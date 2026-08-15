@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering Services | JS Caterer Velachery Chennai</title>
+<meta name="description" content="JS Caterer offers Marriage & Event Management, CPU Industrial Catering, Corporate Packed Combos & Kovil Annathanam across Velachery, OMR, ECR and South Chennai.">
+<meta name="keywords" content="Best Caterers in Velachery, Marriage Caterers Chennai, Veg Caterers Chennai, Non Veg Caterers Chennai, Catering Near Me">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-contacts">
+      <span><i class="fa-solid fa-location-dot glow-icon"></i> No. 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</span>
+      <span><i class="fa-solid fa-phone glow-icon"></i> Jagan C: <a href="tel:9940649939" class="phone-link">99406 49939</a> | <a href="tel:9884985368" class="phone-link">98849 85368</a></span>
+    </div>
+    <div class="top-actions">
+      <a href="https://wa.me/919940649939" target="_blank" class="btn-top-wa"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="luxury-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-logo-group">
+      <img src="assets/logo.png" alt="JS Caterer Logo" class="brand-logo-img">
+      <div class="brand-text">
+        <span class="brand-name">JS CATERER</span>
+        <span class="brand-motto-en">TRADITIONAL TASTE, TIMELESS MEMORIES</span>
+        <span class="brand-motto-ta">பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About Us</a>
+      <a href="services.html" class="nav-item active">Services</a>
+      <a href="menu.html" class="nav-item">Menu & Calculator</a>
+      <a href="gallery.html" class="nav-item">Gallery & Video</a>
+      <a href="contact.html" class="btn-gold-nav">Book Event</a>
+    </nav>
+    <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="brand-logo-group">
+      <img src="assets/logo.png" alt="JS Caterer Logo" class="brand-logo-img" loading="lazy">
+      <div class="brand-text">
+        <span class="brand-name">JS CATERER</span>
+        <span class="brand-motto-en">TRADITIONAL TASTE</span>
+      </div>
+    </a>
+    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+    <a href="services.html" class="mobile-nav-item active"><i class="fa-solid fa-utensils"></i> Services</a>
+    <a href="menu.html" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> Menu & Calculator</a>
+    <a href="gallery.html" class="mobile-nav-item"><i class="fa-solid fa-photo-film"></i> Gallery & Video</a>
+    <a href="contact.html" class="btn-gold-mobile"><i class="fa-solid fa-calendar-check"></i> Book Event</a>
+  </nav>
+  <div class="mobile-drawer-footer">
+    <div class="mobile-drawer-contact">
+      <p><i class="fa-solid fa-phone glow-icon"></i> Jagan C: <a href="tel:9940649939" class="phone-link">99406 49939</a></p>
+      <p><i class="fa-solid fa-location-dot glow-icon"></i> Velachery, Chennai 600042</p>
+    </div>
+    <a href="https://wa.me/919940649939" target="_blank" class="btn-top-wa full-btn mt-16"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp Inquiry</a>
+  </div>
+</div>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero-banner">
+    <div class="container">
+      <span class="page-breadcrumb accent-label">Home / Catering Services</span>
+      <h1 class="page-hero-title">Our Specialty <em>Catering Services</em></h1>
+      <p class="page-hero-slogan">“பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!”</p>
+    </div>
+  </section>
+
+  <!-- SERVICE 01 + 02 — LIGHT -->
+  <section class="section-light">
+    <div class="container">
+
+      <!-- Service 01 -->
+      <div class="service-cat-card">
+        <div class="service-cat-header">
+          <div class="box-icon-wrap" style="margin-bottom:0;flex-shrink:0;"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <div>
+            <span class="card-tag accent-label">Category 01</span>
+            <h3>Marriage & Event Management</h3>
+          </div>
+        </div>
+        <p>Recognized as leading <strong>Marriage Caterers in Chennai</strong>, JS Caterer manages complete event dining setups. From authentic morning tiffin on fresh banana leaves to elaborate multi-cuisine reception buffets, live dosa counters, chat stalls, and traditional sweets.</p>
+        <div class="tag-cloud">
+          <span class="tag-pill">Marriage / Wedding</span>
+          <span class="tag-pill">Betrothal (Engagement)</span>
+          <span class="tag-pill">Baby Shower (வளைகாப்பு)</span>
+          <span class="tag-pill">Birthday Celebrations</span>
+          <span class="tag-pill">Housewarming (கிரகப்பிரவேசம்)</span>
+          <span class="tag-pill">Ear-Piercing Ceremony</span>
+          <span class="tag-pill">60th Birthday (Sashtiapthapoorthi)</span>
+          <span class="tag-pill">80th Birthday (Sadabhishekam)</span>
+          <span class="tag-pill">School & College Functions</span>
+        </div>
+        <a href="marriage-event-catering.html" class="btn-primary-gold"><i class="fa-solid fa-arrow-right"></i> Explore Marriage & Event Menus</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE 03 + 04 — SOFT GOLD -->
+  <section class="section-soft-gold">
+    <div class="container">
+
+      <!-- Service 02: CPU Industrial -->
+      <div class="service-cat-card">
+        <div class="service-cat-header">
+          <div class="box-icon-wrap" style="margin-bottom:0;flex-shrink:0;"><i class="fa-solid fa-industry"></i></div>
+          <div>
+            <span class="card-tag accent-label">Category 02</span>
+            <h3>CPU Industrial Catering</h3>
+          </div>
+        </div>
+        <p>High-volume bulk catering infrastructure powered by our Central Preparation Unit (CPU). We provide seamless, nutritious, hygienic daily workforce breakfast, lunch, and dinner solutions across Velachery, Guindy, Perungudi, and OMR.</p>
+        <div class="tag-cloud">
+          <span class="tag-pill">Manufacturing Sector</span>
+          <span class="tag-pill">IT Sector & Tech Parks</span>
+          <span class="tag-pill">Educational Institutions</span>
+          <span class="tag-pill">Hospitals & Healthcare</span>
+        </div>
+        <a href="contact.html" class="btn-glass-gold">Inquire for CPU Corporate Contract</a>
+      </div>
+
+      <!-- Service 03: Corporate Packed Food -->
+      <div class="service-cat-card">
+        <div class="service-cat-header">
+          <div class="box-icon-wrap" style="margin-bottom:0;flex-shrink:0;"><i class="fa-solid fa-box-open"></i></div>
+          <div>
+            <span class="card-tag accent-label">Category 03</span>
+            <h3>Corporate Packed Food Combos</h3>
+          </div>
+        </div>
+        <p>Hygienically sealed, tamper-evident, temperature-controlled packed food boxes delivered straight to corporate offices for daily staff lunches, boardroom meetings, and training seminars.</p>
+        <div class="combo-grid">
+          <div class="combo-card">
+            <h4><i class="fa-solid fa-mug-hot" style="color:var(--emerald);margin-right:6px;"></i> Breakfast Combo</h4>
+            <p>Soft Idlis, Medu Vada, Ven Pongal / Kichadi, Chutneys & Filter Coffee.</p>
+          </div>
+          <div class="combo-card">
+            <h4><i class="fa-solid fa-box" style="color:var(--emerald);margin-right:6px;"></i> Executive Lunch Box</h4>
+            <p>Veg Biryani / Chapati + Kurma + Variety Rice + Curd Rice + Pickle + Sweet.</p>
+          </div>
+          <div class="combo-card">
+            <h4><i class="fa-solid fa-cookie" style="color:var(--emerald);margin-right:6px;"></i> Evening Snacks Combo</h4>
+            <p>Crispy Samosa / Cutlet / Bajji + Tea / Coffee + Biscuits.</p>
+          </div>
+          <div class="combo-card">
+            <h4><i class="fa-solid fa-moon" style="color:var(--emerald);margin-right:6px;"></i> Dinner Box Combo</h4>
+            <p>2 Chapatis + Paneer / Chicken Butter Masala + Special Rice + Dessert.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-glass-gold">Get Daily Packed Food Contract</a>
+      </div>
+
+      <!-- Service 04: Kovil Annathanam -->
+      <div class="service-cat-card">
+        <div class="service-cat-header">
+          <div class="box-icon-wrap" style="margin-bottom:0;flex-shrink:0;"><i class="fa-solid fa-gopuram"></i></div>
+          <div>
+            <span class="card-tag accent-label">Category 04</span>
+            <h3>Kovil Annathanam — Temple Sacred Feeding</h3>
+          </div>
+        </div>
+        <p>Pure satvik traditional Tamil meals prepared with religious sanctity and discipline for temple consecrated feeding ceremonies (கோவில் அன்னதானம்). Cooked in traditional brass vessels using fresh farm produce, pure A2 ghee, and holy water — no onion, no garlic, full sanctity.</p>
+        <a href="contact.html" class="btn-primary-gold"><i class="fa-solid fa-gopuram"></i> Book Kovil Annathanam</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="luxury-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="JS Caterer Logo" class="footer-logo-img">
+        <span>JS CATERER</span>
+      </div>
+      <p>Premier Veg & Non-Veg Marriage Caterers in Velachery, Chennai. Traditional taste & timeless memories across South Chennai.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu & Calculator</a></li>
+        <li><a href="gallery.html">Gallery & Videos</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-seo">
+      <h4>We Serve</h4>
+      <p class="keywords-list">Best Caterers in Velachery • Marriage Caterers Chennai • Veg Caterers Chennai • Non Veg Caterers Chennai • Catering Near Me</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 JS Caterer (www.jscaterer.in) — Jagan C: 9940649939 / 9884985368</p></div>
+</footer>
+
+<a href="https://wa.me/919940649939" target="_blank" class="floating-wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
