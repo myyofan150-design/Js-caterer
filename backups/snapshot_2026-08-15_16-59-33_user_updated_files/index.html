@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Caterer | Velachery Chennai | Traditional Taste, Timeless Memories</title>
+<meta name="description" content="JS Caterer Velachery — Premier Veg & Non-Veg Marriage Caterers in Chennai. Scroll-based storytelling experience of traditional South Indian culinary art, CPU industrial catering, corporate packed food & Kovil Annathanam.">
+<meta name="keywords" content="Best Caterers in Velachery, Marriage Caterers Chennai, Veg Caterers Chennai, Non Veg Caterers Chennai, Catering Near Me">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="particleCanvas"></canvas>
+
+<!-- Progress Bar -->
+<div class="story-progress-container"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-contacts">
+      <span><i class="fa-solid fa-location-dot glow-icon"></i> No. 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</span>
+      <span><i class="fa-solid fa-phone glow-icon"></i> Jagan C: <a href="tel:9940649939" class="phone-link">99406 49939</a> | <a href="tel:9884985368" class="phone-link">98849 85368</a></span>
+    </div>
+    <div class="top-actions">
+      <a href="https://wa.me/919940649939" target="_blank" class="btn-top-wa"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="luxury-header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-logo-group">
+      <img src="assets/logo.png" alt="JS Caterer Logo" class="brand-logo-img">
+      <div class="brand-text">
+        <span class="brand-name">JS CATERER</span>
+        <span class="brand-motto-en">TRADITIONAL TASTE, TIMELESS MEMORIES</span>
+        <span class="brand-motto-ta">பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item active">Home</a>
+      <a href="about.html" class="nav-item">About Us</a>
+      <a href="services.html" class="nav-item">Services</a>
+      <a href="menu.html" class="nav-item">Menu & Calculator</a>
+      <a href="gallery.html" class="nav-item">Gallery & Video</a>
+      <a href="contact.html" class="btn-gold-nav">Book Event</a>
+    </nav>
+    <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="brand-logo-group">
+      <img src="assets/logo.png" alt="JS Caterer Logo" class="brand-logo-img" loading="lazy">
+      <div class="brand-text">
+        <span class="brand-name">JS CATERER</span>
+        <span class="brand-motto-en">TRADITIONAL TASTE</span>
+      </div>
+    </a>
+    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+    <a href="services.html" class="mobile-nav-item"><i class="fa-solid fa-utensils"></i> Services</a>
+    <a href="menu.html" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> Menu & Calculator</a>
+    <a href="gallery.html" class="mobile-nav-item"><i class="fa-solid fa-photo-film"></i> Gallery & Video</a>
+    <a href="contact.html" class="btn-gold-mobile"><i class="fa-solid fa-calendar-check"></i> Book Event</a>
+  </nav>
+  <div class="mobile-drawer-footer">
+    <div class="mobile-drawer-contact">
+      <p><i class="fa-solid fa-phone glow-icon"></i> Jagan C: <a href="tel:9940649939" class="phone-link">99406 49939</a></p>
+      <p><i class="fa-solid fa-location-dot glow-icon"></i> Velachery, Chennai 600042</p>
+    </div>
+    <a href="https://wa.me/919940649939" target="_blank" class="btn-top-wa full-btn mt-16"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp Inquiry</a>
+  </div>
+</div>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+<!-- Side Dots -->
+<div class="side-story-nav" id="sideStoryNav">
+  <a href="#act-1" class="story-dot active"></a>
+  <a href="#act-2" class="story-dot"></a>
+  <a href="#act-3" class="story-dot"></a>
+  <a href="#act-4" class="story-dot"></a>
+  <a href="#act-5" class="story-dot"></a>
+  <a href="#act-6" class="story-dot"></a>
+  <a href="#act-7" class="story-dot"></a>
+  <a href="#act-8" class="story-dot"></a>
+</div>
+
+<main>
+
+  <!-- ================================================================
+       ACT 01 — VIDEO HERO WITH LOOPABLE VIDEO + PHOTO SLIDESHOW
+       ================================================================ -->
+  <section id="act-1" class="video-hero-section">
+
+    <!-- Top Running Progress Bar -->
+    <div class="hero-top-progress-bar" id="heroTopProgressBar">
+      <div class="hero-top-progress-fill" id="heroTopProgressFill"></div>
+    </div>
+
+    <!-- 1a: Loopable video background -->
+    <!-- REPLACE hero_bg.mp4 WITH YOUR ACTUAL VIDEO FILE -->
+    <video class="hero-video-bg" autoplay muted loop playsinline poster="assets/wedding_feast.jpg" id="heroBgVideo">
+      <source src="assets/videos/hero_bg.mp4" type="video/mp4">
+      <!-- If no video file exists, the poster image will show -->
+    </video>
+
+    <!-- 1b: Photo slideshow layer (crossfades above video when video fails) -->
+    <div class="hero-slideshow" id="heroSlideshow">
+      <div class="hero-slide active" style="background-image:url('assets/wedding_feast.jpg')" data-label="Grand Wedding Feasts"></div>
+      <div class="hero-slide" style="background-image:url('assets/live_kitchen.jpg')" data-label="Master Kitchen"></div>
+      <div class="hero-slide" style="background-image:url('assets/corporate_buffet.jpg')" data-label="Corporate Buffets"></div>
+      <div class="hero-slide" style="background-image:url('assets/temple_annathanam.jpg')" data-label="Kovil Annathanam"></div>
+      <div class="hero-slide" style="background-image:url('assets/banana_leaf_serving.jpg')" data-label="Banana Leaf Serving"></div>
+      <div class="hero-slide" style="background-image:url('assets/sweets_live_counter.jpg')" data-label="Live Sweet Counter"></div>
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Slide caption top-right -->
+    <div style="position:absolute;top:50%;right:36px;transform:translateY(-50%);z-index:3;text-align:right;pointer-events:none;">
+      <div style="font-family:var(--font-head);font-size:5.5rem;font-weight:900;color:rgba(255,255,255,.05);line-height:1;" id="heroSlideNum">01</div>
+      <div style="font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);" id="heroSlideLbl">Grand Wedding Feasts</div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="hero-text-layer">
+      <div class="hero-text-inner">
+
+        <div class="hero-pill-badge accent-label">
+          <i class="fa-solid fa-crown"></i> South Chennai's Premier Caterers
+        </div>
+
+        <h1 class="hero-main-title" id="heroMainTitle">
+          Crafting <em>Unforgettable</em> Feasts in Velachery & Chennai
+        </h1>
+
+        <p class="hero-tamil" id="heroTamilLine">
+          "பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!"
+        </p>
+
+        <p class="hero-sub" id="heroSubtext">
+          Every grand occasion deserves a feast that lives in memory. Led by <strong style="color:#fff;">Jagan C</strong>, JS Caterer blends authentic South Indian culinary tradition, pure brass flames, and 100% kitchen hygiene into an extraordinary dining experience.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="contact.html" class="btn-primary-gold"><i class="fa-solid fa-calendar-check"></i> Book Your Celebration</a>
+          <a href="menu.html" class="btn-glass-gold"><i class="fa-solid fa-utensils"></i> View Menus & Pricing</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Centered Bottom Mouse Scroll Indicator -->
+    <div class="scroll-down-indicator">
+      <span class="accent-label">SCROLL TO EXPLORE THE STORY</span>
+      <div class="mouse-scroll-icon"><div class="mouse-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 02 — DRAG CAROUSEL (LIGHT SECTION)
+       ================================================================ -->
+  <section id="act-2" class="section-light">
+    <div class="container">
+      <div class="carousel-section-header">
+        <div class="carousel-header-text">
+          <div class="story-chapter-tag accent-label"><i class="fa-solid fa-utensils"></i> Culinary Showcase</div>
+          <h2 class="section-title story-reveal">Culinary <em class="gradient-text">Showcase</em></h2>
+          <p class="section-desc story-reveal">Explore our signature spreads, live kitchens & event setups.</p>
+        </div>
+        <div class="carousel-nav-arrows">
+          <button class="carousel-arrow-btn prev-btn" id="carouselPrevBtn" aria-label="Previous Slide"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="carousel-arrow-btn next-btn" id="carouselNextBtn" aria-label="Next Slide"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="drag-carousel-wrapper" id="dragCarouselWrapper">
+        <div class="drag-carousel-track" id="dragCarouselTrack">
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/wedding_feast.jpg" alt="Wedding Feasts"><span class="slide-tag accent-label">01. Marriage Feast</span></div>
+            <div class="slide-body"><h3>Grand Kalyana Banana Leaf Feast</h3><p>Authentic South Indian wedding dining on fresh banana leaves with pure cow ghee & morning filter coffee.</p><a href="services.html" class="slide-link accent-label">View Services &rarr;</a></div>
+          </div>
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/live_kitchen.jpg" alt="Live Kitchen"><span class="slide-tag accent-label">02. 100% Hygiene</span></div>
+            <div class="slide-body"><h3>Master Chef Live Kitchen</h3><p>100% hygienic central preparation unit (CPU), wok flames, clean uniforms, and RO purified water.</p><a href="about.html" class="slide-link accent-label">Our Story &rarr;</a></div>
+          </div>
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/corporate_buffet.jpg" alt="Corporate Buffets"><span class="slide-tag accent-label">03. Corporate Combos</span></div>
+            <div class="slide-body"><h3>Corporate Executive Buffets</h3><p>Stainless steel chafing dish setups and daily packed food boxes for IT companies across OMR & Perungudi.</p><a href="services.html" class="slide-link accent-label">Corporate Plans &rarr;</a></div>
+          </div>
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/temple_annathanam.jpg" alt="Kovil Annathanam"><span class="slide-tag accent-label">04. Sacred Feeding</span></div>
+            <div class="slide-body"><h3>Kovil Annathanam Feasts</h3><p>Pure satvik traditional Tamil meals prepared with religious discipline for temple consecrated feeding.</p><a href="services.html" class="slide-link accent-label">Annathanam Details &rarr;</a></div>
+          </div>
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/banana_leaf_serving.jpg" alt="Banana Leaf Service"><span class="slide-tag accent-label">05. Banana Leaf</span></div>
+            <div class="slide-body"><h3>Traditional Meal Serving</h3><p>Uniformed culinary servers delivering fast, coordinated banana leaf service for 1,000+ guests.</p><a href="gallery.html" class="slide-link accent-label">See Gallery &rarr;</a></div>
+          </div>
+          <div class="carousel-slide-card">
+            <div class="slide-img-box"><img src="assets/sweets_live_counter.jpg" alt="Live Sweets Counter"><span class="slide-tag accent-label">06. Live Stalls</span></div>
+            <div class="slide-body"><h3>Live Sweet & Dessert Counters</h3><p>Hot Tirunelveli Halwa, Badam Halwa, Mysore Pak, Jalebi, and Matka Kulfi live counter setups.</p><a href="menu.html" class="slide-link accent-label">Full Sweets List &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 03 — FULL-STRETCH HERITAGE IMAGE SECTION (DARK)
+       ================================================================ -->
+  <section id="act-3" class="fullstretch-section" style="height: 80vh;">
+    <video class="fs-bg" autoplay loop muted playsinline poster="assets/live_kitchen.jpg">
+      <source src="assets/videos/kitchen_heritage.mp4" type="video/mp4">
+      <img src="assets/live_kitchen.jpg" alt="JS Caterer Live Kitchen Heritage" class="fs-bg">
+    </video>
+    <div class="fullstretch-overlay"></div>
+    <div class="fullstretch-content">
+      <div class="story-chapter-tag accent-label">
+        <i class="fa-solid fa-leaf"></i> The Heritage Story
+      </div>
+      <h2 class="story-reveal">Preserving South India's <em>Rich Taste</em></h2>
+      <p class="story-reveal">Founded by <strong style="color:#fff;">Jagan C</strong>, JS Caterer blends generational recipes, pure brass vessel cooking, and 100% kitchen hygiene to create an extraordinary dining experience for every occasion.</p>
+      <div class="hero-cta-row story-reveal" style="margin-bottom:0;">
+        <a href="about.html" class="btn-primary-gold"><i class="fa-solid fa-leaf"></i> Our Heritage Story</a>
+        <a href="gallery.html" class="btn-glass-gold"><i class="fa-solid fa-images"></i> View Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 04 — FOUR PILLARS GRID (LIGHT)
+       ================================================================ -->
+  <section id="act-4" class="section-light-warm">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-award"></i> Our Four Pillars</div>
+        <h2 class="section-title story-reveal">The Four Pillars of <em class="gradient-text">JS Caterer Excellence</em></h2>
+      </div>
+      <div class="story-pillars-grid">
+        <div class="story-pillar-card story-reveal">
+          <div class="pillar-tamil">சுவை</div><h4>Authentic Taste</h4>
+          <p>Generational recipes slow-cooked over steady flames for deep, irreplaceable flavor.</p>
+        </div>
+        <div class="story-pillar-card story-reveal">
+          <div class="pillar-tamil">தரம்</div><h4>Pure Quality</h4>
+          <p>Hand-selected farm produce, pure A2 cow ghee & cold-pressed oils.</p>
+        </div>
+        <div class="story-pillar-card story-reveal">
+          <div class="pillar-tamil">சுத்தம்</div><h4>100% Hygiene</h4>
+          <p>FSSAI-compliant sanitized prep stations & RO purified water throughout.</p>
+        </div>
+        <div class="story-pillar-card story-reveal">
+          <div class="pillar-tamil">நேர்த்தி</div><h4>Excellence</h4>
+          <p>Uniformed culinary staff delivering flawless hospitality & seamless service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 05 — SERVICES (SOFT GOLD)
+       ================================================================ -->
+  <section id="act-5" class="section-soft-gold">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-plate-wheat"></i> Our Specialty Offerings</div>
+        <h2 class="section-title story-reveal">Specialized Catering <em>Solutions</em></h2>
+        <p class="section-desc story-reveal">From grand weddings to sacred temple feasts — we do it all.</p>
+      </div>
+      <div class="services-3d-grid" style="margin-top:36px;">
+        <div class="service-box-luxury story-reveal">
+          <div class="box-icon-wrap"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <span class="box-num">01</span>
+          <h3>Marriage & Events</h3>
+          <p class="box-text">Wedding, Betrothal, Baby Shower, Birthday, 60th & 80th Birthdays, Housewarming, Ear-Piercing, School & College Functions.</p>
+          <a href="services.html" style="font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt);display:inline-block;margin-top:14px;">Explore &rarr;</a>
+        </div>
+        <div class="service-box-luxury story-reveal">
+          <div class="box-icon-wrap"><i class="fa-solid fa-industry"></i></div>
+          <span class="box-num">02</span>
+          <h3>CPU Industrial Catering</h3>
+          <p class="box-text">High-volume daily meals for Manufacturing, IT Parks, Educational Institutions & Hospitals across South Chennai.</p>
+          <a href="services.html" style="font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt);display:inline-block;margin-top:14px;">Explore &rarr;</a>
+        </div>
+        <div class="service-box-luxury story-reveal">
+          <div class="box-icon-wrap"><i class="fa-solid fa-box-open"></i></div>
+          <span class="box-num">03</span>
+          <h3>Corporate Packed Combos</h3>
+          <p class="box-text">Hygienically sealed Breakfast, Executive Lunch Box, Evening Snacks & Night Shift Dinner combos.</p>
+          <a href="services.html" style="font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt);display:inline-block;margin-top:14px;">Explore &rarr;</a>
+        </div>
+        <div class="service-box-luxury story-reveal">
+          <div class="box-icon-wrap"><i class="fa-solid fa-gopuram"></i></div>
+          <span class="box-num">04</span>
+          <h3>Kovil Annathanam</h3>
+          <p class="box-text">Pure satvik Tamil traditional meals cooked in brass vessels with religious sanctity for temple consecrated feasts.</p>
+          <a href="services.html" style="font-family:var(--font-label);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt);display:inline-block;margin-top:14px;">Explore &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 05b — FULL-STRETCH ANNATHANAM BANNER (stretch between dark acts)
+       ================================================================ -->
+  <section class="fullstretch-section" style="height: 80vh;">
+    <img src="assets/temple_annathanam.jpg" alt="Kovil Annathanam Sacred Feasts" class="fs-bg">
+    <div class="fullstretch-overlay" style="background:linear-gradient(90deg,rgba(14,32,24,.92) 0%,rgba(14,32,24,.45) 100%);"></div>
+    <div class="fullstretch-content">
+      <div class="story-chapter-tag accent-label">
+        <i class="fa-solid fa-gopuram"></i> Sacred Feeding · Satvik Meals
+      </div>
+      <h2 class="story-reveal" style="color:#F3EAD0;font-size:clamp(2.2rem,4.5vw,3.4rem);">Kovil Annathanam <em>Ceremonial Feasts</em></h2>
+      <p class="story-reveal" style="color:rgba(255,255,255,.78);font-size:1.05rem;max-width:640px;margin-bottom:32px;">Prepared in traditional brass vessels with utmost religious sanctity for temple consecrated feasts. No onion. No garlic. Pure satvik cooking.</p>
+      <a href="contact.html" class="btn-primary-gold story-reveal"><i class="fa-solid fa-gopuram"></i> Book Annathanam</a>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 06 — MENU CALCULATOR (LIGHT)
+       ================================================================ -->
+  <section id="act-6" class="section-light">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-calculator"></i> Interactive Budget Calculator</div>
+        <h2 class="section-title story-reveal">Calculate Your <em>Catering Package</em></h2>
+        <p class="section-desc story-reveal">Select your event details to get an instant estimate & send it directly to Jagan C on WhatsApp.</p>
+      </div>
+
+      <div class="calc-card-glass story-reveal">
+        <div class="calc-body-grid">
+          <div class="calc-controls">
+            <div class="calc-group">
+              <label><i class="fa-solid fa-cake-candles"></i> Select Event Type</label>
+              <select id="calcOccasion" class="calc-input">
+                <option value="Marriage">Marriage / Wedding Reception</option>
+                <option value="Engagement">Betrothal / Engagement</option>
+                <option value="Birthday">Birthday Party (1st, 60th, 80th)</option>
+                <option value="Housewarming">Housewarming (கிரகப்பிரவேசம்)</option>
+                <option value="Baby Shower">Baby Shower / Ear-Piercing</option>
+                <option value="Corporate Events">Corporate Events & Office Lunch</option>
+                <option value="CPU Catering">CPU Industrial Catering</option>
+                <option value="Annathanam">Kovil Annathanam</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label><i class="fa-solid fa-utensils"></i> Cuisine Preference</label>
+              <div class="radio-pill-group">
+                <label class="radio-pill active"><input type="radio" name="calcType" value="Veg" checked> Pure Veg</label>
+                <label class="radio-pill"><input type="radio" name="calcType" value="NonVeg"> Non-Veg Feast</label>
+                <label class="radio-pill"><input type="radio" name="calcType" value="Both"> Veg & Non-Veg</label>
+              </div>
+            </div>
+            <div class="calc-group">
+              <label><i class="fa-solid fa-users"></i> Guest Count: <span id="guestCountVal" class="gold-count">250</span> Guests</label>
+              <input type="range" id="guestSlider" min="50" max="3000" step="50" value="250" class="range-slider">
+            </div>
+          </div>
+          <div class="calc-summary-box">
+            <div class="summary-header"><h3>Proposal Summary</h3><span class="summary-badge accent-label">JS Caterer</span></div>
+            <div class="sum-row"><span>Event:</span><strong id="sumEvent">Marriage / Wedding</strong></div>
+            <div class="sum-row"><span>Cuisine:</span><strong id="sumCuisine">Pure Veg Banana Leaf Feast</strong></div>
+            <div class="sum-row"><span>Menu Items:</span><strong id="sumItemsCount">18+ Traditional Dishes</strong></div>
+            <div class="sum-row highlight"><span>Price Range:</span><strong id="sumEstimate">₹180 – ₹350 per plate</strong></div>
+            <button id="sendCalcToWA" class="btn-primary-gold full-btn mt-16"><i class="fa-brands fa-whatsapp"></i> Send Quote to Jagan C</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 07 — CORPORATE BUFFET FULL-STRETCH + AREAS (DARK)
+       ================================================================ -->
+  <section class="fullstretch-section" style="height:70vh;">
+    <img src="assets/corporate_buffet.jpg" alt="Corporate Buffets JS Caterer Chennai" class="fs-bg">
+    <div class="fullstretch-overlay" style="background:linear-gradient(180deg,transparent 0%,rgba(14,32,24,.92) 100%);"></div>
+    <div class="fullstretch-content" style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding-bottom:48px;">
+      <h2 style="color:#F3EAD0;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:10px;">Serving Top IT Parks & <em>Corporate HQs</em> Across OMR</h2>
+      <p style="color:rgba(255,255,255,.72);max-width:600px;font-size:1rem;">Daily breakfast, executive lunch boxes & snack combos delivered on time, every day, with zero compromise on taste.</p>
+    </div>
+  </section>
+
+  <section id="act-7" class="section-soft-gold">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-map-location-dot"></i> Serving 22 Localities Across Chennai</div>
+        <h2 class="section-title story-reveal">Catering Services <em>Near Me</em></h2>
+        <p class="section-desc story-reveal">Click any area to verify instant availability for your event.</p>
+      </div>
+      <div class="areas-grid-interactive story-reveal">
+        <div class="area-chip active-hq" onclick="highlightArea('Velachery')"><i class="fa-solid fa-star"></i> Velachery (HQ)</div>
+        <div class="area-chip" onclick="highlightArea('Adyar')">Adyar</div>
+        <div class="area-chip" onclick="highlightArea('Thiruvanmiyur')">Thiruvanmiyur</div>
+        <div class="area-chip" onclick="highlightArea('Palavakkam')">Palavakkam</div>
+        <div class="area-chip" onclick="highlightArea('Kottivakkam')">Kottivakkam</div>
+        <div class="area-chip" onclick="highlightArea('Neelankarai')">Neelankarai</div>
+        <div class="area-chip" onclick="highlightArea('Adambakkam')">Adambakkam</div>
+        <div class="area-chip" onclick="highlightArea('Madipakkam')">Madipakkam</div>
+        <div class="area-chip" onclick="highlightArea('Medavakkam')">Medavakkam</div>
+        <div class="area-chip" onclick="highlightArea('Pallikaranai')">Pallikaranai</div>
+        <div class="area-chip" onclick="highlightArea('Thoraipakkam')">Thoraipakkam</div>
+        <div class="area-chip" onclick="highlightArea('Perungudi')">Perungudi</div>
+        <div class="area-chip" onclick="highlightArea('Taramani')">Taramani</div>
+        <div class="area-chip" onclick="highlightArea('Guindy')">Guindy</div>
+        <div class="area-chip" onclick="highlightArea('Saidapet')">Saidapet</div>
+        <div class="area-chip" onclick="highlightArea('Nanganallur')">Nanganallur</div>
+        <div class="area-chip" onclick="highlightArea('Tambaram')">Tambaram</div>
+        <div class="area-chip" onclick="highlightArea('Sholinganallur')">Sholinganallur</div>
+        <div class="area-chip" onclick="highlightArea('OMR')">OMR</div>
+        <div class="area-chip" onclick="highlightArea('ECR')">ECR</div>
+        <div class="area-chip" onclick="highlightArea('Chromepet')">Chromepet</div>
+      </div>
+      <div id="areaInfoDisplay" class="area-info-banner story-reveal" style="margin-top:24px;">
+        <i class="fa-solid fa-circle-check" style="color:var(--gold-lt);margin-right:8px;"></i>
+        <span id="areaInfoText">JS Caterer guarantees 100% on-time delivery & hot food catering in <strong>Velachery</strong> and all surrounding locations!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       ACT 08 — WEDDING FEAST FULL-STRETCH + CONTACT (LIGHT)
+       ================================================================ -->
+  <section class="fullstretch-section" style="height: 80vh;">
+    <img src="assets/banana_leaf_serving.jpg" alt="Traditional Banana Leaf Meal Service" class="fs-bg">
+    <div class="fullstretch-overlay"></div>
+    <div class="fullstretch-content">
+      <div class="story-chapter-tag accent-label">
+        <i class="fa-solid fa-utensils"></i> Traditional Kalyana Samayal
+      </div>
+      <h2 style="color:#F3EAD0;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:14px;">1000+ Guests Served <em>Seamlessly</em></h2>
+      <p style="color:rgba(255,255,255,.75);max-width:580px;font-size:1rem;margin-bottom:28px;">Our uniformed servers deliver coordinated banana leaf service with warmth, speed, and zero chaos — every time.</p>
+      <a href="contact.html" class="btn-primary-gold"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+    </div>
+  </section>
+
+  <section id="act-8" class="section-light">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-paper-plane"></i> Begin Your Event Story</div>
+      </div>
+      <div class="contact-grid story-reveal">
+        <div class="contact-card-glass">
+          <span class="section-gold-tag accent-label">Google Business Profile</span>
+          <h2 style="font-family:var(--font-head);font-size:1.9rem;color:var(--emerald);margin:10px 0 4px;">JS Caterer Velachery</h2>
+          <p class="contact-tamil" style="color:var(--gold);">பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!</p>
+          <div class="contact-detail-row"><i class="fa-solid fa-user-tie"></i><div><strong>Jagan C</strong><p>Owner & Founder</p></div></div>
+          <div class="contact-detail-row"><i class="fa-solid fa-phone"></i><div><strong>Phone / WhatsApp</strong><p><a href="tel:9940649939" class="phone-link" style="color:var(--emerald);">99406 49939</a> | <a href="tel:9884985368" class="phone-link" style="color:var(--emerald);">98849 85368</a></p></div></div>
+          <div class="contact-detail-row"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><p>No 81, Throwpathi Amman Koil 5th Street, Velachery, Chennai 600042</p></div></div>
+        </div>
+        <div class="wa-sim-card" style="align-self:start;">
+          <div class="wa-sim-header accent-label"><i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Auto-Reply</div>
+          <div class="chat-bubble">"வணக்கம். JS Caterer-ஐ தொடர்பு கொண்டதற்கு நன்றி. உங்கள் நிகழ்ச்சி தேதி, இடம் மற்றும் விருந்தினர்கள் எண்ணிக்கையை அனுப்புங்கள்."</div>
+          <a href="https://wa.me/919940649939" target="_blank" class="btn-wa-emerald full-btn"><i class="fa-brands fa-whatsapp"></i> Start WhatsApp with Jagan C</a>
+          <a href="contact.html" class="btn-glass-dark full-btn" style="text-align:center;"><i class="fa-solid fa-calendar-check"></i> Full Booking Form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="luxury-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="JS Caterer Logo" class="footer-logo-img">
+        <span>JS CATERER</span>
+      </div>
+      <p>Premier Veg & Non-Veg Marriage Caterers in Velachery, Chennai. Traditional taste & timeless memories across South Chennai.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu & Calculator</a></li>
+        <li><a href="gallery.html">Gallery & Videos</a></li>
+        <li><a href="contact.html">Book Event</a></li>
+      </ul>
+    </div>
+    <div class="footer-seo">
+      <h4>We Serve</h4>
+      <p class="keywords-list">Best Caterers in Velachery • Marriage Caterers Chennai • Veg Caterers Chennai • Non Veg Caterers Chennai • Catering Near Me • OMR • ECR • Tambaram</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 JS Caterer (www.jscaterer.in) — Jagan C: 9940649939 / 9884985368</p></div>
+</footer>
+
+
+<a href="https://wa.me/919940649939" target="_blank" class="floating-wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
