@@ -5,15 +5,17 @@
 ---
 
 ## 🛑 MANDATORY BUG-FREE & FAIL-SAFE PROTOCOL:
-1. **AUTOMATED BACKUP BEFORE EVERY EDIT**:
-   - Before executing ANY code edit or structural modification, ALWAYS run `node scratch/backup.js` OR `git commit` to save an instant restore point.
+1. **AUTOMATED BACKUP & GIT COMMIT-PUSH**:
+   - Every time code modifications are completed, ALWAYS record and push to Git:
+     `git add .; git commit -m "[Feature/Fix Description]"; git push origin main`
+   - This guarantees 100% cloud & local retrieval at any time.
 2. **ZERO TRUNCATION / NO FILE COLLAPSE**:
    - Inspect full target files before writing changes. Never perform edits that replace full files with truncated snippets.
 3. **SCOPE & VERIFY**:
    - Ensure all CSS changes are strictly scoped (e.g. `#act-4 .selector`).
    - Run `node scratch/check_site.js` BEFORE completing ANY turn to verify JavaScript syntax, CSS brace depth, and asset links.
 4. **INSTANT ZERO-RISK RECOVERY**:
-   - If ANY edit causes visual distortion or syntax failure, immediately run `node scratch/restore.js latest` OR `git reset --hard HEAD` to restore the site to a clean working state in 1 second.
+   - If ANY edit causes visual distortion or syntax failure, immediately run `git reset --hard HEAD` to restore the site to a clean working state in 1 second.
 
 ---
 
