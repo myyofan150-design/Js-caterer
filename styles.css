@@ -5052,3 +5052,30 @@ body, html {
   background: linear-gradient(135deg, #E8C84D 0%, #D4AF37 100%) !important;
   color: #FFFFFF !important;
 }
+
+/* ================================================================
+   GRAND HEIGHT EXPANSION FOR SERVICES HERO HEADER (.services-hero-hub)
+   ================================================================ */
+
+#services-hub-page .services-hero-hub {
+  padding: 140px 0 120px !important;
+  min-height: 520px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 992px) {
+  #services-hub-page .services-hero-hub {
+    padding: 100px 20px 84px !important;
+    min-height: 440px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #services-hub-page .services-hero-hub {
+    padding: 84px 16px 64px !important;
+    min-height: 380px !important;
+  }
+}
