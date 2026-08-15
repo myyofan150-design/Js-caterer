@@ -626,4 +626,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ----------------------------------------------------
+  // GSAP-STYLE SCROLL PROGRESS BAR & REVEAL ANIMATIONS
+  // ----------------------------------------------------
+  let siteScrollProgressBar = document.getElementById('siteScrollProgressBar');
+  if (!siteScrollProgressBar) {
+    siteScrollProgressBar = document.createElement('div');
+    siteScrollProgressBar.id = 'siteScrollProgressBar';
+    document.body.appendChild(siteScrollProgressBar);
+  }
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (siteScrollProgressBar) siteScrollProgressBar.style.width = `${scrolled}%`;
+  });
+
+  // GSAP-Style Scroll Reveal Observer for Division Cards & Guarantee Cards
+  const revealElements = document.querySelectorAll('.catering-division-card, .guarantee-card, .custom-pills-card, .special-menu-card, .occ-card, .bento-card');
+  revealElements.forEach(el => el.classList.add('scroll-reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
+
 });
