@@ -5557,3 +5557,41 @@ a[href*="wa.me"] i {
     height: 165px !important;
   }
 }
+
+/* ================================================================
+   100% RESPONSIVE & CLICKABLE CAROUSEL DOTS (#occDots)
+   ================================================================ */
+
+.carousel-dots-indicator {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 28px !important;
+  padding: 8px 0 !important;
+}
+
+.carousel-dots-indicator .dot {
+  display: inline-block !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: rgba(197, 155, 39, 0.3) !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.5) !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 0 !important;
+}
+
+.carousel-dots-indicator .dot:hover {
+  background: rgba(170, 130, 10, 0.6) !important;
+  transform: scale(1.2) !important;
+}
+
+.carousel-dots-indicator .dot.active {
+  width: 32px !important;
+  border-radius: 14px !important;
+  background: #AA820A !important;
+  border-color: #AA820A !important;
+  box-shadow: 0 3px 8px rgba(170, 130, 10, 0.35) !important;
+}
