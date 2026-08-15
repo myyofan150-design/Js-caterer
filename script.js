@@ -615,4 +615,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Services Hub Page Quote Form Submit
+  const servicesPageForm = document.getElementById('servicesPageForm');
+  if (servicesPageForm) {
+    servicesPageForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (id) => (document.getElementById(id) || {}).value || '';
+      const msg = `வணக்கம் JS Caterer (Jagan C),\n\nCatering Services Proposal Request:\n👤 Name: ${v('sName')}\n📞 Phone: ${v('sPhone')}\n🏬 Category: ${v('sCategory')}\n📅 Event Date: ${v('sDate')}\n👥 Guests: ${v('sGuests')}\n🍲 Cuisine: ${v('sCuisine')}\n\nPlease send complete service details and proposal quote!`;
+      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
+
 });
