@@ -4498,3 +4498,31 @@ body, .service-detail-body, .services-hub-body {
     justify-content: center !important;
   }
 }
+
+/* ================================================================
+   100% SINGLE-LINE RESPONSIVE BUTTON FIX (.btn-primary-gold)
+   ================================================================ */
+
+.btn-primary-gold, .btn-glass-gold, .btn-hero-gold {
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px) {
+  .btn-primary-gold, .btn-glass-gold, .btn-hero-gold {
+    font-size: 0.78rem !important;
+    padding: 10px 16px !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-primary-gold, .btn-glass-gold, .btn-hero-gold {
+    font-size: 0.72rem !important;
+    padding: 9px 12px !important;
+  }
+}
