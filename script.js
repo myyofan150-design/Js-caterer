@@ -662,3 +662,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// Smooth scroll handler with sticky header offset for jump pills
+document.addEventListener('DOMContentLoaded', () => {
+  const jumpPills = document.querySelectorAll('.jump-pill[href^="#"]');
+  jumpPills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      const targetId = pill.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElem = document.querySelector(targetId);
+        if (targetElem) {
+          e.preventDefault();
+          const headerOffset = 135;
+          const elementPosition = targetElem.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+});

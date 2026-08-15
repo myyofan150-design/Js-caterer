@@ -4526,3 +4526,17 @@ body, .service-detail-body, .services-hub-body {
     padding: 9px 12px !important;
   }
 }
+
+/* ================================================================
+   STICKY HEADER JUMP SCROLL OFFSET FIX (scroll-margin-top)
+   ================================================================ */
+
+#services-hub-page .catering-division-card,
+#services-hub-page section[id],
+#services-hub-page div[id] {
+  scroll-margin-top: 140px !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
