@@ -4,17 +4,16 @@
 
 ---
 
-## 🛑 MANDATORY BUG-FREE & ZERO-COLLAPSE PROTOCOL
-
-**ANY AI AGENT WORKING IN THIS WORKSPACE MUST ENSURE THAT ALL PRODUCED CODE IS 100% BUG-FREE, ERROR-FREE, AND GUARANTEED FREE FROM SITE COLLAPSES OR REGRESSIONS.**
-
-Before completing ANY task or turn, you MUST execute:
-```bash
-node scratch/check_site.js
-```
-The task is ONLY complete when `check_site.js` returns:
-- `[PASS] JavaScript Syntax Check (script.js): OK`
-- `[PASS] CSS Syntax Check (styles.css): OK`
+## 🛑 MANDATORY BUG-FREE & FAIL-SAFE PROTOCOL:
+1. **AUTOMATED BACKUP BEFORE EVERY EDIT**:
+   - Before executing ANY code edit or structural modification, ALWAYS run `node scratch/backup.js` OR `git commit` to save an instant restore point.
+2. **ZERO TRUNCATION / NO FILE COLLAPSE**:
+   - Inspect full target files before writing changes. Never perform edits that replace full files with truncated snippets.
+3. **SCOPE & VERIFY**:
+   - Ensure all CSS changes are strictly scoped (e.g. `#act-4 .selector`).
+   - Run `node scratch/check_site.js` BEFORE completing ANY turn to verify JavaScript syntax, CSS brace depth, and asset links.
+4. **INSTANT ZERO-RISK RECOVERY**:
+   - If ANY edit causes visual distortion or syntax failure, immediately run `node scratch/restore.js latest` OR `git reset --hard HEAD` to restore the site to a clean working state in 1 second.
 
 ---
 
