@@ -361,33 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ─────────────────────────────────────────────────────
-     6. GOLDEN PARTICLE CANVAS
+     6. GOLDEN PARTICLE CANVAS (REMOVED)
   ───────────────────────────────────────────────────── */
-  const canvas = document.getElementById('particleCanvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let W = canvas.width = window.innerWidth;
-    let H = canvas.height = window.innerHeight;
-    window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
-    const particles = Array.from({ length: 40 }, () => ({
-      x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.8 + 0.4,
-      a: Math.random() * 0.5 + 0.15,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35
-    }));
-    (function draw() {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => {
-        p.x = (p.x + p.vx + W) % W;
-        p.y = (p.y + p.vy + H) % H;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(197,155,39,${p.a})`;
-        ctx.shadowBlur = 6; ctx.shadowColor = '#C59B27'; ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    })();
-  }
 
   /* ─────────────────────────────────────────────────────
      7. CALCULATOR
