@@ -1748,18 +1748,19 @@ body.menu-open {
 
 
 
+
 /* ================================================================
-   INDIVIDUAL SERVICE PAGE: MARRIAGE & EVENT CATERING (#marriage-catering-page)
+   100% PIXEL PERFECT DETAIL PAGE STYLES (#marriage-catering-page)
    ================================================================ */
 
 .service-detail-body {
-  background: #FAF8F2;
+  background: #FAF8F2 !important;
 }
 
-/* Breadcrumb Bar */
 #marriage-catering-page .breadcrumb-bar {
   background: #FAF8F2;
-  padding: 12px 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(170, 130, 10, 0.15);
 }
 #marriage-catering-page .breadcrumb-links {
   display: flex;
@@ -1774,6 +1775,9 @@ body.menu-open {
   text-decoration: none;
   font-weight: 500;
 }
+#marriage-catering-page .breadcrumb-links a:hover {
+  color: #AA820A;
+}
 #marriage-catering-page .breadcrumb-links i {
   font-size: 0.65rem;
   color: #AA820A;
@@ -1785,7 +1789,7 @@ body.menu-open {
 
 /* Detail Hero Section */
 #marriage-catering-page .detail-hero-section {
-  padding: 36px 0 54px;
+  padding: 42px 0 56px;
   background: #FAF8F2;
 }
 #marriage-catering-page .detail-hero-grid {
@@ -1794,15 +1798,19 @@ body.menu-open {
   gap: 40px;
   align-items: center;
 }
+#marriage-catering-page .detail-hero-text {
+  display: flex;
+  flex-direction: column;
+}
 #marriage-catering-page .hero-category-tag {
-  display: block;
+  display: inline-block;
   font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: #AA820A;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 #marriage-catering-page .detail-hero-title {
   font-family: var(--font-head);
@@ -1825,7 +1833,6 @@ body.menu-open {
   margin-bottom: 28px;
 }
 
-/* 4 Value Badges Row */
 #marriage-catering-page .hero-value-badges-row {
   display: flex;
   align-items: center;
@@ -1855,7 +1862,6 @@ body.menu-open {
   flex-shrink: 0;
 }
 
-/* Hero CTA Buttons */
 #marriage-catering-page .hero-cta-buttons {
   display: flex;
   align-items: center;
@@ -1896,8 +1902,12 @@ body.menu-open {
   color: #FFFFFF;
 }
 
-/* Hero Media Frame */
+#marriage-catering-page .detail-hero-media {
+  display: flex;
+  justify-content: center;
+}
 #marriage-catering-page .hero-image-frame {
+  width: 100%;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(14, 32, 24, 0.12);
@@ -1916,6 +1926,9 @@ body.menu-open {
   justify-content: center;
   gap: 12px;
   margin-bottom: 6px;
+}
+#marriage-catering-page .ornamental-header.inline-header {
+  margin-bottom: 4px;
 }
 #marriage-catering-page .flourish-icon {
   color: #AA820A;
@@ -1936,7 +1949,7 @@ body.menu-open {
   margin-bottom: 32px;
 }
 
-/* Section Occasions Carousel */
+/* Occasions Carousel */
 #marriage-catering-page .section-occasions {
   padding: 54px 0;
   background: #FFFFFF;
@@ -2032,7 +2045,7 @@ body.menu-open {
   background: #AA820A;
 }
 
-/* Section Cuisine Switcher */
+/* Cuisine Switcher */
 #marriage-catering-page .section-cuisine-switch {
   padding: 48px 0;
   background: #FAF8F2;
@@ -2092,8 +2105,11 @@ body.menu-open {
   font-size: 1.1rem;
   flex-shrink: 0;
 }
+#marriage-catering-page .btn-text-content {
+  display: flex;
+  flex-direction: column;
+}
 #marriage-catering-page .btn-title {
-  display: block;
   font-family: var(--font-head);
   font-size: 0.98rem;
   font-weight: 800;
@@ -2101,13 +2117,12 @@ body.menu-open {
   letter-spacing: 0.04em;
 }
 #marriage-catering-page .btn-sub {
-  display: block;
   font-family: var(--font-label);
   font-size: 0.75rem;
   color: var(--text-dark-muted);
 }
 
-/* Section Menu Display */
+/* Menu Display */
 #marriage-catering-page .section-menu-display {
   padding: 48px 0 64px;
   background: #FFFFFF;
@@ -2179,6 +2194,9 @@ body.menu-open {
   padding-bottom: 16px;
   border-bottom: 1px dashed rgba(170, 130, 10, 0.3);
 }
+#marriage-catering-page .card-top-banner.nonveg p {
+  color: #AA820A;
+}
 #marriage-catering-page .card-top-banner h3 {
   font-family: var(--font-head);
   font-size: 1.35rem;
@@ -2243,7 +2261,6 @@ body.menu-open {
   pointer-events: none;
 }
 
-/* Photo Column Right */
 #marriage-catering-page .menu-photo-column .photo-container {
   height: 100%;
   min-height: 220px;
@@ -2414,6 +2431,10 @@ body.menu-open {
   gap: 36px;
   align-items: center;
 }
+#marriage-catering-page .plan-copy-col {
+  display: flex;
+  flex-direction: column;
+}
 #marriage-catering-page .plan-title {
   font-family: var(--font-head);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -2451,8 +2472,11 @@ body.menu-open {
 #marriage-catering-page .plan-checklist li i {
   color: #25D366;
 }
+#marriage-catering-page .plan-mandapam-illustration {
+  font-size: 3.5rem;
+  color: rgba(232, 200, 77, 0.08);
+}
 
-/* Quote Form Column */
 #marriage-catering-page .plan-form-col {
   background: #FFFFFF;
   border-radius: 18px;
