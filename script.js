@@ -515,12 +515,102 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const contactPageForm = document.getElementById('contactPageForm');
-  if (contactPageForm) {
-    contactPageForm.addEventListener('submit', (e) => {
+  /* ─────────────────────────────────────────────────────
+     MARRIAGE & EVENT CATERING PAGE INTERACTION HANDLERS
+  ───────────────────────────────────────────────────── */
+  const occTrack = document.getElementById('occTrack');
+  const occPrev = document.getElementById('occPrev');
+  const occNext = document.getElementById('occNext');
+
+  if (occTrack && occPrev && occNext) {
+    occNext.addEventListener('click', () => { occTrack.scrollBy({ left: 220, behavior: 'smooth' }); });
+    occPrev.addEventListener('click', () => { occTrack.scrollBy({ left: -220, behavior: 'smooth' }); });
+  }
+
+  // Cuisine Switcher (Veg vs Non-Veg)
+  const btnVegToggle = document.getElementById('btnVegToggle');
+  const btnNonVegToggle = document.getElementById('btnNonVegToggle');
+  const vegMenuContent = document.getElementById('vegMenuContent');
+  const nonVegMenuContent = document.getElementById('nonVegMenuContent');
+  const menuSectionTitle = document.getElementById('menuSectionTitle');
+
+  if (btnVegToggle && btnNonVegToggle) {
+    btnVegToggle.addEventListener('click', () => {
+      btnVegToggle.classList.add('active');
+      btnNonVegToggle.classList.remove('active');
+      if (vegMenuContent) vegMenuContent.style.display = 'block';
+      if (nonVegMenuContent) nonVegMenuContent.style.display = 'none';
+      if (menuSectionTitle) menuSectionTitle.textContent = 'Explore Our Veg Menus';
+    });
+
+    btnNonVegToggle.addEventListener('click', () => {
+      btnNonVegToggle.classList.add('active');
+      btnVegToggle.classList.remove('active');
+      if (vegMenuContent) vegMenuContent.style.display = 'none';
+      if (nonVegMenuContent) nonVegMenuContent.style.display = 'block';
+      if (menuSectionTitle) menuSectionTitle.textContent = 'Explore Our Non-Veg Menus';
+    });
+  }
+
+  // Meal Category Tabs
+  const mealTabBtns = document.querySelectorAll('.meal-tab-btn');
+  const vegCardTitle = document.getElementById('vegCardTitle');
+  const vegCardSub = document.getElementById('vegCardSub');
+  const menuTabPhoto = document.getElementById('menuTabPhoto');
+
+  const mealTabData = {
+    breakfast: {
+      title: 'Traditional South Indian Breakfast Menu',
+      sub: 'A perfect start to your special day',
+      photo: 'assets/sweets_live_counter.jpg'
+    },
+    lunch: {
+      title: 'Grand Kalyana Samayal Banana Leaf Lunch',
+      sub: 'Authentic 18+ dish traditional wedding feast',
+      photo: 'assets/banana_leaf_serving.jpg'
+    },
+    tiffin: {
+      title: 'Evening Live Counters & Tiffin Menu',
+      sub: 'Hot tiffin, live chaat stalls & filter coffee',
+      photo: 'assets/live_kitchen.jpg'
+    },
+    reception: {
+      title: 'Grand Wedding Reception Buffet Menu',
+      sub: 'Luxury dinner buffet with welcome drinks & live stalls',
+      photo: 'assets/corporate_buffet.jpg'
+    },
+    dinner: {
+      title: 'Traditional Night Dinner Spread',
+      sub: 'Light tiffin & authentic dinner items',
+      photo: 'assets/wedding_feast.jpg'
+    },
+    special: {
+      title: 'Specialty Royal Add-on Items',
+      sub: 'Custom sweets, fruit stalls & mocktails',
+      photo: 'assets/temple_annathanam.jpg'
+    }
+  };
+
+  mealTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mealTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (mealTabData[tab]) {
+        if (vegCardTitle) vegCardTitle.textContent = mealTabData[tab].title;
+        if (vegCardSub) vegCardSub.textContent = mealTabData[tab].sub;
+        if (menuTabPhoto) menuTabPhoto.src = mealTabData[tab].photo;
+      }
+    });
+  });
+
+  // Detail Quote Form Submit
+  const detailQuoteForm = document.getElementById('detailQuoteForm');
+  if (detailQuoteForm) {
+    detailQuoteForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const v = (id) => (document.getElementById(id) || {}).value || '';
-      const msg = `வணக்கம் JS Caterer (Jagan C),\n\nWebsite Booking Inquiry:\n👤 Name: ${v('cName')}\n📞 Phone: ${v('cPhone')}\n✉️ Email: ${v('cEmail')}\n📅 Date: ${v('cDate')}\n🗂️ Category: ${v('cCategory')}\n🎉 Occasion: ${v('cOccasion')}\n🍲 Cuisine: ${v('cCuisine')}\n👥 Guests: ${v('cGuests')}\n📍 Location: ${v('cLocation')}\n📝 Notes: ${v('cDetails')}\n\nPlease send menu packages and quote!`;
+      const msg = `வணக்கம் JS Caterer (Jagan C),\n\nMarriage & Event Catering Quote Request:\n👤 Name: ${v('qName')}\n📞 Phone: ${v('qPhone')}\n🎉 Event Type: ${v('qEvent')}\n📅 Date: ${v('qDate')}\n👥 Guests: ${v('qGuests')}\n🍲 Cuisine: ${v('qCuisine')}\n\nPlease send custom menu options and price per plate quote!`;
       window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
     });
   }
