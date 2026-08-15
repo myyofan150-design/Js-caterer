@@ -3917,3 +3917,18 @@ body, .service-detail-body, .services-hub-body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ================================================================
+   INLINE SELF-FITTING PILL BADGE FIX (.plan-copy-col .story-chapter-tag)
+   ================================================================ */
+
+.plan-copy-col .story-chapter-tag {
+  display: inline-flex !important;
+  align-self: flex-start !important;
+  width: auto !important;
+  max-width: max-content !important;
+  padding: 6px 16px !important;
+  border-radius: 30px !important;
+  margin-bottom: 16px !important;
+  box-sizing: border-box !important;
+}
