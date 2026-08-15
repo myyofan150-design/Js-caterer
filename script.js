@@ -396,70 +396,49 @@ document.addEventListener('DOMContentLoaded', () => {
   if (guestSlider) {
     const guestCountVal = document.getElementById('guestCountVal');
     const sumEvent = document.getElementById('sumEvent');
-    const sumFormat = document.getElementById('sumFormat');
-    const sumSession = document.getElementById('sumSession');
-
-    let selectedFormat = 'Banana Leaf Service';
-    let selectedCuisine = 'Veg';
-    let selectedSession = 'Grand Lunch';
-
-    // Format Segment Buttons
-    document.querySelectorAll('.format-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        selectedFormat = this.getAttribute('data-format') === 'Leaf' ? 'Banana Leaf Service' : 'Brass Vessel Buffet';
-        updateCalc();
-      });
-    });
-
-    // Cuisine Segment Buttons
-    document.querySelectorAll('.cuisine-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.cuisine-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        selectedCuisine = this.getAttribute('data-value') || 'Veg';
-        updateCalc();
-      });
-    });
-
-    // Session Segment Buttons
-    document.querySelectorAll('.session-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.session-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        selectedSession = this.getAttribute('data-session') || 'Grand Lunch';
-        updateCalc();
-      });
-    });
+    const sumCuisine = document.getElementById('sumCuisine');
+    const sumItemsCount = document.getElementById('sumItemsCount');
+    const sumEstimate = document.getElementById('sumEstimate');
+    const calcOccasion = document.getElementById('calcOccasion');
 
     function updateCalc() {
-      const count = parseInt(guestSlider.value, 10) || 250;
+      const count = guestSlider.value;
       if (guestCountVal) guestCountVal.textContent = count;
-      if (sumGuests) sumGuests.textContent = `${count} Guests`;
-      if (sumEvent && calcOccasion) sumEvent.textContent = calcOccasion.value || 'Marriage / Wedding';
-      if (sumFormat) sumFormat.textContent = selectedFormat;
-      if (sumSession) sumSession.textContent = selectedSession;
-
-      if (selectedCuisine === 'Veg') {
-        if (sumCuisine) sumCuisine.textContent = 'Pure Veg Satvik (18+ Dishes)';
-      } else if (selectedCuisine === 'NonVeg') {
-        if (sumCuisine) sumCuisine.textContent = 'Non-Veg & Biryani Delicacies (22+ Dishes)';
+      if (sumEvent && calcOccasion) sumEvent.textContent = calcOccasion.value;
+      const cuisine = (document.querySelector('input[name="calcType"]:checked') || {}).value || 'Veg';
+      if (cuisine === 'Veg') {
+        if (sumCuisine) sumCuisine.textContent = 'Pure Veg Banana Leaf Feast';
+        if (sumItemsCount) sumItemsCount.textContent = '18+ Traditional Veg Dishes';
+        if (sumEstimate) sumEstimate.textContent = '₹180 – ₹350 per plate';
+      } else if (cuisine === 'NonVeg') {
+        if (sumCuisine) sumCuisine.textContent = 'Non-Veg Kalyana / Reception Buffet';
+        if (sumItemsCount) sumItemsCount.textContent = '22+ Non-Veg & Biryani Delicacies';
+        if (sumEstimate) sumEstimate.textContent = '₹350 – ₹650 per plate';
       } else {
-        if (sumCuisine) sumCuisine.textContent = 'Combined Veg & Non-Veg (25+ Grand Selection)';
+        if (sumCuisine) sumCuisine.textContent = 'Combined Veg & Non-Veg Multi-Cuisine';
+        if (sumItemsCount) sumItemsCount.textContent = '25+ Grand Selection';
+        if (sumEstimate) sumEstimate.textContent = '₹400 – ₹750 per plate';
       }
     }
 
     guestSlider.addEventListener('input', updateCalc);
     if (calcOccasion) calcOccasion.addEventListener('change', updateCalc);
+    document.querySelectorAll('input[name="calcType"]').forEach(r => r.addEventListener('change', updateCalc));
+    document.querySelectorAll('.radio-pill').forEach(pill => {
+      pill.addEventListener('click', function () {
+        document.querySelectorAll('.radio-pill').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
 
     const sendCalcToWA = document.getElementById('sendCalcToWA');
     if (sendCalcToWA) {
       sendCalcToWA.addEventListener('click', () => {
         const count = guestSlider.value;
         const eventName = sumEvent ? sumEvent.textContent : 'Marriage';
-        const cuisineName = sumCuisine ? sumCuisine.textContent : 'Pure Veg Satvik';
-        const msg = `வணக்கம் JS Caterer (Jagan C),\n\nMaster Caterer Event Specification:\n🎉 Occasion: ${eventName}\n🍱 Format: ${selectedFormat}\n🍲 Cuisine: ${cuisineName}\n⏰ Session: ${selectedSession}\n👥 Guest Scale: ${count} Guests\n\nPlease send me the detailed itemized menu choices and custom quote!`;
+        const cuisine = sumCuisine ? sumCuisine.textContent : 'Veg Feast';
+        const estimate = sumEstimate ? sumEstimate.textContent : '₹180 – ₹350 per plate';
+        const msg = `வணக்கம் JS Caterer (Jagan C),\n\nI calculated a package on your website:\n🎉 Event: ${eventName}\n👥 Guest Count: ${count}\n🍲 Cuisine: ${cuisine}\n💰 Estimated Range: ${estimate}\n\nPlease send me the exact menu PDF and official quote!`;
         window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
       });
     }
@@ -569,83 +548,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = `வணக்கம் JS Caterer (Jagan C),\n\nWebsite Booking Inquiry:\n👤 Name: ${v('cName')}\n📞 Phone: ${v('cPhone')}\n✉️ Email: ${v('cEmail')}\n📅 Date: ${v('cDate')}\n🗂️ Category: ${v('cCategory')}\n🎉 Occasion: ${v('cOccasion')}\n🍲 Cuisine: ${v('cCuisine')}\n👥 Guests: ${v('cGuests')}\n📍 Location: ${v('cLocation')}\n📝 Notes: ${v('cDetails')}\n\nPlease send menu packages and quote!`;
       window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
     });
-  }
-
-  /* Video Background Toggle Handler */
-  const heritageVideo = document.getElementById('heritageVideo');
-  const heritageVideoToggle = document.getElementById('heritageVideoToggle');
-
-  if (heritageVideo && heritageVideoToggle) {
-    const icon = heritageVideoToggle.querySelector('i');
-    heritageVideo.muted = true;
-
-    function syncVideoBtn() {
-      if (heritageVideo.paused) {
-        heritageVideoToggle.classList.add('paused');
-        if (icon) icon.className = 'fa-solid fa-play';
-        heritageVideoToggle.setAttribute('aria-label', 'Play Video');
-        heritageVideoToggle.setAttribute('title', 'Play Video');
-      } else {
-        heritageVideoToggle.classList.remove('paused');
-        if (icon) icon.className = 'fa-solid fa-pause';
-        heritageVideoToggle.setAttribute('aria-label', 'Pause Video');
-        heritageVideoToggle.setAttribute('title', 'Pause Video');
-      }
-    }
-
-    heritageVideo.addEventListener('play', syncVideoBtn);
-    heritageVideo.addEventListener('pause', syncVideoBtn);
-
-    heritageVideoToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (heritageVideo.paused) {
-        heritageVideo.play().catch(err => console.log('Video play error:', err));
-      } else {
-        heritageVideo.pause();
-      }
-      setTimeout(syncVideoBtn, 50);
-    });
-
-    heritageVideo.pause();
-    syncVideoBtn();
-  }
-
-  /* Section 4 Rotating Thali Plate Scroll Animation */
-  const centralRotatingThali = document.getElementById('centralRotatingThali');
-  const act4Section = document.getElementById('act-4');
-
-  if (centralRotatingThali && act4Section) {
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.to(centralRotatingThali, {
-        scrollTrigger: {
-          trigger: '#act-4',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          invalidateOnRefresh: true
-        },
-        rotation: 720,
-        ease: 'none'
-      });
-
-      // Recalculate ScrollTrigger on load/reload to prevent lag when refreshing midway
-      setTimeout(() => {
-        if (window.ScrollTrigger) ScrollTrigger.refresh();
-      }, 100);
-    }
-
-    // Precise relative section scroll fallback
-    function updatePlateRotation() {
-      const rect = act4Section.getBoundingClientRect();
-      const winHeight = window.innerHeight;
-      if (rect.top < winHeight && rect.bottom > 0) {
-        const progress = (winHeight - rect.top) / (winHeight + rect.height);
-        centralRotatingThali.style.transform = `rotate(${progress * 720}deg)`;
-      }
-    }
-    window.addEventListener('scroll', updatePlateRotation, { passive: true });
-    updatePlateRotation();
   }
 
 });
