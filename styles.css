@@ -5776,38 +5776,3 @@ a[href*="wa.me"] i {
     height: 160px !important;
   }
 }
-
-/* ================================================================
-   100% BULLETPROOF ZERO-GAP & NO HORIZONTAL SCROLL FIX
-   ================================================================ */
-
-/* 1. Global Viewport Bounds Strict Lock */
-html, body {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  position: relative !important;
-}
-
-/* 2. Hide Mobile Nav Drawer Offscreen so it never expands the page canvas */
-.mobile-nav-drawer {
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-.mobile-nav-drawer.is-open {
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-/* 3. Fix Backdrop 100vw Scrollbar Bug */
-.mobile-nav-backdrop {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* 4. Ensure all main page sections respect 100% width */
-main, section, header, .top-bar, .container {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
