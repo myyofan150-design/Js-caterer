@@ -707,9 +707,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const studioDatabase = {
     veg: {
       breakfast: {
-        title: 'Traditional South Indian Veg Breakfast Spread',
-        sub: 'Piping-hot authentic morning feast served on fresh banana leaves',
-        photo: 'assets/sweets_live_counter.jpg',
+        title: 'South Indian Morning Breakfast',
+        sub: 'Piping-hot morning feast served fresh on clean banana leaves',
         badge: '100% PURE GHEE & STEAM FRESH',
         cols: [
           { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
@@ -719,10 +718,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       lunch: {
-        title: 'Grand Kalyana Samayal Banana Leaf Lunch (18+ Veg Items)',
+        title: 'Grand Kalyana Leaf Feast (18+ Items)',
         sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
-        photo: 'assets/banana_leaf_serving.jpg',
-        badge: 'SACRED BANANA LEAF TRADITION (18+ DISHES)',
+        badge: 'SACRED BANANA LEAF TRADITION',
         cols: [
           { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
           { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
@@ -731,9 +729,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       tiffin: {
-        title: 'Evening Tiffin & Live Snack Stalls Spread',
+        title: 'Evening Tiffin & Live Chaat Promenade',
         sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
-        photo: 'assets/live_kitchen.jpg',
         badge: 'LIVE ON-SITE COOKING STALLS',
         cols: [
           { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
@@ -743,9 +740,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       reception: {
-        title: 'Grand Wedding Reception Multi-Cuisine Buffet',
-        sub: 'Modern luxury vegetarian buffet spread with live counters',
-        photo: 'assets/corporate_buffet.jpg',
+        title: 'Grand Reception Multi-Cuisine Buffet',
+        sub: 'Modern luxury vegetarian buffet spread with live counters & dessert bar',
         badge: 'ROYAL GALA BUFFET EXPERIENCE',
         cols: [
           { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
@@ -755,9 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       dinner: {
-        title: 'Traditional Night Dinner Menu Spread',
-        sub: 'Comforting, light night dinner items served fresh and hot',
-        photo: 'assets/wedding_feast.jpg',
+        title: 'Traditional Wedding Night Dinner',
+        sub: 'Comforting, light supper with ghee tiffin, variety rice & gravies',
         badge: 'COMFORTING WEDDING EVE SUPPER',
         cols: [
           { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
@@ -767,9 +762,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       special: {
-        title: 'Royal Chef Signature Special Items',
+        title: 'Royal Signature Chef Specials',
         sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
-        photo: 'assets/temple_annathanam.jpg',
         badge: 'HANDCRAFTED CHEF MASTERPIECES',
         cols: [
           { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
@@ -781,9 +775,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     nonveg: {
       breakfast: {
-        title: 'Non-Veg Special Morning Breakfast Spread',
-        sub: 'Authentic Chettinad & Malabar non-veg morning delicacies',
-        photo: 'assets/live_kitchen.jpg',
+        title: 'Chettinad Morning Non-Veg Breakfast',
+        sub: 'Authentic Chettinad & Malabar morning non-veg delicacies',
         badge: 'AUTHENTIC CHETTINAD MORNING SPECIALS',
         cols: [
           { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
@@ -793,9 +786,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       lunch: {
-        title: 'Grand Non-Veg Marriage Feast (Seeraga Samba Biryani)',
-        sub: 'Seeraga Samba Mutton Biryani feast prepared in authentic copper cauldrons',
-        photo: 'assets/wedding_feast.jpg',
+        title: 'Seeraga Samba Mutton Biryani Feast',
+        sub: 'Grand mutton biryani feast prepared in authentic copper cauldrons',
         badge: 'COPPER CAULDRON SEERAGA SAMBA BIRYANI',
         cols: [
           { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
@@ -805,9 +797,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       tiffin: {
-        title: 'Non-Veg Evening Tiffin & Live Grill Counter',
-        sub: 'Hot spicy chicken, fish fry live stalls, and Kothu Parotta',
-        photo: 'assets/live_kitchen.jpg',
+        title: 'Evening Tiffin & Live Seafood Grill',
+        sub: 'Hot spicy chicken, tawa fish fry stalls & Madurai Kothu Parotta',
         badge: 'LIVE TAWA SEAFOOD & KOTHU PAROTTA',
         cols: [
           { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
@@ -817,9 +808,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       reception: {
-        title: 'Grand Non-Veg Reception Gala Dinner Buffet',
+        title: 'Grand Reception Non-Veg Gala Buffet',
         sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
-        photo: 'assets/corporate_buffet.jpg',
         badge: 'LIVE TANDOORI & CONTINENTAL BBQ',
         cols: [
           { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
@@ -829,9 +819,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       dinner: {
-        title: 'Traditional Night Non-Veg Dinner Spread',
-        sub: 'Comforting non-veg dinner items served with idiyappam, dosa & curries',
-        photo: 'assets/banana_leaf_serving.jpg',
+        title: 'Traditional Night Dinner & Curries',
+        sub: 'Comforting non-veg dinner served with idiyappam, dosa & curries',
         badge: 'AUTHENTIC MALABAR & MADURAI SUPPER',
         cols: [
           { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
@@ -841,9 +830,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       special: {
-        title: 'Non-Veg Chef Signature Delicacies',
+        title: 'Chettinad Royal Chef Specials',
         sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
-        photo: 'assets/temple_annathanam.jpg',
         badge: 'ROYAL CHEF SPECIAL SELECTIONS',
         cols: [
           { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
@@ -855,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  function renderChefStudio() {
+    function renderChefStudio() {
     const data = studioDatabase[curCuisineStudio][curTabStudio];
     if (!data) return;
 

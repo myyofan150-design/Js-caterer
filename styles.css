@@ -7526,3 +7526,57 @@ html, body {
     font-size: 0.85rem !important;
   }
 }
+
+/* ================================================================
+   FLUID CLAMP TYPOGRAPHY & TEXT-WRAP BALANCE (PREVENTS UGLY MULTI-LINE BREAKS)
+   ================================================================ */
+
+.studio-stage-header {
+  padding: 18px 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.stage-badge-pill {
+  font-size: clamp(0.65rem, 1.6vw, 0.72rem) !important;
+  padding: 3px 12px !important;
+  align-self: flex-start !important;
+  white-space: nowrap !important;
+  margin-bottom: 4px !important;
+}
+
+.stage-main-title {
+  font-family: var(--font-head) !important;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem) !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  text-wrap: balance !important;
+  word-break: normal !important;
+}
+
+.stage-sub-title {
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.78rem, 1.8vw, 0.88rem) !important;
+  color: var(--text-dark-muted) !important;
+  line-height: 1.4 !important;
+  margin: 2px 0 0 !important;
+  text-wrap: balance !important;
+}
+
+@media (max-width: 768px) {
+  .studio-stage-header {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+  }
+  .stage-main-title {
+    font-size: clamp(1.08rem, 4.5vw, 1.25rem) !important;
+    line-height: 1.28 !important;
+  }
+  .stage-sub-title {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+  }
+}
