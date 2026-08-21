@@ -7580,3 +7580,85 @@ html, body {
     line-height: 1.35 !important;
   }
 }
+
+/* ================================================================
+   STRICT FIT OVERFLOW LOCK FOR CUISINE TOGGLE & STAGE BADGES
+   ================================================================ */
+
+.panel-cuisine-switch-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 10px 12px !important;
+}
+
+.panel-cuisine-switch-box .modern-toggle-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 6px 10px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.panel-cuisine-switch-box .toggle-side-label {
+  font-size: 0.78rem !important;
+  gap: 4px !important;
+}
+
+.panel-cuisine-switch-box .modern-switch-track {
+  width: 48px !important;
+  height: 26px !important;
+  flex-shrink: 0 !important;
+}
+
+.panel-cuisine-switch-box .switch-slider-round:before {
+  width: 18px !important;
+  height: 18px !important;
+  left: 3px !important;
+  bottom: 2.5px !important;
+}
+
+.panel-cuisine-switch-box .modern-switch-track input:checked + .switch-slider-round:before {
+  transform: translateX(22px) !important;
+}
+
+/* Stage Header Card & Badge Strict Fit */
+.studio-stage-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.stage-badge-pill {
+  max-width: 100% !important;
+  white-space: normal !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: clamp(0.62rem, 3vw, 0.72rem) !important;
+  padding: 4px 10px !important;
+  line-height: 1.2 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 480px) {
+  .studio-timeline-panel {
+    padding: 14px 10px !important;
+  }
+  .panel-cuisine-switch-box .modern-toggle-box {
+    gap: 8px !important;
+    padding: 4px 6px !important;
+  }
+  .panel-cuisine-switch-box .toggle-side-label {
+    font-size: 0.74rem !important;
+  }
+  .studio-stage-header {
+    padding: 12px 14px !important;
+  }
+}

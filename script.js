@@ -709,7 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
       breakfast: {
         title: 'South Indian Morning Breakfast',
         sub: 'Piping-hot morning feast served fresh on clean banana leaves',
-        badge: '100% PURE GHEE & STEAM FRESH',
+        badge: 'PURE GHEE & STEAM FRESH',
         cols: [
           { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
           { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lunch: {
         title: 'Grand Kalyana Leaf Feast (18+ Items)',
         sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
-        badge: 'SACRED BANANA LEAF TRADITION',
+        badge: 'BANANA LEAF TRADITION',
         cols: [
           { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
           { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
@@ -729,9 +729,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       tiffin: {
-        title: 'Evening Tiffin & Live Chaat Promenade',
+        title: 'Evening Tiffin & Live Chaat',
         sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
-        badge: 'LIVE ON-SITE COOKING STALLS',
+        badge: 'LIVE COOKING STALLS',
         cols: [
           { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
           { heading: 'LIVE CHAAT STALLS', icon: 'fa-fire-burner', items: ['Live Pani Puri Counter', 'Delhi Bhel Puri', 'Hot Samosa Ragda Chaat', 'Mumbai Pav Bhaji'] },
@@ -740,9 +740,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       reception: {
-        title: 'Grand Reception Multi-Cuisine Buffet',
+        title: 'Grand Reception Gala Buffet',
         sub: 'Modern luxury vegetarian buffet spread with live counters & dessert bar',
-        badge: 'ROYAL GALA BUFFET EXPERIENCE',
+        badge: 'ROYAL GALA BUFFET',
         cols: [
           { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
           { heading: 'NORTH & SOUTH BUFFET', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Veg Dum Biryani with Raitha', 'Soft Butter Naan / Roti', 'Dal Makhani', 'Jeera Pulao'] },
@@ -753,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dinner: {
         title: 'Traditional Wedding Night Dinner',
         sub: 'Comforting, light supper with ghee tiffin, variety rice & gravies',
-        badge: 'COMFORTING WEDDING EVE SUPPER',
+        badge: 'WEDDING EVE SUPPER',
         cols: [
           { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
           { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
@@ -764,7 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
       special: {
         title: 'Royal Signature Chef Specials',
         sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
-        badge: 'HANDCRAFTED CHEF MASTERPIECES',
+        badge: 'CHEF MASTERPIECES',
         cols: [
           { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
           { heading: 'LIVE SWEET COUNTERS', icon: 'fa-fire-burner', items: ['Live Hot Jalebi with Rabri', 'Live Malpua Counter', 'Live Ice Cream Roll Machine', 'Matka Kulfi'] },
@@ -775,9 +775,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     nonveg: {
       breakfast: {
-        title: 'Chettinad Morning Non-Veg Breakfast',
+        title: 'Chettinad Morning Breakfast',
         sub: 'Authentic Chettinad & Malabar morning non-veg delicacies',
-        badge: 'AUTHENTIC CHETTINAD MORNING SPECIALS',
+        badge: 'CHETTINAD SPECIALS',
         cols: [
           { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
           { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lunch: {
         title: 'Seeraga Samba Mutton Biryani Feast',
         sub: 'Grand mutton biryani feast prepared in authentic copper cauldrons',
-        badge: 'COPPER CAULDRON SEERAGA SAMBA BIRYANI',
+        badge: 'COPPER CAULDRON BIRYANI',
         cols: [
           { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
           { heading: 'BIRYANI & MAIN COURSE', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton Biryani', 'Basmati Chicken Biryani', 'Chicken Chettinad Gravy', 'Malabar Parotta'] },
@@ -799,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tiffin: {
         title: 'Evening Tiffin & Live Seafood Grill',
         sub: 'Hot spicy chicken, tawa fish fry stalls & Madurai Kothu Parotta',
-        badge: 'LIVE TAWA SEAFOOD & KOTHU PAROTTA',
+        badge: 'LIVE TAWA & SEAFOOD',
         cols: [
           { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
           { heading: 'HOT TIFFIN SPECIALS', icon: 'fa-hotdog', items: ['Chicken Kothu Parotta', 'Madurai Kari Dosa', 'Spicy Egg Roll', 'Chicken Stuff Naan'] },
@@ -810,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
       reception: {
         title: 'Grand Reception Non-Veg Gala Buffet',
         sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
-        badge: 'LIVE TANDOORI & CONTINENTAL BBQ',
+        badge: 'LIVE TANDOORI BBQ',
         cols: [
           { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
           { heading: 'BUFFET MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Royal Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan / Roti', 'Prawn Masala Curry'] },
@@ -821,7 +821,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dinner: {
         title: 'Traditional Night Dinner & Curries',
         sub: 'Comforting non-veg dinner served with idiyappam, dosa & curries',
-        badge: 'AUTHENTIC MALABAR & MADURAI SUPPER',
+        badge: 'MALABAR & MADURAI SUPPER',
         cols: [
           { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
           { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
@@ -832,7 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
       special: {
         title: 'Chettinad Royal Chef Specials',
         sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
-        badge: 'ROYAL CHEF SPECIAL SELECTIONS',
+        badge: 'ROYAL CHEF SPECIALS',
         cols: [
           { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
           { heading: 'SEAFOOD EXTRAORDINARY', icon: 'fa-fish', items: ['Whole Tawa Fish Roast', 'Lobster Masala Fry', 'Squid Pepper Fry', 'Jumbo Prawn Curry'] },
