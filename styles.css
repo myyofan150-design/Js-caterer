@@ -7776,3 +7776,107 @@ html, body {
     border-bottom: none !important;
   }
 }
+
+
+/* ================================================================
+   GUARANTEED LUXURY FOOTER & QUOTE FORM REFINEMENTS
+   ================================================================ */
+footer.luxury-footer,
+footer.luxury-footer-wrap,
+.luxury-footer-wrap,
+.luxury-footer {
+  background: #061D12 !important;
+  color: #FFFFFF !important;
+  padding: 60px 0 0 !important;
+  border-top: 2px solid rgba(212, 175, 55, 0.3) !important;
+  width: 100% !important;
+}
+
+.luxury-footer-wrap .footer-desc,
+.luxury-footer .footer-desc {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+}
+
+.luxury-footer-wrap .footer-col-links h4,
+.luxury-footer-wrap .footer-col-services h4,
+.luxury-footer-wrap .footer-col-contact h4,
+.luxury-footer .footer-col-links h4,
+.luxury-footer .footer-col-services h4,
+.luxury-footer .footer-col-contact h4 {
+  color: #E8C84D !important;
+  font-weight: 800 !important;
+}
+
+.luxury-footer-wrap .footer-col-links ul a,
+.luxury-footer-wrap .footer-col-services ul a,
+.luxury-footer .footer-col-links ul a,
+.luxury-footer .footer-col-services ul a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+}
+
+.luxury-footer-wrap .footer-col-links ul a:hover,
+.luxury-footer-wrap .footer-col-services ul a:hover,
+.luxury-footer .footer-col-links ul a:hover,
+.luxury-footer .footer-col-services ul a:hover {
+  color: #E8C84D !important;
+}
+
+.luxury-footer-wrap .footer-col-contact p,
+.luxury-footer .footer-col-contact p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.luxury-footer-wrap .footer-col-contact a.phone-link,
+.luxury-footer .footer-col-contact a.phone-link {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.luxury-footer-wrap .footer-catering-badge,
+.luxury-footer .footer-catering-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(197, 155, 39, 0.15) !important;
+  color: #E8C84D !important;
+  border: 1px solid rgba(197, 155, 39, 0.35) !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+}
+
+.luxury-footer-wrap .footer-bottom-bar,
+.luxury-footer .footer-bottom-bar {
+  background: #030F09 !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.15) !important;
+  padding: 20px 0 !important;
+  margin-top: 40px !important;
+}
+
+.luxury-footer-wrap .footer-bottom-bar p,
+.luxury-footer .footer-bottom-bar p {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.8rem !important;
+  margin: 0 !important;
+}
+
+/* Quote Form Grid Full-Width Fields */
+.quote-form-grid .full-width-field,
+.quote-form-grid .form-field-wrap.full-width-field {
+  grid-column: 1 / -1 !important;
+}
+
+.quote-form-grid textarea.form-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.btn-submit-gold-wa {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
