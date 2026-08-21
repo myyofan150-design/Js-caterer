@@ -951,4 +951,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  // Mobile & Tablet Luxury Dropdown Controller
+  const mobileMealSelectTrigger = document.getElementById('mobileMealSelectTrigger');
+  const mobileMealDropdownMenu = document.getElementById('mobileMealDropdownMenu');
+  const dropdownActiveTime = document.getElementById('dropdownActiveTime');
+  const dropdownActiveName = document.getElementById('dropdownActiveName');
+  const dropdownOptions = document.querySelectorAll('.dropdown-option');
+
+  if (mobileMealSelectTrigger && mobileMealDropdownMenu) {
+    mobileMealSelectTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileMealDropdownMenu.classList.toggle('is-open');
+      mobileMealSelectTrigger.classList.toggle('is-open', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMealDropdownMenu.contains(e.target) && !mobileMealSelectTrigger.contains(e.target)) {
+        mobileMealDropdownMenu.classList.remove('is-open');
+        mobileMealSelectTrigger.classList.remove('is-open');
+      }
+    });
+
+    dropdownOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const tab = opt.getAttribute('data-tab');
+        curTabStudio = tab || 'breakfast';
+
+        // Update active class in dropdown options
+        dropdownOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+
+        // Update trigger display
+        const timeHtml = opt.querySelector('.opt-time') ? opt.querySelector('.opt-time').innerHTML : '';
+        const nameText = opt.querySelector('.opt-name') ? opt.querySelector('.opt-name').textContent : '';
+        if (dropdownActiveTime) dropdownActiveTime.innerHTML = timeHtml;
+        if (dropdownActiveName) dropdownActiveName.textContent = nameText;
+
+        // Sync with desktop timeline steps
+        if (studioTimelineSteps) {
+          studioTimelineSteps.forEach(s => {
+            if (s.getAttribute('data-tab') === curTabStudio) s.classList.add('active');
+            else s.classList.remove('active');
+          });
+        }
+
+        // Close dropdown & render
+        mobileMealDropdownMenu.classList.remove('is-open');
+        mobileMealSelectTrigger.classList.remove('is-open');
+        renderChefStudio();
+      });
+    });
+  }
+
 });
