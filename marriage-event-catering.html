@@ -220,17 +220,21 @@
       </div>
       <p class="section-subtitle">Explore our authentic catering spreads curated for every wedding & celebratory moment</p>
 
-      <!-- MASTER CUISINE TOGGLE (COMPACT ON/OFF STYLE FOCUS SWITCH) -->
-      <div class="luxury-cuisine-toggle-wrap">
-        <div class="luxury-toggle-track" id="cuisineToggleTrack">
-          <button class="cuisine-toggle-pill active" id="btnVegToggle" data-type="Veg">
-            <span class="pill-icon-circle green"><i class="fa-solid fa-leaf"></i></span>
-            <span class="pill-text">Pure Vegetarian</span>
-          </button>
-          <button class="cuisine-toggle-pill" id="btnNonVegToggle" data-type="NonVeg">
-            <span class="pill-icon-circle red"><i class="fa-solid fa-drumstick-bite"></i></span>
-            <span class="pill-text">Non-Vegetarian</span>
-          </button>
+      <!-- MODERN LUXURY ON/OFF CUISINE TOGGLE SWITCH -->
+      <div class="modern-cuisine-switch-wrap">
+        <div class="modern-toggle-box">
+          <span class="toggle-side-label veg active" id="labelVegBtn">
+            <i class="fa-solid fa-leaf"></i> Pure Veg
+          </span>
+
+          <label class="modern-switch-track" for="cuisineToggleInput" title="Toggle between Pure Veg and Non-Veg">
+            <input type="checkbox" id="cuisineToggleInput" aria-label="Toggle cuisine mode">
+            <span class="switch-slider-round"></span>
+          </label>
+
+          <span class="toggle-side-label nonveg" id="labelNonVegBtn">
+            <i class="fa-solid fa-drumstick-bite"></i> Non-Veg
+          </span>
         </div>
       </div>
 

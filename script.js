@@ -916,4 +916,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial render
   renderChefStudio();
+
+  // Modern ON/OFF Switch Controller
+  const cuisineToggleInput = document.getElementById('cuisineToggleInput');
+  const labelVegBtn = document.getElementById('labelVegBtn');
+  const labelNonVegBtn = document.getElementById('labelNonVegBtn');
+
+  if (cuisineToggleInput) {
+    cuisineToggleInput.addEventListener('change', () => {
+      if (cuisineToggleInput.checked) {
+        curCuisineStudio = 'nonveg';
+        if (labelNonVegBtn) labelNonVegBtn.classList.add('active');
+        if (labelVegBtn) labelVegBtn.classList.remove('active');
+      } else {
+        curCuisineStudio = 'veg';
+        if (labelVegBtn) labelVegBtn.classList.add('active');
+        if (labelNonVegBtn) labelNonVegBtn.classList.remove('active');
+      }
+      renderChefStudio();
+    });
+  }
+
+  if (labelVegBtn && cuisineToggleInput) {
+    labelVegBtn.addEventListener('click', () => {
+      cuisineToggleInput.checked = false;
+      cuisineToggleInput.dispatchEvent(new Event('change'));
+    });
+  }
+
+  if (labelNonVegBtn && cuisineToggleInput) {
+    labelNonVegBtn.addEventListener('click', () => {
+      cuisineToggleInput.checked = true;
+      cuisineToggleInput.dispatchEvent(new Event('change'));
+    });
+  }
+
 });
