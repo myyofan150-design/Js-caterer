@@ -6831,3 +6831,52 @@ a[href*="wa.me"] i {
     font-size: 1.3rem !important;
   }
 }
+
+/* ================================================================
+   100% BULLETPROOF RESPONSIVE ENHANCEMENTS FOR SPLIT STUDIO
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  .timeline-steps-list {
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cuisine-toggle-stage {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .cuisine-toggle-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 18px !important;
+  }
+  .studio-banner-copy {
+    padding: 14px 16px !important;
+  }
+  .studio-banner-copy h3 {
+    font-size: clamp(1.15rem, 5vw, 1.4rem) !important;
+    line-height: 1.25 !important;
+  }
+  .studio-banner-copy p {
+    font-size: 0.8rem !important;
+  }
+  .studio-course-box {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+  .studio-course-box h4 {
+    font-size: 0.9rem !important;
+  }
+  .studio-course-box li {
+    font-size: 0.84rem !important;
+  }
+  .studio-footer-note {
+    flex-direction: column !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    padding: 12px 14px !important;
+  }
+}
