@@ -685,3 +685,343 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ─────────────────────────────────────────────────────
+     4-CONCEPT MENU SHOWCASE INTERACTIVE CONTROLLER
+  ───────────────────────────────────────────────────── */
+  const conceptTabs = document.querySelectorAll('.concept-tab-btn');
+  const conceptPanels = document.querySelectorAll('.concept-view-panel');
+  const btnVeg = document.getElementById('btnVegToggle');
+  const btnNonVeg = document.getElementById('btnNonVegToggle');
+  const mealBtns = document.querySelectorAll('#masterMealTabs .meal-tab-btn');
+  const timelineSteps = document.querySelectorAll('#c2TimelineList .timeline-step');
+
+  let curCuisine = 'veg';
+  let curTab = 'breakfast';
+
+  // Master Menu Database (Exhaustive 6 Categories for Veg & Non-Veg)
+  const menuSuiteDatabase = {
+    veg: {
+      breakfast: {
+        title: 'Traditional South Indian Veg Breakfast Spread',
+        sub: 'Piping-hot authentic morning feast served on fresh banana leaves',
+        photo: 'assets/sweets_live_counter.jpg',
+        pax: '14+ Dishes',
+        cols: [
+          { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
+          { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
+          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Traditional Drumstick Sambar', 'Fresh Coconut Chutney', 'Spiced Tomato Chutney', 'Andhra Kara Chutney', 'Idli Podi & Pure Cow Ghee'] },
+          { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Pineapple Rava Kesari', 'Elaneer Payasam', 'Kumbakonam Degree Filter Coffee', 'Hot Milk', 'Ginger Masala Tea'] }
+        ]
+      },
+      lunch: {
+        title: 'Grand Kalyana Samayal Banana Leaf Lunch (18+ Veg Items)',
+        sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
+        photo: 'assets/banana_leaf_serving.jpg',
+        pax: '18+ Dishes',
+        cols: [
+          { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
+          { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
+          { heading: 'PORIYAL & KOOTU', icon: 'fa-carrot', items: ['Beans Paruppu Usili', 'Potato Kara Curry / Urulai Roast', 'Chow Chow Kootu', 'Cucumber Pachadi'] },
+          { heading: 'DESSERT & FINISH', icon: 'fa-apple-whole', items: ['Thirattipal Milk Sweet', 'Fresh Thick Curd Rice', 'Ice Cream with Gulab Jamun', 'Kalyana Beeda & Banana'] }
+        ]
+      },
+      tiffin: {
+        title: 'Evening Tiffin & Live Snack Stalls Spread',
+        sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
+        photo: 'assets/live_kitchen.jpg',
+        pax: '16+ Dishes',
+        cols: [
+          { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
+          { heading: 'LIVE CHAAT STALLS', icon: 'fa-fire-burner', items: ['Live Pani Puri Counter', 'Delhi Bhel Puri', 'Hot Samosa Ragda Chaat', 'Mumbai Pav Bhaji'] },
+          { heading: 'CRISPY EVENING SNACKS', icon: 'fa-cookie-bite', items: ['Crispy Onion Pakoda', 'Thanjavur Masala Vada', 'Assorted Veg Bajji', 'Corn Cheese Balls'] },
+          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Sukku Coffee', 'Cardamom Tea', 'Badam Milk with Saffron'] }
+        ]
+      },
+      reception: {
+        title: 'Grand Wedding Reception Multi-Cuisine Buffet',
+        sub: 'Modern luxury vegetarian buffet spread with live counters',
+        photo: 'assets/corporate_buffet.jpg',
+        pax: '20+ Dishes',
+        cols: [
+          { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
+          { heading: 'NORTH & SOUTH BUFFET', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Veg Dum Biryani with Raitha', 'Soft Butter Naan / Roti', 'Dal Makhani', 'Jeera Pulao'] },
+          { heading: 'LIVE COOKING STALLS', icon: 'fa-fire-burner', items: ['Live Penne Pasta Counter', 'Live Dosa Stall', 'Live Hakka Noodles', 'South Indian Tiffin Counter'] },
+          { heading: 'LUXURY DESSERT BAR', icon: 'fa-ice-cream', items: ['Saffron Rasgulla', 'Hot Gulab Jamun with Ice Cream', 'Chocolate Brownie Fudge', 'Fresh Fruit Bowl'] }
+        ]
+      },
+      dinner: {
+        title: 'Traditional Night Dinner Menu Spread',
+        sub: 'Comforting, light night dinner items served fresh and hot',
+        photo: 'assets/wedding_feast.jpg',
+        pax: '14+ Dishes',
+        cols: [
+          { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
+          { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
+          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Tomato Kara Chutney', 'Potato Chips & Fryums', 'More Milagai Pickles'] },
+          { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Wheat Halwa', 'Saffron Badam Milk', 'Filter Coffee', 'Fresh Banana'] }
+        ]
+      },
+      special: {
+        title: 'Royal Chef Signature Special Items',
+        sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
+        photo: 'assets/temple_annathanam.jpg',
+        pax: '16+ Specials',
+        cols: [
+          { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
+          { heading: 'LIVE SWEET COUNTERS', icon: 'fa-fire-burner', items: ['Live Hot Jalebi with Rabri', 'Live Malpua Counter', 'Live Ice Cream Roll Machine', 'Matka Kulfi'] },
+          { heading: 'ROYAL DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam with Honey', 'Nannari Sharbat', 'Madurai Jigarthanda Live', 'Tender Coconut Water'] },
+          { heading: 'ROYAL FINISH', icon: 'fa-leaf', items: ['Kalyana Meenakshi Beeda', 'Premium Dry Fruit Box', 'Rose Water Spray Welcome', 'Fruit Basket'] }
+        ]
+      }
+    },
+    nonveg: {
+      breakfast: {
+        title: 'Non-Veg Special Morning Breakfast Spread',
+        sub: 'Authentic Chettinad & Malabar non-veg morning delicacies',
+        photo: 'assets/live_kitchen.jpg',
+        pax: '14+ Dishes',
+        cols: [
+          { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
+          { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
+          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Kara Chutney', 'Vegetable Sambar', 'Pure Cow Ghee'] },
+          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Cardamom Tea', 'Hot Milk'] }
+        ]
+      },
+      lunch: {
+        title: 'Grand Non-Veg Marriage Feast (Seeraga Samba Biryani)',
+        sub: 'Seeraga Samba Mutton Biryani feast prepared in authentic copper cauldrons',
+        photo: 'assets/wedding_feast.jpg',
+        pax: '16+ Dishes',
+        cols: [
+          { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
+          { heading: 'BIRYANI & MAIN COURSE', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton Biryani', 'Basmati Chicken Biryani', 'Chicken Chettinad Gravy', 'Malabar Parotta'] },
+          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Onion Cucumber Raitha', 'Traditional Brinjal Dalcha', 'Boiled Pepper Egg', 'Mutton Gravy Salna'] },
+          { heading: 'DESSERTS & FINISH', icon: 'fa-ice-cream', items: ['Hot Gulab Jamun', 'Matka Kulfi', 'Vanilla Ice Cream', 'Sweet Beeda & Fruit'] }
+        ]
+      },
+      tiffin: {
+        title: 'Non-Veg Evening Tiffin & Live Grill Counter',
+        sub: 'Hot spicy chicken, fish fry live stalls, and Kothu Parotta',
+        photo: 'assets/live_kitchen.jpg',
+        pax: '14+ Dishes',
+        cols: [
+          { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
+          { heading: 'HOT TIFFIN SPECIALS', icon: 'fa-hotdog', items: ['Chicken Kothu Parotta', 'Madurai Kari Dosa', 'Spicy Egg Roll', 'Chicken Stuff Naan'] },
+          { heading: 'CRISPY SNACKS', icon: 'fa-cookie-bite', items: ['Chicken Cutlet', 'Egg Puff', 'Mini Chicken Samosa', 'Fish Cutlet'] },
+          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Filter Coffee', 'Masala Chai', 'Chilled Drinks'] }
+        ]
+      },
+      reception: {
+        title: 'Grand Non-Veg Reception Gala Dinner Buffet',
+        sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
+        photo: 'assets/corporate_buffet.jpg',
+        pax: '20+ Dishes',
+        cols: [
+          { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
+          { heading: 'BUFFET MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Royal Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan / Roti', 'Prawn Masala Curry'] },
+          { heading: 'SEAFOOD SPECIALS', icon: 'fa-fish', items: ['Crab Gravy Curry', 'Vanjaram Tawa Fish Fry', 'Nethili Pepper Fry', 'Prawn Dum Biryani'] },
+          { heading: 'DESSERT BAR', icon: 'fa-ice-cream', items: ['Chocolate Brownie with Ice Cream', 'Matka Kulfi', 'Fruit Salad with Cream', 'Beeda'] }
+        ]
+      },
+      dinner: {
+        title: 'Traditional Night Non-Veg Dinner Spread',
+        sub: 'Comforting non-veg dinner items served with idiyappam, dosa & curries',
+        photo: 'assets/banana_leaf_serving.jpg',
+        pax: '14+ Dishes',
+        cols: [
+          { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
+          { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
+          { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Chicken Fried Rice', 'Egg Fried Rice', 'Thick Curd Rice with Pickle'] },
+          { heading: 'SWEETS & MILK', icon: 'fa-apple-whole', items: ['Hot Badam Milk', 'Vanilla Ice Cream', 'Fresh Banana'] }
+        ]
+      },
+      special: {
+        title: 'Non-Veg Chef Signature Delicacies',
+        sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
+        photo: 'assets/temple_annathanam.jpg',
+        pax: '16+ Specials',
+        cols: [
+          { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
+          { heading: 'SEAFOOD EXTRAORDINARY', icon: 'fa-fish', items: ['Whole Tawa Fish Roast', 'Lobster Masala Fry', 'Squid Pepper Fry', 'Jumbo Prawn Curry'] },
+          { heading: 'ROYAL DESSERTS', icon: 'fa-ice-cream', items: ['Elaneer Payasam', 'Dry Fruit Halwa', 'Live Ice Cream Roll', 'Matka Kulfi'] },
+          { heading: 'FINISHING TOUCH', icon: 'fa-leaf', items: ['Special Royal Sweet Beeda', 'Fresh Fruit Basket', 'Rose Water Welcome'] }
+        ]
+      }
+    }
+  };
+
+  function updateAll4Concepts() {
+    const data = menuSuiteDatabase[curCuisine][curTab];
+    if (!data) return;
+
+    // 1. UPDATE CONCEPT 1: ROYAL BANQUET MAGAZINE
+    const c1Title = document.getElementById('c1Title');
+    const c1Sub = document.getElementById('c1Sub');
+    const c1Photo = document.getElementById('c1Photo');
+    const c1ItemCount = document.getElementById('c1ItemCount');
+    const c1BentoGrid = document.getElementById('c1BentoGrid');
+
+    if (c1Title) c1Title.textContent = data.title;
+    if (c1Sub) c1Sub.textContent = data.sub;
+    if (c1Photo && data.photo) c1Photo.src = data.photo;
+    if (c1ItemCount) c1ItemCount.textContent = data.pax;
+
+    if (c1BentoGrid) {
+      c1BentoGrid.innerHTML = '';
+      data.cols.forEach(col => {
+        const card = document.createElement('div');
+        card.className = 'mag-bento-card';
+        card.innerHTML = '<h4>' + col.heading + ' <i class="fa-solid ' + col.icon + ' text-gold"></i></h4>' +
+          '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-circle"></i> ' + item + '</li>').join('') + '</ul>';
+        c1BentoGrid.appendChild(card);
+      });
+    }
+
+    // 2. UPDATE CONCEPT 2: SPLIT-SCREEN CHEF STUDIO
+    const c2Title = document.getElementById('c2Title');
+    const c2Sub = document.getElementById('c2Sub');
+    const c2HeroPhoto = document.getElementById('c2HeroPhoto');
+    const c2CoursesGrid = document.getElementById('c2CoursesGrid');
+
+    if (c2Title) c2Title.textContent = data.title;
+    if (c2Sub) c2Sub.textContent = data.sub;
+    if (c2HeroPhoto && data.photo) c2HeroPhoto.src = data.photo;
+
+    if (c2CoursesGrid) {
+      c2CoursesGrid.innerHTML = '';
+      data.cols.forEach(col => {
+        const card = document.createElement('div');
+        card.className = 'mag-bento-card';
+        card.innerHTML = '<h4>' + col.heading + ' <i class="fa-solid ' + col.icon + ' text-gold"></i></h4>' +
+          '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-circle"></i> ' + item + '</li>').join('') + '</ul>';
+        c2CoursesGrid.appendChild(card);
+      });
+    }
+
+    // 3. UPDATE CONCEPT 3: VISUAL BANANA LEAF THALI
+    const c3Title = document.getElementById('c3Title');
+    const c3Sub = document.getElementById('c3Sub');
+    const c3ThaliDeck = document.getElementById('c3ThaliDeck');
+
+    if (c3Title) c3Title.textContent = data.title;
+    if (c3Sub) c3Sub.textContent = data.sub;
+
+    if (c3ThaliDeck) {
+      c3ThaliDeck.innerHTML = '';
+      data.cols.forEach(col => {
+        const cluster = document.createElement('div');
+        cluster.className = 'thali-cluster-box';
+        cluster.innerHTML = '<h5><i class="fa-solid ' + col.icon + '"></i> ' + col.heading + '</h5>' +
+          '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-leaf text-success"></i> ' + item + '</li>').join('') + '</ul>';
+        c3ThaliDeck.appendChild(cluster);
+      });
+    }
+
+    // 4. UPDATE CONCEPT 4: MODERN LUXURY BENTO DECK
+    const c4Title = document.getElementById('c4Title');
+    const c4BentoDeckGrid = document.getElementById('c4BentoDeckGrid');
+
+    if (c4Title) c4Title.textContent = data.title;
+
+    if (c4BentoDeckGrid) {
+      c4BentoDeckGrid.innerHTML = '';
+      data.cols.forEach(col => {
+        const card = document.createElement('div');
+        card.className = 'bento-dish-card';
+        card.innerHTML = '<h4><i class="fa-solid ' + col.icon + ' text-gold"></i> ' + col.heading + '</h4>' +
+          '<div class="bento-chip-list">' + col.items.map(item => '<span class="bento-dish-chip">' + item + '</span>').join('') + '</div>';
+        c4BentoDeckGrid.appendChild(card);
+      });
+    }
+  }
+
+  // Concept View Tabs Switcher Event
+  conceptTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      conceptTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const conceptId = btn.getAttribute('data-concept');
+
+      conceptPanels.forEach(panel => {
+        panel.style.display = 'none';
+        panel.classList.remove('active');
+      });
+
+      if (conceptId === 'c1') {
+        const p = document.getElementById('viewConcept1');
+        if (p) { p.style.display = 'block'; p.classList.add('active'); }
+      } else if (conceptId === 'c2') {
+        const p = document.getElementById('viewConcept2');
+        if (p) { p.style.display = 'block'; p.classList.add('active'); }
+      } else if (conceptId === 'c3') {
+        const p = document.getElementById('viewConcept3');
+        if (p) { p.style.display = 'block'; p.classList.add('active'); }
+      } else if (conceptId === 'c4') {
+        const p = document.getElementById('viewConcept4');
+        if (p) { p.style.display = 'block'; p.classList.add('active'); }
+      }
+    });
+  });
+
+  // Master Cuisine Switcher
+  if (btnVeg && btnNonVeg) {
+    btnVeg.addEventListener('click', () => {
+      btnVeg.classList.add('active');
+      btnNonVeg.classList.remove('active');
+      curCuisine = 'veg';
+      updateAll4Concepts();
+    });
+
+    btnNonVeg.addEventListener('click', () => {
+      btnNonVeg.classList.add('active');
+      btnVeg.classList.remove('active');
+      curCuisine = 'nonveg';
+      updateAll4Concepts();
+    });
+  }
+
+  // Master Meal Tabs
+  mealBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mealBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      curTab = btn.getAttribute('data-tab') || 'breakfast';
+
+      // Sync Concept 2 timeline
+      timelineSteps.forEach(step => {
+        if (step.getAttribute('data-tab') === curTab) step.classList.add('active');
+        else step.classList.remove('active');
+      });
+
+      updateAll4Concepts();
+    });
+  });
+
+  // Concept 2 Timeline Steps click
+  timelineSteps.forEach(step => {
+    step.addEventListener('click', () => {
+      const tab = step.getAttribute('data-tab');
+      mealBtns.forEach(b => {
+        if (b.getAttribute('data-tab') === tab) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      timelineSteps.forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+      curTab = tab || 'breakfast';
+      updateAll4Concepts();
+    });
+  });
+
+  // Concept 1 WhatsApp button
+  const btnC1WhatsApp = document.getElementById('btnC1WhatsApp');
+  if (btnC1WhatsApp) {
+    btnC1WhatsApp.addEventListener('click', () => {
+      const data = menuSuiteDatabase[curCuisine][curTab];
+      const text = encodeURIComponent('Hello JS Caterer (Jagan C)! I am interested in booking the ' + data.title + ' (' + data.pax + '). Please send customized pricing!');
+      window.open('https://wa.me/919940649939?text=' + text, '_blank');
+    });
+  }
+
+  // Initial Execution
+  updateAll4Concepts();

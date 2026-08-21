@@ -5776,3 +5776,714 @@ a[href*="wa.me"] i {
     height: 160px !important;
   }
 }
+
+/* ================================================================
+   4-CONCEPT MENU SHOWCASE TESTING SUITE STYLES
+   ================================================================ */
+
+.section-concept-suite {
+  padding: 64px 0 !important;
+  background: #FAFAF6 !important;
+  width: 100% !important;
+}
+
+/* Concept Testing Floating Switcher Bar */
+.concept-testing-bar {
+  background: #0E2018 !important;
+  border: 2px solid #AA820A !important;
+  border-radius: 24px !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-bottom: 36px !important;
+  box-shadow: 0 12px 36px rgba(14, 32, 24, 0.25) !important;
+  flex-wrap: wrap !important;
+}
+
+.concept-bar-label {
+  font-family: var(--font-label) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  letter-spacing: 0.08em !important;
+}
+
+.concept-tab-buttons {
+  display: flex !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.concept-tab-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(232, 200, 77, 0.4) !important;
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.concept-tab-btn.active,
+.concept-tab-btn:hover {
+  background: #AA820A !important;
+  color: #FFFFFF !important;
+  border-color: #AA820A !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(170, 130, 10, 0.4) !important;
+}
+
+/* Master Cuisine Switcher */
+.cuisine-master-bar {
+  text-align: center !important;
+  margin-bottom: 28px !important;
+}
+
+.cuisine-toggle-stage {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin-top: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.cuisine-toggle-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: #FFFFFF !important;
+  border: 2px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 24px !important;
+  padding: 14px 28px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 6px 18px rgba(14, 32, 24, 0.05) !important;
+}
+
+.cuisine-toggle-btn.active {
+  background: #0E2018 !important;
+  border-color: #AA820A !important;
+  box-shadow: 0 10px 28px rgba(14, 32, 24, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+.cuisine-toggle-btn.active .btn-title {
+  color: #FFFFFF !important;
+}
+
+.cuisine-toggle-btn.active .btn-sub {
+  color: #E8C84D !important;
+}
+
+.btn-icon-wrap {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.1rem !important;
+  background: rgba(197, 155, 39, 0.15) !important;
+  color: #AA820A !important;
+}
+
+.cuisine-toggle-btn.active .btn-icon-wrap {
+  background: #AA820A !important;
+  color: #FFFFFF !important;
+}
+
+.btn-title {
+  font-family: var(--font-head) !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  display: block !important;
+}
+
+.btn-sub {
+  font-family: var(--font-label) !important;
+  font-size: 0.76rem !important;
+  color: var(--text-dark-muted) !important;
+}
+
+/* Meal Progression Time Tabs */
+.meal-progression-bar {
+  margin-bottom: 32px !important;
+}
+
+.meal-tabs-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.meal-tab-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(14, 32, 24, 0.05) !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.meal-tab-btn:hover,
+.meal-tab-btn.active {
+  background: #AA820A !important;
+  color: #FFFFFF !important;
+  border-color: #AA820A !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(170, 130, 10, 0.3) !important;
+}
+
+/* ============================================================
+   CONCEPT 1: ROYAL BANQUET MAGAZINE STYLING
+   ============================================================ */
+.royal-magazine-card {
+  background: #FFFFFF !important;
+  border: 2px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 32px !important;
+  padding: 36px 32px !important;
+  box-shadow: 0 18px 48px rgba(14, 32, 24, 0.08) !important;
+}
+
+.mag-header-strip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 24px !important;
+  margin-bottom: 28px !important;
+  border-bottom: 1.5px dashed rgba(197, 155, 39, 0.35) !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+.mag-course-badge {
+  display: inline-block !important;
+  background: rgba(197, 155, 39, 0.12) !important;
+  color: #AA820A !important;
+  border: 1px solid rgba(197, 155, 39, 0.35) !important;
+  padding: 4px 14px !important;
+  border-radius: 20px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 8px !important;
+}
+
+.mag-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin-bottom: 4px !important;
+}
+
+.mag-sub {
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  color: var(--text-dark-muted) !important;
+}
+
+.mag-pax-stamp {
+  background: #0E2018 !important;
+  color: #E8C84D !important;
+  border: 1.5px solid #AA820A !important;
+  border-radius: 20px !important;
+  padding: 12px 20px !important;
+  text-align: center !important;
+}
+
+.stamp-count {
+  display: block !important;
+  font-family: var(--font-head) !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+}
+
+.stamp-label {
+  font-family: var(--font-label) !important;
+  font-size: 0.7rem !important;
+  opacity: 0.9 !important;
+}
+
+.mag-grid-layout {
+  display: grid !important;
+  grid-template-columns: 2.2fr 1fr !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+}
+
+.mag-bento-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 18px !important;
+}
+
+.mag-bento-card {
+  background: #FAFAF6 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.28) !important;
+  border-top: 4px solid #AA820A !important;
+  border-radius: 20px !important;
+  padding: 20px 18px !important;
+  box-shadow: 0 6px 16px rgba(14, 32, 24, 0.03) !important;
+}
+
+.mag-bento-card h4 {
+  font-family: var(--font-head) !important;
+  font-size: 0.92rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.mag-bento-card ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.mag-bento-card li {
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #0E2018 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.mag-bento-card li i {
+  color: #AA820A !important;
+  font-size: 0.45rem !important;
+}
+
+.mag-photo-stage {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.stage-img-frame {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 240px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  border: 2px solid #AA820A !important;
+  box-shadow: 0 10px 28px rgba(14, 32, 24, 0.14) !important;
+}
+
+.stage-img-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.stage-badge-tag {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  background: rgba(14, 32, 24, 0.88) !important;
+  color: #E8C84D !important;
+  padding: 6px 12px !important;
+  border-radius: 16px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+}
+
+/* ============================================================
+   CONCEPT 2: SPLIT-SCREEN CHEF STUDIO STYLING
+   ============================================================ */
+.split-studio-container {
+  display: grid !important;
+  grid-template-columns: 320px 1fr !important;
+  gap: 28px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  border-radius: 28px !important;
+  padding: 28px !important;
+  box-shadow: 0 16px 42px rgba(14, 32, 24, 0.08) !important;
+}
+
+.studio-timeline-panel {
+  background: #0E2018 !important;
+  border-radius: 22px !important;
+  padding: 24px 20px !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.studio-panel-heading {
+  font-family: var(--font-head) !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  margin-bottom: 8px !important;
+}
+
+.timeline-steps-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.timeline-step {
+  padding: 10px 14px !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.timeline-step.active,
+.timeline-step:hover {
+  background: #AA820A !important;
+  border-color: #AA820A !important;
+  transform: translateX(4px) !important;
+}
+
+.step-time {
+  display: block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+}
+
+.timeline-step.active .step-time {
+  color: #FFFFFF !important;
+}
+
+.step-name {
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+}
+
+.studio-action-card {
+  margin-top: auto !important;
+  padding-top: 14px !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2) !important;
+}
+
+.studio-action-card p {
+  font-size: 0.78rem !important;
+  margin-bottom: 10px !important;
+}
+
+.studio-main-stage {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+.studio-hero-banner {
+  position: relative !important;
+  height: 180px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.studio-hero-banner img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.studio-banner-copy {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  padding: 16px 20px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(14, 32, 24, 0.92) 100%) !important;
+  color: #FFFFFF !important;
+}
+
+.studio-banner-copy h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.35rem !important;
+  margin-bottom: 2px !important;
+}
+
+.studio-banner-copy p {
+  font-size: 0.85rem !important;
+  color: #E8C84D !important;
+}
+
+.studio-courses-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 16px !important;
+}
+
+/* ============================================================
+   CONCEPT 3: VISUAL BANANA LEAF & THALI EXPERIENCE STYLING
+   ============================================================ */
+.leaf-thali-container {
+  background: #FFFFFF !important;
+  border: 2px solid #20BD5A !important;
+  border-radius: 32px !important;
+  padding: 36px 32px !important;
+  box-shadow: 0 16px 42px rgba(14, 32, 24, 0.08) !important;
+}
+
+.thali-intro-header {
+  text-align: center !important;
+  margin-bottom: 24px !important;
+}
+
+.thali-intro-header h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.8rem !important;
+  color: #0E2018 !important;
+}
+
+.thali-intro-header p {
+  font-size: 0.9rem !important;
+  color: var(--text-dark-muted) !important;
+}
+
+.thali-leaf-board {
+  background: linear-gradient(135deg, #183C25 0%, #0E2416 100%) !important;
+  border: 3px solid #25D366 !important;
+  border-radius: 28px !important;
+  padding: 28px 24px !important;
+  color: #FFFFFF !important;
+  box-shadow: inset 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.thali-leaf-topbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 16px !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px dashed rgba(37, 211, 102, 0.4) !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+}
+
+.thali-seal-badge {
+  background: rgba(232, 200, 77, 0.15) !important;
+  color: #E8C84D !important;
+  border: 1px solid #E8C84D !important;
+  padding: 4px 12px !important;
+  border-radius: 16px !important;
+  font-size: 0.74rem !important;
+}
+
+.thali-dishes-deck {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.thali-cluster-box {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 18px !important;
+  padding: 16px 14px !important;
+}
+
+.thali-cluster-box h5 {
+  font-family: var(--font-head) !important;
+  font-size: 0.86rem !important;
+  color: #E8C84D !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid rgba(232, 200, 77, 0.3) !important;
+}
+
+.thali-cluster-box ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.thali-cluster-box li {
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.thali-footer-bar {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-top: 24px !important;
+  padding-top: 16px !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.thali-spec-pill {
+  background: rgba(0, 0, 0, 0.3) !important;
+  padding: 6px 14px !important;
+  border-radius: 14px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.76rem !important;
+  color: #E8C84D !important;
+}
+
+/* ============================================================
+   CONCEPT 4: MODERN LUXURY BENTO DECK STYLING
+   ============================================================ */
+.bento-deck-container {
+  background: #FFFFFF !important;
+  border: 2px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 32px !important;
+  padding: 36px 32px !important;
+  box-shadow: 0 16px 42px rgba(14, 32, 24, 0.08) !important;
+}
+
+.bento-deck-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 28px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1.5px dashed rgba(197, 155, 39, 0.3) !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+.bento-lead-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  letter-spacing: 0.08em !important;
+}
+
+.bento-deck-header h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.8rem !important;
+  color: #0E2018 !important;
+}
+
+.bento-deck-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
+}
+
+.bento-dish-card {
+  background: #FAFAF6 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.25) !important;
+  border-radius: 20px !important;
+  padding: 20px 16px !important;
+  transition: transform 0.25s ease !important;
+}
+
+.bento-dish-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #AA820A !important;
+}
+
+.bento-dish-card h4 {
+  font-family: var(--font-head) !important;
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #AA820A !important;
+}
+
+.bento-chip-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.bento-dish-chip {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(197, 155, 39, 0.3) !important;
+  padding: 6px 12px !important;
+  border-radius: 16px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #0E2018 !important;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES FOR ALL 4 CONCEPTS
+   ============================================================ */
+@media (max-width: 1100px) {
+  .mag-grid-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .split-studio-container {
+    grid-template-columns: 1fr !important;
+  }
+  .thali-dishes-deck {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .bento-deck-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .concept-testing-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .concept-tab-buttons {
+    width: 100% !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 6px !important;
+  }
+  .mag-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .studio-courses-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .thali-dishes-deck {
+    grid-template-columns: 1fr !important;
+  }
+  .bento-deck-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

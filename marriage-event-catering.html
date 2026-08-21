@@ -204,207 +204,188 @@
     </div>
   </section>
 
-  <!-- SECTION 2: CHOOSE YOUR CUISINE SWITCHER -->
-  <section class="section-cuisine-switch">
+
+  <!-- ================================================================
+       INNOVATIVE 4-CONCEPT MENU SHOWCASE TESTING SUITE
+       ================================================================ -->
+  <section class="section-concept-suite" id="menuShowcaseEngine">
     <div class="container">
-      <div class="ornamental-header">
-        <span class="flourish-icon">❖</span>
-        <h2>Choose Your Cuisine</h2>
-        <span class="flourish-icon">❖</span>
-      </div>
-
-      <div class="cuisine-toggle-stage">
-        <!-- Pure Veg Button -->
-        <button class="cuisine-toggle-btn active" id="btnVegToggle" data-type="Veg">
-          <div class="btn-icon-wrap green-circle"><i class="fa-solid fa-leaf"></i></div>
-          <div class="btn-text-content">
-            <strong class="btn-title">PURE VEGETARIAN</strong>
-            <span class="btn-sub">Traditional Veg Menus</span>
-          </div>
-        </button>
-
-        <!-- Non-Veg Button -->
-        <button class="cuisine-toggle-btn" id="btnNonVegToggle" data-type="NonVeg">
-          <div class="btn-icon-wrap light-circle"><i class="fa-solid fa-utensils"></i></div>
-          <div class="btn-text-content">
-            <strong class="btn-title">NON-VEGETARIAN</strong>
-            <span class="btn-sub">Non-Veg Special Menus</span>
-          </div>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3 & 4: MENU TABS & DETAILED MENU CATEGORIES DISPLAY -->
-  <section class="section-menu-display">
-    <div class="container">
-      <div class="menu-display-header">
-        <h2 id="menuSectionTitle">Explore Our Veg Menus</h2>
-        <p>Select a menu type to view complete menu</p>
-      </div>
-
-      <!-- 6 Meal Category Tabs -->
-      <div class="meal-tabs-wrapper">
-        <button class="meal-tab-btn active" data-tab="breakfast"><i class="fa-solid fa-mug-hot"></i><span>Breakfast</span></button>
-        <button class="meal-tab-btn" data-tab="lunch"><i class="fa-solid fa-bowl-food"></i><span>Lunch (Main Course)</span></button>
-        <button class="meal-tab-btn" data-tab="tiffin"><i class="fa-solid fa-cookie-bite"></i><span>Evening Tiffin & Snacks</span></button>
-        <button class="meal-tab-btn" data-tab="reception"><i class="fa-solid fa-utensils"></i><span>Reception Menu</span></button>
-        <button class="meal-tab-btn" data-tab="dinner"><i class="fa-solid fa-plate-wheat"></i><span>Dinner Menu</span></button>
-        <button class="meal-tab-btn" data-tab="special"><i class="fa-solid fa-star"></i><span>Special Items</span></button>
-      </div>
-
-      <!-- DETAILED MENU DISPLAY CARD (VEG CONTENT) -->
-      <div class="detailed-menu-card" id="vegMenuContent">
-        <div class="card-top-banner">
-          <div class="ornamental-header inline-header">
-            <span class="flourish-icon">❖</span>
-            <h3 id="vegCardTitle">Traditional South Indian Breakfast Menu</h3>
-            <span class="flourish-icon">❖</span>
-          </div>
-          <p id="vegCardSub">A perfect start to your special day</p>
+      
+      <!-- CONCEPT SELECTOR TABS (FOR LIVE USER COMPARISON) -->
+      <div class="concept-testing-bar">
+        <span class="concept-bar-label"><i class="fa-solid fa-wand-magic-sparkles"></i> CHOOSE CONCEPT VIEW:</span>
+        <div class="concept-tab-buttons">
+          <button class="concept-tab-btn active" data-concept="c1"><i class="fa-solid fa-crown"></i> Concept 1: Royal Banquet Magazine</button>
+          <button class="concept-tab-btn" data-concept="c2"><i class="fa-solid fa-book-open"></i> Concept 2: Split-Screen Studio</button>
+          <button class="concept-tab-btn" data-concept="c3"><i class="fa-solid fa-leaf"></i> Concept 3: Banana Leaf & Thali Map</button>
+          <button class="concept-tab-btn" data-concept="c4"><i class="fa-solid fa-layer-group"></i> Concept 4: Luxury Bento Deck</button>
         </div>
+      </div>
 
-        <div class="menu-columns-grid">
-          <!-- Column 1 -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">WELCOME DRINKS</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Panakam</li>
-              <li><i class="fa-solid fa-circle"></i> Fresh Lime Juice</li>
-              <li><i class="fa-solid fa-circle"></i> Rose Milk</li>
-              <li><i class="fa-solid fa-circle"></i> Buttermilk</li>
-            </ul>
-            <div class="col-illustration"><i class="fa-solid fa-glass-water"></i></div>
+      <!-- MASTER CUISINE SWITCHER (SHARED BY ALL CONCEPTS) -->
+      <div class="cuisine-master-bar">
+        <div class="ornamental-header inline-ornament">
+          <span class="flourish-icon">❖</span>
+          <h2>Select Your Catering Style</h2>
+          <span class="flourish-icon">❖</span>
+        </div>
+        <div class="cuisine-toggle-stage">
+          <button class="cuisine-toggle-btn active" id="btnVegToggle" data-type="Veg">
+            <div class="btn-icon-wrap green-circle"><i class="fa-solid fa-leaf"></i></div>
+            <div class="btn-text-content">
+              <strong class="btn-title">PURE VEGETARIAN</strong>
+              <span class="btn-sub">Traditional Brahmin & Tamil Veg Menus</span>
+            </div>
+          </button>
+          <button class="cuisine-toggle-btn" id="btnNonVegToggle" data-type="NonVeg">
+            <div class="btn-icon-wrap light-circle"><i class="fa-solid fa-utensils"></i></div>
+            <div class="btn-text-content">
+              <strong class="btn-title">NON-VEGETARIAN</strong>
+              <span class="btn-sub">Chettinad & Mutton Biryani Feasts</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6 MEAL CATEGORY TIME-STAGE NAVIGATION PILLS -->
+      <div class="meal-progression-bar">
+        <div class="meal-tabs-wrapper" id="masterMealTabs">
+          <button class="meal-tab-btn active" data-tab="breakfast"><i class="fa-solid fa-mug-hot"></i><span>☀️ 07:00 AM Breakfast</span></button>
+          <button class="meal-tab-btn" data-tab="lunch"><i class="fa-solid fa-crown"></i><span>👑 12:30 PM Kalyana Lunch</span></button>
+          <button class="meal-tab-btn" data-tab="tiffin"><i class="fa-solid fa-cookie-bite"></i><span>☕ 05:00 PM Evening Tiffin</span></button>
+          <button class="meal-tab-btn" data-tab="reception"><i class="fa-solid fa-champagne-glasses"></i><span>✨ 07:30 PM Reception Buffet</span></button>
+          <button class="meal-tab-btn" data-tab="dinner"><i class="fa-solid fa-moon"></i><span>🌙 09:00 PM Night Dinner</span></button>
+          <button class="meal-tab-btn" data-tab="special"><i class="fa-solid fa-star"></i><span>⭐ Royal Chef Specials</span></button>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           CONCEPT 1: THE ROYAL BANQUET MAGAZINE (ACTIVE DEFAULT)
+           ============================================================ -->
+      <div class="concept-view-panel active" id="viewConcept1">
+        <div class="royal-magazine-card">
+          <!-- Top Header Banner -->
+          <div class="mag-header-strip">
+            <div>
+              <span class="mag-course-badge" id="c1Badge"><i class="fa-solid fa-sparkles"></i> TRADITIONAL BANANA LEAF EXPERIENCE</span>
+              <h3 class="mag-title" id="c1Title">Traditional South Indian Veg Breakfast Spread</h3>
+              <p class="mag-sub" id="c1Sub">Piping-hot authentic morning feast served on fresh banana leaves</p>
+            </div>
+            <div class="mag-pax-stamp">
+              <span class="stamp-count" id="c1ItemCount">18+ Dishes</span>
+              <span class="stamp-label">Included in Spread</span>
+            </div>
           </div>
 
-          <!-- Column 2 -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">HOT BREAKFAST</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Idli</li>
-              <li><i class="fa-solid fa-circle"></i> Mini Ghee Pongal</li>
-              <li><i class="fa-solid fa-circle"></i> Medu Vada</li>
-              <li><i class="fa-solid fa-circle"></i> Poori</li>
-              <li><i class="fa-solid fa-circle"></i> Masala Dosa / Plain Dosa</li>
-              <li><i class="fa-solid fa-circle"></i> Upma</li>
-            </ul>
-            <div class="col-illustration"><i class="fa-solid fa-bowl-hot"></i></div>
-          </div>
+          <!-- 4 Course Bento Columns + Media Stage Grid -->
+          <div class="mag-grid-layout">
+            <!-- 4 Course Bento Cards -->
+            <div class="mag-bento-grid" id="c1BentoGrid">
+              <!-- Rendered via JS -->
+            </div>
 
-          <!-- Column 3 -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">ACCOMPANIMENTS</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Sambar</li>
-              <li><i class="fa-solid fa-circle"></i> Coconut Chutney</li>
-              <li><i class="fa-solid fa-circle"></i> Tomato Chutney</li>
-              <li><i class="fa-solid fa-circle"></i> Kara Chutney</li>
-              <li><i class="fa-solid fa-circle"></i> Podi</li>
-              <li><i class="fa-solid fa-circle"></i> Ghee</li>
-            </ul>
-            <div class="col-illustration"><i class="fa-solid fa-pepper-hot"></i></div>
-          </div>
-
-          <!-- Column 4 -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">SWEET & BEVERAGES</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Kesari</li>
-              <li><i class="fa-solid fa-circle"></i> Payasam</li>
-              <li><i class="fa-solid fa-circle"></i> Filter Coffee</li>
-              <li><i class="fa-solid fa-circle"></i> Hot Milk</li>
-              <li><i class="fa-solid fa-circle"></i> Tea</li>
-            </ul>
-            <div class="col-illustration"><i class="fa-solid fa-mug-hot"></i></div>
-          </div>
-
-          <!-- Right Showcase Image Column -->
-          <div class="menu-photo-column">
-            <div class="photo-container">
-              <img src="assets/sweets_live_counter.jpg" alt="South Indian Breakfast Feast" id="menuTabPhoto">
+            <!-- Right Photo & Instant Action Stage -->
+            <div class="mag-photo-stage">
+              <div class="stage-img-frame">
+                <img src="assets/sweets_live_counter.jpg" alt="Culinary Showcase JS Caterer" id="c1Photo">
+                <div class="stage-gradient-overlay"></div>
+                <div class="stage-badge-tag"><i class="fa-solid fa-shield-heart"></i> 100% Organic & Steam Pure</div>
+              </div>
+              <div class="stage-action-box">
+                <button class="btn-whatsapp-green full-btn" id="btnC1WhatsApp"><i class="fa-brands fa-whatsapp"></i> REQUEST THIS SPREAD ON WHATSAPP</button>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="card-footer-note">
-          <i class="fa-regular fa-circle-info"></i>
-          <span>Menu items are subject to availability and can be customised based on your preferences.</span>
-        </div>
       </div>
 
-      <!-- DETAILED MENU DISPLAY CARD (NON-VEG CONTENT) -->
-      <div class="detailed-menu-card" id="nonVegMenuContent" style="display:none;">
-        <div class="card-top-banner nonveg">
-          <div class="ornamental-header inline-header">
-            <span class="flourish-icon">❖</span>
-            <h3>Non-Vegetarian Wedding & Reception Feast</h3>
-            <span class="flourish-icon">❖</span>
-          </div>
-          <p>Grand non-veg culinary spreads prepared with authentic spices</p>
-        </div>
-
-        <div class="menu-columns-grid">
-          <!-- Column 1: Starters -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">STARTERS & LIVE STALLS</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Chicken 65</li>
-              <li><i class="fa-solid fa-circle"></i> Chicken Tikka</li>
-              <li><i class="fa-solid fa-circle"></i> Fish Fry</li>
-              <li><i class="fa-solid fa-circle"></i> Mutton Chukka</li>
-              <li><i class="fa-solid fa-circle"></i> Egg Bonda</li>
-            </ul>
+      <!-- ============================================================
+           CONCEPT 2: SPLIT-SCREEN CHEF CULINARY STUDIO
+           ============================================================ -->
+      <div class="concept-view-panel" id="viewConcept2" style="display:none;">
+        <div class="split-studio-container">
+          <!-- Left Sticky Timeline Panel -->
+          <div class="studio-timeline-panel">
+            <h4 class="studio-panel-heading"><i class="fa-solid fa-timeline"></i> Event Timeline</h4>
+            <div class="timeline-steps-list" id="c2TimelineList">
+              <div class="timeline-step active" data-tab="breakfast"><span class="step-time">07:00 AM</span><span class="step-name">South Indian Breakfast</span></div>
+              <div class="timeline-step" data-tab="lunch"><span class="step-time">12:30 PM</span><span class="step-name">Grand Banana Leaf Lunch</span></div>
+              <div class="timeline-step" data-tab="tiffin"><span class="step-time">05:00 PM</span><span class="step-name">Evening Tiffin & Chaat</span></div>
+              <div class="timeline-step" data-tab="reception"><span class="step-time">07:30 PM</span><span class="step-name">Reception Gala Buffet</span></div>
+              <div class="timeline-step" data-tab="dinner"><span class="step-time">09:00 PM</span><span class="step-name">Night Dinner Spread</span></div>
+              <div class="timeline-step" data-tab="special"><span class="step-time">ALL DAY</span><span class="step-name">Royal Signature Stalls</span></div>
+            </div>
+            <div class="studio-action-card">
+              <p><i class="fa-solid fa-circle-check text-success"></i> Customise menu for your guest count</p>
+              <a href="#quoteSection" class="btn-primary-gold" style="width:100%;text-align:center;justify-content:center;">GET CUSTOM QUOTE</a>
+            </div>
           </div>
 
-          <!-- Column 2: Biryani & Main Course -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">BIRYANI & MAIN COURSE</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Seeraga Samba Mutton Biryani</li>
-              <li><i class="fa-solid fa-circle"></i> Basmati Chicken Biryani</li>
-              <li><i class="fa-solid fa-circle"></i> Chicken Gravy / Chettinad Curry</li>
-              <li><i class="fa-solid fa-circle"></i> Mutton Salna</li>
-              <li><i class="fa-solid fa-circle"></i> Malabar Parotta / Naan</li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Seafood Special -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">SEAFOOD SPECIALS</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Vanjaram Fish Fry</li>
-              <li><i class="fa-solid fa-circle"></i> Nethili Fry</li>
-              <li><i class="fa-solid fa-circle"></i> Prawn Masala</li>
-              <li><i class="fa-solid fa-circle"></i> Crab Curry</li>
-              <li><i class="fa-solid fa-circle"></i> Fish Gravy</li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Desserts -->
-          <div class="menu-column-box">
-            <h4 class="col-heading">DESSERTS & ACCOMPANIMENTS</h4>
-            <ul class="item-list">
-              <li><i class="fa-solid fa-circle"></i> Onion Raitha</li>
-              <li><i class="fa-solid fa-circle"></i> Brinjal Dalcha</li>
-              <li><i class="fa-solid fa-circle"></i> Gulab Jamun</li>
-              <li><i class="fa-solid fa-circle"></i> Matka Kulfi</li>
-              <li><i class="fa-solid fa-circle"></i> Ice Cream with Fruit Salad</li>
-            </ul>
-          </div>
-
-          <!-- Right Showcase Image Column -->
-          <div class="menu-photo-column">
-            <div class="photo-container">
-              <img src="assets/live_kitchen.jpg" alt="Non-Veg Feast JS Caterer">
+          <!-- Right Interactive Stage -->
+          <div class="studio-main-stage">
+            <div class="studio-hero-banner">
+              <img src="assets/sweets_live_counter.jpg" alt="Menu Spread" id="c2HeroPhoto">
+              <div class="studio-banner-copy">
+                <h3 id="c2Title">Traditional South Indian Veg Breakfast Spread</h3>
+                <p id="c2Sub">Piping-hot authentic morning feast served on fresh banana leaves</p>
+              </div>
+            </div>
+            <div class="studio-courses-grid" id="c2CoursesGrid">
+              <!-- Rendered via JS -->
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="card-footer-note">
-          <i class="fa-regular fa-circle-info"></i>
-          <span>Non-vegetarian menus are prepared with strict hygiene controls in separate dedicated vessels.</span>
+      <!-- ============================================================
+           CONCEPT 3: VISUAL BANANA LEAF & THALI EXPERIENCE MAP
+           ============================================================ -->
+      <div class="concept-view-panel" id="viewConcept3" style="display:none;">
+        <div class="leaf-thali-container">
+          <div class="thali-intro-header">
+            <h3 id="c3Title">Grand Kalyana Samayal Authentic Thali Map</h3>
+            <p id="c3Sub">See how our master chefs arrange the sacred 18+ items on the auspicious banana leaf</p>
+          </div>
+
+          <!-- The Visual Banana Leaf Experience Board -->
+          <div class="thali-leaf-board">
+            <div class="thali-leaf-topbar">
+              <span><i class="fa-solid fa-leaf text-success"></i> SACRED BANANA LEAF PLACEMENT (தலைவாழை இலை)</span>
+              <span class="thali-seal-badge"><i class="fa-solid fa-crown"></i> 100% Traditional Samayal</span>
+            </div>
+            
+            <div class="thali-dishes-deck" id="c3ThaliDeck">
+              <!-- Rendered via JS in visual food clusters -->
+            </div>
+
+            <div class="thali-footer-bar">
+              <div class="thali-spec-pill"><i class="fa-solid fa-fire"></i> Wood-Fire Cooked</div>
+              <div class="thali-spec-pill"><i class="fa-solid fa-cow"></i> Pure Cow Ghee & Desi Spices</div>
+              <div class="thali-spec-pill"><i class="fa-solid fa-clock"></i> 0-Min Serving Delay</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- ============================================================
+           CONCEPT 4: MODERN LUXURY BENTO DECK WITH DISH TAG PILLS
+           ============================================================ -->
+      <div class="concept-view-panel" id="viewConcept4" style="display:none;">
+        <div class="bento-deck-container">
+          <div class="bento-deck-header">
+            <div>
+              <span class="bento-lead-tag">CURATED CATERING CATALOGUE</span>
+              <h3 id="c4Title">Traditional South Indian Veg Breakfast Spread</h3>
+            </div>
+            <a href="https://wa.me/919940649939" target="_blank" class="btn-whatsapp-green"><i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Quote</a>
+          </div>
+
+          <div class="bento-deck-grid" id="c4BentoDeckGrid">
+            <!-- Rendered via JS as modern bento cards with dish tag chips -->
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
