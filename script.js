@@ -1139,10 +1139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Ensure temple cuisine has fallback for nonveg
+  multiServiceDatabases.temple.nonveg = multiServiceDatabases.temple.veg;
+
   const studioDatabase = (multiServiceDatabases[serviceType] || multiServiceDatabases.marriage);
 
-    function renderChefStudio() {
-    const data = studioDatabase[curCuisineStudio][curTabStudio];
+  function renderChefStudio() {
+    const curDb = studioDatabase || {};
+    const cuisineGroup = curDb[curCuisineStudio] || curDb['veg'] || Object.values(curDb)[0] || {};
+    const data = cuisineGroup[curTabStudio] || cuisineGroup['breakfast'] || Object.values(cuisineGroup)[0];
     if (!data) return;
 
     if (studioTitle) studioTitle.textContent = data.title;
@@ -1152,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const badgeEl = document.getElementById('studioCourseBadge');
     if (badgeEl && data.badge) badgeEl.innerHTML = '<i class="fa-solid fa-sparkles"></i> ' + data.badge;
 
-    if (studioCoursesGrid) {
+    if (studioCoursesGrid && data.cols) {
       studioCoursesGrid.innerHTML = '';
       data.cols.forEach(col => {
         const box = document.createElement('div');
@@ -1194,8 +1199,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // WhatsApp Button Event
   if (btnStudioWhatsApp) {
     btnStudioWhatsApp.addEventListener('click', () => {
-      const data = studioDatabase[curCuisineStudio][curTabStudio];
-      const text = encodeURIComponent('Hello JS Caterer (Jagan C)! I would like to book / get a customized quote for: ' + data.title + '. Please share packages and pricing!');
+      const curDb = studioDatabase || {};
+      const cuisineGroup = curDb[curCuisineStudio] || curDb['veg'] || Object.values(curDb)[0] || {};
+      const data = cuisineGroup[curTabStudio] || Object.values(cuisineGroup)[0];
+      const title = data ? data.title : 'Catering Packages';
+      const text = encodeURIComponent('Hello JS Caterer (Jagan C)! I would like to book / get a customized quote for: ' + title + '. Please share packages and pricing!');
       window.open('https://wa.me/919940649939?text=' + text, '_blank');
     });
   }
