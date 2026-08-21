@@ -7234,3 +7234,93 @@ a[href*="wa.me"] i {
     transform: translateX(24px) !important;
   }
 }
+
+/* ================================================================
+   CRITICAL GLOBAL MOBILE RIGHT-SIDE GAP FIX & INTEGRATED TOGGLE
+   ================================================================ */
+
+/* 1. Global Viewport & Root Lock */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+
+/* 2. Fix Offscreen Mobile Drawer from expanding document width */
+.mobile-nav-drawer {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.mobile-nav-drawer.is-open {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.mobile-nav-backdrop {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 3. Fix Occasions Carousel bounds & right gap */
+.section-occasions {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.occasions-carousel-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.occasions-scroll-track {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 4. Integrated Cuisine Switch in Left Studio Panel */
+.panel-cuisine-switch-box {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(232, 200, 77, 0.25) !important;
+  border-radius: 20px !important;
+  padding: 14px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-bottom: 6px !important;
+}
+
+.panel-cuisine-switch-box .modern-toggle-box {
+  width: 100% !important;
+  justify-content: space-between !important;
+  padding: 6px 14px !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (max-width: 1024px) {
+  .studio-timeline-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .panel-cuisine-switch-box {
+    margin-bottom: 0 !important;
+    padding: 10px 14px !important;
+  }
+  .panel-cuisine-switch-box .modern-toggle-box {
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+}

@@ -220,29 +220,30 @@
       </div>
       <p class="section-subtitle">Explore our authentic catering spreads curated for every wedding & celebratory moment</p>
 
-      <!-- MODERN LUXURY ON/OFF CUISINE TOGGLE SWITCH -->
-      <div class="modern-cuisine-switch-wrap">
-        <div class="modern-toggle-box">
-          <span class="toggle-side-label veg active" id="labelVegBtn">
-            <i class="fa-solid fa-leaf"></i> Pure Veg
-          </span>
-
-          <label class="modern-switch-track" for="cuisineToggleInput" title="Toggle between Pure Veg and Non-Veg">
-            <input type="checkbox" id="cuisineToggleInput" aria-label="Toggle cuisine mode">
-            <span class="switch-slider-round"></span>
-          </label>
-
-          <span class="toggle-side-label nonveg" id="labelNonVegBtn">
-            <i class="fa-solid fa-drumstick-bite"></i> Non-Veg
-          </span>
-        </div>
-      </div>
-
       <!-- MAIN SPLIT-SCREEN CHEF STUDIO -->
       <div class="split-studio-container">
         
-        <!-- Left Column: Sticky Timeline Navigator -->
+        <!-- Left Column: Sticky Timeline Navigator with Integrated Cuisine Switch -->
         <aside class="studio-timeline-panel">
+          <!-- INTEGRATED CUISINE ON/OFF SWITCH IN LEFT PANEL -->
+          <div class="panel-cuisine-switch-box">
+            <span class="panel-tag"><i class="fa-solid fa-utensils"></i> CUISINE STYLE</span>
+            <div class="modern-toggle-box">
+              <span class="toggle-side-label veg active" id="labelVegBtn">
+                <i class="fa-solid fa-leaf"></i> Veg
+              </span>
+
+              <label class="modern-switch-track" for="cuisineToggleInput" title="Toggle between Veg and Non-Veg">
+                <input type="checkbox" id="cuisineToggleInput" aria-label="Toggle cuisine mode">
+                <span class="switch-slider-round"></span>
+              </label>
+
+              <span class="toggle-side-label nonveg" id="labelNonVegBtn">
+                <i class="fa-solid fa-drumstick-bite"></i> Non-Veg
+              </span>
+            </div>
+          </div>
+
           <div class="studio-panel-header">
             <span class="panel-tag"><i class="fa-solid fa-clock"></i> OCCASION TIMELINE</span>
             <h4 class="studio-panel-heading">Select Meal Session</h4>
