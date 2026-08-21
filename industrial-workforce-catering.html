@@ -383,7 +383,7 @@
 
         <!-- Right Column: Form -->
         <div class="plan-form-col">
-          <h3>Request Corporate Catering Quote</h3>
+          <h3>Request a Corporate Quote</h3>
           <form id="detailQuoteForm" class="quote-form-grid">
             <div class="form-field-wrap">
               <label>Company / Contact Name*</label>
@@ -391,14 +391,14 @@
             </div>
 
             <div class="form-field-wrap">
-              <label>Phone / WhatsApp Number*</label>
-              <input type="tel" id="qPhone" placeholder="Enter contact number" required class="form-input">
+              <label>Phone Number*</label>
+              <input type="tel" id="qPhone" placeholder="Enter your WhatsApp number" required class="form-input">
             </div>
 
             <div class="form-field-wrap">
               <label>Facility / Industry Type*</label>
               <div class="select-wrap">
-                <select id="qEventType" required class="form-input">
+                <select id="qEvent" required class="form-input">
                   <option value="" disabled selected>Select Facility Type</option>
                   <option value="Manufacturing Factory">Manufacturing Factory</option>
                   <option value="IT Tech Park">IT Tech Park / Office</option>
@@ -411,13 +411,36 @@
             </div>
 
             <div class="form-field-wrap">
-              <label>Daily Headcount / Shift Strength*</label>
-              <input type="number" id="qGuests" placeholder="e.g. 500" min="50" required class="form-input">
+              <label>Contract Start Date*</label>
+              <input type="date" id="qDate" required class="form-input">
             </div>
 
-            <div class="form-field-wrap full-width-field">
-              <label>Facility Location & Shift Requirements</label>
-              <textarea id="qNotes" rows="2" placeholder="e.g. Velachery / Guindy / OMR, 3 shifts daily" class="form-input form-textarea"></textarea>
+            <div class="form-field-wrap">
+              <label>Daily Headcount Strength*</label>
+              <div class="select-wrap">
+                <select id="qGuests" required class="form-input">
+                  <option value="" disabled selected>Select Daily Headcount</option>
+                  <option value="100 - 300 Meals">100 – 300 Meals / Day</option>
+                  <option value="300 - 600 Meals">300 – 600 Meals / Day</option>
+                  <option value="600 - 1500 Meals">600 – 1,500 Meals / Day</option>
+                  <option value="1500 - 5000+ Meals">1,500 – 5,000+ Meals / Day</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
+            </div>
+
+            <div class="form-field-wrap">
+              <label>Shift Schedule*</label>
+              <div class="select-wrap">
+                <select id="qCuisine" required class="form-input">
+                  <option value="" disabled selected>Select Shift Pattern</option>
+                  <option value="General Shift (Breakfast + Lunch)">General Shift (Breakfast + Lunch)</option>
+                  <option value="2 Shifts (Day + Night)">2 Shifts (Day + Night)</option>
+                  <option value="3 Shifts (24/7 Full Operations)">3 Shifts (24/7 Full Operations)</option>
+                  <option value="High-Tea & Snacks Only">High-Tea & Snacks Only</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
             </div>
 
             <button type="submit" class="btn-submit-gold-wa">

@@ -391,33 +391,55 @@
             </div>
 
             <div class="form-field-wrap">
-              <label>WhatsApp Number*</label>
-              <input type="tel" id="qPhone" placeholder="Enter WhatsApp number" required class="form-input">
+              <label>Phone Number*</label>
+              <input type="tel" id="qPhone" placeholder="Enter your WhatsApp number" required class="form-input">
             </div>
 
             <div class="form-field-wrap">
-              <label>Preferred Box Format*</label>
+              <label>Preferred Meal Box*</label>
               <div class="select-wrap">
-                <select id="qEventType" required class="form-input">
+                <select id="qEvent" required class="form-input">
                   <option value="" disabled selected>Select Meal Box</option>
                   <option value="Executive Veg Thali Box">Executive Veg Thali Box</option>
                   <option value="Chettinad Biryani Combo Box">Chettinad Biryani Combo Box</option>
-                  <option value="Breakfast Combo Box">South Indian Breakfast Box</option>
-                  <option value="High-Tea Snack Box">Evening High-Tea Snack Pack</option>
-                  <option value="VIP 5-Star Platter">VIP 5-Star Executive Platter</option>
+                  <option value="South Indian Breakfast Box">South Indian Breakfast Box</option>
+                  <option value="Evening High-Tea Snack Pack">Evening High-Tea Snack Pack</option>
+                  <option value="VIP 5-Star Executive Platter">VIP 5-Star Executive Platter</option>
                 </select>
                 <i class="fa-solid fa-chevron-down select-arrow"></i>
               </div>
             </div>
 
             <div class="form-field-wrap">
-              <label>Required Box Quantity*</label>
-              <input type="number" id="qGuests" placeholder="e.g. 100" min="20" required class="form-input">
+              <label>Delivery Date*</label>
+              <input type="date" id="qDate" required class="form-input">
             </div>
 
-            <div class="form-field-wrap full-width-field">
-              <label>Delivery Address & Event Date/Time</label>
-              <textarea id="qNotes" rows="2" placeholder="e.g. Tidel Park OMR, Tomorrow 12:30 PM" class="form-input form-textarea"></textarea>
+            <div class="form-field-wrap">
+              <label>Quantity of Meal Boxes*</label>
+              <div class="select-wrap">
+                <select id="qGuests" required class="form-input">
+                  <option value="" disabled selected>Select Box Quantity</option>
+                  <option value="25 - 50 Boxes">25 – 50 Boxes</option>
+                  <option value="50 - 100 Boxes">50 – 100 Boxes</option>
+                  <option value="100 - 250 Boxes">100 – 250 Boxes</option>
+                  <option value="250 - 500+ Boxes">250 – 500+ Boxes</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
+            </div>
+
+            <div class="form-field-wrap">
+              <label>Cuisine / Diet Preference*</label>
+              <div class="select-wrap">
+                <select id="qCuisine" required class="form-input">
+                  <option value="" disabled selected>Select Diet Preference</option>
+                  <option value="Pure Vegetarian Boxes">Pure Vegetarian Boxes</option>
+                  <option value="Non-Vegetarian Boxes">Non-Vegetarian Boxes</option>
+                  <option value="Mixed Veg & Non-Veg Assortment">Mixed Veg & Non-Veg Assortment</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
             </div>
 
             <button type="submit" class="btn-submit-gold-wa">
