@@ -455,30 +455,123 @@
   <section id="act-8" class="section-light">
     <div class="container">
       <div class="section-header-center">
-        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-paper-plane"></i> Begin Your Event Story</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-paper-plane"></i> ACT 08 · BEGIN YOUR EVENT STORY</div>
+        <h2 class="section-title">Get in Touch with <em>JS Caterer</em></h2>
+        <p class="section-desc">Connect directly with Founder Jagan C or request an instant customized catering proposal.</p>
       </div>
-      <div class="contact-grid story-reveal">
-        <div class="contact-card-glass">
-          <span class="section-gold-tag accent-label">Google Business Profile</span>
-          <h2 style="font-family:var(--font-head);font-size:1.9rem;color:var(--emerald);margin:10px 0 4px;">JS Caterer Velachery</h2>
-          <p class="contact-tamil" style="color:var(--gold);">பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!</p>
-          <div class="contact-detail-row"><i class="fa-solid fa-user-tie"></i><div><strong>Jagan C</strong><p>Owner & Founder</p></div></div>
-          <div class="contact-detail-row"><i class="fa-solid fa-phone"></i><div><strong>Phone / WhatsApp</strong><p><a href="tel:9940649939" class="phone-link" style="color:var(--emerald);">99406 49939</a> | <a href="tel:9884985368" class="phone-link" style="color:var(--emerald);">98849 85368</a></p></div></div>
-          <div class="contact-detail-row"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><p>No 81, Throwpathi Amman Koil 5th Street, Velachery, Chennai 600042</p></div></div>
+
+      <div class="contact-two-col">
+
+        <!-- LEFT: Google Business Profile & Fast Inquiry Card -->
+        <div class="contact-info-card">
+          <div>
+            <span class="section-gold-tag accent-label">Google Business Profile</span>
+            <h2>JS Caterer Velachery</h2>
+            <p class="contact-tamil">பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!</p>
+
+            <div class="contact-detail-row">
+              <i class="fa-solid fa-user-tie"></i>
+              <div><strong>Owner & Founder</strong><p>Jagan C</p></div>
+            </div>
+            <div class="contact-detail-row">
+              <i class="fa-solid fa-phone"></i>
+              <div><strong>Phone / WhatsApp</strong><p><a href="tel:9940649939" class="phone-link">99406 49939</a> | <a href="tel:9884985368" class="phone-link">98849 85368</a></p></div>
+            </div>
+            <div class="contact-detail-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div><strong>Address</strong><p>No 81, Throwpathi Amman Koil 5th Street, Velachery, Chennai 600042</p></div>
+            </div>
+          </div>
+
+          <!-- Integrated WhatsApp Auto-Reply Box -->
+          <div class="wa-sim-card">
+            <div class="wa-sim-header accent-label"><i class="fa-brands fa-whatsapp"></i> INSTANT WHATSAPP AUTO-REPLY</div>
+            <div class="chat-bubble">
+              "வணக்கம். JS Caterer-ஐ தொடர்பு கொண்டதற்கு நன்றி. உங்கள் நிகழ்ச்சி தேதி, இடம் மற்றும் விருந்தினர்கள் எண்ணிக்கையை அனுப்புங்கள்."
+            </div>
+            <a href="https://wa.me/919940649939" target="_blank" class="btn-wa-emerald full-btn">
+              <i class="fa-brands fa-whatsapp"></i> START WHATSAPP WITH JAGAN C
+            </a>
+          </div>
         </div>
-        <div class="wa-sim-card" style="align-self:start;">
-          <div class="wa-sim-header accent-label"><i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Auto-Reply</div>
-          <div class="chat-bubble">"வணக்கம். JS Caterer-ஐ தொடர்பு கொண்டதற்கு நன்றி. உங்கள் நிகழ்ச்சி தேதி, இடம் மற்றும் விருந்தினர்கள் எண்ணிக்கையை அனுப்புங்கள்."</div>
-          <a href="https://wa.me/919940649939" target="_blank" class="btn-wa-emerald full-btn"><i class="fa-brands fa-whatsapp"></i> Start WhatsApp with Jagan C</a>
-          <a href="contact.html" class="btn-glass-dark full-btn" style="text-align:center;"><i class="fa-solid fa-calendar-check"></i> Full Booking Form</a>
+
+        <!-- RIGHT: Interactive Booking / Proposal Form -->
+        <div class="contact-form-card">
+          <span class="section-gold-tag accent-label">Quick Proposal Request</span>
+          <h3 style="font-family:var(--font-head);font-size:1.5rem;color:var(--emerald);margin:10px 0 20px;">Send Your Event Inquiry</h3>
+
+          <form id="homeContactForm">
+            <div class="modal-form-grid">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" id="hName" required placeholder="Enter your full name">
+              </div>
+
+              <div class="form-group">
+                <label>Phone / WhatsApp Number *</label>
+                <input type="tel" id="hPhone" required placeholder="Enter your WhatsApp number">
+              </div>
+
+              <div class="form-group">
+                <label>Catering Service Category *</label>
+                <select id="hCategory" required>
+                  <option value="" disabled selected>Select Catering Service</option>
+                  <option value="Marriage & Event Catering">Marriage & Event Catering</option>
+                  <option value="CPU Industrial & Workforce">CPU Industrial & Workforce Catering</option>
+                  <option value="Corporate Packed Food Combos">Corporate Packed Food Combos</option>
+                  <option value="Kovil Annathanam & Sacred Feasts">Kovil Annathanam & Sacred Feasts</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Event Date *</label>
+                <input type="date" id="hDate" required>
+              </div>
+
+              <div class="form-group">
+                <label>Estimated Guest Count *</label>
+                <select id="hGuests" required>
+                  <option value="" disabled selected>Select Guest Count</option>
+                  <option value="50 - 150 Guests">50 – 150 Guests</option>
+                  <option value="150 - 300 Guests">150 – 300 Guests</option>
+                  <option value="300 - 600 Guests">300 – 600 Guests</option>
+                  <option value="600 - 1500 Guests">600 – 1,500 Guests</option>
+                  <option value="1500+ Guests">1,500+ Guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Cuisine Preference *</label>
+                <select id="hCuisine" required>
+                  <option value="" disabled selected>Select Cuisine</option>
+                  <option value="Pure Vegetarian Feast">Pure Vegetarian Feast</option>
+                  <option value="Non-Vegetarian Feast">Non-Vegetarian Feast</option>
+                  <option value="Veg & Non-Veg Combination">Veg & Non-Veg Combination</option>
+                  <option value="100% Satvik (No Onion/Garlic)">100% Satvik (No Onion/Garlic)</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label>Event Location / Special Requirements</label>
+                <textarea id="hNotes" rows="2" placeholder="e.g. Velachery / Adyar / OMR, Wedding Reception Buffet"></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <button type="submit" class="btn-primary-gold full-btn">
+                  <i class="fa-brands fa-whatsapp"></i> Send Inquiry to Jagan C via WhatsApp
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
+
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="luxury-footer">
+<footer class="luxury-footer luxury-footer-wrap">
   <div class="container footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">

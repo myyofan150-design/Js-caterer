@@ -626,6 +626,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Home Page Act 08 Contact Form Submit
+  const homeContactForm = document.getElementById('homeContactForm');
+  if (homeContactForm) {
+    homeContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      const name = v('hName');
+      const phone = v('hPhone');
+      const category = v('hCategory');
+      const date = v('hDate');
+      const guests = v('hGuests');
+      const cuisine = v('hCuisine');
+      const notes = v('hNotes');
+
+      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nWebsite Event Inquiry & Proposal Request:\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n🏬 Service Category: ${category}`;
+      if (date) msg += `\n📅 Event Date: ${date}`;
+      if (guests) msg += `\n👥 Guest Count: ${guests}`;
+      if (cuisine) msg += `\n🍲 Cuisine: ${cuisine}`;
+      if (notes) msg += `\n📝 Location & Details: ${notes}`;
+      msg += `\n\nPlease send package options and pricing quotation!`;
+
+      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
+
   // ----------------------------------------------------
   // GSAP-STYLE SCROLL PROGRESS BAR & REVEAL ANIMATIONS
   // ----------------------------------------------------
