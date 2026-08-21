@@ -6997,3 +6997,112 @@ a[href*="wa.me"] i {
     padding: 14px 12px !important;
   }
 }
+
+/* ================================================================
+   LUXURY COMPACT ON/OFF STYLE CUISINE TOGGLE SWITCH
+   ================================================================ */
+
+.luxury-cuisine-toggle-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto 32px !important;
+  width: 100% !important;
+}
+
+.luxury-toggle-track {
+  background: #0E2018 !important;
+  border: 2px solid #AA820A !important;
+  border-radius: 50px !important;
+  padding: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 8px 28px rgba(14, 32, 24, 0.18), 0 0 16px rgba(170, 130, 10, 0.25) !important;
+  max-width: 440px !important;
+  width: auto !important;
+  position: relative !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cuisine-toggle-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 22px !important;
+  border-radius: 40px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  outline: none !important;
+}
+
+.cuisine-toggle-pill:hover {
+  color: #FFFFFF !important;
+}
+
+.cuisine-toggle-pill.active {
+  background: #AA820A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(170, 130, 10, 0.45) !important;
+  transform: scale(1.02) !important;
+}
+
+.pill-icon-circle {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.8rem !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  transition: all 0.3s ease !important;
+}
+
+.pill-icon-circle.green {
+  color: #48E085 !important;
+}
+
+.pill-icon-circle.red {
+  color: #FF8F8F !important;
+}
+
+.cuisine-toggle-pill.active .pill-icon-circle {
+  background: #FFFFFF !important;
+}
+
+.cuisine-toggle-pill.active .pill-icon-circle.green {
+  color: #108A45 !important;
+}
+
+.cuisine-toggle-pill.active .pill-icon-circle.red {
+  color: #B82828 !important;
+}
+
+@media (max-width: 480px) {
+  .luxury-toggle-track {
+    width: 100% !important;
+    max-width: 340px !important;
+    justify-content: space-between !important;
+    padding: 4px !important;
+  }
+  .cuisine-toggle-pill {
+    flex: 1 !important;
+    justify-content: center !important;
+    padding: 9px 12px !important;
+    font-size: 0.78rem !important;
+    gap: 6px !important;
+  }
+  .pill-icon-circle {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.72rem !important;
+  }
+}
