@@ -687,26 +687,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ─────────────────────────────────────────────────────
-     4-CONCEPT MENU SHOWCASE INTERACTIVE CONTROLLER
-  ───────────────────────────────────────────────────── */
-  const conceptTabs = document.querySelectorAll('.concept-tab-btn');
-  const conceptPanels = document.querySelectorAll('.concept-view-panel');
-  const btnVeg = document.getElementById('btnVegToggle');
-  const btnNonVeg = document.getElementById('btnNonVegToggle');
-  const mealBtns = document.querySelectorAll('#masterMealTabs .meal-tab-btn');
-  const timelineSteps = document.querySelectorAll('#c2TimelineList .timeline-step');
+   FINALIZED SPLIT-SCREEN CHEF STUDIO CONTROLLER (CONCEPT 2)
+───────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const btnVegStudio = document.getElementById('btnVegToggle');
+  const btnNonVegStudio = document.getElementById('btnNonVegToggle');
+  const studioTimelineSteps = document.querySelectorAll('#studioTimelineList .timeline-step');
+  const studioHeroPhoto = document.getElementById('studioHeroPhoto');
+  const studioTitle = document.getElementById('studioTitle');
+  const studioSub = document.getElementById('studioSub');
+  const studioCoursesGrid = document.getElementById('studioCoursesGrid');
+  const btnStudioWhatsApp = document.getElementById('btnStudioWhatsApp');
 
-  let curCuisine = 'veg';
-  let curTab = 'breakfast';
+  if (!studioCoursesGrid) return; // Only execute if studio stage exists on current page
 
-  // Master Menu Database (Exhaustive 6 Categories for Veg & Non-Veg)
-  const menuSuiteDatabase = {
+  let curCuisineStudio = 'veg';
+  let curTabStudio = 'breakfast';
+
+  const studioDatabase = {
     veg: {
       breakfast: {
         title: 'Traditional South Indian Veg Breakfast Spread',
         sub: 'Piping-hot authentic morning feast served on fresh banana leaves',
         photo: 'assets/sweets_live_counter.jpg',
-        pax: '14+ Dishes',
+        badge: '100% PURE GHEE & STEAM FRESH',
         cols: [
           { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
           { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
@@ -718,7 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Grand Kalyana Samayal Banana Leaf Lunch (18+ Veg Items)',
         sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
         photo: 'assets/banana_leaf_serving.jpg',
-        pax: '18+ Dishes',
+        badge: 'SACRED BANANA LEAF TRADITION (18+ DISHES)',
         cols: [
           { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
           { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
@@ -730,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Evening Tiffin & Live Snack Stalls Spread',
         sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
         photo: 'assets/live_kitchen.jpg',
-        pax: '16+ Dishes',
+        badge: 'LIVE ON-SITE COOKING STALLS',
         cols: [
           { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
           { heading: 'LIVE CHAAT STALLS', icon: 'fa-fire-burner', items: ['Live Pani Puri Counter', 'Delhi Bhel Puri', 'Hot Samosa Ragda Chaat', 'Mumbai Pav Bhaji'] },
@@ -742,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Grand Wedding Reception Multi-Cuisine Buffet',
         sub: 'Modern luxury vegetarian buffet spread with live counters',
         photo: 'assets/corporate_buffet.jpg',
-        pax: '20+ Dishes',
+        badge: 'ROYAL GALA BUFFET EXPERIENCE',
         cols: [
           { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
           { heading: 'NORTH & SOUTH BUFFET', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Veg Dum Biryani with Raitha', 'Soft Butter Naan / Roti', 'Dal Makhani', 'Jeera Pulao'] },
@@ -754,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Traditional Night Dinner Menu Spread',
         sub: 'Comforting, light night dinner items served fresh and hot',
         photo: 'assets/wedding_feast.jpg',
-        pax: '14+ Dishes',
+        badge: 'COMFORTING WEDDING EVE SUPPER',
         cols: [
           { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
           { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
@@ -766,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Royal Chef Signature Special Items',
         sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
         photo: 'assets/temple_annathanam.jpg',
-        pax: '16+ Specials',
+        badge: 'HANDCRAFTED CHEF MASTERPIECES',
         cols: [
           { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
           { heading: 'LIVE SWEET COUNTERS', icon: 'fa-fire-burner', items: ['Live Hot Jalebi with Rabri', 'Live Malpua Counter', 'Live Ice Cream Roll Machine', 'Matka Kulfi'] },
@@ -780,7 +784,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Non-Veg Special Morning Breakfast Spread',
         sub: 'Authentic Chettinad & Malabar non-veg morning delicacies',
         photo: 'assets/live_kitchen.jpg',
-        pax: '14+ Dishes',
+        badge: 'AUTHENTIC CHETTINAD MORNING SPECIALS',
         cols: [
           { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
           { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
@@ -792,7 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Grand Non-Veg Marriage Feast (Seeraga Samba Biryani)',
         sub: 'Seeraga Samba Mutton Biryani feast prepared in authentic copper cauldrons',
         photo: 'assets/wedding_feast.jpg',
-        pax: '16+ Dishes',
+        badge: 'COPPER CAULDRON SEERAGA SAMBA BIRYANI',
         cols: [
           { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
           { heading: 'BIRYANI & MAIN COURSE', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton Biryani', 'Basmati Chicken Biryani', 'Chicken Chettinad Gravy', 'Malabar Parotta'] },
@@ -804,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Non-Veg Evening Tiffin & Live Grill Counter',
         sub: 'Hot spicy chicken, fish fry live stalls, and Kothu Parotta',
         photo: 'assets/live_kitchen.jpg',
-        pax: '14+ Dishes',
+        badge: 'LIVE TAWA SEAFOOD & KOTHU PAROTTA',
         cols: [
           { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
           { heading: 'HOT TIFFIN SPECIALS', icon: 'fa-hotdog', items: ['Chicken Kothu Parotta', 'Madurai Kari Dosa', 'Spicy Egg Roll', 'Chicken Stuff Naan'] },
@@ -816,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Grand Non-Veg Reception Gala Dinner Buffet',
         sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
         photo: 'assets/corporate_buffet.jpg',
-        pax: '20+ Dishes',
+        badge: 'LIVE TANDOORI & CONTINENTAL BBQ',
         cols: [
           { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
           { heading: 'BUFFET MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Royal Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan / Roti', 'Prawn Masala Curry'] },
@@ -828,7 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Traditional Night Non-Veg Dinner Spread',
         sub: 'Comforting non-veg dinner items served with idiyappam, dosa & curries',
         photo: 'assets/banana_leaf_serving.jpg',
-        pax: '14+ Dishes',
+        badge: 'AUTHENTIC MALABAR & MADURAI SUPPER',
         cols: [
           { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
           { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
@@ -840,7 +844,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Non-Veg Chef Signature Delicacies',
         sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
         photo: 'assets/temple_annathanam.jpg',
-        pax: '16+ Specials',
+        badge: 'ROYAL CHEF SPECIAL SELECTIONS',
         cols: [
           { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
           { heading: 'SEAFOOD EXTRAORDINARY', icon: 'fa-fish', items: ['Whole Tawa Fish Roast', 'Lobster Masala Fry', 'Squid Pepper Fry', 'Jumbo Prawn Curry'] },
@@ -851,177 +855,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  function updateAll4Concepts() {
-    const data = menuSuiteDatabase[curCuisine][curTab];
+  function renderChefStudio() {
+    const data = studioDatabase[curCuisineStudio][curTabStudio];
     if (!data) return;
 
-    // 1. UPDATE CONCEPT 1: ROYAL BANQUET MAGAZINE
-    const c1Title = document.getElementById('c1Title');
-    const c1Sub = document.getElementById('c1Sub');
-    const c1Photo = document.getElementById('c1Photo');
-    const c1ItemCount = document.getElementById('c1ItemCount');
-    const c1BentoGrid = document.getElementById('c1BentoGrid');
+    if (studioTitle) studioTitle.textContent = data.title;
+    if (studioSub) studioSub.textContent = data.sub;
+    if (studioHeroPhoto && data.photo) studioHeroPhoto.src = data.photo;
+    
+    const badgeEl = document.getElementById('studioCourseBadge');
+    if (badgeEl && data.badge) badgeEl.innerHTML = '<i class="fa-solid fa-sparkles"></i> ' + data.badge;
 
-    if (c1Title) c1Title.textContent = data.title;
-    if (c1Sub) c1Sub.textContent = data.sub;
-    if (c1Photo && data.photo) c1Photo.src = data.photo;
-    if (c1ItemCount) c1ItemCount.textContent = data.pax;
-
-    if (c1BentoGrid) {
-      c1BentoGrid.innerHTML = '';
+    if (studioCoursesGrid) {
+      studioCoursesGrid.innerHTML = '';
       data.cols.forEach(col => {
-        const card = document.createElement('div');
-        card.className = 'mag-bento-card';
-        card.innerHTML = '<h4>' + col.heading + ' <i class="fa-solid ' + col.icon + ' text-gold"></i></h4>' +
+        const box = document.createElement('div');
+        box.className = 'studio-course-box';
+        box.innerHTML = '<h4>' + col.heading + ' <i class="fa-solid ' + col.icon + ' text-gold"></i></h4>' +
           '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-circle"></i> ' + item + '</li>').join('') + '</ul>';
-        c1BentoGrid.appendChild(card);
-      });
-    }
-
-    // 2. UPDATE CONCEPT 2: SPLIT-SCREEN CHEF STUDIO
-    const c2Title = document.getElementById('c2Title');
-    const c2Sub = document.getElementById('c2Sub');
-    const c2HeroPhoto = document.getElementById('c2HeroPhoto');
-    const c2CoursesGrid = document.getElementById('c2CoursesGrid');
-
-    if (c2Title) c2Title.textContent = data.title;
-    if (c2Sub) c2Sub.textContent = data.sub;
-    if (c2HeroPhoto && data.photo) c2HeroPhoto.src = data.photo;
-
-    if (c2CoursesGrid) {
-      c2CoursesGrid.innerHTML = '';
-      data.cols.forEach(col => {
-        const card = document.createElement('div');
-        card.className = 'mag-bento-card';
-        card.innerHTML = '<h4>' + col.heading + ' <i class="fa-solid ' + col.icon + ' text-gold"></i></h4>' +
-          '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-circle"></i> ' + item + '</li>').join('') + '</ul>';
-        c2CoursesGrid.appendChild(card);
-      });
-    }
-
-    // 3. UPDATE CONCEPT 3: VISUAL BANANA LEAF THALI
-    const c3Title = document.getElementById('c3Title');
-    const c3Sub = document.getElementById('c3Sub');
-    const c3ThaliDeck = document.getElementById('c3ThaliDeck');
-
-    if (c3Title) c3Title.textContent = data.title;
-    if (c3Sub) c3Sub.textContent = data.sub;
-
-    if (c3ThaliDeck) {
-      c3ThaliDeck.innerHTML = '';
-      data.cols.forEach(col => {
-        const cluster = document.createElement('div');
-        cluster.className = 'thali-cluster-box';
-        cluster.innerHTML = '<h5><i class="fa-solid ' + col.icon + '"></i> ' + col.heading + '</h5>' +
-          '<ul>' + col.items.map(item => '<li><i class="fa-solid fa-leaf text-success"></i> ' + item + '</li>').join('') + '</ul>';
-        c3ThaliDeck.appendChild(cluster);
-      });
-    }
-
-    // 4. UPDATE CONCEPT 4: MODERN LUXURY BENTO DECK
-    const c4Title = document.getElementById('c4Title');
-    const c4BentoDeckGrid = document.getElementById('c4BentoDeckGrid');
-
-    if (c4Title) c4Title.textContent = data.title;
-
-    if (c4BentoDeckGrid) {
-      c4BentoDeckGrid.innerHTML = '';
-      data.cols.forEach(col => {
-        const card = document.createElement('div');
-        card.className = 'bento-dish-card';
-        card.innerHTML = '<h4><i class="fa-solid ' + col.icon + ' text-gold"></i> ' + col.heading + '</h4>' +
-          '<div class="bento-chip-list">' + col.items.map(item => '<span class="bento-dish-chip">' + item + '</span>').join('') + '</div>';
-        c4BentoDeckGrid.appendChild(card);
+        studioCoursesGrid.appendChild(box);
       });
     }
   }
 
-  // Concept View Tabs Switcher Event
-  conceptTabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      conceptTabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const conceptId = btn.getAttribute('data-concept');
-
-      conceptPanels.forEach(panel => {
-        panel.style.display = 'none';
-        panel.classList.remove('active');
-      });
-
-      if (conceptId === 'c1') {
-        const p = document.getElementById('viewConcept1');
-        if (p) { p.style.display = 'block'; p.classList.add('active'); }
-      } else if (conceptId === 'c2') {
-        const p = document.getElementById('viewConcept2');
-        if (p) { p.style.display = 'block'; p.classList.add('active'); }
-      } else if (conceptId === 'c3') {
-        const p = document.getElementById('viewConcept3');
-        if (p) { p.style.display = 'block'; p.classList.add('active'); }
-      } else if (conceptId === 'c4') {
-        const p = document.getElementById('viewConcept4');
-        if (p) { p.style.display = 'block'; p.classList.add('active'); }
-      }
-    });
-  });
-
-  // Master Cuisine Switcher
-  if (btnVeg && btnNonVeg) {
-    btnVeg.addEventListener('click', () => {
-      btnVeg.classList.add('active');
-      btnNonVeg.classList.remove('active');
-      curCuisine = 'veg';
-      updateAll4Concepts();
+  // Cuisine Switcher Events
+  if (btnVegStudio && btnNonVegStudio) {
+    btnVegStudio.addEventListener('click', () => {
+      btnVegStudio.classList.add('active');
+      btnNonVegStudio.classList.remove('active');
+      curCuisineStudio = 'veg';
+      renderChefStudio();
     });
 
-    btnNonVeg.addEventListener('click', () => {
-      btnNonVeg.classList.add('active');
-      btnVeg.classList.remove('active');
-      curCuisine = 'nonveg';
-      updateAll4Concepts();
+    btnNonVegStudio.addEventListener('click', () => {
+      btnNonVegStudio.classList.add('active');
+      btnVegStudio.classList.remove('active');
+      curCuisineStudio = 'nonveg';
+      renderChefStudio();
     });
   }
 
-  // Master Meal Tabs
-  mealBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      mealBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      curTab = btn.getAttribute('data-tab') || 'breakfast';
-
-      // Sync Concept 2 timeline
-      timelineSteps.forEach(step => {
-        if (step.getAttribute('data-tab') === curTab) step.classList.add('active');
-        else step.classList.remove('active');
-      });
-
-      updateAll4Concepts();
-    });
-  });
-
-  // Concept 2 Timeline Steps click
-  timelineSteps.forEach(step => {
+  // Timeline Step Events
+  studioTimelineSteps.forEach(step => {
     step.addEventListener('click', () => {
-      const tab = step.getAttribute('data-tab');
-      mealBtns.forEach(b => {
-        if (b.getAttribute('data-tab') === tab) b.classList.add('active');
-        else b.classList.remove('active');
-      });
-      timelineSteps.forEach(s => s.classList.remove('active'));
+      studioTimelineSteps.forEach(s => s.classList.remove('active'));
       step.classList.add('active');
-      curTab = tab || 'breakfast';
-      updateAll4Concepts();
+      curTabStudio = step.getAttribute('data-tab') || 'breakfast';
+      renderChefStudio();
     });
   });
 
-  // Concept 1 WhatsApp button
-  const btnC1WhatsApp = document.getElementById('btnC1WhatsApp');
-  if (btnC1WhatsApp) {
-    btnC1WhatsApp.addEventListener('click', () => {
-      const data = menuSuiteDatabase[curCuisine][curTab];
-      const text = encodeURIComponent('Hello JS Caterer (Jagan C)! I am interested in booking the ' + data.title + ' (' + data.pax + '). Please send customized pricing!');
+  // WhatsApp Button Event
+  if (btnStudioWhatsApp) {
+    btnStudioWhatsApp.addEventListener('click', () => {
+      const data = studioDatabase[curCuisineStudio][curTabStudio];
+      const text = encodeURIComponent('Hello JS Caterer (Jagan C)! I would like to book / get a customized quote for: ' + data.title + '. Please share packages and pricing!');
       window.open('https://wa.me/919940649939?text=' + text, '_blank');
     });
   }
 
-  // Initial Execution
-  updateAll4Concepts();
+  // Initial render
+  renderChefStudio();
+});

@@ -6487,3 +6487,347 @@ a[href*="wa.me"] i {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ================================================================
+   FINALIZED CONCEPT 2: SPLIT-SCREEN CHEF'S CULINARY STUDIO
+   ================================================================ */
+
+.section-culinary-studio {
+  padding: 64px 0 !important;
+  background: #FAFAF6 !important;
+  width: 100% !important;
+}
+
+/* Master Cuisine Toggle Bar */
+.cuisine-master-bar {
+  text-align: center !important;
+  margin-bottom: 32px !important;
+}
+
+.cuisine-toggle-stage {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.cuisine-toggle-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: #FFFFFF !important;
+  border: 2px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 24px !important;
+  padding: 14px 28px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 6px 18px rgba(14, 32, 24, 0.05) !important;
+}
+
+.cuisine-toggle-btn.active {
+  background: #0E2018 !important;
+  border-color: #AA820A !important;
+  box-shadow: 0 10px 28px rgba(14, 32, 24, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+.cuisine-toggle-btn.active .btn-title {
+  color: #FFFFFF !important;
+}
+
+.cuisine-toggle-btn.active .btn-sub {
+  color: #E8C84D !important;
+}
+
+/* Split-Screen Studio Main Grid */
+.split-studio-container {
+  display: grid !important;
+  grid-template-columns: 340px 1fr !important;
+  gap: 32px !important;
+  background: #FFFFFF !important;
+  border: 2px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 32px !important;
+  padding: 32px !important;
+  box-shadow: 0 20px 50px rgba(14, 32, 24, 0.08) !important;
+  align-items: start !important;
+}
+
+/* Left Sticky Timeline Panel */
+.studio-timeline-panel {
+  position: sticky !important;
+  top: 100px !important;
+  background: #0E2018 !important;
+  border: 1.5px solid #AA820A !important;
+  border-radius: 24px !important;
+  padding: 24px 20px !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.panel-tag {
+  display: inline-block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 4px !important;
+}
+
+.studio-panel-heading {
+  font-family: var(--font-head) !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+}
+
+.timeline-steps-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.timeline-step {
+  padding: 12px 16px !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.timeline-step:hover {
+  background: rgba(170, 130, 10, 0.25) !important;
+  border-color: #AA820A !important;
+  transform: translateX(4px) !important;
+}
+
+.timeline-step.active {
+  background: #AA820A !important;
+  border-color: #E8C84D !important;
+  transform: translateX(6px) !important;
+  box-shadow: 0 6px 18px rgba(170, 130, 10, 0.4) !important;
+}
+
+.step-time-badge {
+  font-family: var(--font-label) !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.timeline-step.active .step-time-badge {
+  color: #FFFFFF !important;
+}
+
+.step-name {
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.studio-action-card {
+  margin-top: 8px !important;
+  padding-top: 16px !important;
+  border-top: 1.5px dashed rgba(232, 200, 77, 0.3) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.action-card-text {
+  font-family: var(--font-body) !important;
+  font-size: 0.8rem !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Right Interactive Studio Stage */
+.studio-main-stage {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+}
+
+.studio-hero-banner {
+  position: relative !important;
+  height: 220px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 2px solid rgba(197, 155, 39, 0.3) !important;
+  box-shadow: 0 10px 28px rgba(14, 32, 24, 0.12) !important;
+}
+
+.studio-hero-banner img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.studio-banner-copy {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  padding: 20px 24px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(14, 32, 24, 0.95) 100%) !important;
+  color: #FFFFFF !important;
+}
+
+.banner-top-pill {
+  display: inline-block !important;
+  background: rgba(232, 200, 77, 0.25) !important;
+  color: #E8C84D !important;
+  border: 1px solid #E8C84D !important;
+  padding: 4px 12px !important;
+  border-radius: 14px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 6px !important;
+}
+
+.studio-banner-copy h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 4px !important;
+}
+
+.studio-banner-copy p {
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  color: #E8C84D !important;
+}
+
+/* 4 Course Bento Box Grid */
+.studio-courses-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+}
+
+.studio-course-box {
+  background: #FAFAF6 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  border-top: 4px solid #AA820A !important;
+  border-radius: 20px !important;
+  padding: 22px 20px !important;
+  box-shadow: 0 6px 18px rgba(14, 32, 24, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.studio-course-box:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 24px rgba(170, 130, 10, 0.15) !important;
+}
+
+.studio-course-box h4 {
+  font-family: var(--font-head) !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.studio-course-box ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.studio-course-box li {
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #0E2018 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.studio-course-box li i {
+  color: #AA820A !important;
+  font-size: 0.45rem !important;
+}
+
+.studio-footer-note {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: rgba(170, 130, 10, 0.08) !important;
+  border: 1px solid rgba(170, 130, 10, 0.25) !important;
+  border-radius: 16px !important;
+  padding: 14px 20px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  color: #0E2018 !important;
+}
+
+.studio-footer-note i {
+  color: #AA820A !important;
+  font-size: 1.1rem !important;
+}
+
+/* Responsive Media Breakpoints for Split Studio */
+@media (max-width: 1024px) {
+  .split-studio-container {
+    grid-template-columns: 1fr !important;
+    padding: 24px 20px !important;
+  }
+  .studio-timeline-panel {
+    position: static !important;
+  }
+  .timeline-steps-list {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
+  }
+  .timeline-steps-list::-webkit-scrollbar {
+    display: none !important;
+  }
+  .timeline-step {
+    flex: 0 0 auto !important;
+    min-width: 180px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .split-studio-container {
+    padding: 18px 14px !important;
+    border-radius: 20px !important;
+  }
+  .studio-courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .studio-hero-banner {
+    height: 180px !important;
+  }
+  .studio-banner-copy h3 {
+    font-size: 1.3rem !important;
+  }
+}

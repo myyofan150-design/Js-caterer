@@ -205,30 +205,23 @@
   </section>
 
 
-  <!-- ================================================================
-       INNOVATIVE 4-CONCEPT MENU SHOWCASE TESTING SUITE
-       ================================================================ -->
-  <section class="section-concept-suite" id="menuShowcaseEngine">
-    <div class="container">
-      
-      <!-- CONCEPT SELECTOR TABS (FOR LIVE USER COMPARISON) -->
-      <div class="concept-testing-bar">
-        <span class="concept-bar-label"><i class="fa-solid fa-wand-magic-sparkles"></i> CHOOSE CONCEPT VIEW:</span>
-        <div class="concept-tab-buttons">
-          <button class="concept-tab-btn active" data-concept="c1"><i class="fa-solid fa-crown"></i> Concept 1: Royal Banquet Magazine</button>
-          <button class="concept-tab-btn" data-concept="c2"><i class="fa-solid fa-book-open"></i> Concept 2: Split-Screen Studio</button>
-          <button class="concept-tab-btn" data-concept="c3"><i class="fa-solid fa-leaf"></i> Concept 3: Banana Leaf & Thali Map</button>
-          <button class="concept-tab-btn" data-concept="c4"><i class="fa-solid fa-layer-group"></i> Concept 4: Luxury Bento Deck</button>
-        </div>
-      </div>
 
-      <!-- MASTER CUISINE SWITCHER (SHARED BY ALL CONCEPTS) -->
+  <!-- ================================================================
+       SECTION 2: CHEF'S CULINARY STUDIO MENU ENGINE (CONCEPT 2)
+       ================================================================ -->
+  <section class="section-culinary-studio" id="menuStudioSection">
+    <div class="container">
+
+      <!-- MASTER SECTION HEADER -->
+      <div class="ornamental-header">
+        <span class="flourish-icon">❖</span>
+        <h2>Royal Culinary Showcase</h2>
+        <span class="flourish-icon">❖</span>
+      </div>
+      <p class="section-subtitle">Explore our authentic catering spreads curated for every wedding & celebratory moment</p>
+
+      <!-- MASTER CUISINE SWITCHER -->
       <div class="cuisine-master-bar">
-        <div class="ornamental-header inline-ornament">
-          <span class="flourish-icon">❖</span>
-          <h2>Select Your Catering Style</h2>
-          <span class="flourish-icon">❖</span>
-        </div>
         <div class="cuisine-toggle-stage">
           <button class="cuisine-toggle-btn active" id="btnVegToggle" data-type="Veg">
             <div class="btn-icon-wrap green-circle"><i class="fa-solid fa-leaf"></i></div>
@@ -247,143 +240,78 @@
         </div>
       </div>
 
-      <!-- 6 MEAL CATEGORY TIME-STAGE NAVIGATION PILLS -->
-      <div class="meal-progression-bar">
-        <div class="meal-tabs-wrapper" id="masterMealTabs">
-          <button class="meal-tab-btn active" data-tab="breakfast"><i class="fa-solid fa-mug-hot"></i><span>☀️ 07:00 AM Breakfast</span></button>
-          <button class="meal-tab-btn" data-tab="lunch"><i class="fa-solid fa-crown"></i><span>👑 12:30 PM Kalyana Lunch</span></button>
-          <button class="meal-tab-btn" data-tab="tiffin"><i class="fa-solid fa-cookie-bite"></i><span>☕ 05:00 PM Evening Tiffin</span></button>
-          <button class="meal-tab-btn" data-tab="reception"><i class="fa-solid fa-champagne-glasses"></i><span>✨ 07:30 PM Reception Buffet</span></button>
-          <button class="meal-tab-btn" data-tab="dinner"><i class="fa-solid fa-moon"></i><span>🌙 09:00 PM Night Dinner</span></button>
-          <button class="meal-tab-btn" data-tab="special"><i class="fa-solid fa-star"></i><span>⭐ Royal Chef Specials</span></button>
-        </div>
-      </div>
+      <!-- MAIN SPLIT-SCREEN CHEF STUDIO -->
+      <div class="split-studio-container">
+        
+        <!-- Left Column: Sticky Timeline Navigator -->
+        <aside class="studio-timeline-panel">
+          <div class="studio-panel-header">
+            <span class="panel-tag"><i class="fa-solid fa-clock"></i> OCCASION TIMELINE</span>
+            <h4 class="studio-panel-heading">Select Meal Session</h4>
+          </div>
 
-      <!-- ============================================================
-           CONCEPT 1: THE ROYAL BANQUET MAGAZINE (ACTIVE DEFAULT)
-           ============================================================ -->
-      <div class="concept-view-panel active" id="viewConcept1">
-        <div class="royal-magazine-card">
-          <!-- Top Header Banner -->
-          <div class="mag-header-strip">
-            <div>
-              <span class="mag-course-badge" id="c1Badge"><i class="fa-solid fa-sparkles"></i> TRADITIONAL BANANA LEAF EXPERIENCE</span>
-              <h3 class="mag-title" id="c1Title">Traditional South Indian Veg Breakfast Spread</h3>
-              <p class="mag-sub" id="c1Sub">Piping-hot authentic morning feast served on fresh banana leaves</p>
+          <div class="timeline-steps-list" id="studioTimelineList">
+            <div class="timeline-step active" data-tab="breakfast">
+              <div class="step-time-badge"><i class="fa-solid fa-sun"></i> 07:00 AM</div>
+              <span class="step-name">South Indian Breakfast</span>
             </div>
-            <div class="mag-pax-stamp">
-              <span class="stamp-count" id="c1ItemCount">18+ Dishes</span>
-              <span class="stamp-label">Included in Spread</span>
+            <div class="timeline-step" data-tab="lunch">
+              <div class="step-time-badge"><i class="fa-solid fa-crown"></i> 12:30 PM</div>
+              <span class="step-name">Grand Kalyana Lunch (18+ Items)</span>
+            </div>
+            <div class="timeline-step" data-tab="tiffin">
+              <div class="step-time-badge"><i class="fa-solid fa-cookie-bite"></i> 05:00 PM</div>
+              <span class="step-name">Evening Tiffin & Live Chaat</span>
+            </div>
+            <div class="timeline-step" data-tab="reception">
+              <div class="step-time-badge"><i class="fa-solid fa-champagne-glasses"></i> 07:30 PM</div>
+              <span class="step-name">Reception Gala Buffet</span>
+            </div>
+            <div class="timeline-step" data-tab="dinner">
+              <div class="step-time-badge"><i class="fa-solid fa-moon"></i> 09:00 PM</div>
+              <span class="step-name">Traditional Night Dinner</span>
+            </div>
+            <div class="timeline-step" data-tab="special">
+              <div class="step-time-badge"><i class="fa-solid fa-star"></i> ALL DAY</div>
+              <span class="step-name">Royal Chef Signature Specials</span>
             </div>
           </div>
 
-          <!-- 4 Course Bento Columns + Media Stage Grid -->
-          <div class="mag-grid-layout">
-            <!-- 4 Course Bento Cards -->
-            <div class="mag-bento-grid" id="c1BentoGrid">
-              <!-- Rendered via JS -->
+          <!-- Bottom Direct Quick Action Box -->
+          <div class="studio-action-card">
+            <div class="action-card-text">
+              <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+              <span>Need custom dish substitutions?</span>
             </div>
-
-            <!-- Right Photo & Instant Action Stage -->
-            <div class="mag-photo-stage">
-              <div class="stage-img-frame">
-                <img src="assets/sweets_live_counter.jpg" alt="Culinary Showcase JS Caterer" id="c1Photo">
-                <div class="stage-gradient-overlay"></div>
-                <div class="stage-badge-tag"><i class="fa-solid fa-shield-heart"></i> 100% Organic & Steam Pure</div>
-              </div>
-              <div class="stage-action-box">
-                <button class="btn-whatsapp-green full-btn" id="btnC1WhatsApp"><i class="fa-brands fa-whatsapp"></i> REQUEST THIS SPREAD ON WHATSAPP</button>
-              </div>
-            </div>
+            <button class="btn-whatsapp-green full-btn" id="btnStudioWhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> CUSTOMISE ON WHATSAPP
+            </button>
           </div>
-        </div>
-      </div>
+        </aside>
 
-      <!-- ============================================================
-           CONCEPT 2: SPLIT-SCREEN CHEF CULINARY STUDIO
-           ============================================================ -->
-      <div class="concept-view-panel" id="viewConcept2" style="display:none;">
-        <div class="split-studio-container">
-          <!-- Left Sticky Timeline Panel -->
-          <div class="studio-timeline-panel">
-            <h4 class="studio-panel-heading"><i class="fa-solid fa-timeline"></i> Event Timeline</h4>
-            <div class="timeline-steps-list" id="c2TimelineList">
-              <div class="timeline-step active" data-tab="breakfast"><span class="step-time">07:00 AM</span><span class="step-name">South Indian Breakfast</span></div>
-              <div class="timeline-step" data-tab="lunch"><span class="step-time">12:30 PM</span><span class="step-name">Grand Banana Leaf Lunch</span></div>
-              <div class="timeline-step" data-tab="tiffin"><span class="step-time">05:00 PM</span><span class="step-name">Evening Tiffin & Chaat</span></div>
-              <div class="timeline-step" data-tab="reception"><span class="step-time">07:30 PM</span><span class="step-name">Reception Gala Buffet</span></div>
-              <div class="timeline-step" data-tab="dinner"><span class="step-time">09:00 PM</span><span class="step-name">Night Dinner Spread</span></div>
-              <div class="timeline-step" data-tab="special"><span class="step-time">ALL DAY</span><span class="step-name">Royal Signature Stalls</span></div>
-            </div>
-            <div class="studio-action-card">
-              <p><i class="fa-solid fa-circle-check text-success"></i> Customise menu for your guest count</p>
-              <a href="#quoteSection" class="btn-primary-gold" style="width:100%;text-align:center;justify-content:center;">GET CUSTOM QUOTE</a>
+        <!-- Right Column: Interactive Dynamic Stage -->
+        <main class="studio-main-stage">
+          <!-- Dynamic Hero Banner -->
+          <div class="studio-hero-banner">
+            <img src="assets/sweets_live_counter.jpg" alt="Menu Spread" id="studioHeroPhoto">
+            <div class="studio-banner-copy">
+              <div class="banner-top-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> 100% AUTHENTIC RECIPES</div>
+              <h3 id="studioTitle">Traditional South Indian Veg Breakfast Spread</h3>
+              <p id="studioSub">Piping-hot authentic morning feast served on fresh banana leaves</p>
             </div>
           </div>
 
-          <!-- Right Interactive Stage -->
-          <div class="studio-main-stage">
-            <div class="studio-hero-banner">
-              <img src="assets/sweets_live_counter.jpg" alt="Menu Spread" id="c2HeroPhoto">
-              <div class="studio-banner-copy">
-                <h3 id="c2Title">Traditional South Indian Veg Breakfast Spread</h3>
-                <p id="c2Sub">Piping-hot authentic morning feast served on fresh banana leaves</p>
-              </div>
-            </div>
-            <div class="studio-courses-grid" id="c2CoursesGrid">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============================================================
-           CONCEPT 3: VISUAL BANANA LEAF & THALI EXPERIENCE MAP
-           ============================================================ -->
-      <div class="concept-view-panel" id="viewConcept3" style="display:none;">
-        <div class="leaf-thali-container">
-          <div class="thali-intro-header">
-            <h3 id="c3Title">Grand Kalyana Samayal Authentic Thali Map</h3>
-            <p id="c3Sub">See how our master chefs arrange the sacred 18+ items on the auspicious banana leaf</p>
+          <!-- 4 Course Bento Box Grid -->
+          <div class="studio-courses-grid" id="studioCoursesGrid">
+            <!-- Dynamically populated via script.js -->
           </div>
 
-          <!-- The Visual Banana Leaf Experience Board -->
-          <div class="thali-leaf-board">
-            <div class="thali-leaf-topbar">
-              <span><i class="fa-solid fa-leaf text-success"></i> SACRED BANANA LEAF PLACEMENT (தலைவாழை இலை)</span>
-              <span class="thali-seal-badge"><i class="fa-solid fa-crown"></i> 100% Traditional Samayal</span>
-            </div>
-            
-            <div class="thali-dishes-deck" id="c3ThaliDeck">
-              <!-- Rendered via JS in visual food clusters -->
-            </div>
-
-            <div class="thali-footer-bar">
-              <div class="thali-spec-pill"><i class="fa-solid fa-fire"></i> Wood-Fire Cooked</div>
-              <div class="thali-spec-pill"><i class="fa-solid fa-cow"></i> Pure Cow Ghee & Desi Spices</div>
-              <div class="thali-spec-pill"><i class="fa-solid fa-clock"></i> 0-Min Serving Delay</div>
-            </div>
+          <div class="studio-footer-note">
+            <i class="fa-regular fa-circle-info"></i>
+            <span>All menus are 100% customisable based on your family traditions, guest preferences, and event timings.</span>
           </div>
-        </div>
-      </div>
+        </main>
 
-      <!-- ============================================================
-           CONCEPT 4: MODERN LUXURY BENTO DECK WITH DISH TAG PILLS
-           ============================================================ -->
-      <div class="concept-view-panel" id="viewConcept4" style="display:none;">
-        <div class="bento-deck-container">
-          <div class="bento-deck-header">
-            <div>
-              <span class="bento-lead-tag">CURATED CATERING CATALOGUE</span>
-              <h3 id="c4Title">Traditional South Indian Veg Breakfast Spread</h3>
-            </div>
-            <a href="https://wa.me/919940649939" target="_blank" class="btn-whatsapp-green"><i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Quote</a>
-          </div>
-
-          <div class="bento-deck-grid" id="c4BentoDeckGrid">
-            <!-- Rendered via JS as modern bento cards with dish tag chips -->
-          </div>
-        </div>
       </div>
 
     </div>
