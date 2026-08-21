@@ -7467,3 +7467,62 @@ html, body {
     display: block !important;
   }
 }
+
+/* ================================================================
+   CLEAN LUXURY STAGE HEADER (TEXT & BADGE FOCUS - NO CLUTTERED PHOTO)
+   ================================================================ */
+
+.studio-stage-header {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-left: 5px solid #AA820A !important;
+  border-radius: 20px !important;
+  padding: 22px 26px !important;
+  box-shadow: 0 8px 24px rgba(14, 32, 24, 0.05) !important;
+  margin-bottom: 8px !important;
+}
+
+.stage-badge-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(197, 155, 39, 0.14) !important;
+  color: #AA820A !important;
+  border: 1px solid rgba(197, 155, 39, 0.35) !important;
+  padding: 4px 14px !important;
+  border-radius: 20px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 8px !important;
+}
+
+.stage-main-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.7rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 4px !important;
+}
+
+.stage-sub-title {
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  color: var(--text-dark-muted) !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .studio-stage-header {
+    padding: 16px 18px !important;
+    border-radius: 16px !important;
+  }
+  .stage-main-title {
+    font-size: 1.3rem !important;
+  }
+  .stage-sub-title {
+    font-size: 0.85rem !important;
+  }
+}
