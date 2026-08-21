@@ -704,144 +704,442 @@ document.addEventListener('DOMContentLoaded', () => {
   let curCuisineStudio = 'veg';
   let curTabStudio = 'breakfast';
 
-  const studioDatabase = {
-    veg: {
-      breakfast: {
-        title: 'South Indian Morning Breakfast',
-        sub: 'Piping-hot morning feast served fresh on clean banana leaves',
-        badge: 'PURE GHEE & STEAM FRESH',
-        cols: [
-          { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
-          { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
-          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Traditional Drumstick Sambar', 'Fresh Coconut Chutney', 'Spiced Tomato Chutney', 'Andhra Kara Chutney', 'Idli Podi & Pure Cow Ghee'] },
-          { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Pineapple Rava Kesari', 'Elaneer Payasam', 'Kumbakonam Degree Filter Coffee', 'Hot Milk', 'Ginger Masala Tea'] }
-        ]
+  const studioSectionEl = document.getElementById('menuStudioSection');
+  const serviceType = studioSectionEl ? (studioSectionEl.getAttribute('data-service-type') || 'marriage') : 'marriage';
+
+  const multiServiceDatabases = {
+    marriage: {
+      veg: {
+        breakfast: {
+          title: 'South Indian Morning Breakfast',
+          sub: 'Piping-hot morning feast served fresh on clean banana leaves',
+          badge: 'PURE GHEE & STEAM FRESH',
+          cols: [
+            { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
+            { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Traditional Drumstick Sambar', 'Fresh Coconut Chutney', 'Spiced Tomato Chutney', 'Andhra Kara Chutney', 'Idli Podi & Pure Cow Ghee'] },
+            { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Pineapple Rava Kesari', 'Elaneer Payasam', 'Kumbakonam Degree Filter Coffee', 'Hot Milk', 'Ginger Masala Tea'] }
+          ]
+        },
+        lunch: {
+          title: 'Grand Kalyana Leaf Feast (18+ Items)',
+          sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
+          badge: 'BANANA LEAF TRADITION',
+          cols: [
+            { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
+            { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
+            { heading: 'PORIYAL & KOOTU', icon: 'fa-carrot', items: ['Beans Paruppu Usili', 'Potato Kara Curry / Urulai Roast', 'Chow Chow Kootu', 'Cucumber Pachadi'] },
+            { heading: 'DESSERT & FINISH', icon: 'fa-apple-whole', items: ['Thirattipal Milk Sweet', 'Fresh Thick Curd Rice', 'Ice Cream with Gulab Jamun', 'Kalyana Beeda & Banana'] }
+          ]
+        },
+        tiffin: {
+          title: 'Evening Tiffin & Live Chaat',
+          sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
+          badge: 'LIVE COOKING STALLS',
+          cols: [
+            { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
+            { heading: 'LIVE CHAAT STALLS', icon: 'fa-fire-burner', items: ['Live Pani Puri Counter', 'Delhi Bhel Puri', 'Hot Samosa Ragda Chaat', 'Mumbai Pav Bhaji'] },
+            { heading: 'CRISPY EVENING SNACKS', icon: 'fa-cookie-bite', items: ['Crispy Onion Pakoda', 'Thanjavur Masala Vada', 'Assorted Veg Bajji', 'Corn Cheese Balls'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Sukku Coffee', 'Cardamom Tea', 'Badam Milk with Saffron'] }
+          ]
+        },
+        reception: {
+          title: 'Grand Reception Gala Buffet',
+          sub: 'Modern luxury vegetarian buffet spread with live counters & dessert bar',
+          badge: 'ROYAL GALA BUFFET',
+          cols: [
+            { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
+            { heading: 'NORTH & SOUTH BUFFET', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Veg Dum Biryani with Raitha', 'Soft Butter Naan / Roti', 'Dal Makhani', 'Jeera Pulao'] },
+            { heading: 'LIVE COOKING STALLS', icon: 'fa-fire-burner', items: ['Live Penne Pasta Counter', 'Live Dosa Stall', 'Live Hakka Noodles', 'South Indian Tiffin Counter'] },
+            { heading: 'LUXURY DESSERT BAR', icon: 'fa-ice-cream', items: ['Saffron Rasgulla', 'Hot Gulab Jamun with Ice Cream', 'Chocolate Brownie Fudge', 'Fresh Fruit Bowl'] }
+          ]
+        },
+        dinner: {
+          title: 'Traditional Wedding Night Dinner',
+          sub: 'Comforting, light supper with ghee tiffin, variety rice & gravies',
+          badge: 'WEDDING EVE SUPPER',
+          cols: [
+            { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
+            { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Tomato Kara Chutney', 'Potato Chips & Fryums', 'More Milagai Pickles'] },
+            { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Wheat Halwa', 'Saffron Badam Milk', 'Filter Coffee', 'Fresh Banana'] }
+          ]
+        },
+        special: {
+          title: 'Royal Signature Chef Specials',
+          sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
+          badge: 'CHEF MASTERPIECES',
+          cols: [
+            { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
+            { heading: 'LIVE SWEET COUNTERS', icon: 'fa-fire-burner', items: ['Live Hot Jalebi with Rabri', 'Live Malpua Counter', 'Live Ice Cream Roll Machine', 'Matka Kulfi'] },
+            { heading: 'ROYAL DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam with Honey', 'Nannari Sharbat', 'Madurai Jigarthanda Live', 'Tender Coconut Water'] },
+            { heading: 'ROYAL FINISH', icon: 'fa-leaf', items: ['Kalyana Meenakshi Beeda', 'Premium Dry Fruit Box', 'Rose Water Spray Welcome', 'Fruit Basket'] }
+          ]
+        }
       },
-      lunch: {
-        title: 'Grand Kalyana Leaf Feast (18+ Items)',
-        sub: 'Traditional 18+ dish authentic South Indian wedding banana leaf feast',
-        badge: 'BANANA LEAF TRADITION',
-        cols: [
-          { heading: 'STARTERS & SWEETS', icon: 'fa-cookie', items: ['Sweet Poli / Tirupati Laddu', 'Paruppu Payasam', 'Crispy Urad Dal Vada', 'Special Rice Appalam', 'Mavadu & Mango Pickles'] },
-          { heading: 'MAIN COURSE & RICE', icon: 'fa-bowl-food', items: ['Hot Steamed Ponni Rice', 'Pure Ghee & Paruppu', 'Kalyana Drumstick Sambar', 'Poondu Vathakulambu', 'Pineapple Mysore Rasam'] },
-          { heading: 'PORIYAL & KOOTU', icon: 'fa-carrot', items: ['Beans Paruppu Usili', 'Potato Kara Curry / Urulai Roast', 'Chow Chow Kootu', 'Cucumber Pachadi'] },
-          { heading: 'DESSERT & FINISH', icon: 'fa-apple-whole', items: ['Thirattipal Milk Sweet', 'Fresh Thick Curd Rice', 'Ice Cream with Gulab Jamun', 'Kalyana Beeda & Banana'] }
-        ]
-      },
-      tiffin: {
-        title: 'Evening Tiffin & Live Chaat',
-        sub: 'Hot tiffin delicacies, live chaat counters & filter coffee',
-        badge: 'LIVE COOKING STALLS',
-        cols: [
-          { heading: 'HOT TIFFIN MAINS', icon: 'fa-hotdog', items: ['Crispy Mini Rava Dosa', 'Traditional Adai with Avial', 'Idiyappam with Veg Kurma', 'Kuzhi Paniyaram with Chutney'] },
-          { heading: 'LIVE CHAAT STALLS', icon: 'fa-fire-burner', items: ['Live Pani Puri Counter', 'Delhi Bhel Puri', 'Hot Samosa Ragda Chaat', 'Mumbai Pav Bhaji'] },
-          { heading: 'CRISPY EVENING SNACKS', icon: 'fa-cookie-bite', items: ['Crispy Onion Pakoda', 'Thanjavur Masala Vada', 'Assorted Veg Bajji', 'Corn Cheese Balls'] },
-          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Sukku Coffee', 'Cardamom Tea', 'Badam Milk with Saffron'] }
-        ]
-      },
-      reception: {
-        title: 'Grand Reception Gala Buffet',
-        sub: 'Modern luxury vegetarian buffet spread with live counters & dessert bar',
-        badge: 'ROYAL GALA BUFFET',
-        cols: [
-          { heading: 'WELCOME MOCKTAILS', icon: 'fa-martini-glass-citrus', items: ['Blue Lagoon Sparkler', 'Watermelon Mint Punch', 'Fruit Punch', 'Virgin Mojito'] },
-          { heading: 'NORTH & SOUTH BUFFET', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Veg Dum Biryani with Raitha', 'Soft Butter Naan / Roti', 'Dal Makhani', 'Jeera Pulao'] },
-          { heading: 'LIVE COOKING STALLS', icon: 'fa-fire-burner', items: ['Live Penne Pasta Counter', 'Live Dosa Stall', 'Live Hakka Noodles', 'South Indian Tiffin Counter'] },
-          { heading: 'LUXURY DESSERT BAR', icon: 'fa-ice-cream', items: ['Saffron Rasgulla', 'Hot Gulab Jamun with Ice Cream', 'Chocolate Brownie Fudge', 'Fresh Fruit Bowl'] }
-        ]
-      },
-      dinner: {
-        title: 'Traditional Wedding Night Dinner',
-        sub: 'Comforting, light supper with ghee tiffin, variety rice & gravies',
-        badge: 'WEDDING EVE SUPPER',
-        cols: [
-          { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
-          { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
-          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Tomato Kara Chutney', 'Potato Chips & Fryums', 'More Milagai Pickles'] },
-          { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Wheat Halwa', 'Saffron Badam Milk', 'Filter Coffee', 'Fresh Banana'] }
-        ]
-      },
-      special: {
-        title: 'Royal Signature Chef Specials',
-        sub: 'Exclusive wedding specials handcrafted by master sweet chefs',
-        badge: 'CHEF MASTERPIECES',
-        cols: [
-          { heading: 'SIGNATURE SWEETS', icon: 'fa-crown', items: ['Tender Coconut Elaneer Payasam', 'Srivilliputhur Palkova', 'Kashi Halwa (Ash Gourd)', 'Basundi with Almond Flakes'] },
-          { heading: 'LIVE SWEET COUNTERS', icon: 'fa-fire-burner', items: ['Live Hot Jalebi with Rabri', 'Live Malpua Counter', 'Live Ice Cream Roll Machine', 'Matka Kulfi'] },
-          { heading: 'ROYAL DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam with Honey', 'Nannari Sharbat', 'Madurai Jigarthanda Live', 'Tender Coconut Water'] },
-          { heading: 'ROYAL FINISH', icon: 'fa-leaf', items: ['Kalyana Meenakshi Beeda', 'Premium Dry Fruit Box', 'Rose Water Spray Welcome', 'Fruit Basket'] }
-        ]
+      nonveg: {
+        breakfast: {
+          title: 'Chettinad Morning Breakfast',
+          sub: 'Authentic Chettinad & Malabar morning non-veg delicacies',
+          badge: 'CHETTINAD SPECIALS',
+          cols: [
+            { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
+            { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Kara Chutney', 'Vegetable Sambar', 'Pure Cow Ghee'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Cardamom Tea', 'Hot Milk'] }
+          ]
+        },
+        lunch: {
+          title: 'Seeraga Samba Mutton Biryani Feast',
+          sub: 'Grand mutton biryani feast prepared in authentic copper cauldrons',
+          badge: 'COPPER CAULDRON BIRYANI',
+          cols: [
+            { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
+            { heading: 'BIRYANI & MAIN COURSE', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton Biryani', 'Basmati Chicken Biryani', 'Chicken Chettinad Gravy', 'Malabar Parotta'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Onion Cucumber Raitha', 'Traditional Brinjal Dalcha', 'Boiled Pepper Egg', 'Mutton Gravy Salna'] },
+            { heading: 'DESSERTS & FINISH', icon: 'fa-ice-cream', items: ['Hot Gulab Jamun', 'Matka Kulfi', 'Vanilla Ice Cream', 'Sweet Beeda & Fruit'] }
+          ]
+        },
+        tiffin: {
+          title: 'Evening Tiffin & Live Seafood Grill',
+          sub: 'Hot spicy chicken, tawa fish fry stalls & Madurai Kothu Parotta',
+          badge: 'LIVE TAWA & SEAFOOD',
+          cols: [
+            { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
+            { heading: 'HOT TIFFIN SPECIALS', icon: 'fa-hotdog', items: ['Chicken Kothu Parotta', 'Madurai Kari Dosa', 'Spicy Egg Roll', 'Chicken Stuff Naan'] },
+            { heading: 'CRISPY SNACKS', icon: 'fa-cookie-bite', items: ['Chicken Cutlet', 'Egg Puff', 'Mini Chicken Samosa', 'Fish Cutlet'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Filter Coffee', 'Masala Chai', 'Chilled Drinks'] }
+          ]
+        },
+        reception: {
+          title: 'Grand Reception Non-Veg Gala Buffet',
+          sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
+          badge: 'LIVE TANDOORI BBQ',
+          cols: [
+            { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
+            { heading: 'BUFFET MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Royal Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan / Roti', 'Prawn Masala Curry'] },
+            { heading: 'SEAFOOD SPECIALS', icon: 'fa-fish', items: ['Crab Gravy Curry', 'Vanjaram Tawa Fish Fry', 'Nethili Pepper Fry', 'Prawn Dum Biryani'] },
+            { heading: 'DESSERT BAR', icon: 'fa-ice-cream', items: ['Chocolate Brownie with Ice Cream', 'Matka Kulfi', 'Fruit Salad with Cream', 'Beeda'] }
+          ]
+        },
+        dinner: {
+          title: 'Traditional Night Dinner & Curries',
+          sub: 'Comforting non-veg dinner served with idiyappam, dosa & curries',
+          badge: 'MALABAR & MADURAI SUPPER',
+          cols: [
+            { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
+            { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
+            { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Chicken Fried Rice', 'Egg Fried Rice', 'Thick Curd Rice with Pickle'] },
+            { heading: 'SWEETS & MILK', icon: 'fa-apple-whole', items: ['Hot Badam Milk', 'Vanilla Ice Cream', 'Fresh Banana'] }
+          ]
+        },
+        special: {
+          title: 'Chettinad Royal Chef Specials',
+          sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
+          badge: 'ROYAL CHEF SPECIALS',
+          cols: [
+            { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
+            { heading: 'SEAFOOD EXTRAORDINARY', icon: 'fa-fish', items: ['Whole Tawa Fish Roast', 'Lobster Masala Fry', 'Squid Pepper Fry', 'Jumbo Prawn Curry'] },
+            { heading: 'ROYAL DESSERTS', icon: 'fa-ice-cream', items: ['Elaneer Payasam', 'Dry Fruit Halwa', 'Live Ice Cream Roll', 'Matka Kulfi'] },
+            { heading: 'FINISHING TOUCH', icon: 'fa-leaf', items: ['Special Royal Sweet Beeda', 'Fresh Fruit Basket', 'Rose Water Welcome'] }
+          ]
+        }
       }
     },
-    nonveg: {
-      breakfast: {
-        title: 'Chettinad Morning Breakfast',
-        sub: 'Authentic Chettinad & Malabar morning non-veg delicacies',
-        badge: 'CHETTINAD SPECIALS',
-        cols: [
-          { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
-          { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
-          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Kara Chutney', 'Vegetable Sambar', 'Pure Cow Ghee'] },
-          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Cardamom Tea', 'Hot Milk'] }
-        ]
+    industrial: {
+      veg: {
+        breakfast: {
+          title: 'Morning Shift Breakfast Buffet',
+          sub: 'Nutritious high-energy morning meal prepared fresh at our Central Kitchen',
+          badge: 'CPU STEAM FRESH',
+          cols: [
+            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (4 Pcs)', 'Hot Ghee Kichadi / Pongal', 'Crispy Medu Vada', 'Poori with Potato Masala'] },
+            { heading: 'SAMBAR & CHUTNEYS', icon: 'fa-pepper-hot', items: ['Drumstick Veg Sambar', 'Fresh Coconut Chutney', 'Tomato Kara Chutney', 'Idli Milagai Podi'] },
+            { heading: 'ENERGY SIDES', icon: 'fa-seedling', items: ['Boiled Sprouted Moong', 'Banana', 'Mixed Fruit Bowl'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Filter Coffee', 'Cardamom Tea', 'Hot Milk with Bournvita'] }
+          ]
+        },
+        lunch: {
+          title: 'Factory Full Meals Lunch Spread',
+          sub: 'Sustained energy workforce lunch with balanced proteins & carbohydrates',
+          badge: 'DIETITIAN BALANCED',
+          cols: [
+            { heading: 'RICE & BREAD', icon: 'fa-bowl-food', items: ['Hot Steamed Rice (Unlimited)', 'Whole Wheat Phulka / Chapathi (2 Pcs)', 'Variety Rice (Lemon / Tomato)'] },
+            { heading: 'DAL & GRAVIES', icon: 'fa-plate-wheat', items: ['Vegetable Sambar', 'Mor Kulambu / Vathakulambu', 'Pepper Rasam', 'Thick Dal Tadka'] },
+            { heading: 'PORIYAL & KOOTU', icon: 'fa-carrot', items: ['Cabbage Chana Poriyal', 'Snake Gourd Kootu', 'Crispy Appalam', 'Lemon Pickle'] },
+            { heading: 'FINISH', icon: 'fa-leaf', items: ['Fresh Set Curd / Buttermilk', 'Semiya Payasam', 'Banana'] }
+          ]
+        },
+        tiffin: {
+          title: 'Shift High-Tea & Energy Snacks',
+          sub: 'Evening shift refreshment with hot snacks and immunity drinks',
+          badge: 'SHIFT ENERGY BOOST',
+          cols: [
+            { heading: 'HOT SNACKS', icon: 'fa-cookie-bite', items: ['Onion Pakoda', 'Veg Samosa (2 Pcs)', 'Masala Vada', 'Corn Cheese Nuggets'] },
+            { heading: 'LIGHT TIFFIN', icon: 'fa-hotdog', items: ['Kuzhi Paniyaram with Chutney', 'Rava Upma with Podi', 'Bread Butter Jam'] },
+            { heading: 'DIPS', icon: 'fa-pepper-hot', items: ['Mint Coriander Chutney', 'Tomato Ketchup', 'Coconut Chutney'] },
+            { heading: 'HOT BEVERAGES', icon: 'fa-mug-hot', items: ['Masala Chai', 'Strong Filter Coffee', 'Ginger Tea'] }
+          ]
+        },
+        dinner: {
+          title: 'Night Shift Dinner Buffet Spread',
+          sub: 'Easy-to-digest, wholesome night dinner for factory and tech park shifts',
+          badge: 'EASY DIGESTION SUPPER',
+          cols: [
+            { heading: 'TIFFIN MAINS', icon: 'fa-bowl-food', items: ['Hot Soft Chapathi (3 Pcs)', 'Veg Kurma Gravy', 'Kal Dosa with Podi', 'Idiyappam'] },
+            { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Steamed Rice with Sambar', 'Digestive Jeera Rice', 'Tempered Curd Rice with Pickle'] },
+            { heading: 'GRAVIES & RASAM', icon: 'fa-pepper-hot', items: ['Poondu Rasam (Garlic Rasam)', 'Tomato Thokku', 'Fryums'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Badam Milk', 'Sukku Coffee', 'Herbal Digestive Tea'] }
+          ]
+        },
+        special: {
+          title: 'Midnight Shift Booster Packs',
+          sub: 'Specially packed midnight shift boxes for 24/7 manufacturing plants',
+          badge: '24/7 OPERATIONS',
+          cols: [
+            { heading: 'PACKED COMBO', icon: 'fa-box-open', items: ['Ghee Chapathi (2 Pcs) with Paneer Curry', 'Lemon Sevai / Veg Fried Rice', 'Curd Rice with Mango Thokku'] },
+            { heading: 'SNACKS', icon: 'fa-cookie', items: ['Dry Fruit Chikki', 'Biscuits Pack', 'Fresh Apple / Banana'] },
+            { heading: 'WARM FLUIDS', icon: 'fa-mug-hot', items: ['Insulated Flask Masala Tea', 'Filter Coffee Dispenser'] },
+            { heading: 'HYGIENE PACK', icon: 'fa-hand-sparkles', items: ['Sealed Disposable Cutlery', 'Sanitizing Wet Wipe', 'Mouth Freshener'] }
+          ]
+        }
       },
-      lunch: {
-        title: 'Seeraga Samba Mutton Biryani Feast',
-        sub: 'Grand mutton biryani feast prepared in authentic copper cauldrons',
-        badge: 'COPPER CAULDRON BIRYANI',
-        cols: [
-          { heading: 'STARTERS & FRY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65', 'Mutton Chukka Roast', 'Vanjaram Fish Tawa Fry', 'Spiced Egg Bonda'] },
-          { heading: 'BIRYANI & MAIN COURSE', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton Biryani', 'Basmati Chicken Biryani', 'Chicken Chettinad Gravy', 'Malabar Parotta'] },
-          { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Onion Cucumber Raitha', 'Traditional Brinjal Dalcha', 'Boiled Pepper Egg', 'Mutton Gravy Salna'] },
-          { heading: 'DESSERTS & FINISH', icon: 'fa-ice-cream', items: ['Hot Gulab Jamun', 'Matka Kulfi', 'Vanilla Ice Cream', 'Sweet Beeda & Fruit'] }
-        ]
+      nonveg: {
+        breakfast: {
+          title: 'Morning Shift Egg & Chicken Breakfast',
+          sub: 'High-protein workforce breakfast with boiled eggs and chicken gravy',
+          badge: 'HIGH PROTEIN SHIFT',
+          cols: [
+            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (4 Pcs)', 'Egg Kal Dosa (2 Pcs)', 'Hot Medu Vada', 'Poori with Masala'] },
+            { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chicken Salna Gravy', 'Egg Curry Thokku', 'Tiffin Sambar'] },
+            { heading: 'PROTEIN SIDES', icon: 'fa-egg', items: ['2 Whole Boiled Eggs with Pepper', 'Fresh Chutneys'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Filter Coffee', 'Cardamom Tea'] }
+          ]
+        },
+        lunch: {
+          title: 'Workforce Non-Veg Chicken / Fish Meals',
+          sub: 'Hearty non-veg shift lunch with chicken gravy, fish fry, and sides',
+          badge: 'ENERGY NON-VEG LUNCH',
+          cols: [
+            { heading: 'NON-VEG MAINS', icon: 'fa-drumstick-bite', items: ['Chicken Chettinad Gravy (2 Pcs)', 'Vanjaram Tawa Fish Fry / Egg', 'Chicken Dum Biryani (Weekly)'] },
+            { heading: 'RICE & CHAPATHI', icon: 'fa-bowl-food', items: ['Steamed Ponni Rice (Unlimited)', 'Whole Wheat Chapathi (2 Pcs)', 'Mutton Flavoured Salna'] },
+            { heading: 'VEG SIDES', icon: 'fa-carrot', items: ['Vegetable Sambar', 'Pepper Rasam', 'Cabbage Poriyal', 'Appalam'] },
+            { heading: 'DESSERT & CURD', icon: 'fa-ice-cream', items: ['Set Curd Rice with Pickle', 'Kesari Sweet', 'Banana'] }
+          ]
+        },
+        tiffin: {
+          title: 'Evening Non-Veg Snack & Tea Break',
+          sub: 'Crispy chicken cutlets, egg rolls & piping hot tea for afternoon shift',
+          badge: 'CRISPY SHIFT BITES',
+          cols: [
+            { heading: 'NON-VEG BITES', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65 (4 Pcs)', 'Egg Puff', 'Chicken Cutlet', 'Spiced Egg Bonda'] },
+            { heading: 'VEG BACKUP', icon: 'fa-cookie-bite', items: ['Onion Pakoda', 'Veg Samosa'] },
+            { heading: 'CHUTNEYS', icon: 'fa-pepper-hot', items: ['Pudina Mint Chutney', 'Tomato Dip'] },
+            { heading: 'TEA & COFFEE', icon: 'fa-mug-hot', items: ['Masala Chai', 'Strong Coffee'] }
+          ]
+        },
+        dinner: {
+          title: 'Night Shift Non-Veg Dinner Buffet',
+          sub: 'Soft parotta, idiyappam with chicken curry and pepper egg for night shifts',
+          badge: 'NIGHT SHIFT RECHARGE',
+          cols: [
+            { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Malabar Parotta (2 Pcs)', 'Idiyappam (3 Pcs)', 'Soft Chapathi'] },
+            { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chicken Pepper Gravy', 'Egg Salna', 'Veg Kurma Gravy'] },
+            { heading: 'RICE', icon: 'fa-rice', items: ['Egg Fried Rice', 'Steamed Rice with Rasam', 'Curd Rice with Pickle'] },
+            { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Badam Milk', 'Sukku Tea'] }
+          ]
+        },
+        special: {
+          title: 'Midnight Non-Veg Shift Booster Pack',
+          sub: 'Individually packed chicken biryani & egg combos for 24/7 night staff',
+          badge: 'SEALED NIGHT COMBO',
+          cols: [
+            { heading: 'PACKED MEAL', icon: 'fa-box-open', items: ['Chicken Biryani Bento with Raitha & Gravy', 'Boiled Egg with Pepper', 'Parotta (2 Pcs) with Chicken Chukka'] },
+            { heading: 'SNACKS & DRINK', icon: 'fa-cookie', items: ['Chicken Samosa', 'Chilled Drink / Energy Milk'] },
+            { heading: 'SWEET', icon: 'fa-ice-cream', items: ['Gulab Jamun Pack'] },
+            { heading: 'HYGIENE KIT', icon: 'fa-hand-sparkles', items: ['Disposable Spoon, Napkin & Mouth Freshener'] }
+          ]
+        }
+      }
+    },
+    corporate: {
+      veg: {
+        breakfast: {
+          title: 'South Indian Breakfast Box',
+          sub: 'Individual 4-compartment sealed box with idli, vada, pongal & sweet',
+          badge: 'HOT SEALED BENTO',
+          cols: [
+            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (2 Pcs)', 'Mini Ghee Cashew Pongal', 'Crispy Medu Vada (1 Pc)', 'Mini Poori Masala'] },
+            { heading: 'CHUTNEY & SAMBAR', icon: 'fa-pepper-hot', items: ['Sealed Sambar Cup', 'Fresh Coconut Chutney Cup', 'Kara Chutney Cup'] },
+            { heading: 'SWEET', icon: 'fa-cookie', items: ['Pineapple Rava Kesari (50g)'] },
+            { heading: 'BEVERAGE & KIT', icon: 'fa-mug-hot', items: ['Flask Degree Coffee / Tea', 'Cutlery & Wet Wipe'] }
+          ]
+        },
+        lunch: {
+          title: 'Executive Veg Kalyana Thali Box',
+          sub: '8-compartment luxury lunch tray packed with authentic wedding delicacies',
+          badge: 'EXECUTIVE 8-COMPARTMENT',
+          cols: [
+            { heading: 'RICE & BREAD', icon: 'fa-bowl-food', items: ['Steamed Basmati Rice', 'Veg Dum Biryani with Raitha', 'Soft Phulka Chapathi (2 Pcs)'] },
+            { heading: 'GRAVIES & DAL', icon: 'fa-plate-wheat', items: ['Paneer Butter Masala', 'Kalyana Drumstick Sambar', 'Mysore Rasam Cup'] },
+            { heading: 'PORIYAL & STARTER', icon: 'fa-carrot', items: ['Potato Roast / Urulai Kara Curry', 'Beans Usili', 'Crispy Mini Vada', 'Appalam & Pickle'] },
+            { heading: 'DESSERT & CURD', icon: 'fa-apple-whole', items: ['Thirattipal Milk Sweet', 'Set Thick Curd Rice', 'Sweet Beeda'] }
+          ]
+        },
+        tiffin: {
+          title: 'Meeting Snack & Sandwich Pack',
+          sub: 'Mess-free executive snack boxes for board meetings & workshops',
+          badge: 'BOARDROOM SNACK BOX',
+          cols: [
+            { heading: 'SANDWICH & SAVOURY', icon: 'fa-bread-slice', items: ['Grilled Paneer Veg Club Sandwich', 'Cocktail Veg Samosa (2 Pcs)', 'Corn Cheese Ball'] },
+            { heading: 'TRADITIONAL SNACK', icon: 'fa-cookie-bite', items: ['Mini Kuzhi Paniyaram with Dip', 'Thanjavur Ribbon Pakoda'] },
+            { heading: 'SWEET & DESSERT', icon: 'fa-cookie', items: ['Dry Fruit Brownie', 'Saffron Sandesh'] },
+            { heading: 'BEVERAGE', icon: 'fa-glass-water', items: ['Packed Real Fruit Juice / Iced Tea', 'Wet Wipe & Napkin'] }
+          ]
+        },
+        reception: {
+          title: 'VIP 5-Star Executive Platter',
+          sub: 'Ultra-premium corporate dining platter for VIP clients and delegacy visits',
+          badge: '5-STAR VIP PLATTER',
+          cols: [
+            { heading: 'STARTERS', icon: 'fa-crown', items: ['Paneer Tikka Skewer', 'Hara Bhara Kebab', 'Crispy Lotus Stem'] },
+            { heading: 'ROYAL MAINS', icon: 'fa-bowl-food', items: ['Kashmiri Pulao with Nuts', 'Butter Naan / Roti', 'Shahi Paneer Korma', 'Dal Makhani'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Burani Garlic Raitha', 'Special Salad with Dressing', 'Roasted Papad'] },
+            { heading: 'DESSERT', icon: 'fa-ice-cream', items: ['Angoori Rasmalai', 'Elaneer Payasam Cup', 'Imported Chocolate Bar'] }
+          ]
+        },
+        dinner: {
+          title: 'Dinner Chapathi & Rice Box',
+          sub: 'Light, healthy corporate dinner box for late-night office work sessions',
+          badge: 'LATE NIGHT WORK BENTO',
+          cols: [
+            { heading: 'BREAD & GRAVY', icon: 'fa-bowl-food', items: ['Soft Ghee Chapathi (3 Pcs)', 'Mixed Vegetable Paneer Kurma', 'Dal Tadka'] },
+            { heading: 'RICE', icon: 'fa-rice', items: ['Veg Pulao with Raitha', 'Thick Curd Rice with Mango Pickle'] },
+            { heading: 'SIDES', icon: 'fa-carrot', items: ['Fresh Green Salad', 'Fried Appalam'] },
+            { heading: 'DESSERT', icon: 'fa-apple-whole', items: ['Gulab Jamun (1 Pc)', 'Fresh Cut Apple'] }
+          ]
+        }
       },
-      tiffin: {
-        title: 'Evening Tiffin & Live Seafood Grill',
-        sub: 'Hot spicy chicken, tawa fish fry stalls & Madurai Kothu Parotta',
-        badge: 'LIVE TAWA & SEAFOOD',
-        cols: [
-          { heading: 'LIVE FRY STALLS', icon: 'fa-fire-burner', items: ['Live Vanjaram Fish Fry', 'Crispy Chicken Lollipop', 'Mutton Kola Urundai', 'Prawn Pepper Fry'] },
-          { heading: 'HOT TIFFIN SPECIALS', icon: 'fa-hotdog', items: ['Chicken Kothu Parotta', 'Madurai Kari Dosa', 'Spicy Egg Roll', 'Chicken Stuff Naan'] },
-          { heading: 'CRISPY SNACKS', icon: 'fa-cookie-bite', items: ['Chicken Cutlet', 'Egg Puff', 'Mini Chicken Samosa', 'Fish Cutlet'] },
-          { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Filter Coffee', 'Masala Chai', 'Chilled Drinks'] }
-        ]
-      },
-      reception: {
-        title: 'Grand Reception Non-Veg Gala Buffet',
-        sub: 'Luxury international non-veg buffet spread with live BBQ & grills',
-        badge: 'LIVE TANDOORI BBQ',
-        cols: [
-          { heading: 'LIVE BBQ & GRILL', icon: 'fa-fire-burner', items: ['Tandoori Chicken', 'Chicken Malai Tikka', 'Fish Tikka', 'Mutton Sheekh Kebab'] },
-          { heading: 'BUFFET MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Royal Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan / Roti', 'Prawn Masala Curry'] },
-          { heading: 'SEAFOOD SPECIALS', icon: 'fa-fish', items: ['Crab Gravy Curry', 'Vanjaram Tawa Fish Fry', 'Nethili Pepper Fry', 'Prawn Dum Biryani'] },
-          { heading: 'DESSERT BAR', icon: 'fa-ice-cream', items: ['Chocolate Brownie with Ice Cream', 'Matka Kulfi', 'Fruit Salad with Cream', 'Beeda'] }
-        ]
-      },
-      dinner: {
-        title: 'Traditional Night Dinner & Curries',
-        sub: 'Comforting non-veg dinner served with idiyappam, dosa & curries',
-        badge: 'MALABAR & MADURAI SUPPER',
-        cols: [
-          { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
-          { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
-          { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Chicken Fried Rice', 'Egg Fried Rice', 'Thick Curd Rice with Pickle'] },
-          { heading: 'SWEETS & MILK', icon: 'fa-apple-whole', items: ['Hot Badam Milk', 'Vanilla Ice Cream', 'Fresh Banana'] }
-        ]
-      },
-      special: {
-        title: 'Chettinad Royal Chef Specials',
-        sub: 'Exclusive royal Chettinad & Malabar signature dishes for special events',
-        badge: 'ROYAL CHEF SPECIALS',
-        cols: [
-          { heading: 'CHEF SIGNATURE MAINS', icon: 'fa-crown', items: ['Nattu Kozhi Soup (Country Chicken)', 'Mutton Nalli Fry (Marrow Roast)', 'Turkey Roast', 'Rabbit Chukka Roast'] },
-          { heading: 'SEAFOOD EXTRAORDINARY', icon: 'fa-fish', items: ['Whole Tawa Fish Roast', 'Lobster Masala Fry', 'Squid Pepper Fry', 'Jumbo Prawn Curry'] },
-          { heading: 'ROYAL DESSERTS', icon: 'fa-ice-cream', items: ['Elaneer Payasam', 'Dry Fruit Halwa', 'Live Ice Cream Roll', 'Matka Kulfi'] },
-          { heading: 'FINISHING TOUCH', icon: 'fa-leaf', items: ['Special Royal Sweet Beeda', 'Fresh Fruit Basket', 'Rose Water Welcome'] }
-        ]
+      nonveg: {
+        breakfast: {
+          title: 'Non-Veg Breakfast Bento Box',
+          sub: 'High-protein executive breakfast box with chicken gravy & boiled egg',
+          badge: 'PROTEIN BENTO BOX',
+          cols: [
+            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (2 Pcs)', 'Egg Kal Dosa (1 Pc)', 'Crispy Medu Vada (1 Pc)'] },
+            { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chettinad Chicken Salna', 'Boiled Egg with Black Pepper'] },
+            { heading: 'CHUTNEY', icon: 'fa-pepper-hot', items: ['Coconut Chutney Cup', 'Kara Chutney Cup'] },
+            { heading: 'SWEET & TEA', icon: 'fa-mug-hot', items: ['Kesari Cup', 'Flask Coffee / Tea', 'Cutlery Kit'] }
+          ]
+        },
+        lunch: {
+          title: 'Chettinad Mutton / Chicken Biryani Box',
+          sub: 'Authentic Seeraga Samba Biryani meal box sealed hot with starters & sweet',
+          badge: 'ROYAL BIRYANI BENTO',
+          cols: [
+            { heading: 'BIRYANI MAINS', icon: 'fa-bowl-food', items: ['Seeraga Samba Mutton / Chicken Biryani', 'Boiled Pepper Egg', 'Malabar Parotta (1 Pc)'] },
+            { heading: 'STARTER & GRAVY', icon: 'fa-drumstick-bite', items: ['Crispy Chicken 65 (3 Pcs)', 'Authentic Brinjal Dalcha', 'Ennai Kathirikai Gravy'] },
+            { heading: 'SIDES', icon: 'fa-pepper-hot', items: ['Cucumber Onion Raitha Cup', 'Mint Dip'] },
+            { heading: 'DESSERT', icon: 'fa-ice-cream', items: ['Hot Gulab Jamun (2 Pcs)', 'Sweet Meenakshi Beeda'] }
+          ]
+        },
+        tiffin: {
+          title: 'Corporate Non-Veg High-Tea Box',
+          sub: 'Crispy chicken lollipop, chicken sandwich & snacks for executive high-tea',
+          badge: 'EXECUTIVE HIGH-TEA',
+          cols: [
+            { heading: 'STARTERS', icon: 'fa-drumstick-bite', items: ['Chicken Lollipop with Hot Garlic Sauce', 'Chicken Mayo Club Sandwich', 'Crispy Chicken Cutlet'] },
+            { heading: 'SNACK', icon: 'fa-cookie-bite', items: ['Egg Puff', 'Mini Samosa'] },
+            { heading: 'SWEET', icon: 'fa-cookie', items: ['Chocolate Mousse Cup', 'Walnut Brownie'] },
+            { heading: 'DRINK', icon: 'fa-glass-water', items: ['Fruit Juice Pack', 'Cutlery & Sanitizing Wipe'] }
+          ]
+        },
+        reception: {
+          title: 'VIP Non-Veg 5-Star Platter',
+          sub: 'Luxury international corporate lunch platter with Tandoori BBQ & fish fry',
+          badge: '5-STAR VIP NON-VEG',
+          cols: [
+            { heading: 'LIVE BBQ STARTERS', icon: 'fa-fire-burner', items: ['Chicken Malai Tikka', 'Vanjaram Tawa Fish Fry', 'Mutton Seekh Kebab'] },
+            { heading: 'MAIN SPREAD', icon: 'fa-plate-wheat', items: ['Dum Mutton Biryani', 'Butter Chicken Masala', 'Butter Naan (2 Pcs)'] },
+            { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Mutton Salna Gravy', 'Raitha & Salad Cup', 'Pickle'] },
+            { heading: 'ROYAL DESSERT', icon: 'fa-ice-cream', items: ['Angoori Rasmalai', 'Matka Kulfi Box', 'Dry Fruit Beeda'] }
+          ]
+        },
+        dinner: {
+          title: 'Non-Veg Dinner Parotta & Biryani Box',
+          sub: 'Wholesome dinner box with soft Malabar parotta, chicken curry & fried rice',
+          badge: 'NIGHT NON-VEG BENTO',
+          cols: [
+            { heading: 'BREAD & GRAVY', icon: 'fa-bowl-food', items: ['Malabar Parotta (2 Pcs)', 'Chicken Chettinad Gravy (2 Pcs)', 'Egg Thokku'] },
+            { heading: 'RICE', icon: 'fa-rice', items: ['Egg Fried Rice / Chicken Biryani', 'Curd Rice with Pickle'] },
+            { heading: 'SIDES', icon: 'fa-pepper-hot', items: ['Salna Gravy', 'Onion Raitha Cup'] },
+            { heading: 'DESSERT', icon: 'fa-apple-whole', items: ['Gulab Jamun (1 Pc)', 'Fresh Cut Fruit'] }
+          ]
+        }
+      }
+    },
+    temple: {
+      veg: {
+        breakfast: {
+          title: 'Suprabatham Morning Prasadam Spread',
+          sub: 'Auspicious morning prasadam cooked with pure cow ghee & whole cashew nuts',
+          badge: '100% SATVIK PURITY',
+          cols: [
+            { heading: 'SACRED PRASADAM', icon: 'fa-gopuram', items: ['Ven Pongal with Desi Cow Ghee', 'Sarkarai Pongal with Jaggery', 'Crispy Medu Vada (No Onion)', 'Rava Upma with Ghee'] },
+            { heading: 'SAMBAR & CHUTNEY', icon: 'fa-pepper-hot', items: ['Traditional Temple Drumstick Sambar', 'Fresh Coconut Chutney (No Garlic)', 'Spiced Ginger Chutney'] },
+            { heading: 'SACRED DRINK', icon: 'fa-glass-water', items: ['Theertham Prasadam', 'Spiced Panakam with Cardamom & Honey', 'Sukku Coffee'] },
+            { heading: 'FRUITS & FLOWERS', icon: 'fa-seedling', items: ['Fresh Country Banana', 'Tulasi Theertham', 'Prasadam Kumkum'] }
+          ]
+        },
+        lunch: {
+          title: 'Grand Maha Annathanam Leaf Feast (16+ Items)',
+          sub: 'Traditional Satvik wedding-scale feast cooked in sacred brass cauldrons',
+          badge: 'SACRED BRASS CAULDRONS',
+          cols: [
+            { heading: 'SWEETS & STARTERS', icon: 'fa-cookie', items: ['Tirupati Laddu / Sweet Poli', 'Akkaravadisal / Sarkarai Pongal', 'Urad Dal Vada', 'Rice Appalam'] },
+            { heading: 'RICE & GHEE', icon: 'fa-bowl-food', items: ['Hot Steamed Rice', 'Desi Cow Ghee & Paruppu', 'Temple Puliyodharai (Tamarind Rice)', 'Kadhamba Sambar (No Onion Garlic)'] },
+            { heading: 'PORIYAL & KOOTU', icon: 'fa-carrot', items: ['Vazhaikkai Poriyal (Raw Banana)', 'Chow Chow Kootu', 'Pachadi with Curd', 'Mavadu Pickle'] },
+            { heading: 'RASAM, PAYASAM & CURD', icon: 'fa-apple-whole', items: ['Mysore Pineapple Rasam', 'Paal Payasam with Cashews', 'Thick Temple Curd Rice', 'Banana & Beeda'] }
+          ]
+        },
+        tiffin: {
+          title: 'Sayaratchai Evening Pooja Prasadam',
+          sub: 'Sacred evening sundal varieties, kozhukattai & divine sweets',
+          badge: 'EVENING POOJA UTSAVAM',
+          cols: [
+            { heading: 'SUNDAL VARIETIES', icon: 'fa-bowl-rice', items: ['Konda Kadalai Sundal (Chickpea)', 'Pachai Payaru Sundal (Green Gram)', 'Mochai Sundal with Coconut'] },
+            { heading: 'SACRED SWEETS', icon: 'fa-crown', items: ['Poornam Kozhukattai', 'Sweet Appam with Ghee', 'Saffron Rava Kesari'] },
+            { heading: 'CRISPY PRASADAM', icon: 'fa-cookie-bite', items: ['Ulundhu Vada with Pepper', 'Thenkuzhal Murukku'] },
+            { heading: 'DIVINE DRINKS', icon: 'fa-glass-water', items: ['Elaneer Payasam Cup', 'Nannari Sharbat', 'Cardamom Milk'] }
+          ]
+        },
+        reception: {
+          title: 'Maha Kumbabishekam Samaradhana Feast',
+          sub: 'Grand community feast prepared for thousands of devotees during consecration',
+          badge: 'DEVOTEE SCALE: 1,000–5,000+',
+          cols: [
+            { heading: 'AUSPICIOUS SWEETS', icon: 'fa-crown', items: ['Maha Prasadam Tirupati Laddu', 'Ghee Mysore Pak', 'Paruppu Payasam', 'Special Vada'] },
+            { heading: 'SACRED FEAST MAINS', icon: 'fa-plate-wheat', items: ['Steamed Rice with Ghee', 'Temple Kovil Sambar', 'Mor Kulambu', 'Milagu Jeera Rasam'] },
+            { heading: 'VARIETY SACRED RICE', icon: 'fa-rice', items: ['Authentic Kovil Puliyodharai', 'Kalkandu Sadham (Rock Sugar Rice)', 'Curd Rice with Pomegranate'] },
+            { heading: 'TRADITIONAL SIDES', icon: 'fa-leaf', items: ['Urulai Kara Roast', 'Keerai Kootu', 'More Milagai', 'Thamboolam Bag'] }
+          ]
+        },
+        dinner: {
+          title: 'Ardhajama Night Prasadam Spread',
+          sub: 'Light and auspicious night prasadam offering for temple priests and devotees',
+          badge: 'DIVINE NIGHT PRASADAM',
+          cols: [
+            { heading: 'SACRED TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Chapathi with Potato Kurma', 'Soft Dosa with Sambar (No Onion)', 'Idiyappam with Coconut Milk'] },
+            { heading: 'RICE OFFERINGS', icon: 'fa-rice', items: ['Kovil Sambar Sadham', 'Thick Curd Rice with Fresh Mango Pickle'] },
+            { heading: 'SACRED MILK', icon: 'fa-mug-hot', items: ['Kunkumapoo Saffron Milk', 'Hot Sukku Coffee with Palm Jaggery'] },
+            { heading: 'FRUITS', icon: 'fa-apple-whole', items: ['Fresh Naattu Pazham (Hill Banana)', 'Sacred Vibhuti & Prasadam'] }
+          ]
+        }
       }
     }
   };
+
+  const studioDatabase = (multiServiceDatabases[serviceType] || multiServiceDatabases.marriage);
 
     function renderChefStudio() {
     const data = studioDatabase[curCuisineStudio][curTabStudio];
