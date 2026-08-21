@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body id="temple-annathanam-page">
+<body class="service-detail-body">
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -77,7 +77,7 @@
 </div>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-<main>
+<main class="service-detail-page" id="temple-annathanam-page">
 
   <!-- BREADCRUMB BAR -->
   <div class="breadcrumb-bar">
@@ -85,7 +85,7 @@
       <div class="breadcrumb-links">
         <a href="index.html">Home</a>
         <i class="fa-solid fa-chevron-right"></i>
-        <a href="services.html">Catering Services</a>
+        <a href="services.html">Services</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span class="current">Kovil Annathanam & Sacred Feasts</span>
       </div>
@@ -96,7 +96,7 @@
   <section class="detail-hero-section">
     <div class="container detail-hero-grid">
       <div class="detail-hero-text">
-        <div class="story-chapter-tag"><i class="fa-solid fa-gopuram"></i> DIVISION 04 · SATVIK TEMPLE MADAPPALLI</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-gopuram"></i> DIVISION 04 · SATVIK TEMPLE MADAPPALLI</div>
         <h1 class="detail-hero-title">
           Kovil Annathanam & <br><em>Sacred Temple Feasts</em>
         </h1>
@@ -106,15 +106,27 @@
 
         <!-- 4 Value Badges -->
         <div class="hero-value-badges-row">
-          <div class="value-badge-item"><i class="fa-solid fa-leaf text-gold"></i> Strictly No Onion, No Garlic</div>
-          <div class="value-badge-item"><i class="fa-solid fa-bell text-gold"></i> Dedicated Sacred Brass Vessels</div>
-          <div class="value-badge-item"><i class="fa-solid fa-fire-flame-curved text-gold"></i> Authentic Firewood Cooking</div>
-          <div class="value-badge-item"><i class="fa-solid fa-users text-gold"></i> Devotee Scale: 500 – 5,000+</div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-leaf"></i></div>
+            <span>No Onion, No Garlic</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-bell"></i></div>
+            <span>Sacred Brass Vessels</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-fire"></i></div>
+            <span>Wood-Fire Cooking</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-users"></i></div>
+            <span>Scale: 500 – 5,000+</span>
+          </div>
         </div>
 
         <div class="hero-cta-buttons">
-          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-gopuram"></i> BOOK ANNATHANAM</a>
-          <a href="https://wa.me/919940649939?text=Namaskaram%20JS%20Caterer!%20We%20require%20Temple%20Annathanam%20Catering." target="_blank" class="btn-top-wa"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
+          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-arrow-right"></i> BOOK ANNATHANAM</a>
+          <a href="https://wa.me/919940649939?text=Namaskaram%20JS%20Caterer!%20We%20require%20Temple%20Annathanam%20Catering." target="_blank" class="btn-whatsapp-green"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
         </div>
       </div>
 
@@ -128,7 +140,7 @@
     </div>
   </section>
 
-  <!-- OCCASIONS / SACRED FESTIVALS CAROUSEL -->
+  <!-- OCCASIONS / SACRED OCCASIONS CAROUSEL -->
   <section class="section-occasions">
     <div class="container">
       <div class="ornamental-header">
@@ -143,11 +155,11 @@
         <div class="occasions-scroll-track" id="occTrack">
           <div class="occ-card active" data-occasion="Kumbabishekam">
             <div class="occ-img-box"><img src="assets/temple_annathanam.jpg" alt="Maha Kumbabishekam"></div>
-            <h4>Maha Kumbabishekam (கும்பாபிஷேகம்)</h4>
+            <h4>Maha Kumbabishekam</h4>
           </div>
           <div class="occ-card" data-occasion="Daily Annathanam">
             <div class="occ-img-box"><img src="assets/banana_leaf_serving.jpg" alt="Daily Temple Annathanam"></div>
-            <h4>Daily Temple Annathanam (அன்னதானம்)</h4>
+            <h4>Daily Temple Annathanam</h4>
           </div>
           <div class="occ-card" data-occasion="Sashti Pradosham">
             <div class="occ-img-box"><img src="assets/sweets_live_counter.jpg" alt="Sashti & Pradosham Poojas"></div>
@@ -155,7 +167,7 @@
           </div>
           <div class="occ-card" data-occasion="Navaratri">
             <div class="occ-img-box"><img src="assets/wedding_feast.jpg" alt="Navaratri Pooja Prasadam"></div>
-            <h4>Navaratri Pooja & Sundal Utsavam</h4>
+            <h4>Navaratri Pooja Prasadam</h4>
           </div>
           <div class="occ-card" data-occasion="Brahmotsavam">
             <div class="occ-img-box"><img src="assets/live_kitchen.jpg" alt="Brahmotsavam Feasts"></div>
@@ -163,7 +175,7 @@
           </div>
           <div class="occ-card" data-occasion="Samaradhana">
             <div class="occ-img-box"><img src="assets/corporate_buffet.jpg" alt="Veda Samaradhana"></div>
-            <h4>Veda Parayanam & Samaradhana</h4>
+            <h4>Veda Samaradhana</h4>
           </div>
         </div>
         <button class="carousel-arrow arrow-next" id="occNext" aria-label="Next Sacred Event"><i class="fa-solid fa-chevron-right"></i></button>
@@ -177,7 +189,7 @@
     </div>
   </section>
 
-  <!-- MENU STUDIO ENGINE (SATVIK TEMPLE MADAPPALLI SHOWCASE) -->
+  <!-- MENU STUDIO ENGINE -->
   <section class="section-culinary-studio" id="menuStudioSection" data-service-type="temple">
     <div class="container">
 
@@ -188,17 +200,15 @@
       </div>
       <p class="section-subtitle">100% Satvik sacred spreads prepared in traditional brass cauldrons with pure cow ghee</p>
 
-      <!-- SPLIT STUDIO CONTAINER -->
       <div class="split-studio-container">
         
         <!-- Left Column: Control Panel -->
         <aside class="studio-timeline-panel">
-          <!-- Integrated Satvik Purity Indicator -->
           <div class="panel-cuisine-switch-box">
             <span class="panel-tag"><i class="fa-solid fa-hands-praying"></i> SATVIK PURITY</span>
             <div class="modern-toggle-box" style="justify-content:center;background:rgba(0,0,0,0.4);">
               <span class="toggle-side-label veg active" style="color:#48E085;font-size:0.82rem;">
-                <i class="fa-solid fa-leaf"></i> 100% Satvik Pure Veg (No Onion / Garlic)
+                <i class="fa-solid fa-leaf"></i> 100% Satvik (No Onion / Garlic)
               </span>
             </div>
           </div>
@@ -279,7 +289,6 @@
 
         <!-- Right Column: Dynamic Stage -->
         <main class="studio-main-stage">
-          <!-- Clean Stage Header -->
           <div class="studio-stage-header">
             <div class="stage-header-meta">
               <span class="stage-badge-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> 100% SATVIK PURITY (NO ONION GARLIC)</span>
@@ -288,7 +297,6 @@
             </div>
           </div>
 
-          <!-- 4 Course Bento Box Grid -->
           <div class="studio-courses-grid" id="studioCoursesGrid">
             <!-- Dynamically populated via script.js -->
           </div>
@@ -390,6 +398,7 @@
                   <option value="Temple Brahmotsavam">Temple Brahmotsavam</option>
                   <option value="Special Homam & Pooja">Special Homam & Pooja</option>
                 </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
               </div>
             </div>
 

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body id="corporate-bento-page">
+<body class="service-detail-body">
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -77,7 +77,7 @@
 </div>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-<main>
+<main class="service-detail-page" id="corporate-bento-page">
 
   <!-- BREADCRUMB BAR -->
   <div class="breadcrumb-bar">
@@ -85,7 +85,7 @@
       <div class="breadcrumb-links">
         <a href="index.html">Home</a>
         <i class="fa-solid fa-chevron-right"></i>
-        <a href="services.html">Catering Services</a>
+        <a href="services.html">Services</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span class="current">Corporate Packed Food Combos</span>
       </div>
@@ -96,7 +96,7 @@
   <section class="detail-hero-section">
     <div class="container detail-hero-grid">
       <div class="detail-hero-text">
-        <div class="story-chapter-tag"><i class="fa-solid fa-box-open"></i> DIVISION 03 · EXECUTIVE BENTO KITCHEN</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-box-open"></i> DIVISION 03 · EXECUTIVE BENTO KITCHEN</div>
         <h1 class="detail-hero-title">
           Corporate Packed <br><em>Food Combos & Trays</em>
         </h1>
@@ -106,15 +106,27 @@
 
         <!-- 4 Value Badges -->
         <div class="hero-value-badges-row">
-          <div class="value-badge-item"><i class="fa-solid fa-shield-check text-gold"></i> 100% Leak-Proof Sealed</div>
-          <div class="value-badge-item"><i class="fa-solid fa-utensils text-gold"></i> Cutlery & Wet Wipes Included</div>
-          <div class="value-badge-item"><i class="fa-solid fa-leaf text-gold"></i> Eco-Friendly Compartments</div>
-          <div class="value-badge-item"><i class="fa-solid fa-bolt text-gold"></i> Express 45-Min Hot Delivery</div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-box-open"></i></div>
+            <span>100% Leak-Proof Sealed</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-utensils"></i></div>
+            <span>Cutlery & Wipes Included</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-leaf"></i></div>
+            <span>Eco Compartments</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-bolt"></i></div>
+            <span>45-Min Hot Delivery</span>
+          </div>
         </div>
 
         <div class="hero-cta-buttons">
-          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-bag-shopping"></i> ORDER PACKED MEALS</a>
-          <a href="https://wa.me/919940649939?text=Hello%20JS%20Caterer!%20I%20would%20like%20to%20order%20Corporate%20Packed%20Food%20Boxes." target="_blank" class="btn-top-wa"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
+          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-arrow-right"></i> ORDER PACKED MEALS</a>
+          <a href="https://wa.me/919940649939?text=Hello%20JS%20Caterer!%20I%20would%20like%20to%20order%20Corporate%20Packed%20Food%20Boxes." target="_blank" class="btn-whatsapp-green"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
         </div>
       </div>
 
@@ -128,7 +140,7 @@
     </div>
   </section>
 
-  <!-- OCCASIONS / BENTO VARIETY CAROUSEL -->
+  <!-- OCCASIONS / BENTO FORMATS CAROUSEL -->
   <section class="section-occasions">
     <div class="container">
       <div class="ornamental-header">
@@ -147,7 +159,7 @@
           </div>
           <div class="occ-card" data-occasion="Executive Non-Veg">
             <div class="occ-img-box"><img src="assets/wedding_feast.jpg" alt="Non-Veg Biryani Box"></div>
-            <h4>Chettinad Biryani Combo Box</h4>
+            <h4>Chettinad Biryani Combo</h4>
           </div>
           <div class="occ-card" data-occasion="Breakfast Box">
             <div class="occ-img-box"><img src="assets/sweets_live_counter.jpg" alt="Breakfast Box"></div>
@@ -155,11 +167,11 @@
           </div>
           <div class="occ-card" data-occasion="High Tea">
             <div class="occ-img-box"><img src="assets/live_kitchen.jpg" alt="Evening Snack Box"></div>
-            <h4>Evening High-Tea Snack Pack</h4>
+            <h4>Evening High-Tea Pack</h4>
           </div>
           <div class="occ-card" data-occasion="VIP Trays">
             <div class="occ-img-box"><img src="assets/corporate_buffet.jpg" alt="VIP 5-Compartment Meal Tray"></div>
-            <h4>VIP 5-Compartment Meal Tray</h4>
+            <h4>VIP 5-Star Executive Platter</h4>
           </div>
           <div class="occ-card" data-occasion="Dinner Combo">
             <div class="occ-img-box"><img src="assets/temple_annathanam.jpg" alt="Dinner Combo Box"></div>
@@ -177,7 +189,7 @@
     </div>
   </section>
 
-  <!-- MENU STUDIO ENGINE (CORPORATE BENTO SHOWCASE) -->
+  <!-- MENU STUDIO ENGINE -->
   <section class="section-culinary-studio" id="menuStudioSection" data-service-type="corporate">
     <div class="container">
 
@@ -188,17 +200,15 @@
       </div>
       <p class="section-subtitle">Explore our complete range of compartmentalized breakfast, lunch, snack, and dinner meal boxes</p>
 
-      <!-- SPLIT STUDIO CONTAINER -->
       <div class="split-studio-container">
         
         <!-- Left Column: Control Panel -->
         <aside class="studio-timeline-panel">
-          <!-- Integrated Cuisine Style Switch -->
           <div class="panel-cuisine-switch-box">
             <span class="panel-tag"><i class="fa-solid fa-utensils"></i> COMBO DIET STYLE</span>
             <div class="modern-toggle-box">
               <span class="toggle-side-label veg active" id="labelVegBtn">
-                <i class="fa-solid fa-leaf"></i> Pure Veg
+                <i class="fa-solid fa-leaf"></i> Veg
               </span>
 
               <label class="modern-switch-track" for="cuisineToggleInput" title="Toggle between Veg and Non-Veg">
@@ -288,16 +298,14 @@
 
         <!-- Right Column: Dynamic Stage -->
         <main class="studio-main-stage">
-          <!-- Clean Stage Header -->
           <div class="studio-stage-header">
             <div class="stage-header-meta">
-              <span class="stage-badge-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> SEALED & LEAK-PROOF</span>
+              <span class="stage-badge-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> 100% SEALED & LEAK-PROOF</span>
               <h3 id="studioTitle" class="stage-main-title">South Indian Breakfast Box</h3>
               <p id="studioSub" class="stage-sub-title">Individual 4-compartment sealed box with fresh idli, vada, pongal & sweet</p>
             </div>
           </div>
 
-          <!-- 4 Course Bento Box Grid -->
           <div class="studio-courses-grid" id="studioCoursesGrid">
             <!-- Dynamically populated via script.js -->
           </div>
@@ -398,6 +406,7 @@
                   <option value="High-Tea Snack Box">Evening High-Tea Snack Pack</option>
                   <option value="VIP 5-Star Platter">VIP 5-Star Executive Platter</option>
                 </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
               </div>
             </div>
 

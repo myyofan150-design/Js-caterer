@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body id="industrial-catering-page">
+<body class="service-detail-body">
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -77,7 +77,7 @@
 </div>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-<main>
+<main class="service-detail-page" id="industrial-catering-page">
 
   <!-- BREADCRUMB BAR -->
   <div class="breadcrumb-bar">
@@ -85,7 +85,7 @@
       <div class="breadcrumb-links">
         <a href="index.html">Home</a>
         <i class="fa-solid fa-chevron-right"></i>
-        <a href="services.html">Catering Services</a>
+        <a href="services.html">Services</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span class="current">CPU Industrial & Workforce Catering</span>
       </div>
@@ -96,25 +96,37 @@
   <section class="detail-hero-section">
     <div class="container detail-hero-grid">
       <div class="detail-hero-text">
-        <div class="story-chapter-tag"><i class="fa-solid fa-building-columns"></i> DIVISION 02 · CENTRAL PREPARATION UNIT</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-industry"></i> DIVISION 02 · CENTRAL PREPARATION UNIT</div>
         <h1 class="detail-hero-title">
           CPU Industrial & <br><em>Workforce Catering</em>
         </h1>
         <p class="detail-hero-desc">
-          High-volume, hygienic workforce catering infrastructure powered by our Central Preparation Unit (CPU). We provide nutritious, punctual shift breakfast, lunch, and dinner solutions for manufacturing factories, IT tech parks, healthcare, and institutions across Chennai.
+          High-volume, hygienic workforce catering infrastructure powered by our Central Preparation Unit (CPU). We provide nutritious, punctual shift breakfast, lunch, and dinner solutions for manufacturing factories, IT tech parks, and institutions across Chennai.
         </p>
 
         <!-- 4 Value Badges -->
         <div class="hero-value-badges-row">
-          <div class="value-badge-item"><i class="fa-solid fa-certificate text-gold"></i> ISO-Grade CPU Kitchen</div>
-          <div class="value-badge-item"><i class="fa-solid fa-truck-fast text-gold"></i> Insulated Thermal Delivery</div>
-          <div class="value-badge-item"><i class="fa-solid fa-scale-balanced text-gold"></i> Calorie-Balanced Nutrition</div>
-          <div class="value-badge-item"><i class="fa-solid fa-users text-gold"></i> Scale: 500 – 5,000+ Meals/Day</div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-certificate"></i></div>
+            <span>ISO-Grade CPU Kitchen</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-truck-fast"></i></div>
+            <span>Insulated Hot Delivery</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-scale-balanced"></i></div>
+            <span>Calorie-Balanced Nutrition</span>
+          </div>
+          <div class="value-badge-item">
+            <div class="badge-icon-circle"><i class="fa-solid fa-users"></i></div>
+            <span>Scale: 500 – 5,000+ Meals</span>
+          </div>
         </div>
 
         <div class="hero-cta-buttons">
-          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-calendar-check"></i> GET CONTRACT QUOTE</a>
-          <a href="https://wa.me/919940649939?text=Hello%20JS%20Caterer!%20We%20need%20Industrial%20Workforce%20Catering%20for%20our%20facility." target="_blank" class="btn-top-wa"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
+          <a href="#quoteSection" class="btn-primary-gold"><i class="fa-solid fa-arrow-right"></i> GET CONTRACT QUOTE</a>
+          <a href="https://wa.me/919940649939?text=Hello%20JS%20Caterer!%20We%20need%20Industrial%20Workforce%20Catering%20for%20our%20facility." target="_blank" class="btn-whatsapp-green"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
         </div>
       </div>
 
@@ -128,7 +140,7 @@
     </div>
   </section>
 
-  <!-- OCCASIONS / SECTOR CAROUSEL -->
+  <!-- OCCASIONS / SECTORS CAROUSEL -->
   <section class="section-occasions">
     <div class="container">
       <div class="ornamental-header">
@@ -143,15 +155,15 @@
         <div class="occasions-scroll-track" id="occTrack">
           <div class="occ-card active" data-occasion="Manufacturing">
             <div class="occ-img-box"><img src="assets/corporate_buffet.jpg" alt="Manufacturing Plants"></div>
-            <h4>Manufacturing Plants & Factories</h4>
+            <h4>Manufacturing Plants</h4>
           </div>
           <div class="occ-card" data-occasion="IT Parks">
             <div class="occ-img-box"><img src="assets/live_kitchen.jpg" alt="IT & Tech Parks"></div>
-            <h4>IT Tech Parks & SEZ Cafeterias</h4>
+            <h4>IT Tech Park Cafeterias</h4>
           </div>
           <div class="occ-card" data-occasion="Healthcare">
             <div class="occ-img-box"><img src="assets/banana_leaf_serving.jpg" alt="Hospitals & Healthcare"></div>
-            <h4>Hospitals & Healthcare Staff</h4>
+            <h4>Hospitals & Healthcare</h4>
           </div>
           <div class="occ-card" data-occasion="Educational">
             <div class="occ-img-box"><img src="assets/sweets_live_counter.jpg" alt="Educational Institutions"></div>
@@ -163,7 +175,7 @@
           </div>
           <div class="occ-card" data-occasion="Monthly Contracts">
             <div class="occ-img-box"><img src="assets/temple_annathanam.jpg" alt="Monthly Corporate Contracts"></div>
-            <h4>Monthly Corporate Contracts</h4>
+            <h4>Monthly Contracts</h4>
           </div>
         </div>
         <button class="carousel-arrow arrow-next" id="occNext" aria-label="Next Sector"><i class="fa-solid fa-chevron-right"></i></button>
@@ -177,7 +189,7 @@
     </div>
   </section>
 
-  <!-- MENU STUDIO ENGINE (INDUSTRIAL SHIFT CYCLES) -->
+  <!-- MENU STUDIO ENGINE -->
   <section class="section-culinary-studio" id="menuStudioSection" data-service-type="industrial">
     <div class="container">
 
@@ -188,17 +200,15 @@
       </div>
       <p class="section-subtitle">Rotating weekly menus designed for sustained energy, balanced nutrition & home-style taste</p>
 
-      <!-- SPLIT STUDIO CONTAINER -->
       <div class="split-studio-container">
         
         <!-- Left Column: Control Panel -->
         <aside class="studio-timeline-panel">
-          <!-- Integrated Cuisine Style Switch -->
           <div class="panel-cuisine-switch-box">
             <span class="panel-tag"><i class="fa-solid fa-utensils"></i> MENU DIET STYLE</span>
             <div class="modern-toggle-box">
               <span class="toggle-side-label veg active" id="labelVegBtn">
-                <i class="fa-solid fa-leaf"></i> Pure Veg
+                <i class="fa-solid fa-leaf"></i> Veg
               </span>
 
               <label class="modern-switch-track" for="cuisineToggleInput" title="Toggle between Veg and Non-Veg">
@@ -288,16 +298,14 @@
 
         <!-- Right Column: Dynamic Stage -->
         <main class="studio-main-stage">
-          <!-- Clean Stage Header -->
           <div class="studio-stage-header">
             <div class="stage-header-meta">
-              <span class="stage-badge-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> 100% HYGIENIC CENTRAL KITCHEN</span>
+              <span class="stage-badge-pill" id="studioCourseBadge"><i class="fa-solid fa-sparkles"></i> 100% HYGIENIC CPU KITCHEN</span>
               <h3 id="studioTitle" class="stage-main-title">Morning Shift Breakfast Spread</h3>
               <p id="studioSub" class="stage-sub-title">Nutritious high-energy morning meal prepared fresh at our Central Kitchen</p>
             </div>
           </div>
 
-          <!-- 4 Course Bento Box Grid -->
           <div class="studio-courses-grid" id="studioCoursesGrid">
             <!-- Dynamically populated via script.js -->
           </div>
@@ -369,7 +377,7 @@
           </ul>
 
           <div class="plan-mandapam-illustration">
-            <i class="fa-solid fa-building-user"></i>
+            <i class="fa-solid fa-industry"></i>
           </div>
         </div>
 
@@ -398,6 +406,7 @@
                   <option value="Educational College">College / Hostel</option>
                   <option value="Other Industry">Other Institution</option>
                 </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
               </div>
             </div>
 
