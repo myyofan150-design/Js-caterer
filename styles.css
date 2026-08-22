@@ -11110,3 +11110,782 @@ footer.luxury-footer-wrap,
     font-size: 1.15rem !important;
   }
 }
+
+
+/* ================================================================
+   ANIMATED MULTI-STEP CATERING FEAST CONCIERGE
+   ================================================================ */
+
+.section-catering-concierge {
+  padding: 64px 0 76px !important;
+  background: #FAF8F2 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.concierge-master-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.25fr !important;
+  gap: 32px !important;
+  align-items: stretch !important;
+  margin-top: 24px !important;
+}
+
+/* ================================================================
+   1. LEFT WING: CHEF'S LIVE KITCHEN PASS CARD
+   ================================================================ */
+.concierge-kitchen-pass-card {
+  position: relative !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 20px 50px rgba(10, 28, 20, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 520px !important;
+}
+
+.kitchen-pass-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  transition: transform 0.6s ease !important;
+}
+
+.concierge-kitchen-pass-card:hover .kitchen-pass-bg-img {
+  transform: scale(1.04) !important;
+}
+
+.kitchen-card-bg-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(8, 28, 19, 0.9) 0%, rgba(6, 22, 15, 0.95) 100%) !important;
+  z-index: 1 !important;
+}
+
+.kitchen-card-content {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 32px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  gap: 20px !important;
+}
+
+.chef-live-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(37, 211, 102, 0.15) !important;
+  border: 1px solid rgba(37, 211, 102, 0.35) !important;
+  padding: 5px 14px !important;
+  border-radius: 20px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  color: #FFFFFF !important;
+  align-self: flex-start !important;
+}
+
+.pulse-live-green-ring {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.3) !important;
+  animation: pulseGreenRing 2s infinite !important;
+}
+
+@keyframes pulseGreenRing {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.kitchen-gold-pill {
+  display: inline-block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  color: #E8C84D !important;
+  margin-bottom: 4px !important;
+}
+
+.kitchen-hero-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.9rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  line-height: 1.15 !important;
+  margin: 0 0 4px !important;
+}
+
+.kitchen-tamil-quote {
+  font-family: var(--font-tamil) !important;
+  font-size: 0.92rem !important;
+  color: #E8C84D !important;
+  font-style: italic !important;
+  margin: 0 !important;
+}
+
+/* Live Summary Box inside Left Card */
+.live-feast-summary-box {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 14px 16px !important;
+}
+
+.summary-box-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #E8C84D !important;
+  margin-bottom: 8px !important;
+}
+
+.summary-dynamic-items {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.summary-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.8rem !important;
+}
+
+.item-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 700 !important;
+}
+
+.summary-item strong {
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Trust Badges Grid */
+.kitchen-trust-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+.trust-mini-chip {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 10px !important;
+  padding: 6px 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #FFFFFF !important;
+}
+
+/* Hotline */
+.kitchen-direct-hotline {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(232, 200, 77, 0.12) !important;
+  border: 1px solid rgba(232, 200, 77, 0.3) !important;
+  padding: 10px 14px !important;
+  border-radius: 14px !important;
+}
+
+.kitchen-direct-hotline i {
+  font-size: 1.1rem !important;
+}
+
+.hotline-sub {
+  font-family: var(--font-label) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #E8C84D !important;
+  display: block !important;
+}
+
+.hotline-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.hotline-links a.phone-link {
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.hotline-links a.phone-link:hover {
+  color: #E8C84D !important;
+}
+
+/* ================================================================
+   2. RIGHT WING: ANIMATED MULTI-STEP CONVERSATIONAL FEAST STUDIO
+   ================================================================ */
+.concierge-studio-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 26px !important;
+  padding: 32px 28px !important;
+  box-shadow: 0 16px 45px rgba(14, 32, 24, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  min-height: 520px !important;
+}
+
+/* Progress Tracker */
+.studio-progress-tracker {
+  margin-bottom: 20px !important;
+}
+
+.progress-bar-fill-track {
+  height: 6px !important;
+  background: #F0EDE5 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
+}
+
+.progress-bar-indicator {
+  height: 100% !important;
+  background: linear-gradient(90deg, #AA820A 0%, #E8C84D 100%) !important;
+  border-radius: 10px !important;
+  transition: width 0.35s ease !important;
+}
+
+.progress-steps-label-row {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.step-label-pill {
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  color: #A0AEC0 !important;
+  letter-spacing: 0.04em !important;
+  transition: color 0.3s ease !important;
+}
+
+.step-label-pill.active {
+  color: #0E2018 !important;
+  font-weight: 900 !important;
+}
+
+/* Dialogue Speech Bubble */
+.step-dialogue-bubble {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  background: #FAF8F2 !important;
+  border: 1px solid rgba(197, 155, 39, 0.25) !important;
+  border-radius: 16px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 18px !important;
+}
+
+.chef-bubble-avatar img {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  border: 1px solid #AA820A !important;
+  object-fit: cover !important;
+  background: #FFFFFF !important;
+}
+
+.bubble-speech {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.chef-name-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  letter-spacing: 0.05em !important;
+}
+
+.bubble-speech p {
+  font-family: var(--font-body) !important;
+  font-size: 0.86rem !important;
+  color: #0E2018 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+}
+
+/* Step Containers */
+.concierge-step-container {
+  display: none !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.concierge-step-container.active {
+  display: flex !important;
+  animation: fadeInStep 0.35s ease forwards !important;
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* STEP 1: OCCASION IMAGE CARDS */
+.occasion-cards-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+.occasion-select-card {
+  background: #FAF8F2 !important;
+  border: 2px solid transparent !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s ease !important;
+}
+
+.occasion-select-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(14, 32, 24, 0.08) !important;
+}
+
+.occasion-select-card.active {
+  border-color: #AA820A !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(170, 130, 10, 0.18) !important;
+}
+
+.card-image-wrap {
+  position: relative !important;
+  height: 90px !important;
+  overflow: hidden !important;
+}
+
+.card-image-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+
+.occasion-select-card:hover .card-image-wrap img {
+  transform: scale(1.06) !important;
+}
+
+.card-image-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%) !important;
+}
+
+.check-badge {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  color: #FFFFFF !important;
+  font-size: 1.1rem !important;
+  opacity: 0.5 !important;
+  transition: all 0.2s ease !important;
+}
+
+.occasion-select-card.active .check-badge {
+  color: #25D366 !important;
+  opacity: 1 !important;
+}
+
+.card-caption {
+  padding: 10px 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.card-caption strong {
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+}
+
+.card-caption span {
+  font-family: var(--font-body) !important;
+  font-size: 0.7rem !important;
+  color: #718096 !important;
+}
+
+/* STEP 2: GUEST PILLS & DATE */
+.step2-interactive-controls {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.control-heading {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 8px !important;
+}
+
+.guest-pills-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.guest-pill {
+  flex: 1 1 calc(33.333% - 8px) !important;
+  background: #FAF8F2 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  color: #0E2018 !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  padding: 10px 8px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+}
+
+.guest-pill:hover {
+  background: rgba(197, 155, 39, 0.15) !important;
+}
+
+.guest-pill.active {
+  background: #0E2018 !important;
+  color: #E8C84D !important;
+  border-color: #0E2018 !important;
+}
+
+.date-input-wrap {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.date-icon {
+  position: absolute !important;
+  left: 14px !important;
+  color: #AA820A !important;
+  font-size: 0.9rem !important;
+  pointer-events: none !important;
+}
+
+.step-date-input {
+  width: 100% !important;
+  background: #FAF8F2 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 11px 14px 11px 40px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  color: #0E2018 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.step-date-input:focus {
+  border-color: #AA820A !important;
+  background: #FFFFFF !important;
+}
+
+/* STEP 3: CUISINE CARDS */
+.cuisine-options-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.cuisine-option-card {
+  background: #FAF8F2 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.25) !important;
+  border-radius: 14px !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.cuisine-option-card:hover {
+  background: #FFFFFF !important;
+  border-color: #AA820A !important;
+}
+
+.cuisine-option-card.active {
+  background: #FFFFFF !important;
+  border-color: #AA820A !important;
+  box-shadow: 0 4px 16px rgba(170, 130, 10, 0.15) !important;
+}
+
+.cuisine-icon-circle {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(197, 155, 39, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.95rem !important;
+}
+
+.cuisine-card-text {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+}
+
+.cuisine-card-text strong {
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+}
+
+.cuisine-card-text span {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #718096 !important;
+}
+
+.cuisine-radio-dot {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  border: 2px solid #CBD5E0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.cuisine-option-card.active .cuisine-radio-dot {
+  border-color: #AA820A !important;
+  background: #AA820A !important;
+  box-shadow: inset 0 0 0 3px #FFFFFF !important;
+}
+
+/* STEP 4: FINAL DISPATCH FORM */
+.final-step-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.final-fields-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+.final-input-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.final-input-wrap label {
+  font-family: var(--font-label) !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+}
+
+.field-with-icon {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.icon-gold {
+  position: absolute !important;
+  left: 12px !important;
+  color: #AA820A !important;
+  font-size: 0.85rem !important;
+  pointer-events: none !important;
+}
+
+.final-text-input {
+  width: 100% !important;
+  background: #FAF8F2 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 10px 12px 10px 36px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem !important;
+  color: #0E2018 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.final-text-input:focus {
+  border-color: #AA820A !important;
+  background: #FFFFFF !important;
+}
+
+.btn-whatsapp-grand-dispatch {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.86rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 14px 20px !important;
+  border-radius: 14px !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.25s ease !important;
+  margin-top: 6px !important;
+}
+
+.btn-whatsapp-grand-dispatch:hover {
+  background: linear-gradient(135deg, #1EBE5D 0%, #0E7A6E 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5) !important;
+}
+
+.final-trust-subtext {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #718096 !important;
+  text-align: center !important;
+  margin-top: 4px !important;
+}
+
+/* Step Navigation Footer Buttons */
+.step-nav-footer {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+.step-nav-footer.between {
+  justify-content: space-between !important;
+}
+
+.btn-step-next {
+  background: #0E2018 !important;
+  color: #E8C84D !important;
+  border: 1px solid #AA820A !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-step-next:hover {
+  background: #1C3E2F !important;
+  transform: translateX(2px) !important;
+}
+
+.btn-step-prev {
+  background: #FAF8F2 !important;
+  color: #0E2018 !important;
+  border: 1px solid rgba(197, 155, 39, 0.3) !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-step-prev:hover {
+  background: rgba(197, 155, 39, 0.15) !important;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  .concierge-master-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-catering-concierge {
+    padding: 44px 0 54px !important;
+  }
+  
+  .concierge-kitchen-pass-card,
+  .concierge-studio-card {
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+  
+  .occasion-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .final-fields-row {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .guest-pills-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .progress-steps-label-row {
+    font-size: 0.62rem !important;
+  }
+}

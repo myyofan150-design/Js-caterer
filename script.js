@@ -627,87 +627,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
-  // CONTACT DESIGN SWITCHER (OPTION 1 vs OPTION 2)
+  // ANIMATED MULTI-STEP CATERING CONCIERGE CONTROLLER
   // ----------------------------------------------------
-  window.switchContactDesign = function(optId) {
-    const opt1El = document.getElementById('contactOpt1');
-    const opt2El = document.getElementById('contactOpt2');
-    const btns = document.querySelectorAll('.design-tab-btn');
+  let conciergeState = {
+    step: 1,
+    occasion: 'Marriage & Event Feast',
+    guests: '150 – 300 Guests',
+    date: '',
+    cuisine: 'Pure Vegetarian Feast',
+    name: '',
+    phone: '',
+    notes: ''
+  };
 
-    btns.forEach(btn => btn.classList.remove('active'));
+  window.goToStep = function(stepNum) {
+    conciergeState.step = stepNum;
+    
+    // Hide all step containers and show active
+    document.querySelectorAll('.concierge-step-container').forEach(el => el.classList.remove('active'));
+    const targetStep = document.getElementById(`conciergeStep${stepNum}`);
+    if (targetStep) targetStep.classList.add('active');
 
-    if (optId === 'opt1') {
-      if (opt1El) opt1El.classList.add('active');
-      if (opt2El) opt2El.classList.remove('active');
-      if (btns[0]) btns[0].classList.add('active');
-    } else if (optId === 'opt2') {
-      if (opt1El) opt1El.classList.remove('active');
-      if (opt2El) opt2El.classList.add('active');
-      if (btns[1]) btns[1].classList.add('active');
+    // Update progress bar
+    const bar = document.getElementById('studioProgressBar');
+    if (bar) {
+      const pct = stepNum === 1 ? 25 : stepNum === 2 ? 50 : stepNum === 3 ? 75 : 100;
+      bar.style.width = `${pct}%`;
+    }
+
+    // Update step label pills
+    for (let i = 1; i <= 4; i++) {
+      const pill = document.getElementById(`stepPill${i}`);
+      if (pill) {
+        if (i <= stepNum) pill.classList.add('active');
+        else pill.classList.remove('active');
+      }
     }
   };
 
-  // Option 1: Royal Booking Form Submit
-  const royalBookingForm = document.getElementById('royalBookingForm');
-  if (royalBookingForm) {
-    royalBookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const v = (id) => {
-        const el = document.getElementById(id);
-        return el ? el.value.trim() : '';
-      };
-      const name = v('rName');
-      const phone = v('rPhone');
-      const category = v('rCategory');
-      const date = v('rDate');
-      const guests = v('rGuests');
-      const cuisine = v('rCuisine');
-      const notes = v('rNotes');
+  window.selectOccasionCard = function(cardEl, occasionName) {
+    document.querySelectorAll('.occasion-select-card').forEach(c => c.classList.remove('active'));
+    cardEl.classList.add('active');
+    conciergeState.occasion = occasionName;
+    
+    const summaryOccasion = document.getElementById('summaryOccasion');
+    if (summaryOccasion) summaryOccasion.textContent = occasionName;
+  };
 
-      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nI would like to request a custom catering proposal:\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n🏬 Service Category: ${category}`;
-      if (date) msg += `\n📅 Event Date: ${date}`;
-      if (guests) msg += `\n👥 Guest Count: ${guests}`;
-      if (cuisine) msg += `\n🍲 Cuisine Preference: ${cuisine}`;
-      if (notes) msg += `\n📍 Special Notes / Location: ${notes}`;
-      msg += `\n\nPlease share the detailed menu options and per-plate pricing quote!`;
+  window.selectGuestPill = function(pillEl, guestRange) {
+    document.querySelectorAll('.guest-pill').forEach(p => p.classList.remove('active'));
+    pillEl.classList.add('active');
+    conciergeState.guests = guestRange;
 
-      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-  }
+    const summaryGuests = document.getElementById('summaryGuests');
+    if (summaryGuests) summaryGuests.textContent = guestRange;
+  };
 
-  // Option 2: Bento Booking Form Submit & Chips
-  let bentoSelectedService = 'Marriage Catering';
-  const bentoChips = document.querySelectorAll('.bento-chip');
-  bentoChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      bentoChips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      bentoSelectedService = chip.getAttribute('data-service') || 'Marriage Catering';
-    });
-  });
+  window.selectCuisineCard = function(cardEl, cuisineName) {
+    document.querySelectorAll('.cuisine-option-card').forEach(c => c.classList.remove('active'));
+    cardEl.classList.add('active');
+    conciergeState.cuisine = cuisineName;
 
-  const bentoBookingForm = document.getElementById('bentoBookingForm');
-  if (bentoBookingForm) {
-    bentoBookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const v = (id) => {
-        const el = document.getElementById(id);
-        return el ? el.value.trim() : '';
-      };
-      const name = v('bName');
-      const phone = v('bPhone');
-      const date = v('bDate');
-      const guests = v('bGuests');
-      const notes = v('bNotes');
+    const summaryCuisine = document.getElementById('summaryCuisine');
+    if (summaryCuisine) summaryCuisine.textContent = cuisineName;
+  };
 
-      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nBento Fast Quote Request:\n🎯 Service: ${bentoSelectedService}\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n👥 Guests: ${guests}`;
-      if (date) msg += `\n📅 Event Date: ${date}`;
-      if (notes) msg += `\n📍 Notes / Locality: ${notes}`;
-      msg += `\n\nPlease send custom package options and instant quote!`;
+  window.updateLiveSummary = function() {
+    const dateInput = document.getElementById('conciergeEventDate');
+    if (dateInput) conciergeState.date = dateInput.value;
+  };
 
-      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-  }
+  window.handleConciergeSubmit = function(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('conciergeUserName');
+    const phoneInput = document.getElementById('conciergeUserPhone');
+    const notesInput = document.getElementById('conciergeUserNotes');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const notes = notesInput ? notesInput.value.trim() : '';
+    const date = conciergeState.date;
+
+    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nI have curated a custom catering inquiry on your website:\n🎯 Occasion: ${conciergeState.occasion}\n👥 Guest Strength: ${conciergeState.guests}\n🍲 Cuisine Preference: ${conciergeState.cuisine}`;
+    if (date) msg += `\n📅 Auspicious Date: ${date}`;
+    if (name) msg += `\n👤 Name: ${name}`;
+    if (phone) msg += `\n📞 WhatsApp: ${phone}`;
+    if (notes) msg += `\n📍 Locality / Special Notes: ${notes}`;
+    msg += `\n\nPlease send me the custom menu proposal and price quote!`;
+
+    window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+  };
 
   // ----------------------------------------------------
   // GSAP-STYLE SCROLL PROGRESS BAR & REVEAL ANIMATIONS
