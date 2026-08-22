@@ -1687,3 +1687,88 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', handleStickyScroll);
   handleStickyScroll();
 })();
+
+// ================================================================
+// 360° CIRCULAR INFOGRAPHIC INTERACTIVE CONTROLLER
+// ================================================================
+const circularPillarsData = {
+  1: {
+    tamil: 'சுவை',
+    title: 'Authentic Taste',
+    desc: 'Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable flavor.',
+    metric: '100% Traditional Woodfire Simmering',
+    metricIcon: 'fa-bolt',
+    b1: 'Stone-ground masalas',
+    b2: 'Zero artificial food colors'
+  },
+  2: {
+    tamil: 'தரம்',
+    title: 'Pure Quality',
+    desc: 'Hand-selected daily harvest produce, certified pure A2 cow ghee, cold-pressed groundnut oils, and first-grade whole spices.',
+    metric: 'Pure A2 Cow Ghee & Cold-Pressed Oils',
+    metricIcon: 'fa-crown',
+    b1: 'Daily farm-direct produce',
+    b2: '100% pure dairy & aged basmati'
+  },
+  3: {
+    tamil: 'சுத்தம்',
+    title: '100% Hygiene',
+    desc: 'State-of-the-art Central Production Unit with sanitized prep stations, RO water purification, and strict glove/hairnet protocols.',
+    metric: 'FSSAI Certified 4-Stage RO Stations',
+    metricIcon: 'fa-shield-check',
+    b1: '4-stage RO water cooking line',
+    b2: 'Stainless steel sanitized vessels'
+  },
+  4: {
+    tamil: 'நேர்த்தி',
+    title: 'Flawless Hospitality',
+    desc: 'Courteous, uniformed service captains delivering coordinated traditional banana leaf service with warmth, speed, and elegance.',
+    metric: 'Zero-Delay Muhurtham Service Guarantee',
+    metricIcon: 'fa-clock-rotate-left',
+    b1: 'Uniformed, trained service staff',
+    b2: 'Dedicated banquet VIP manager'
+  }
+};
+
+window.selectCircularPillar = function(pillarId) {
+  const data = circularPillarsData[pillarId];
+  if (!data) return;
+
+  // Update satellite node active classes
+  document.querySelectorAll('.orbit-satellite-node').forEach(node => {
+    node.classList.toggle('active', parseInt(node.getAttribute('data-pillar')) === pillarId);
+  });
+
+  // Update dial button active classes
+  const dialBtns = document.querySelectorAll('.dial-btn');
+  dialBtns.forEach((btn, idx) => {
+    btn.classList.toggle('active', (idx + 1) === pillarId);
+  });
+
+  // Smooth crossfade dynamic hub content
+  const hubContent = document.getElementById('hubDynamicContent');
+  if (hubContent) {
+    hubContent.style.opacity = '0';
+    hubContent.style.transform = 'scale(0.95)';
+
+    setTimeout(() => {
+      document.getElementById('hubTamilTitle').textContent = data.tamil;
+      document.getElementById('hubTitle').textContent = data.title;
+      document.getElementById('hubDesc').textContent = data.desc;
+      document.getElementById('hubMetricText').textContent = data.metric;
+      
+      const metricIconEl = document.querySelector('#hubMetric i');
+      if (metricIconEl) {
+        metricIconEl.className = 'fa-solid ' + data.metricIcon + ' text-gold';
+      }
+
+      const bulletsEl = document.getElementById('hubBullets');
+      if (bulletsEl) {
+        bulletsEl.innerHTML = '<span><i class="fa-solid fa-circle-check text-green"></i> ' + data.b1 + '</span><span><i class="fa-solid fa-circle-check text-green"></i> ' + data.b2 + '</span>';
+      }
+
+      hubContent.style.opacity = '1';
+      hubContent.style.transform = 'scale(1)';
+    }, 150);
+  }
+};

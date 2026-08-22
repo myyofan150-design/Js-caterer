@@ -13954,3 +13954,468 @@ body {
     font-size: 1.15rem !important;
   }
 }
+
+
+/* ================================================================
+   360° CIRCULAR INTERACTIVE INFOGRAPHIC SYSTEM
+   ================================================================ */
+
+.section-circular-infographic {
+  padding: 80px 0 96px !important;
+  background: radial-gradient(circle at 50% 50%, #FFFDF9 0%, #FAF6ED 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.circular-infographic-stage {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 960px !important;
+  height: 600px !important;
+  margin: 24px auto 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Background Orbital Concentric Rings */
+.orbit-rings-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.orbit-ring-outer {
+  width: 540px !important;
+  height: 540px !important;
+  border-radius: 50% !important;
+  border: 1.5px dashed rgba(212, 175, 55, 0.35) !important;
+  position: absolute !important;
+  animation: rotateClockwise 60s linear infinite !important;
+}
+
+.orbit-ring-middle {
+  width: 440px !important;
+  height: 440px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  position: absolute !important;
+}
+
+.orbit-ring-inner {
+  width: 340px !important;
+  height: 340px !important;
+  border-radius: 50% !important;
+  border: 1.5px dotted rgba(27, 56, 40, 0.2) !important;
+  position: absolute !important;
+  animation: rotateCounterClockwise 45s linear infinite !important;
+}
+
+@keyframes rotateClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* ================================================================
+   CENTRAL CORE HUB
+   ================================================================ */
+.circular-hub-core {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 360px !important;
+  height: 360px !important;
+  border-radius: 50% !important;
+  background: #082016 !important;
+  border: 2px solid #E8C84D !important;
+  box-shadow: 0 20px 60px rgba(8, 32, 22, 0.35), inset 0 0 30px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+
+.hub-aura-glow {
+  position: absolute !important;
+  inset: -12px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.25) !important;
+  animation: pulseHubGlow 3s infinite ease-in-out !important;
+  pointer-events: none !important;
+}
+
+@keyframes pulseHubGlow {
+  0% { transform: scale(0.98); opacity: 0.5; }
+  50% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(0.98); opacity: 0.5; }
+}
+
+.hub-inner-screen {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  gap: 4px !important;
+}
+
+.hub-emblem-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 4px !important;
+}
+
+.hub-logo-img {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: 1px solid #E8C84D !important;
+}
+
+.hub-live-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  color: #E8C84D !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  padding: 2px 8px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.hub-dynamic-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+.hub-tamil-title {
+  font-family: var(--font-tamil) !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  line-height: 1 !important;
+  margin-bottom: 2px !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.hub-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin: 0 0 4px !important;
+  line-height: 1.2 !important;
+}
+
+.hub-desc {
+  font-family: var(--font-body) !important;
+  font-size: 0.76rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8px !important;
+  max-width: 280px !important;
+}
+
+.hub-metric-badge {
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 4px 10px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.66rem !important;
+  font-weight: 800 !important;
+  color: #FAF8F2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.hub-proof-bullets {
+  display: flex !important;
+  gap: 10px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.68rem !important;
+  color: #FAF8F2 !important;
+}
+
+.hub-proof-bullets span {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+/* ================================================================
+   ORBITING SATELLITE PODS (4 CORNERS)
+   ================================================================ */
+.orbit-nodes-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.orbit-satellite-node {
+  position: absolute !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Positioning the 4 nodes around the 540px perimeter */
+.orbit-satellite-node.node-1 {
+  top: 35px !important;
+  left: 20px !important;
+}
+
+.orbit-satellite-node.node-2 {
+  top: 35px !important;
+  right: 20px !important;
+}
+
+.orbit-satellite-node.node-3 {
+  bottom: 35px !important;
+  right: 20px !important;
+}
+
+.orbit-satellite-node.node-4 {
+  bottom: 35px !important;
+  left: 20px !important;
+}
+
+/* Satellite Pill Card */
+.satellite-pill-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 20px !important;
+  padding: 14px 18px !important;
+  width: 240px !important;
+  box-shadow: 0 8px 24px rgba(10, 28, 20, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  position: relative !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.sat-node-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.sat-num {
+  font-family: var(--font-label) !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+}
+
+.sat-tamil {
+  font-family: var(--font-tamil) !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: var(--emerald) !important;
+  line-height: 1 !important;
+}
+
+.sat-icon-wrap {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  border-radius: 50% !important;
+  background: #082016 !important;
+  border: 1.5px solid #E8C84D !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E8C84D !important;
+  font-size: 1.05rem !important;
+  box-shadow: 0 4px 12px rgba(8, 32, 22, 0.2) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.sat-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  text-align: left !important;
+}
+
+.sat-text-wrap strong {
+  font-family: var(--font-head) !important;
+  font-size: 0.95rem !important;
+  color: #0E2018 !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+.sat-text-wrap span {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #6A7570 !important;
+}
+
+/* Hover and Active State on Satellite */
+.orbit-satellite-node:hover .satellite-pill-card,
+.orbit-satellite-node.active .satellite-pill-card {
+  transform: scale(1.05) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 16px 36px rgba(14, 32, 24, 0.16) !important;
+  background: #FFFDF9 !important;
+}
+
+.orbit-satellite-node.active .sat-icon-wrap {
+  background: #E8C84D !important;
+  color: #082016 !important;
+  transform: scale(1.1) rotate(6deg) !important;
+}
+
+/* ================================================================
+   4-WAY DIAL SELECTOR CONTROLS (DESKTOP & MOBILE)
+   ================================================================ */
+.circular-dial-controls {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 32px !important;
+  flex-wrap: wrap !important;
+}
+
+.dial-btn {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 30px !important;
+  padding: 8px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(10, 28, 20, 0.05) !important;
+}
+
+.dial-btn-num {
+  font-family: var(--font-label) !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  padding: 1px 6px !important;
+  border-radius: 6px !important;
+}
+
+.dial-btn-tamil {
+  font-family: var(--font-tamil) !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: var(--emerald) !important;
+}
+
+.dial-btn-label {
+  font-family: var(--font-head) !important;
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+}
+
+.dial-btn:hover,
+.dial-btn.active {
+  background: #082016 !important;
+  border-color: #E8C84D !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(8, 32, 22, 0.2) !important;
+}
+
+.dial-btn:hover .dial-btn-label,
+.dial-btn.active .dial-btn-label,
+.dial-btn:hover .dial-btn-tamil,
+.dial-btn.active .dial-btn-tamil {
+  color: #E8C84D !important;
+}
+
+/* ================================================================
+   MOBILE RESPONSIVENESS (<992px)
+   ================================================================ */
+@media (max-width: 992px) {
+  .circular-infographic-stage {
+    height: auto !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .orbit-rings-bg {
+    display: none !important;
+  }
+
+  .orbit-nodes-wrapper {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    inset: auto !important;
+  }
+
+  .orbit-satellite-node {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+  }
+
+  .satellite-pill-card {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .circular-hub-core {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    min-height: 280px !important;
+    border-radius: 26px !important;
+    padding: 22px 18px !important;
+    order: -1 !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .orbit-nodes-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+
+  .circular-dial-controls {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .dial-btn {
+    justify-content: center !important;
+  }
+}

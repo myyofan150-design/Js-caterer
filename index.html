@@ -247,122 +247,163 @@
   </section>
 
   <!-- ================================================================
-       ACT 04 — FOUR PILLARS INFOGRAPHIC (LUXURY INTERACTIVE ROADMAP)
+       ACT 04 — FOUR PILLARS 360° CIRCULAR INTERACTIVE INFOGRAPHIC
        ================================================================ -->
-  <section id="act-4" class="section-light-warm section-pillars-infographic">
+  <section id="act-4" class="section-light-warm section-circular-infographic">
     <div class="container">
       
       <!-- Section Header -->
       <div class="section-header-center">
-        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-award"></i> The 4 Culinary Standards</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-circle-nodes"></i> 360° Quality Ecosystem</div>
         <h2 class="section-title story-reveal">The Four Pillars of <em class="gradient-text">JS Caterer Excellence</em></h2>
-        <p class="section-desc story-reveal" style="max-width: 720px; margin: 0 auto 36px; text-wrap: balance;">An unbroken commitment to generational authenticity, pure farm ingredients, clinical hygiene, and flawless Muhurtham hospitality.</p>
+        <p class="section-desc story-reveal" style="max-width: 760px; margin: 0 auto 28px; text-wrap: balance;">An unbroken 360° circle of generational authenticity, uncompromised farm ingredients, clinical hygiene, and seamless Muhurtham hospitality.</p>
       </div>
 
-      <!-- INFOGRAPHIC GRID WRAPPER WITH CONNECTING PIPELINE -->
-      <div class="pillars-infographic-pipeline story-reveal">
+      <!-- CIRCULAR INFOGRAPHIC MASTER STAGE -->
+      <div class="circular-infographic-stage story-reveal" id="circularInfographicStage">
         
-        <!-- INFOGRAPHIC NODE 01: TASTE -->
-        <div class="pillar-infographic-card">
-          <div class="pillar-node-badge">
-            <span class="node-number">01</span>
-            <div class="node-icon-circle"><i class="fa-solid fa-fire-burner"></i></div>
-          </div>
-          
-          <div class="pillar-card-content">
-            <div class="pillar-tamil-seal">சுவை</div>
-            <h3 class="pillar-card-title">Authentic Taste</h3>
-            <span class="pillar-card-sub">Generational Woodfire Slow-Cooking</span>
-            <p class="pillar-card-desc">Generational family recipes slow-cooked over steady firewood flames in traditional brass urulis for deep, irreplaceable flavor.</p>
-            
-            <div class="pillar-metric-chip">
-              <i class="fa-solid fa-bolt text-gold"></i>
-              <span>100% Woodfire Simmering</span>
-            </div>
-
-            <ul class="pillar-specs-list">
-              <li><i class="fa-solid fa-circle-check"></i> Stone-ground heirloom masalas</li>
-              <li><i class="fa-solid fa-circle-check"></i> Zero artificial colors or tasting salts</li>
-            </ul>
-          </div>
+        <!-- Background Orbital Rings & Mandala SVG -->
+        <div class="orbit-rings-bg">
+          <div class="orbit-ring-outer"></div>
+          <div class="orbit-ring-middle"></div>
+          <div class="orbit-ring-inner"></div>
         </div>
 
-        <!-- INFOGRAPHIC NODE 02: QUALITY -->
-        <div class="pillar-infographic-card">
-          <div class="pillar-node-badge">
-            <span class="node-number">02</span>
-            <div class="node-icon-circle"><i class="fa-solid fa-leaf"></i></div>
-          </div>
+        <!-- 4 ORBITING SATELLITE PILLAR NODES -->
+        <div class="orbit-nodes-wrapper">
           
-          <div class="pillar-card-content">
-            <div class="pillar-tamil-seal">தரம்</div>
-            <h3 class="pillar-card-title">Pure Quality</h3>
-            <span class="pillar-card-sub">Uncompromised Premium Sourcing</span>
-            <p class="pillar-card-desc">Hand-selected harvest produce, certified pure A2 cow ghee, cold-pressed groundnut oils, and first-grade whole spices.</p>
-            
-            <div class="pillar-metric-chip">
-              <i class="fa-solid fa-crown text-gold"></i>
-              <span>Pure A2 Ghee & Cold-Pressed</span>
+          <!-- NODE 01: TASTE (TOP-LEFT) -->
+          <div class="orbit-satellite-node node-1 active" data-pillar="1" onclick="selectCircularPillar(1)" onmouseenter="selectCircularPillar(1)">
+            <div class="satellite-pill-card">
+              <div class="sat-node-header">
+                <span class="sat-num">01</span>
+                <span class="sat-tamil">சுவை</span>
+              </div>
+              <div class="sat-icon-wrap">
+                <i class="fa-solid fa-fire-burner"></i>
+              </div>
+              <div class="sat-text-wrap">
+                <strong>Authentic Taste</strong>
+                <span>Woodfire Slow-Cooking</span>
+              </div>
             </div>
-
-            <ul class="pillar-specs-list">
-              <li><i class="fa-solid fa-circle-check"></i> Daily farm-direct vegetables</li>
-              <li><i class="fa-solid fa-circle-check"></i> 100% pure dairy & aged basmati</li>
-            </ul>
+            <span class="sat-connecting-beam"></span>
           </div>
+
+          <!-- NODE 02: QUALITY (TOP-RIGHT) -->
+          <div class="orbit-satellite-node node-2" data-pillar="2" onclick="selectCircularPillar(2)" onmouseenter="selectCircularPillar(2)">
+            <div class="satellite-pill-card">
+              <div class="sat-node-header">
+                <span class="sat-num">02</span>
+                <span class="sat-tamil">தரம்</span>
+              </div>
+              <div class="sat-icon-wrap">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="sat-text-wrap">
+                <strong>Pure Quality</strong>
+                <span>A2 Ghee & Farm Harvest</span>
+              </div>
+            </div>
+            <span class="sat-connecting-beam"></span>
+          </div>
+
+          <!-- NODE 03: HYGIENE (BOTTOM-RIGHT) -->
+          <div class="orbit-satellite-node node-3" data-pillar="3" onclick="selectCircularPillar(3)" onmouseenter="selectCircularPillar(3)">
+            <div class="satellite-pill-card">
+              <div class="sat-node-header">
+                <span class="sat-num">03</span>
+                <span class="sat-tamil">சுத்தம்</span>
+              </div>
+              <div class="sat-icon-wrap">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="sat-text-wrap">
+                <strong>100% Hygiene</strong>
+                <span>FSSAI ISO Clinical Line</span>
+              </div>
+            </div>
+            <span class="sat-connecting-beam"></span>
+          </div>
+
+          <!-- NODE 04: HOSPITALITY (BOTTOM-LEFT) -->
+          <div class="orbit-satellite-node node-4" data-pillar="4" onclick="selectCircularPillar(4)" onmouseenter="selectCircularPillar(4)">
+            <div class="satellite-pill-card">
+              <div class="sat-node-header">
+                <span class="sat-num">04</span>
+                <span class="sat-tamil">நேர்த்தி</span>
+              </div>
+              <div class="sat-icon-wrap">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="sat-text-wrap">
+                <strong>Hospitality</strong>
+                <span>Zero-Delay Muhurtham</span>
+              </div>
+            </div>
+            <span class="sat-connecting-beam"></span>
+          </div>
+
         </div>
 
-        <!-- INFOGRAPHIC NODE 03: HYGIENE -->
-        <div class="pillar-infographic-card">
-          <div class="pillar-node-badge">
-            <span class="node-number">03</span>
-            <div class="node-icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
-          </div>
+        <!-- CENTRAL CORE HUB & LIVE DATA DISPLAY -->
+        <div class="circular-hub-core">
+          <div class="hub-aura-glow"></div>
           
-          <div class="pillar-card-content">
-            <div class="pillar-tamil-seal">சுத்தம்</div>
-            <h3 class="pillar-card-title">100% Hygiene</h3>
-            <span class="pillar-card-sub">FSSAI Certified Clinical Standard</span>
-            <p class="pillar-card-desc">State-of-the-art Central Production Unit with sanitized prep stations, RO water purification, and strict glove/hairnet protocols.</p>
+          <div class="hub-inner-screen">
             
-            <div class="pillar-metric-chip">
-              <i class="fa-solid fa-shield-check text-gold"></i>
-              <span>FSSAI & ISO Grade Cleanliness</span>
+            <!-- Live Core Emblem -->
+            <div class="hub-emblem-badge">
+              <img src="assets/logo.png" alt="JS Caterer Seal" class="hub-logo-img">
+              <span class="hub-live-tag">PILLAR INSPECTOR</span>
             </div>
 
-            <ul class="pillar-specs-list">
-              <li><i class="fa-solid fa-circle-check"></i> 4-stage RO water cooking line</li>
-              <li><i class="fa-solid fa-circle-check"></i> Stainless steel sanitized vessels</li>
-            </ul>
-          </div>
-        </div>
+            <!-- Dynamic Pillar Info Display -->
+            <div class="hub-dynamic-content" id="hubDynamicContent">
+              <div class="hub-tamil-title" id="hubTamilTitle">சுவை</div>
+              <h3 class="hub-title" id="hubTitle">Authentic Taste</h3>
+              <p class="hub-desc" id="hubDesc">Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable flavor.</p>
+              
+              <div class="hub-metric-badge" id="hubMetric">
+                <i class="fa-solid fa-bolt text-gold"></i>
+                <span id="hubMetricText">100% Traditional Woodfire Simmering</span>
+              </div>
 
-        <!-- INFOGRAPHIC NODE 04: HOSPITALITY -->
-        <div class="pillar-infographic-card">
-          <div class="pillar-node-badge">
-            <span class="node-number">04</span>
-            <div class="node-icon-circle"><i class="fa-solid fa-award"></i></div>
-          </div>
-          
-          <div class="pillar-card-content">
-            <div class="pillar-tamil-seal">நேர்த்தி</div>
-            <h3 class="pillar-card-title">Flawless Hospitality</h3>
-            <span class="pillar-card-sub">Zero-Delay Muhurtham Timing</span>
-            <p class="pillar-card-desc">Courteous, uniformed service captains delivering coordinated traditional banana leaf service with warmth, speed, and elegance.</p>
-            
-            <div class="pillar-metric-chip">
-              <i class="fa-solid fa-clock-rotate-left text-gold"></i>
-              <span>Zero-Delay Muhurtham Service</span>
+              <div class="hub-proof-bullets" id="hubBullets">
+                <span><i class="fa-solid fa-circle-check text-green"></i> Stone-ground masalas</span>
+                <span><i class="fa-solid fa-circle-check text-green"></i> Zero artificial food colors</span>
+              </div>
             </div>
 
-            <ul class="pillar-specs-list">
-              <li><i class="fa-solid fa-circle-check"></i> Uniformed, trained service staff</li>
-              <li><i class="fa-solid fa-circle-check"></i> Dedicated banquet VIP manager</li>
-            </ul>
           </div>
         </div>
 
       </div>
+
+      <!-- 4-WAY INTERACTIVE DIAL SELECTOR (FOR EASY TOUCH ON MOBILE & TABLET) -->
+      <div class="circular-dial-controls">
+        <button type="button" class="dial-btn active" onclick="selectCircularPillar(1)">
+          <span class="dial-btn-num">01</span>
+          <span class="dial-btn-tamil">சுவை</span>
+          <span class="dial-btn-label">Taste</span>
+        </button>
+        <button type="button" class="dial-btn" onclick="selectCircularPillar(2)">
+          <span class="dial-btn-num">02</span>
+          <span class="dial-btn-tamil">தரம்</span>
+          <span class="dial-btn-label">Quality</span>
+        </button>
+        <button type="button" class="dial-btn" onclick="selectCircularPillar(3)">
+          <span class="dial-btn-num">03</span>
+          <span class="dial-btn-tamil">சுத்தம்</span>
+          <span class="dial-btn-label">Hygiene</span>
+        </button>
+        <button type="button" class="dial-btn" onclick="selectCircularPillar(4)">
+          <span class="dial-btn-num">04</span>
+          <span class="dial-btn-tamil">நேர்த்தி</span>
+          <span class="dial-btn-label">Hospitality</span>
+        </button>
+      </div>
+
     </div>
   </section>
 
