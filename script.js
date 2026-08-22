@@ -860,15 +860,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // EXPERIENCE 2: Animated Multi-Step Concierge Controller
   let conciergeState = {
     step: 1,
-    occasion: 'Marriage & Event Feast',
+    category: 'Events Management',
     specificOccasion: 'Marriage',
     guests: '150 – 300 Guests',
     date: '',
     cuisine: 'Pure Vegetarian Feast'
   };
 
-  const OCCASION_OPTIONS_MAP = {
-    'Marriage & Event Feast': [
+  const EVENT_CATEGORY_OCCASIONS = {
+    'Events Management': [
       'Marriage',
       'Betrothal',
       'Birthday',
@@ -878,21 +878,21 @@ document.addEventListener('DOMContentLoaded', () => {
       '60th & 80th Birthdays',
       'Others (etc.)'
     ],
-    'CPU Industrial Workforce Catering': [
+    'CPU Industrial Catering': [
       'Manufacturing Sector',
       'IT Sector',
       'Institutions',
       'Hospitals',
       'Daily Shift Meals'
     ],
-    'Corporate Packed Bento Boxes': [
+    'Corporate Packed Food': [
       'Breakfast Combo',
       'Lunch',
       'Snacks',
       'Dinner Combo',
       'Night Shift Combos'
     ],
-    'Kovil Annathanam & Sacred Feasts': [
+    'Kovil Annathanam': [
       'Temple Consecration',
       'Daily Temple Annathanam',
       'Special Festival Feast',
@@ -902,23 +902,33 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.populateSpecificOccasions = function(category) {
-    const occasionSelect = document.getElementById('conciergeSpecificOccasion');
-    if (!occasionSelect) return;
+    const selectEl = document.getElementById('conciergeSpecificOccasion');
+    if (!selectEl) return;
 
-    const options = OCCASION_OPTIONS_MAP[category] || OCCASION_OPTIONS_MAP['Marriage & Event Feast'];
-    occasionSelect.innerHTML = '';
-    
+    const options = EVENT_CATEGORY_OCCASIONS[category] || EVENT_CATEGORY_OCCASIONS['Events Management'];
+    selectEl.innerHTML = '';
+
     options.forEach((opt, idx) => {
       const optEl = document.createElement('option');
       optEl.value = opt;
       optEl.textContent = opt;
       if (idx === 0) optEl.selected = true;
-      occasionSelect.appendChild(optEl);
+      selectEl.appendChild(optEl);
     });
 
+    conciergeState.category = category;
     conciergeState.specificOccasion = options[0];
     window.updateLiveSummary();
   };
+
+  window.selectOccasionCategoryCard = function(cardEl, categoryName) {
+    document.querySelectorAll('.occasion-select-card').forEach(c => c.classList.remove('active'));
+    if (cardEl) cardEl.classList.add('active');
+    window.populateSpecificOccasions(categoryName);
+  };
+
+  // Backwards compatibility alias
+  window.selectOccasionCard = window.selectOccasionCategoryCard;
 
   window.goToStep = function(stepNum) {
     conciergeState.step = stepNum;
@@ -941,14 +951,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.selectOccasionCard = function(cardEl, occasionName) {
-    document.querySelectorAll('.occasion-select-card').forEach(c => c.classList.remove('active'));
-    cardEl.classList.add('active');
-    conciergeState.occasion = occasionName;
-    const summaryOccasion = document.getElementById('summaryOccasion');
-    if (summaryOccasion) summaryOccasion.textContent = occasionName;
-  };
-
   window.selectGuestPill = function(pillEl, guestRange) {
     document.querySelectorAll('.guest-pill').forEach(p => p.classList.remove('active'));
     pillEl.classList.add('active');
@@ -968,6 +970,18 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateLiveSummary = function() {
     const dateInput = document.getElementById('conciergeEventDate');
     if (dateInput) conciergeState.date = dateInput.value;
+
+    const selectEl = document.getElementById('conciergeSpecificOccasion');
+    if (selectEl) {
+      conciergeState.specificOccasion = selectEl.value;
+    }
+
+    const summaryOccasion = document.getElementById('summaryOccasion');
+    if (summaryOccasion) {
+      const cat = conciergeState.category || 'Events Management';
+      const spec = conciergeState.specificOccasion || 'Marriage';
+      summaryOccasion.innerHTML = `<strong>${spec}</strong> <span style="font-size:0.75rem;opacity:0.75;">(${cat})</span>`;
+    }
   };
 
   window.handleConciergeSubmit = function(e) {
@@ -981,15 +995,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const notes = notesInput ? notesInput.value.trim() : '';
     const date = conciergeState.date;
 
-    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nCustom Catering Inquiry (Concierge Builder):\n🎯 Occasion: ${conciergeState.occasion}\n👥 Guest Strength: ${conciergeState.guests}\n🍲 Cuisine Preference: ${conciergeState.cuisine}`;
+    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nCustom Catering Inquiry (Concierge Studio):\n🎯 Event Category: ${conciergeState.category}\n📋 Specific Occasion: ${conciergeState.specificOccasion}\n👥 Guest Strength: ${conciergeState.guests}\n🍲 Cuisine Preference: ${conciergeState.cuisine}`;
     if (date) msg += `\n📅 Auspicious Date: ${date}`;
     if (name) msg += `\n👤 Name: ${name}`;
     if (phone) msg += `\n📞 WhatsApp: ${phone}`;
     if (notes) msg += `\n📍 Locality / Notes: ${notes}`;
-    msg += `\n\nPlease share menu package options and quote!`;
+    msg += `\n\nPlease share menu package options and customized quotation!`;
 
     window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
   };
+
+  // Initial population on load
+  window.populateSpecificOccasions('Events Management');
 
   // EXPERIENCE 3: Bento Grid Form Controller
   let bentoSelectedService = 'Marriage & Event Catering';
