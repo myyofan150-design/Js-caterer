@@ -16360,3 +16360,164 @@ body {
     text-align: center !important;
   }
 }
+
+
+/* ================================================================
+   FLUID & BULLETPROOF RESPONSIVE SYSTEM FOR CIRCULAR INFOGRAPHIC
+   ================================================================ */
+
+@media (min-width: 901px) and (max-width: 1080px) {
+  .pure-circle-stage {
+    max-width: 780px !important;
+    height: 580px !important;
+  }
+
+  .orbit-svg-canvas {
+    width: 480px !important;
+    height: 480px !important;
+  }
+
+  .circle-center-hub {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .node-glass-card {
+    width: 230px !important;
+    padding: 14px 16px !important;
+  }
+
+  .node-text h3 {
+    font-size: 1rem !important;
+  }
+
+  .node-text p {
+    font-size: 0.74rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-pure-circular-infographic {
+    padding: 64px 0 76px !important;
+  }
+
+  .pure-circle-stage {
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    padding: 10px 0 !important;
+    max-width: 680px !important;
+  }
+
+  .circle-orbit-svg-wrap {
+    display: none !important;
+  }
+
+  .circle-center-hub {
+    grid-column: 1 / span 2 !important;
+    margin: 0 auto 12px !important;
+    width: 130px !important;
+    height: 130px !important;
+    box-shadow: 0 12px 30px rgba(8, 32, 22, 0.25) !important;
+  }
+
+  .hub-logo {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .hub-brand-name {
+    font-size: 0.72rem !important;
+  }
+
+  .hub-tagline {
+    font-size: 0.54rem !important;
+  }
+
+  .circle-node {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .circle-node.node-top,
+  .circle-node.node-bottom,
+  .circle-node.node-right,
+  .circle-node.node-left {
+    transform: none !important;
+  }
+
+  .node-glass-card {
+    width: 100% !important;
+    padding: 16px 18px !important;
+    box-sizing: border-box !important;
+    border-radius: 18px !important;
+  }
+
+  .circle-mobile-dial-chips {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .section-pure-circular-infographic {
+    padding: 50px 0 64px !important;
+  }
+
+  .pure-circle-stage {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+
+  .circle-center-hub {
+    grid-column: 1 !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .node-glass-card {
+    padding: 14px 16px !important;
+    gap: 8px !important;
+  }
+
+  .node-tamil {
+    font-size: 1.2rem !important;
+  }
+
+  .node-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .node-text h3 {
+    font-size: 1.02rem !important;
+  }
+
+  .node-text p {
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .circle-mobile-dial-chips {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+  }
+
+  .circle-chip {
+    padding: 6px 10px !important;
+    font-size: 0.72rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
