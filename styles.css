@@ -9285,3 +9285,639 @@ footer.luxury-footer-wrap,
     gap: 6px !important;
   }
 }
+
+
+/* ================================================================
+   RAZOR-SHARP BUSINESS CARD & CRYSTAL CLEAR WHATSAPP CHAT FLOW
+   ================================================================ */
+
+.section-executive-contact {
+  padding: 64px 0 76px !important;
+  background: #FAF8F2 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.exec-contact-two-col {
+  display: grid !important;
+  grid-template-columns: 1fr 1.1fr !important;
+  gap: 36px !important;
+  align-items: stretch !important;
+  margin-top: 24px !important;
+}
+
+/* ================================================================
+   1. RAZOR-SHARP LUXURY PHYSICAL BUSINESS CARD
+   ================================================================ */
+.business-card-showcase-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.executive-physical-card {
+  background: linear-gradient(145deg, #071910 0%, #0C261A 55%, #05140C 100%) !important;
+  border-radius: 24px !important;
+  padding: 36px 32px !important;
+  color: #FFFFFF !important;
+  box-shadow: 
+    0 24px 50px rgba(7, 25, 16, 0.28),
+    0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+}
+
+/* Subtle Inner Metallic Trim */
+.card-foil-border {
+  position: absolute !important;
+  inset: 8px !important;
+  border: 1px solid rgba(232, 200, 77, 0.22) !important;
+  border-radius: 18px !important;
+  pointer-events: none !important;
+}
+
+.card-brand-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+.card-brand-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.card-logo-img {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #E8C84D !important;
+  background: #FFFFFF !important;
+  padding: 2px !important;
+  object-fit: cover !important;
+}
+
+.card-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.card-brand-name {
+  font-family: var(--font-head) !important;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  letter-spacing: 0.08em !important;
+}
+
+.card-brand-sub {
+  font-family: var(--font-label) !important;
+  font-size: 0.64rem !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  letter-spacing: 0.1em !important;
+}
+
+.card-rating-badge {
+  background: rgba(197, 155, 39, 0.18) !important;
+  border: 1px solid rgba(232, 200, 77, 0.4) !important;
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.card-rating-badge .star-rating {
+  font-family: var(--font-label) !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  font-size: 0.78rem !important;
+}
+
+.card-rating-badge .reviews-count {
+  font-family: var(--font-body) !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.card-holder-block {
+  margin-bottom: 14px !important;
+}
+
+.card-role-pill {
+  display: inline-block !important;
+  background: rgba(232, 200, 77, 0.15) !important;
+  color: #E8C84D !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.holder-name {
+  font-family: var(--font-head) !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 0 4px !important;
+  line-height: 1.15 !important;
+}
+
+.card-tamil-motto {
+  font-family: var(--font-tamil) !important;
+  font-size: 0.92rem !important;
+  color: #E8C84D !important;
+  font-style: italic !important;
+  margin: 0 !important;
+}
+
+.card-gold-divider {
+  height: 1px !important;
+  background: linear-gradient(90deg, rgba(232, 200, 77, 0.65) 0%, rgba(232, 200, 77, 0.15) 100%) !important;
+  margin: 18px 0 !important;
+}
+
+.card-contact-rows {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  margin-bottom: 24px !important;
+}
+
+.card-row-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.row-icon-box {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 50% !important;
+  background: rgba(232, 200, 77, 0.15) !important;
+  border: 1px solid rgba(232, 200, 77, 0.35) !important;
+  color: #E8C84D !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+}
+
+.row-text-block {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.row-label {
+  font-family: var(--font-label) !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  color: rgba(232, 200, 77, 0.85) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.row-phone-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.card-link {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.card-link:hover {
+  color: #E8C84D !important;
+}
+
+.row-val {
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  font-style: normal !important;
+}
+
+.card-quick-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin-top: auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.card-action-btn {
+  padding: 11px 16px !important;
+  border-radius: 12px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-card-call {
+  background: #AA820A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(170, 130, 10, 0.35) !important;
+}
+
+.btn-card-call:hover {
+  background: #C59B27 !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-card-maps {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-card-maps:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-2px) !important;
+}
+
+
+/* ================================================================
+   2. CLEAN, NON-CONFUSING NATIVE WHATSAPP CHAT FLOW
+   ================================================================ */
+.native-wa-phone-container {
+  background: #EFEAE2 !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 
+    0 18px 45px rgba(14, 32, 24, 0.09),
+    0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* App Header */
+.wa-app-header {
+  background: #075E54 !important;
+  color: #FFFFFF !important;
+  padding: 12px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18) !important;
+}
+
+.wa-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.wa-avatar-box {
+  width: 42px !important;
+  height: 42px !important;
+  position: relative !important;
+}
+
+.wa-avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background: #FFFFFF !important;
+  padding: 2px !important;
+}
+
+.wa-online-status-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  border: 2px solid #075E54 !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+.wa-contact-info {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.wa-contact-name {
+  font-family: var(--font-body) !important;
+  font-size: 0.96rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.wa-verified-icon {
+  font-size: 0.76rem !important;
+  color: #25D366 !important;
+}
+
+.wa-contact-status {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin: 0 !important;
+}
+
+.wa-header-right-icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  color: #FFFFFF !important;
+}
+
+.wa-icon-btn {
+  font-size: 1rem !important;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease !important;
+}
+
+.wa-icon-btn:hover {
+  transform: scale(1.1) !important;
+}
+
+/* Chat Viewport & Messages */
+.wa-chat-viewport {
+  padding: 18px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0) !important;
+  background-size: 16px 16px !important;
+  flex: 1 !important;
+  overflow-y: auto !important;
+}
+
+.wa-date-divider-pill {
+  align-self: center !important;
+  background: rgba(225, 245, 254, 0.95) !important;
+  color: #555555 !important;
+  padding: 4px 14px !important;
+  border-radius: 8px !important;
+  font-size: 0.68rem !important;
+  font-family: var(--font-label) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  margin-bottom: 4px !important;
+}
+
+.wa-chat-bubble {
+  max-width: 88% !important;
+  padding: 10px 14px 6px !important;
+  border-radius: 12px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+  position: relative !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) !important;
+}
+
+.wa-incoming-bubble {
+  align-self: flex-start !important;
+  background: #FFFFFF !important;
+  color: #111B21 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.wa-incoming-bubble::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -8px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 8px solid transparent !important;
+  border-top-color: #FFFFFF !important;
+  border-right-color: #FFFFFF !important;
+}
+
+.wa-outgoing-bubble {
+  align-self: flex-end !important;
+  background: #E7FFDB !important;
+  color: #111B21 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.wa-outgoing-bubble::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: -8px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 8px solid transparent !important;
+  border-top-color: #E7FFDB !important;
+  border-left-color: #E7FFDB !important;
+}
+
+/* Step 1: Category Chips */
+.wa-step-box {
+  background: #FFFFFF !important;
+  border-radius: 12px !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.wa-step-label {
+  display: block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  color: #075E54 !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 8px !important;
+}
+
+.wa-interactive-chips-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+.wa-chip {
+  background: #F0F2F5 !important;
+  border: 1px solid rgba(7, 94, 84, 0.2) !important;
+  color: #075E54 !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  padding: 8px 10px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: left !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.wa-chip:hover {
+  background: #E7FFDB !important;
+  border-color: #25D366 !important;
+}
+
+.wa-chip.active {
+  background: #075E54 !important;
+  color: #FFFFFF !important;
+  border-color: #075E54 !important;
+}
+
+/* Step 2: Clean Guided Inputs */
+.wa-clean-guided-form {
+  background: #FFFFFF !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.wa-input-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+}
+
+.wa-clean-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.field-title {
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  color: #075E54 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.wa-field-input {
+  width: 100% !important;
+  background: #F0F2F5 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border-radius: 8px !important;
+  padding: 7px 10px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  color: #111B21 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.wa-field-input:focus {
+  border-color: #25D366 !important;
+  background: #FFFFFF !important;
+}
+
+.wa-select-clean {
+  cursor: pointer !important;
+}
+
+/* Bottom Action Launch Strip */
+.wa-bottom-action-strip {
+  padding: 14px 16px !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.btn-whatsapp-direct-send {
+  width: 100% !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.86rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 13px 20px !important;
+  border-radius: 14px !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-whatsapp-direct-send:hover {
+  background: linear-gradient(135deg, #1EBE5D 0%, #0E7A6E 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5) !important;
+}
+
+.wa-guarantee-note {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #667781 !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .exec-contact-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-executive-contact {
+    padding: 44px 0 54px !important;
+  }
+  .executive-physical-card {
+    padding: 24px 20px !important;
+    border-radius: 20px !important;
+  }
+  .holder-name {
+    font-size: 1.6rem !important;
+  }
+  .wa-interactive-chips-row,
+  .wa-input-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+}
