@@ -13729,3 +13729,18 @@ body {
     padding: 8px 16px !important;
   }
 }
+
+
+/* ================================================================
+   MOBILE DRAWER INSTANT DISMISSAL & BFCACHE FLASH PREVENTION
+   ================================================================ */
+
+.mobile-nav-drawer {
+  visibility: hidden;
+  will-change: transform, visibility;
+}
+
+.mobile-nav-drawer.is-open {
+  visibility: visible !important;
+  transform: translateX(0) !important;
+}
