@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldBrass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3EAD0"/>
+      <stop offset="30%" stop-color="#E8C84D"/>
+      <stop offset="70%" stop-color="#AA820A"/>
+      <stop offset="100%" stop-color="#6E5102"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FF3B30"/>
+      <stop offset="50%" stop-color="#FF9500"/>
+      <stop offset="100%" stop-color="#FFCC00"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .steam-wave-1 {
+      animation: steamAnim1 2.2s infinite ease-in-out;
+      transform-origin: 50% 50%;
+    }
+    .steam-wave-2 {
+      animation: steamAnim2 2.6s infinite ease-in-out 0.4s;
+      transform-origin: 50% 50%;
+    }
+    .steam-wave-3 {
+      animation: steamAnim3 2.0s infinite ease-in-out 0.8s;
+      transform-origin: 50% 50%;
+    }
+    @keyframes steamAnim1 {
+      0% { opacity: 0; transform: translateY(0) scaleX(0.8); }
+      50% { opacity: 0.85; transform: translateY(-12px) scaleX(1.1); }
+      100% { opacity: 0; transform: translateY(-24px) scaleX(1.4); }
+    }
+    @keyframes steamAnim2 {
+      0% { opacity: 0; transform: translateY(0) scaleX(0.9); }
+      50% { opacity: 0.9; transform: translateY(-14px) scaleX(1.2); }
+      100% { opacity: 0; transform: translateY(-26px) scaleX(1.5); }
+    }
+    @keyframes steamAnim3 {
+      0% { opacity: 0; transform: translateY(0) scaleX(0.7); }
+      50% { opacity: 0.8; transform: translateY(-10px) scaleX(1.0); }
+      100% { opacity: 0; transform: translateY(-22px) scaleX(1.3); }
+    }
+    .flame-pulse {
+      animation: flameFlicker 1.2s infinite alternate ease-in-out;
+      transform-origin: 60px 105px;
+    }
+    @keyframes flameFlicker {
+      0% { transform: scale(0.95); opacity: 0.85; }
+      100% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 6px #FF9500); }
+    }
+  </style>
+
+  <!-- Animated Rising Steam Waves -->
+  <g fill="none" stroke="#FAF8F2" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <path class="steam-wave-1" d="M 45 42 Q 40 30 46 18 Q 50 10 44 2"/>
+    <path class="steam-wave-2" d="M 60 40 Q 66 28 58 16 Q 54 8 62 2"/>
+    <path class="steam-wave-3" d="M 75 42 Q 70 30 76 18 Q 80 10 74 2"/>
+  </g>
+
+  <!-- Traditional Brass Uruli / Cooking Cauldron Pot -->
+  <ellipse cx="60" cy="52" rx="42" ry="10" fill="url(#goldBrass)" stroke="#533D02" stroke-width="2"/>
+  <ellipse cx="60" cy="50" rx="36" ry="6" fill="#422902"/>
+  <path d="M 22 52 C 20 86, 100 86, 98 52 Z" fill="url(#goldBrass)" stroke="#533D02" stroke-width="2"/>
+  
+  <!-- Pot Handles -->
+  <path d="M 18 56 C 10 56, 10 68, 20 68" fill="none" stroke="url(#goldBrass)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 102 56 C 110 56, 110 68, 100 68" fill="none" stroke="url(#goldBrass)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Ornate Rim Engraving -->
+  <path d="M 26 58 Q 60 70 94 58" fill="none" stroke="#FAF8F2" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Sizzling Cooking Flame underneath -->
+  <g class="flame-pulse">
+    <path d="M 38 95 Q 60 78 82 95 Q 60 110 38 95 Z" fill="url(#fireGrad)"/>
+    <circle cx="52" cy="94" r="5" fill="#FFF"/>
+    <circle cx="68" cy="94" r="5" fill="#FFF"/>
+  </g>
+</svg>
