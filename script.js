@@ -1954,3 +1954,13 @@ window.highlightDish = function(dishId) {
 window.activateLeafDish = function(dishId) {
   // subtle hover effect on leaf dish cards
 };
+
+
+// ================================================================
+// ISOLATED BANANA LEAF 4-DISH CONTROLLER
+// ================================================================
+window.activateDish = function(dishId) {
+  document.querySelectorAll('.leaf-dish-card').forEach((card, idx) => {
+    card.classList.toggle('active', (idx + 1) === dishId);
+  });
+};

@@ -247,76 +247,89 @@
   </section>
 
   <!-- ================================================================
-       ACT 04 — FOUR PILLARS (FULL BANANA LEAF SECTION BACKGROUND)
+       ACT 04 — FOUR PILLARS (ISOLATED BANANA LEAF & 4 DISHES)
        ================================================================ -->
-  <section id="act-4" class="section-full-banana-leaf">
-    <div class="full-leaf-overlay"></div>
-    <div class="container relative-z">
+  <section id="act-4" class="section-light-warm section-isolated-banana-leaf">
+    <div class="container">
       
       <!-- Section Header -->
       <div class="section-header-center">
-        <div class="story-chapter-tag accent-label gold-border-tag"><i class="fa-solid fa-leaf text-gold"></i> தலைவாழை இலை விருந்து முறை</div>
-        <h2 class="section-title text-white story-reveal">The Four Pillars of <em class="text-gold-light">JS Caterer Excellence</em></h2>
-        <p class="section-desc text-white-sub story-reveal" style="max-width: 680px; margin: 0 auto 36px; text-wrap: balance;">Traditional Tamil wedding feast hospitality — 4 sacred culinary pillars served fresh on our signature banana leaf.</p>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-leaf"></i> தலைவாழை இலை விருந்து முறை · Sacred Feast Standards</div>
+        <h2 class="section-title story-reveal">The Four Pillars of <em class="gradient-text">JS Caterer Excellence</em></h2>
+        <p class="section-desc story-reveal" style="max-width: 680px; margin: 0 auto 36px; text-wrap: balance;">Traditional Tamil wedding feast hospitality — 4 sacred culinary pillars served fresh on our signature banana leaf.</p>
       </div>
 
-      <!-- 4 DISH CARDS PLACED DIRECTLY ON THE BANANA LEAF -->
-      <div class="banana-leaf-dishes-row story-reveal">
+      <!-- ISOLATED BANANA LEAF STAGE -->
+      <div class="isolated-leaf-stage story-reveal">
         
-        <!-- DISH 01: TASTE -->
-        <div class="leaf-dish-card" onmouseenter="activateLeafDish(1)">
-          <div class="dish-card-header">
-            <span class="dish-pill-num">01</span>
-            <span class="dish-tamil-seal">சுவை</span>
-          </div>
-          <div class="dish-brass-circle">
-            <i class="fa-solid fa-fire-burner"></i>
-          </div>
-          <h3 class="dish-card-title">Authentic Taste</h3>
-          <span class="dish-card-sub">Woodfire Slow-Cooking</span>
-          <p class="dish-card-desc">Generational family recipes slow-cooked over firewood flames in heirloom brass urulis.</p>
+        <!-- Isolated Banana Leaf Cutout Graphic -->
+        <div class="leaf-cutout-wrap">
+          <img src="assets/isolated_banana_leaf_cutout.jpg" alt="Fresh Emerald South Indian Banana Leaf" class="isolated-leaf-img">
         </div>
 
-        <!-- DISH 02: QUALITY -->
-        <div class="leaf-dish-card" onmouseenter="activateLeafDish(2)">
-          <div class="dish-card-header">
-            <span class="dish-pill-num">02</span>
-            <span class="dish-tamil-seal">தரம்</span>
+        <!-- 4 DISH POINTS PLACED DIRECTLY OVER THE LEAF -->
+        <div class="leaf-dishes-overlay-grid">
+          
+          <!-- DISH 01: TASTE (TOP LEFT) -->
+          <div class="leaf-dish-card dish-pos-1" onmouseenter="activateDish(1)" onclick="activateDish(1)">
+            <div class="dish-card-header">
+              <span class="dish-pill-num">01</span>
+              <span class="dish-tamil-seal">சுவை</span>
+            </div>
+            <div class="dish-card-body">
+              <div class="dish-brass-circle"><i class="fa-solid fa-fire-burner"></i></div>
+              <div class="dish-card-text">
+                <h3>Authentic Taste</h3>
+                <p>Generational recipes slow-cooked over steady firewood flames in heirloom brass urulis.</p>
+              </div>
+            </div>
           </div>
-          <div class="dish-brass-circle">
-            <i class="fa-solid fa-leaf"></i>
-          </div>
-          <h3 class="dish-card-title">Pure Quality</h3>
-          <span class="dish-card-sub">A2 Ghee & Delta Leaves</span>
-          <p class="dish-card-desc">Certified pure A2 cow ghee, cold-pressed oils, and fresh Cauvery delta banana leaves.</p>
-        </div>
 
-        <!-- DISH 03: HYGIENE -->
-        <div class="leaf-dish-card" onmouseenter="activateLeafDish(3)">
-          <div class="dish-card-header">
-            <span class="dish-pill-num">03</span>
-            <span class="dish-tamil-seal">சுத்தம்</span>
+          <!-- DISH 02: QUALITY (TOP RIGHT) -->
+          <div class="leaf-dish-card dish-pos-2" onmouseenter="activateDish(2)" onclick="activateDish(2)">
+            <div class="dish-card-header">
+              <span class="dish-pill-num">02</span>
+              <span class="dish-tamil-seal">தரம்</span>
+            </div>
+            <div class="dish-card-body">
+              <div class="dish-brass-circle"><i class="fa-solid fa-leaf"></i></div>
+              <div class="dish-card-text">
+                <h3>Pure Quality</h3>
+                <p>Certified pure A2 cow ghee, cold-pressed oils & fresh Cauvery delta banana leaves.</p>
+              </div>
+            </div>
           </div>
-          <div class="dish-brass-circle">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3 class="dish-card-title">100% Hygiene</h3>
-          <span class="dish-card-sub">FSSAI Certified RO Line</span>
-          <p class="dish-card-desc">State-of-the-art Central Kitchen with 4-stage RO water and steam-sanitized leaves.</p>
-        </div>
 
-        <!-- DISH 04: SERVICE -->
-        <div class="leaf-dish-card" onmouseenter="activateLeafDish(4)">
-          <div class="dish-card-header">
-            <span class="dish-pill-num">04</span>
-            <span class="dish-tamil-seal">நேர்த்தி</span>
+          <!-- DISH 03: HYGIENE (BOTTOM LEFT) -->
+          <div class="leaf-dish-card dish-pos-3" onmouseenter="activateDish(3)" onclick="activateDish(3)">
+            <div class="dish-card-header">
+              <span class="dish-pill-num">03</span>
+              <span class="dish-tamil-seal">சுத்தம்</span>
+            </div>
+            <div class="dish-card-body">
+              <div class="dish-brass-circle"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="dish-card-text">
+                <h3>100% Hygiene</h3>
+                <p>State-of-the-art Central Kitchen with 4-stage RO water and steam-sanitized leaves.</p>
+              </div>
+            </div>
           </div>
-          <div class="dish-brass-circle">
-            <i class="fa-solid fa-award"></i>
+
+          <!-- DISH 04: SERVICE (BOTTOM RIGHT) -->
+          <div class="leaf-dish-card dish-pos-4" onmouseenter="activateDish(4)" onclick="activateDish(4)">
+            <div class="dish-card-header">
+              <span class="dish-pill-num">04</span>
+              <span class="dish-tamil-seal">நேர்த்தி</span>
+            </div>
+            <div class="dish-card-body">
+              <div class="dish-brass-circle"><i class="fa-solid fa-award"></i></div>
+              <div class="dish-card-text">
+                <h3>Flawless Service</h3>
+                <p>Uniformed captains delivering traditional clockwise feast service with zero delay.</p>
+              </div>
+            </div>
           </div>
-          <h3 class="dish-card-title">Flawless Service</h3>
-          <span class="dish-card-sub">Zero-Delay Muhurtham</span>
-          <p class="dish-card-desc">Uniformed captains delivering traditional clockwise seating service with warmth and speed.</p>
+
         </div>
 
       </div>

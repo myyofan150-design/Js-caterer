@@ -15809,3 +15809,197 @@ body {
     font-size: 1.15rem !important;
   }
 }
+
+
+/* ================================================================
+   ISOLATED BANANA LEAF WITH 4 DISH CARDS (ACT 04)
+   ================================================================ */
+
+.section-isolated-banana-leaf {
+  padding: 84px 0 96px !important;
+  background: radial-gradient(circle at 50% 50%, #FFFDF9 0%, #FAF5EA 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.isolated-leaf-stage {
+  position: relative !important;
+  max-width: 1040px !important;
+  min-height: 520px !important;
+  margin: 16px auto 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Banana Leaf Cutout Layer */
+.leaf-cutout-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.isolated-leaf-img {
+  width: 100% !important;
+  max-width: 1020px !important;
+  height: auto !important;
+  max-height: 500px !important;
+  object-fit: contain !important;
+  mix-blend-mode: multiply !important;
+  filter: drop-shadow(0 20px 45px rgba(10, 38, 22, 0.16)) !important;
+  transform: rotate(-1deg) scale(1.02) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.isolated-leaf-stage:hover .isolated-leaf-img {
+  transform: rotate(0deg) scale(1.04) !important;
+}
+
+/* 4 Dishes Overlay Grid */
+.leaf-dishes-overlay-grid {
+  position: relative !important;
+  z-index: 3 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px 60px !important;
+  width: 100% !important;
+  max-width: 960px !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Individual Dish Card */
+.leaf-dish-card {
+  background: rgba(255, 253, 248, 0.94) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 22px !important;
+  padding: 20px 22px !important;
+  box-shadow: 0 10px 30px rgba(10, 32, 22, 0.1) !important;
+  cursor: pointer !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.leaf-dish-card:hover,
+.leaf-dish-card.active {
+  transform: translateY(-6px) scale(1.02) !important;
+  border-color: #2E7D32 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 18px 42px rgba(10, 32, 22, 0.18), 0 0 0 2px rgba(232, 200, 77, 0.5) !important;
+}
+
+.dish-card-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
+}
+
+.dish-pill-num {
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  background: rgba(212, 175, 55, 0.14) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 2px 8px !important;
+  border-radius: 8px !important;
+}
+
+.dish-tamil-seal {
+  font-family: var(--font-tamil) !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  color: var(--emerald) !important;
+  line-height: 1 !important;
+}
+
+.dish-card-body {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+}
+
+.dish-brass-circle {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 50% !important;
+  background: #082016 !important;
+  border: 1.5px solid #E8C84D !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E8C84D !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 4px 12px rgba(8, 32, 22, 0.25) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.leaf-dish-card:hover .dish-brass-circle,
+.leaf-dish-card.active .dish-brass-circle {
+  background: #E8C84D !important;
+  color: #082016 !important;
+  transform: scale(1.1) rotate(6deg) !important;
+}
+
+.dish-card-text h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.18rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin: 0 0 3px !important;
+  line-height: 1.2 !important;
+}
+
+.dish-card-text p {
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  color: #4A5550 !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+@media (max-width: 992px) {
+  .isolated-leaf-stage {
+    min-height: auto !important;
+  }
+
+  .leaf-dishes-overlay-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px 20px !important;
+    padding: 12px !important;
+  }
+
+  .leaf-dish-card {
+    padding: 16px 16px !important;
+  }
+
+  .dish-tamil-seal {
+    font-size: 1.25rem !important;
+  }
+
+  .dish-card-text h3 {
+    font-size: 1.08rem !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .leaf-dishes-overlay-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .leaf-dish-card {
+    padding: 16px 18px !important;
+    border-radius: 18px !important;
+  }
+}
