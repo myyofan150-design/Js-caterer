@@ -16714,63 +16714,169 @@ body {
 }
 
 /* ================================================================
-   MOBILE & TABLET RESPONSIVE STACK (<992px)
+   MOBILE & TABLET RESPONSIVE STACK (<992px) — 100% READABILITY & AIRY LUXURY
    ================================================================ */
 @media (max-width: 992px) {
+  .section-kinetic-offerings {
+    padding: 56px 0 68px !important;
+  }
+
   .kinetic-curtain-container {
     flex-direction: column !important;
     height: auto !important;
-    gap: 16px !important;
+    gap: 20px !important;
+    max-width: 580px !important;
+    margin: 16px auto 0 !important;
   }
 
   .kinetic-panel {
     flex: none !important;
     width: 100% !important;
     height: auto !important;
-    min-height: 280px !important;
-    border-radius: 22px !important;
+    min-height: auto !important;
+    border-radius: 24px !important;
+    border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+    box-shadow: 0 12px 32px rgba(10, 32, 22, 0.12) !important;
+    background: #082016 !important;
   }
 
   .kinetic-panel.active {
     flex: none !important;
+    border-color: #E8C84D !important;
+  }
+
+  /* High-Contrast Deep Obsidian Overlay on Mobile for Crystal Clear Text */
+  .panel-glass-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(6, 24, 16, 0.75) 0%, rgba(4, 18, 12, 0.94) 40%, #030F0A 100%) !important;
+    z-index: 2 !important;
   }
 
   .panel-collapsed-badge {
     display: none !important;
   }
 
+  /* Airy, Well-Padded Content Container */
   .panel-expanded-content {
     position: relative !important;
     opacity: 1 !important;
     transform: none !important;
     pointer-events: auto !important;
-    padding: 22px 20px !important;
+    padding: 24px 20px 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    z-index: 4 !important;
+  }
+
+  /* Top Badges Row */
+  .panel-top-pill {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 2px !important;
+  }
+
+  .pill-category {
+    font-size: 0.68rem !important;
+    padding: 3px 10px !important;
+    background: rgba(232, 200, 77, 0.15) !important;
+    border-color: rgba(232, 200, 77, 0.5) !important;
+  }
+
+  .pill-capacity {
+    font-size: 0.72rem !important;
+    padding: 3px 10px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #F7E7B4 !important;
+  }
+
+  /* Main Title & Description */
+  .panel-main-info {
+    margin: 0 !important;
+    gap: 10px !important;
+  }
+
+  .panel-icon-brass {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 2px !important;
   }
 
   .panel-title {
-    font-size: 1.35rem !important;
+    font-size: 1.38rem !important;
+    line-height: 1.25 !important;
+    color: #FFFFFF !important;
+    margin: 0 !important;
   }
 
   .panel-desc {
-    font-size: 0.84rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    margin: 0 !important;
   }
 
+  /* Specs Chips: Clean Inline Row / Wrap with Soft Background */
   .panel-specs-chips {
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 8px !important;
-    margin-bottom: 16px !important;
+    margin: 4px 0 6px !important;
   }
 
   .panel-specs-chips span {
-    font-size: 0.72rem !important;
+    font-size: 0.74rem !important;
+    padding: 5px 10px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: 8px !important;
+    color: #E6E1D3 !important;
+  }
+
+  /* Action Button: Full Width, Comfortable Touch Height */
+  .panel-action-row {
+    margin-top: 4px !important;
   }
 
   .btn-panel-action {
     width: 100% !important;
     justify-content: center !important;
-    padding: 10px 18px !important;
+    padding: 12px 20px !important;
+    font-size: 0.8rem !important;
+    border-radius: 24px !important;
   }
 
   .curtain-autoplay-indicators {
     display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-kinetic-offerings {
+    padding: 48px 0 60px !important;
+  }
+
+  .panel-expanded-content {
+    padding: 20px 16px 18px !important;
+    gap: 12px !important;
+  }
+
+  .panel-title {
+    font-size: 1.25rem !important;
+  }
+
+  .panel-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .pill-category,
+  .pill-capacity {
+    font-size: 0.64rem !important;
+    padding: 2px 8px !important;
   }
 }
