@@ -861,9 +861,63 @@ document.addEventListener('DOMContentLoaded', () => {
   let conciergeState = {
     step: 1,
     occasion: 'Marriage & Event Feast',
+    specificOccasion: 'Marriage',
     guests: '150 – 300 Guests',
     date: '',
     cuisine: 'Pure Vegetarian Feast'
+  };
+
+  const OCCASION_OPTIONS_MAP = {
+    'Marriage & Event Feast': [
+      'Marriage',
+      'Betrothal',
+      'Birthday',
+      'Gettogether Ceremony',
+      'Housewarming',
+      'Baby Shower',
+      '60th & 80th Birthdays',
+      'Others (etc.)'
+    ],
+    'CPU Industrial Workforce Catering': [
+      'Manufacturing Sector',
+      'IT Sector',
+      'Institutions',
+      'Hospitals',
+      'Daily Shift Meals'
+    ],
+    'Corporate Packed Bento Boxes': [
+      'Breakfast Combo',
+      'Lunch',
+      'Snacks',
+      'Dinner Combo',
+      'Night Shift Combos'
+    ],
+    'Kovil Annathanam & Sacred Feasts': [
+      'Temple Consecration',
+      'Daily Temple Annathanam',
+      'Special Festival Feast',
+      'Pradosham / Sashti',
+      'Others (etc.)'
+    ]
+  };
+
+  window.populateSpecificOccasions = function(category) {
+    const occasionSelect = document.getElementById('conciergeSpecificOccasion');
+    if (!occasionSelect) return;
+
+    const options = OCCASION_OPTIONS_MAP[category] || OCCASION_OPTIONS_MAP['Marriage & Event Feast'];
+    occasionSelect.innerHTML = '';
+    
+    options.forEach((opt, idx) => {
+      const optEl = document.createElement('option');
+      optEl.value = opt;
+      optEl.textContent = opt;
+      if (idx === 0) optEl.selected = true;
+      occasionSelect.appendChild(optEl);
+    });
+
+    conciergeState.specificOccasion = options[0];
+    window.updateLiveSummary();
   };
 
   window.goToStep = function(stepNum) {
@@ -2052,94 +2106,3 @@ window.resumeCurtainAutoplay = function() {
 document.addEventListener('DOMContentLoaded', () => {
   startCurtainAutoplay();
 });
-
-
-// ================================================================
-// DYNAMIC OCCASION DEPENDENT DROPDOWN CONTROLLER
-// ================================================================
-const OCCASION_OPTIONS_MAP = {
-  'Marriage & Event Feast': [
-    'Marriage',
-    'Betrothal',
-    'Birthday',
-    'Gettogether Ceremony',
-    'Housewarming',
-    'Baby Shower',
-    '60th & 80th Birthdays',
-    'Others (etc.)'
-  ],
-  'CPU Industrial Workforce Catering': [
-    'Manufacturing Sector',
-    'IT Sector',
-    'Institutions',
-    'Hospitals',
-    'Daily Shift Meals'
-  ],
-  'Corporate Packed Bento Boxes': [
-    'Breakfast Combo',
-    'Lunch',
-    'Snacks',
-    'Dinner Combo',
-    'Night Shift Combos'
-  ],
-  'Kovil Annathanam & Sacred Feasts': [
-    'Temple Consecration',
-    'Daily Temple Annathanam',
-    'Special Festival Feast',
-    'Pradosham / Sashti',
-    'Others (etc.)'
-  ]
-};
-
-window.populateSpecificOccasions = function(category) {
-  const occasionSelect = document.getElementById('conciergeSpecificOccasion');
-  if (!occasionSelect) return;
-
-  const options = OCCASION_OPTIONS_MAP[category] || OCCASION_OPTIONS_MAP['Marriage & Event Feast'];
-  occasionSelect.innerHTML = '';
-  
-  options.forEach((opt, idx) => {
-    const optEl = document.createElement('option');
-    optEl.value = opt;
-    optEl.textContent = opt;
-    if (idx === 0) optEl.selected = true;
-    occasionSelect.appendChild(optEl);
-  });
-
-  if (typeof updateLiveSummary === 'function') {
-    updateLiveSummary();
-  }
-};
-
-// Hook into selectOccasionCard
-const originalSelectOccasionCard = window.selectOccasionCard;
-window.selectOccasionCard = function(element, occasionName) {
-  if (typeof originalSelectOccasionCard === 'function') {
-    originalSelectOccasionCard(element, occasionName);
-  } else {
-    document.querySelectorAll('.occasion-select-card').forEach(card => card.classList.remove('active'));
-    if (element) element.classList.add('active');
-  }
-
-  window.selectedOccasionCategory = occasionName;
-  populateSpecificOccasions(occasionName);
-};
-
-// Hook into updateLiveSummary to include Specific Occasion in WhatsApp Message & Summary
-const originalUpdateLiveSummary = window.updateLiveSummary;
-window.updateLiveSummary = function() {
-  if (typeof originalUpdateLiveSummary === 'function') {
-    originalUpdateLiveSummary();
-  }
-
-  const category = window.selectedOccasionCategory || 'Marriage & Event Feast';
-  const occasionSelect = document.getElementById('conciergeSpecificOccasion');
-  const specificOccasion = occasionSelect ? occasionSelect.value : '';
-
-  const summaryOccasionEl = document.getElementById('summaryOccasion');
-  if (summaryOccasionEl) {
-    summaryOccasionEl.innerHTML = specificOccasion 
-      ? `<strong>${specificOccasion}</strong> <span style="font-size:0.75rem;color:rgba(255,255,255,0.6);">(${category})</span>` 
-      : category;
-  }
-};
