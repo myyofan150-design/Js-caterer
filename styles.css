@@ -18290,30 +18290,40 @@ body {
   letter-spacing: 0.2px !important;
 }
 
-#about-cpu-section .btn-cpu-gold-action {
+#about-cpu-section .cpu-action-row {
+  margin-top: 28px !important;
+  width: 100% !important;
+}
+
+#about-cpu-section .btn-cpu-wa-action {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 10px !important;
-  padding: 15px 28px !important;
-  background: linear-gradient(135deg, #E8C84D 0%, #D4AF37 100%) !important;
-  color: #030F0A !important;
+  gap: 12px !important;
+  padding: 16px 30px !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
   font-family: var(--font-label) !important;
-  font-size: 0.88rem !important;
+  font-size: 0.92rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
-  border-radius: 14px !important;
+  border-radius: 16px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 16px rgba(232, 200, 77, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
 }
 
-#about-cpu-section .btn-cpu-gold-action:hover {
-  background: #FFFFFF !important;
-  color: #030F0A !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3) !important;
+#about-cpu-section .btn-cpu-wa-action i {
+  font-size: 1.35rem !important;
+  color: #FFFFFF !important;
+}
+
+#about-cpu-section .btn-cpu-wa-action:hover {
+  background: linear-gradient(135deg, #2BF076 0%, #15A392 100%) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6) !important;
 }
 
 /* Specific Mobile Device Optimizations for this section */
@@ -18360,7 +18370,7 @@ body {
   
   #about-cpu-section .cpu-live-hud-grid {
     gap: 10px !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 22px !important;
   }
   
   #about-cpu-section .hud-pill-box {
@@ -18392,15 +18402,21 @@ body {
   }
   
   #about-cpu-section .cpu-action-row {
-    margin-top: 4px !important;
+    margin-top: 24px !important;
+    padding-top: 2px !important;
   }
   
-  #about-cpu-section .btn-cpu-gold-action {
+  #about-cpu-section .btn-cpu-wa-action {
     width: 100% !important;
-    font-size: 0.82rem !important;
-    padding: 13px 16px !important;
+    font-size: 0.85rem !important;
+    padding: 15px 18px !important;
     box-sizing: border-box !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
+    gap: 10px !important;
+  }
+
+  #about-cpu-section .btn-cpu-wa-action i {
+    font-size: 1.25rem !important;
   }
 }
 
