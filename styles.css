@@ -10012,3 +10012,74 @@ footer.luxury-footer-wrap,
     gap: 12px !important;
   }
 }
+
+
+/* ================================================================
+   BUSINESS CARD VIP METRICS & LIVE STATUS (ZERO GAP ENHANCEMENT)
+   ================================================================ */
+
+.card-metrics-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  margin: 12px 0 16px !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  padding: 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.metric-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.metric-box i {
+  font-size: 1.1rem !important;
+  color: #E8C84D !important;
+}
+
+.metric-box div strong {
+  display: block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.82rem !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+.metric-box div span {
+  display: block !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.68rem !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.card-live-status-banner {
+  background: rgba(37, 211, 102, 0.12) !important;
+  border: 1px solid rgba(37, 211, 102, 0.3) !important;
+  border-radius: 10px !important;
+  padding: 8px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 18px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.76rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.pulse-live-green {
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.3) !important;
+}
+
+.card-live-status-banner strong {
+  color: #25D366 !important;
+  font-weight: 700 !important;
+}
