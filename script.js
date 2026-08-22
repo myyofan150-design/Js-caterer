@@ -627,8 +627,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
-  // 3D GAMIFIED VIRTUAL CENTRAL KITCHEN WORLD CONTROLLER
+  // MASTER 3-WAY EXPERIENCE SWITCHER
   // ----------------------------------------------------
+  window.switchMasterExperience = function(expId) {
+    const exp1 = document.getElementById('masterExp1');
+    const exp2 = document.getElementById('masterExp2');
+    const exp3 = document.getElementById('masterExp3');
+    const btns = document.querySelectorAll('.exp-switch-btn');
+
+    btns.forEach(b => b.classList.remove('active'));
+
+    if (expId === 'exp1') {
+      if (exp1) exp1.classList.add('active');
+      if (exp2) exp2.classList.remove('active');
+      if (exp3) exp3.classList.remove('active');
+      if (btns[0]) btns[0].classList.add('active');
+      setTimeout(initKitchen3DCanvas, 100);
+    } else if (expId === 'exp2') {
+      if (exp1) exp1.classList.remove('active');
+      if (exp2) exp2.classList.add('active');
+      if (exp3) exp3.classList.remove('active');
+      if (btns[1]) btns[1].classList.add('active');
+    } else if (expId === 'exp3') {
+      if (exp1) exp1.classList.remove('active');
+      if (exp2) exp2.classList.remove('active');
+      if (exp3) exp3.classList.add('active');
+      if (btns[2]) btns[2].classList.add('active');
+    }
+  };
+
+  // EXPERIENCE 1: 3D Virtual Kitchen Controller
   const selectedStations = new Set(['station1', 'station2']);
 
   window.interactStation = function(stationId, stationName) {
@@ -636,11 +664,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectedStations.has(stationId)) {
       if (selectedStations.size > 1) {
         selectedStations.delete(stationId);
-        if (card) card.classList.remove('active');
+        if (card) {
+          card.classList.remove('active');
+          const btnSpan = card.querySelector('.station-action-btn span');
+          const btnIcon = card.querySelector('.station-action-btn i');
+          if (btnSpan) btnSpan.textContent = 'Add to Feast Tray';
+          if (btnIcon) { btnIcon.className = 'fa-solid fa-plus-circle text-gold'; }
+        }
       }
     } else {
       selectedStations.add(stationId);
-      if (card) card.classList.add('active');
+      if (card) {
+        card.classList.add('active');
+        const btnSpan = card.querySelector('.station-action-btn span');
+        const btnIcon = card.querySelector('.station-action-btn i');
+        if (btnSpan) btnSpan.textContent = 'Added to Feast Tray';
+        if (btnIcon) { btnIcon.className = 'fa-solid fa-circle-check text-green'; }
+      }
     }
     updateTrayDisplay();
   };
@@ -699,8 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
     camera.position.z = 80;
 
-    // Glowing Golden Spice Particles (Ambience)
-    const particleCount = 120;
+    const particleCount = 100;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
@@ -759,8 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize WebGL once DOM is ready
-  setTimeout(initKitchen3DCanvas, 500);
+  setTimeout(initKitchen3DCanvas, 400);
 
   window.launch3dKitchenWhatsApp = function() {
     const guests = document.getElementById('gameHeadcount') ? document.getElementById('gameHeadcount').value : '150 – 300 Guests';
@@ -783,6 +821,120 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
   };
+
+  // EXPERIENCE 2: Animated Multi-Step Concierge Controller
+  let conciergeState = {
+    step: 1,
+    occasion: 'Marriage & Event Feast',
+    guests: '150 – 300 Guests',
+    date: '',
+    cuisine: 'Pure Vegetarian Feast'
+  };
+
+  window.goToStep = function(stepNum) {
+    conciergeState.step = stepNum;
+    document.querySelectorAll('.concierge-step-container').forEach(el => el.classList.remove('active'));
+    const targetStep = document.getElementById(`conciergeStep${stepNum}`);
+    if (targetStep) targetStep.classList.add('active');
+
+    const bar = document.getElementById('studioProgressBar');
+    if (bar) {
+      const pct = stepNum === 1 ? 25 : stepNum === 2 ? 50 : stepNum === 3 ? 75 : 100;
+      bar.style.width = `${pct}%`;
+    }
+
+    for (let i = 1; i <= 4; i++) {
+      const pill = document.getElementById(`stepPill${i}`);
+      if (pill) {
+        if (i <= stepNum) pill.classList.add('active');
+        else pill.classList.remove('active');
+      }
+    }
+  };
+
+  window.selectOccasionCard = function(cardEl, occasionName) {
+    document.querySelectorAll('.occasion-select-card').forEach(c => c.classList.remove('active'));
+    cardEl.classList.add('active');
+    conciergeState.occasion = occasionName;
+    const summaryOccasion = document.getElementById('summaryOccasion');
+    if (summaryOccasion) summaryOccasion.textContent = occasionName;
+  };
+
+  window.selectGuestPill = function(pillEl, guestRange) {
+    document.querySelectorAll('.guest-pill').forEach(p => p.classList.remove('active'));
+    pillEl.classList.add('active');
+    conciergeState.guests = guestRange;
+    const summaryGuests = document.getElementById('summaryGuests');
+    if (summaryGuests) summaryGuests.textContent = guestRange;
+  };
+
+  window.selectCuisineCard = function(cardEl, cuisineName) {
+    document.querySelectorAll('.cuisine-option-card').forEach(c => c.classList.remove('active'));
+    cardEl.classList.add('active');
+    conciergeState.cuisine = cuisineName;
+    const summaryCuisine = document.getElementById('summaryCuisine');
+    if (summaryCuisine) summaryCuisine.textContent = cuisineName;
+  };
+
+  window.updateLiveSummary = function() {
+    const dateInput = document.getElementById('conciergeEventDate');
+    if (dateInput) conciergeState.date = dateInput.value;
+  };
+
+  window.handleConciergeSubmit = function(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('conciergeUserName');
+    const phoneInput = document.getElementById('conciergeUserPhone');
+    const notesInput = document.getElementById('conciergeUserNotes');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const notes = notesInput ? notesInput.value.trim() : '';
+    const date = conciergeState.date;
+
+    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nCustom Catering Inquiry (Concierge Builder):\n🎯 Occasion: ${conciergeState.occasion}\n👥 Guest Strength: ${conciergeState.guests}\n🍲 Cuisine Preference: ${conciergeState.cuisine}`;
+    if (date) msg += `\n📅 Auspicious Date: ${date}`;
+    if (name) msg += `\n👤 Name: ${name}`;
+    if (phone) msg += `\n📞 WhatsApp: ${phone}`;
+    if (notes) msg += `\n📍 Locality / Notes: ${notes}`;
+    msg += `\n\nPlease share menu package options and quote!`;
+
+    window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+
+  // EXPERIENCE 3: Bento Grid Form Controller
+  let bentoSelectedService = 'Marriage & Event Catering';
+  const bentoChips = document.querySelectorAll('.bento-chip');
+  bentoChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      bentoChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      bentoSelectedService = chip.getAttribute('data-service') || 'Marriage & Event Catering';
+    });
+  });
+
+  const bentoBookingForm = document.getElementById('bentoBookingForm');
+  if (bentoBookingForm) {
+    bentoBookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      const name = v('bName');
+      const phone = v('bPhone');
+      const date = v('bDate');
+      const guests = v('bGuests');
+      const notes = v('bNotes');
+
+      let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nBento Fast Quote Request:\n🎯 Service: ${bentoSelectedService}\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n👥 Guests: ${guests}`;
+      if (date) msg += `\n📅 Event Date: ${date}`;
+      if (notes) msg += `\n📍 Notes / Locality: ${notes}`;
+      msg += `\n\nPlease send package options and quote!`;
+
+      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
 
   // ----------------------------------------------------
   // GSAP-STYLE SCROLL PROGRESS BAR & REVEAL ANIMATIONS
