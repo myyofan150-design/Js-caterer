@@ -453,644 +453,368 @@
     </div>
   </section>
 
-  <section id="act-8" class="section-all-experiences-master">
+  <section id="act-8" class="section-catering-concierge">
     <div class="container">
       
       <!-- Section Header -->
       <div class="ornamental-header">
         <span class="flourish-icon">❖</span>
-        <h2>Begin Your Event Story</h2>
+        <h2>Curate Your Auspicious Feast</h2>
         <span class="flourish-icon">❖</span>
       </div>
-      <p class="section-subtitle">Experience JS Caterer's 3 Interactive Booking Concepts — Choose Your Preferred Experience</p>
+      <p class="section-subtitle">Interactive Step-by-Step Menu Builder & Direct WhatsApp Booking with Head Chef Jagan C</p>
 
-      <!-- 3-WAY LIVE EXPERIENCE SWITCHER BAR -->
-      <div class="master-experience-switcher">
-        <button type="button" class="exp-switch-btn active" onclick="switchMasterExperience('exp1')">
-          <i class="fa-solid fa-gamepad"></i> 1. 3D Gamified Kitchen
-        </button>
-        <button type="button" class="exp-switch-btn" onclick="switchMasterExperience('exp2')">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> 2. Animated Multi-Step Concierge
-        </button>
-        <button type="button" class="exp-switch-btn" onclick="switchMasterExperience('exp3')">
-          <i class="fa-solid fa-table-cells-large"></i> 3. Modern Luxury Bento Grid
-        </button>
-      </div>
+      <!-- MAIN 2-COLUMN CATERING CONCIERGE WRAPPER -->
+      <div class="concierge-master-grid">
 
-      <!-- =========================================================================
-           EXPERIENCE 1: 3D GAMIFIED VIRTUAL CENTRAL KITCHEN METAVERSE
-           ========================================================================= -->
-      <div id="masterExp1" class="master-experience-view active">
-        <div class="kitchen-3d-metaverse-wrap" id="kitchenMetaverseWrap">
+        <!-- =======================================================
+             LEFT WING: CHEF'S LIVE KITCHEN PASS & FEAST SUMMARY
+             ======================================================= -->
+        <div class="concierge-kitchen-pass-card">
           
-          <!-- Three.js Ambient Particle & Lighting Canvas -->
-          <canvas id="kitchen3dCanvas" class="kitchen-3d-bg-canvas"></canvas>
+          <div class="kitchen-card-bg-overlay"></div>
+          <img src="assets/banana_leaf_serving.jpg" alt="Traditional Banana Leaf Feast" class="kitchen-pass-bg-img">
 
-          <!-- Kitchen Atmosphere Overlay -->
-          <div class="kitchen-hud-top">
-            <div class="hud-status-badge">
-              <span class="pulse-live-green-ring"></span>
-              <span><strong>3D KITCHEN SIMULATION</strong> · Velachery Central Facility</span>
-            </div>
-            <div class="hud-guest-counter">
-              <span class="hud-label"><i class="fa-solid fa-gamepad text-gold"></i> GAMIFIED FEAST BUILDER</span>
-              <div class="hud-level-tag">LEVEL: CHEF CONCIERGE</div>
-            </div>
+          <!-- Steaming Pot Animation Watermark -->
+          <div class="animated-steaming-pot-watermark">
+            <img src="assets/animations/steaming_pot.svg" alt="Steaming Feast Cauldron" class="steaming-pot-icon">
           </div>
 
-          <!-- 3D INTERACTIVE KITCHEN STATIONS GRID -->
-          <div class="kitchen-stations-3d-grid" id="kitchenStationsGrid">
+          <div class="kitchen-card-content">
             
-            <!-- ZONE 1: GRAND DUM BIRYANI & SAMBAR CAULDRONS -->
-            <div class="station-3d-card active" data-station="station1" onclick="interactStation('station1', 'Grand Kalyana Virundhu (Dum Biryani & Cauldron Sambar)')">
-              <div class="station-card-inner">
-                <div class="station-3d-header">
-                  <span class="station-num-pill">ZONE 01</span>
-                  <span class="station-temp-tag">♨️ 100°C SIMMERING</span>
-                </div>
-                
-                <div class="station-visual-wrap">
-                  <img src="assets/animations/steaming_pot.svg" alt="Steaming Cauldron" class="station-3d-icon-svg">
-                </div>
+            <!-- Live Chef Status Header -->
+            <div class="chef-live-status-badge">
+              <span class="pulse-live-green-ring"></span>
+              <span><strong>Chef Jagan C</strong> · Cooking Live in Velachery</span>
+              <span class="live-flame-tag">🔥 Kitchen Active</span>
+            </div>
 
-                <div class="station-info">
-                  <h4 class="station-title">Grand Cauldron Zone</h4>
-                  <p class="station-desc">Simmering authentic wedding sambhar, rasam, and dum biryani in brass urulis.</p>
-                  <div class="station-action-btn">
-                    <i class="fa-solid fa-circle-check text-green"></i>
-                    <span>Added to Feast Tray</span>
-                  </div>
+            <div class="kitchen-brand-block">
+              <span class="kitchen-gold-pill">PREMIER SOUTH CHENNAI CATERING</span>
+              <h3 class="kitchen-hero-title">JS Caterer Velachery</h3>
+              <p class="kitchen-tamil-quote">“பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!”</p>
+            </div>
+
+            <!-- Dynamic Live Feast Summary Box -->
+            <div class="live-feast-summary-box">
+              <div class="summary-box-header">
+                <i class="fa-solid fa-utensils text-gold"></i>
+                <span>LIVE FEAST ITINERARY</span>
+                <span class="live-dot-pulse"></span>
+              </div>
+              <div class="summary-dynamic-items">
+                <div class="summary-item">
+                  <span class="item-tag">OCCASION:</span>
+                  <strong id="summaryOccasion">Marriage & Event Feast</strong>
+                </div>
+                <div class="summary-item">
+                  <span class="item-tag">GUEST STRENGTH:</span>
+                  <strong id="summaryGuests">150 – 300 Guests</strong>
+                </div>
+                <div class="summary-item">
+                  <span class="item-tag">CUISINE STYLE:</span>
+                  <strong id="summaryCuisine">Pure Vegetarian Feast</strong>
                 </div>
               </div>
             </div>
 
-            <!-- ZONE 2: BANANA LEAF PLATING ASSEMBLY -->
-            <div class="station-3d-card active" data-station="station2" onclick="interactStation('station2', 'Traditional Banana Leaf VIP Service (Vadai, Payasam & Sweets)')">
-              <div class="station-card-inner">
-                <div class="station-3d-header">
-                  <span class="station-num-pill">ZONE 02</span>
-                  <span class="station-temp-tag">🌿 100% SATVIK VIRUNDHU</span>
-                </div>
-                
-                <div class="station-visual-wrap">
-                  <img src="assets/wedding_feast.jpg" alt="Banana Leaf Plating" class="station-thumb-img">
-                </div>
-
-                <div class="station-info">
-                  <h4 class="station-title">Banana Leaf Assembly</h4>
-                  <p class="station-desc">Freshly harvested leaves laid with hot medu vadai, paruppu payasam & aviyal.</p>
-                  <div class="station-action-btn">
-                    <i class="fa-solid fa-circle-check text-green"></i>
-                    <span>Added to Feast Tray</span>
-                  </div>
-                </div>
+            <!-- 4 Trust Badges Grid -->
+            <div class="kitchen-trust-grid">
+              <div class="trust-mini-chip">
+                <i class="fa-solid fa-leaf text-gold"></i>
+                <span>Farm-Fresh Daily</span>
+              </div>
+              <div class="trust-mini-chip">
+                <i class="fa-solid fa-clock text-gold"></i>
+                <span>Zero-Delay Muhurtham</span>
+              </div>
+              <div class="trust-mini-chip">
+                <i class="fa-solid fa-star text-gold"></i>
+                <span>4.9★ (280+ Reviews)</span>
+              </div>
+              <div class="trust-mini-chip">
+                <i class="fa-solid fa-shield-check text-gold"></i>
+                <span>FSSAI Certified</span>
               </div>
             </div>
 
-            <!-- ZONE 3: LIVE MATKA KULFI & SWEET CORNER -->
-            <div class="station-3d-card" data-station="station3" onclick="interactStation('station3', 'Live Matka Kulfi & Hot Jalebi Counters')">
-              <div class="station-card-inner">
-                <div class="station-3d-header">
-                  <span class="station-num-pill">ZONE 03</span>
-                  <span class="station-temp-tag">🍧 LIVE DESSERT COUNTER</span>
-                </div>
-                
-                <div class="station-visual-wrap">
-                  <img src="assets/sweets_live_counter.jpg" alt="Live Sweets Counter" class="station-thumb-img">
-                </div>
-
-                <div class="station-info">
-                  <h4 class="station-title">Live Sweets & Kulfi Corner</h4>
-                  <p class="station-desc">Interactive live counters for hot ghee jalebis, badam milk & matka kulfis.</p>
-                  <div class="station-action-btn">
-                    <i class="fa-solid fa-plus-circle text-gold"></i>
-                    <span>Add to Feast Tray</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ZONE 4: AUTOMATED CPU BENTO PACKAGING -->
-            <div class="station-3d-card" data-station="station4" onclick="interactStation('station4', 'FSSAI Certified Industrial Packed Meal Boxes')">
-              <div class="station-card-inner">
-                <div class="station-3d-header">
-                  <span class="station-num-pill">ZONE 04</span>
-                  <span class="station-temp-tag">🛡️ ISO GRADE HYGIENE</span>
-                </div>
-                
-                <div class="station-visual-wrap">
-                  <img src="assets/corporate_buffet.jpg" alt="Bento Packaging" class="station-thumb-img">
-                </div>
-
-                <div class="station-info">
-                  <h4 class="station-title">Hygienic Bento Packaging</h4>
-                  <p class="station-desc">Automated hot sealing lines for IT parks, factories & bulk shift deliveries.</p>
-                  <div class="station-action-btn">
-                    <i class="fa-solid fa-plus-circle text-gold"></i>
-                    <span>Add to Feast Tray</span>
-                  </div>
+            <!-- Direct Hotline Link -->
+            <div class="kitchen-direct-hotline">
+              <i class="fa-solid fa-phone-volume text-gold"></i>
+              <div>
+                <span class="hotline-sub">DIRECT CHEF HOTLINE:</span>
+                <div class="hotline-links">
+                  <a href="tel:9940649939" class="phone-link">99406 49939</a>
+                  <span class="sep">|</span>
+                  <a href="tel:9884985368" class="phone-link">98849 85368</a>
                 </div>
               </div>
             </div>
 
           </div>
+        </div>
 
-          <!-- FLOATING 3D HUD TRAY -->
-          <div class="kitchen-gamified-tray-hud">
-            <div class="tray-hud-header">
-              <div class="tray-title-group">
-                <i class="fa-solid fa-cart-flatbed-suitcase text-gold"></i>
-                <div>
-                  <strong>YOUR 3D CURATED FEAST TRAY</strong>
-                  <span id="trayItemCount">2 Kitchen Zones Selected</span>
-                </div>
+        <!-- =======================================================
+             RIGHT WING: ANIMATED MULTI-STEP CONVERSATIONAL FEAST STUDIO
+             ======================================================= -->
+        <div class="concierge-studio-card">
+
+          <!-- Multi-Step Progress Tracker Bar -->
+          <div class="studio-progress-tracker">
+            <div class="progress-bar-fill-track">
+              <div class="progress-bar-indicator" id="studioProgressBar" style="width: 25%;"></div>
+            </div>
+            <div class="progress-steps-label-row">
+              <span class="step-label-pill active" id="stepPill1">❶ Occasion</span>
+              <span class="step-label-pill" id="stepPill2">❷ Guests</span>
+              <span class="step-label-pill" id="stepPill3">❸ Menu</span>
+              <span class="step-label-pill" id="stepPill4">❹ Quote</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: SELECT OCCASION (WITH RICH IMAGE CARDS) -->
+          <div class="concierge-step-container active" id="conciergeStep1">
+            <div class="step-dialogue-bubble">
+              <div class="chef-bubble-avatar">
+                <img src="assets/logo.png" alt="Chef Avatar">
               </div>
-              <div class="tray-items-pills" id="trayPillsContainer">
-                <span class="tray-item-pill active">🍲 Cauldron Zone</span>
-                <span class="tray-item-pill active">🌿 Leaf Assembly</span>
+              <div class="bubble-speech">
+                <span class="chef-name-tag">Chef Jagan C</span>
+                <p>“வணக்கம்! Which auspicious occasion are we curating the feast for?”</p>
               </div>
             </div>
 
-            <div class="tray-booking-controls">
-              <div class="tray-input-box">
-                <label>GUEST COUNT:</label>
-                <select id="gameHeadcount" class="tray-select">
-                  <option value="50 – 150 Guests">50 – 150 Guests</option>
-                  <option value="150 – 300 Guests" selected>150 – 300 Guests</option>
-                  <option value="300 – 600 Guests">300 – 600 Guests</option>
-                  <option value="600 – 1500 Guests">600 – 1,500 Guests</option>
-                  <option value="1500+ Guests">1,500+ Guests (Grand)</option>
-                </select>
+            <div class="occasion-cards-grid">
+              
+              <div class="occasion-select-card active" data-occasion="Marriage & Event Feast" onclick="selectOccasionCard(this, 'Marriage & Event Feast')">
+                <div class="card-image-wrap">
+                  <img src="assets/wedding_feast.jpg" alt="Wedding Feast" loading="lazy">
+                  <div class="card-image-overlay"></div>
+                  <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <div class="card-caption">
+                  <strong>Marriage Kalyana Virundhu</strong>
+                  <span>Traditional Muhurtham Leaf Feast</span>
+                </div>
               </div>
 
-              <div class="tray-input-box">
-                <label>EVENT DATE:</label>
-                <input type="date" id="gameEventDate" class="tray-date-input">
+              <div class="occasion-select-card" data-occasion="CPU Industrial Workforce Catering" onclick="selectOccasionCard(this, 'CPU Industrial Workforce Catering')">
+                <div class="card-image-wrap">
+                  <img src="assets/live_kitchen.jpg" alt="Industrial Catering" loading="lazy">
+                  <div class="card-image-overlay"></div>
+                  <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <div class="card-caption">
+                  <strong>Industrial Workforce</strong>
+                  <span>Factory & IT Park Canteen Shifts</span>
+                </div>
               </div>
 
-              <div class="tray-input-box full">
-                <label>YOUR NAME / PHONE:</label>
-                <input type="text" id="gameContact" placeholder="Your Name & WhatsApp Phone" class="tray-text-input">
+              <div class="occasion-select-card" data-occasion="Corporate Packed Bento Boxes" onclick="selectOccasionCard(this, 'Corporate Packed Bento Boxes')">
+                <div class="card-image-wrap">
+                  <img src="assets/corporate_buffet.jpg" alt="Corporate Buffet" loading="lazy">
+                  <div class="card-image-overlay"></div>
+                  <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <div class="card-caption">
+                  <strong>Corporate Meal Boxes</strong>
+                  <span>Hot Sealed Executive Combos</span>
+                </div>
               </div>
 
-              <button type="button" class="btn-game-whatsapp-launch" onclick="launch3dKitchenWhatsApp()">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>TRANSMIT 3D FEAST ITINERARY TO CHEF JAGAN</span>
-                <i class="fa-solid fa-bolt text-gold"></i>
+              <div class="occasion-select-card" data-occasion="Kovil Annathanam & Sacred Feasts" onclick="selectOccasionCard(this, 'Kovil Annathanam & Sacred Feasts')">
+                <div class="card-image-wrap">
+                  <img src="assets/temple_annathanam.jpg" alt="Temple Annathanam" loading="lazy">
+                  <div class="card-image-overlay"></div>
+                  <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <div class="card-caption">
+                  <strong>Temple Annathanam</strong>
+                  <span>100% Satvik Prasadam Feast</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="step-nav-footer">
+              <button type="button" class="btn-step-next" onclick="goToStep(2)">
+                <span>Next: Guest Count & Date</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
           </div>
 
-        </div>
-      </div>
-
-      <!-- =========================================================================
-           EXPERIENCE 2: ANIMATED MULTI-STEP CONVERSATIONAL FEAST CONCIERGE
-           ========================================================================= -->
-      <div id="masterExp2" class="master-experience-view">
-        <div class="concierge-master-grid">
-
-          <!-- Left Wing: Chef's Live Kitchen Pass Card -->
-          <div class="concierge-kitchen-pass-card">
-            <div class="kitchen-card-bg-overlay"></div>
-            <img src="assets/banana_leaf_serving.jpg" alt="Traditional Banana Leaf Feast" class="kitchen-pass-bg-img">
-
-            <div class="animated-steaming-pot-watermark">
-              <img src="assets/animations/steaming_pot.svg" alt="Steaming Feast Cauldron" class="steaming-pot-icon">
+          <!-- STEP 2: GUEST COUNT & AUSPICIOUS DATE -->
+          <div class="concierge-step-container" id="conciergeStep2">
+            <div class="step-dialogue-bubble">
+              <div class="chef-bubble-avatar">
+                <img src="assets/logo.png" alt="Chef Avatar">
+              </div>
+              <div class="bubble-speech">
+                <span class="chef-name-tag">Chef Jagan C</span>
+                <p>“Wonderful! How many guests will be seated, and what is your event date?”</p>
+              </div>
             </div>
 
-            <div class="kitchen-card-content">
-              <div class="chef-live-status-badge">
-                <span class="pulse-live-green-ring"></span>
-                <span><strong>Chef Jagan C</strong> · Cooking Live in Velachery</span>
-                <span class="live-flame-tag">🔥 Kitchen Active</span>
-              </div>
-
-              <div class="kitchen-brand-block">
-                <span class="kitchen-gold-pill">PREMIER SOUTH CHENNAI CATERING</span>
-                <h3 class="kitchen-hero-title">JS Caterer Velachery</h3>
-                <p class="kitchen-tamil-quote">“பாரம்பரிய சுவை... மறக்க முடியாத விருந்து!”</p>
-              </div>
-
-              <div class="live-feast-summary-box">
-                <div class="summary-box-header">
-                  <i class="fa-solid fa-utensils text-gold"></i>
-                  <span>LIVE FEAST ITINERARY</span>
-                  <span class="live-dot-pulse"></span>
-                </div>
-                <div class="summary-dynamic-items">
-                  <div class="summary-item">
-                    <span class="item-tag">OCCASION:</span>
-                    <strong id="summaryOccasion">Marriage & Event Feast</strong>
-                  </div>
-                  <div class="summary-item">
-                    <span class="item-tag">GUEST STRENGTH:</span>
-                    <strong id="summaryGuests">150 – 300 Guests</strong>
-                  </div>
-                  <div class="summary-item">
-                    <span class="item-tag">CUISINE STYLE:</span>
-                    <strong id="summaryCuisine">Pure Vegetarian Feast</strong>
-                  </div>
+            <div class="step2-interactive-controls">
+              
+              <div class="control-group">
+                <label class="control-heading"><i class="fa-solid fa-users text-gold"></i> ESTIMATED GUEST HEADCOUNT:</label>
+                <div class="guest-pills-row" id="guestPillsRow">
+                  <button type="button" class="guest-pill" onclick="selectGuestPill(this, '50 – 150 Guests')">50 – 150</button>
+                  <button type="button" class="guest-pill active" onclick="selectGuestPill(this, '150 – 300 Guests')">150 – 300</button>
+                  <button type="button" class="guest-pill" onclick="selectGuestPill(this, '300 – 600 Guests')">300 – 600</button>
+                  <button type="button" class="guest-pill" onclick="selectGuestPill(this, '600 – 1,500 Guests')">600 – 1,500</button>
+                  <button type="button" class="guest-pill" onclick="selectGuestPill(this, '1,500+ Guests')">1,500+ (Grand)</button>
                 </div>
               </div>
 
-              <div class="kitchen-trust-grid">
-                <div class="trust-mini-chip">
-                  <i class="fa-solid fa-leaf text-gold"></i>
-                  <span>Farm-Fresh Daily</span>
-                </div>
-                <div class="trust-mini-chip">
-                  <i class="fa-solid fa-clock text-gold"></i>
-                  <span>Zero-Delay Muhurtham</span>
-                </div>
-                <div class="trust-mini-chip">
-                  <i class="fa-solid fa-star text-gold"></i>
-                  <span>4.9★ (280+ Reviews)</span>
-                </div>
-                <div class="trust-mini-chip">
-                  <i class="fa-solid fa-shield-check text-gold"></i>
-                  <span>FSSAI Certified</span>
+              <div class="control-group">
+                <label class="control-heading"><i class="fa-solid fa-calendar-day text-gold"></i> AUSPICIOUS EVENT DATE:</label>
+                <div class="date-input-wrap">
+                  <i class="fa-solid fa-calendar-days date-icon"></i>
+                  <input type="date" id="conciergeEventDate" class="step-date-input" onchange="updateLiveSummary()">
                 </div>
               </div>
 
-              <div class="kitchen-direct-hotline">
-                <i class="fa-solid fa-phone-volume text-gold"></i>
-                <div>
-                  <span class="hotline-sub">DIRECT CHEF HOTLINE:</span>
-                  <div class="hotline-links">
-                    <a href="tel:9940649939" class="phone-link">99406 49939</a>
-                    <span class="sep">|</span>
-                    <a href="tel:9884985368" class="phone-link">98849 85368</a>
-                  </div>
-                </div>
-              </div>
+            </div>
+
+            <div class="step-nav-footer between">
+              <button type="button" class="btn-step-prev" onclick="goToStep(1)">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button type="button" class="btn-step-next" onclick="goToStep(3)">
+                <span>Next: Menu Preference</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Right Wing: Multi-Step Studio Card -->
-          <div class="concierge-studio-card">
-
-            <div class="studio-progress-tracker">
-              <div class="progress-bar-fill-track">
-                <div class="progress-bar-indicator" id="studioProgressBar" style="width: 25%;"></div>
+          <!-- STEP 3: CUISINE & LIVE COUNTERS -->
+          <div class="concierge-step-container" id="conciergeStep3">
+            <div class="step-dialogue-bubble">
+              <div class="chef-bubble-avatar">
+                <img src="assets/logo.png" alt="Chef Avatar">
               </div>
-              <div class="progress-steps-label-row">
-                <span class="step-label-pill active" id="stepPill1">❶ Occasion</span>
-                <span class="step-label-pill" id="stepPill2">❷ Guests</span>
-                <span class="step-label-pill" id="stepPill3">❸ Menu</span>
-                <span class="step-label-pill" id="stepPill4">❹ Quote</span>
+              <div class="bubble-speech">
+                <span class="chef-name-tag">Chef Jagan C</span>
+                <p>“What cuisine style and feast spread would delight your guests?”</p>
               </div>
             </div>
 
-            <!-- STEP 1: OCCASION IMAGE CARDS -->
-            <div class="concierge-step-container active" id="conciergeStep1">
-              <div class="step-dialogue-bubble">
-                <div class="chef-bubble-avatar">
-                  <img src="assets/logo.png" alt="Chef Avatar">
+            <div class="cuisine-options-grid">
+              
+              <div class="cuisine-option-card active" onclick="selectCuisineCard(this, 'Pure Vegetarian Traditional Feast')">
+                <div class="cuisine-icon-circle"><i class="fa-solid fa-leaf text-green"></i></div>
+                <div class="cuisine-card-text">
+                  <strong>Pure Vegetarian Feast</strong>
+                  <span>Traditional Sambhar, Rasam, Payasam & Sweets</span>
                 </div>
-                <div class="bubble-speech">
-                  <span class="chef-name-tag">Chef Jagan C</span>
-                  <p>“வணக்கம்! Which auspicious occasion are we curating the feast for?”</p>
-                </div>
+                <span class="cuisine-radio-dot"></span>
               </div>
 
-              <div class="occasion-cards-grid">
-                <div class="occasion-select-card active" data-occasion="Marriage & Event Feast" onclick="selectOccasionCard(this, 'Marriage & Event Feast')">
-                  <div class="card-image-wrap">
-                    <img src="assets/wedding_feast.jpg" alt="Wedding Feast" loading="lazy">
-                    <div class="card-image-overlay"></div>
-                    <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
-                  </div>
-                  <div class="card-caption">
-                    <strong>Marriage Kalyana Virundhu</strong>
-                    <span>Traditional Muhurtham Leaf Feast</span>
-                  </div>
+              <div class="cuisine-option-card" onclick="selectCuisineCard(this, 'Chettinad Non-Vegetarian Feast')">
+                <div class="cuisine-icon-circle"><i class="fa-solid fa-drumstick-bite text-gold"></i></div>
+                <div class="cuisine-card-text">
+                  <strong>Non-Vegetarian Feast</strong>
+                  <span>Authentic Chettinad Biryani, Mutton & Chicken Gravies</span>
                 </div>
-
-                <div class="occasion-select-card" data-occasion="CPU Industrial Workforce Catering" onclick="selectOccasionCard(this, 'CPU Industrial Workforce Catering')">
-                  <div class="card-image-wrap">
-                    <img src="assets/live_kitchen.jpg" alt="Industrial Catering" loading="lazy">
-                    <div class="card-image-overlay"></div>
-                    <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
-                  </div>
-                  <div class="card-caption">
-                    <strong>Industrial Workforce</strong>
-                    <span>Factory & IT Park Canteen Shifts</span>
-                  </div>
-                </div>
-
-                <div class="occasion-select-card" data-occasion="Corporate Packed Bento Boxes" onclick="selectOccasionCard(this, 'Corporate Packed Bento Boxes')">
-                  <div class="card-image-wrap">
-                    <img src="assets/corporate_buffet.jpg" alt="Corporate Buffet" loading="lazy">
-                    <div class="card-image-overlay"></div>
-                    <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
-                  </div>
-                  <div class="card-caption">
-                    <strong>Corporate Meal Boxes</strong>
-                    <span>Hot Sealed Executive Combos</span>
-                  </div>
-                </div>
-
-                <div class="occasion-select-card" data-occasion="Kovil Annathanam & Sacred Feasts" onclick="selectOccasionCard(this, 'Kovil Annathanam & Sacred Feasts')">
-                  <div class="card-image-wrap">
-                    <img src="assets/temple_annathanam.jpg" alt="Temple Annathanam" loading="lazy">
-                    <div class="card-image-overlay"></div>
-                    <span class="check-badge"><i class="fa-solid fa-circle-check"></i></span>
-                  </div>
-                  <div class="card-caption">
-                    <strong>Temple Annathanam</strong>
-                    <span>100% Satvik Prasadam Feast</span>
-                  </div>
-                </div>
+                <span class="cuisine-radio-dot"></span>
               </div>
 
-              <div class="step-nav-footer">
-                <button type="button" class="btn-step-next" onclick="goToStep(2)">
-                  <span>Next: Guest Count & Date</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
+              <div class="cuisine-option-card" onclick="selectCuisineCard(this, 'Veg & Non-Veg Combination Feast')">
+                <div class="cuisine-icon-circle"><i class="fa-solid fa-bowl-rice text-gold"></i></div>
+                <div class="cuisine-card-text">
+                  <strong>Veg & Non-Veg Combo</strong>
+                  <span>Balanced buffet spread for multi-preference gatherings</span>
+                </div>
+                <span class="cuisine-radio-dot"></span>
+              </div>
+
+              <div class="cuisine-option-card" onclick="selectCuisineCard(this, '100% Satvik Temple Feast (No Onion/Garlic)')">
+                <div class="cuisine-icon-circle"><i class="fa-solid fa-om text-gold"></i></div>
+                <div class="cuisine-card-text">
+                  <strong>100% Satvik Prasadam</strong>
+                  <span>Strictly No Onion & No Garlic devotional feast</span>
+                </div>
+                <span class="cuisine-radio-dot"></span>
+              </div>
+
+            </div>
+
+            <div class="step-nav-footer between">
+              <button type="button" class="btn-step-prev" onclick="goToStep(2)">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button type="button" class="btn-step-next" onclick="goToStep(4)">
+                <span>Next: Final Summary & Quote</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: FINAL SUMMARY & INSTANT WHATSAPP DISPATCH -->
+          <div class="concierge-step-container" id="conciergeStep4">
+            <div class="step-dialogue-bubble">
+              <div class="chef-bubble-avatar">
+                <img src="assets/logo.png" alt="Chef Avatar">
+              </div>
+              <div class="bubble-speech">
+                <span class="chef-name-tag">Chef Jagan C</span>
+                <p>“All set! Please enter your name & WhatsApp number to receive your custom per-plate quote & menu options instantly.”</p>
               </div>
             </div>
 
-            <!-- STEP 2: GUEST COUNT & AUSPICIOUS DATE -->
-            <div class="concierge-step-container" id="conciergeStep2">
-              <div class="step-dialogue-bubble">
-                <div class="chef-bubble-avatar">
-                  <img src="assets/logo.png" alt="Chef Avatar">
-                </div>
-                <div class="bubble-speech">
-                  <span class="chef-name-tag">Chef Jagan C</span>
-                  <p>“Wonderful! How many guests will be seated, and what is your event date?”</p>
-                </div>
-              </div>
-
-              <div class="step2-interactive-controls">
-                <div class="control-group">
-                  <label class="control-heading"><i class="fa-solid fa-users text-gold"></i> ESTIMATED GUEST HEADCOUNT:</label>
-                  <div class="guest-pills-row" id="guestPillsRow">
-                    <button type="button" class="guest-pill" onclick="selectGuestPill(this, '50 – 150 Guests')">50 – 150</button>
-                    <button type="button" class="guest-pill active" onclick="selectGuestPill(this, '150 – 300 Guests')">150 – 300</button>
-                    <button type="button" class="guest-pill" onclick="selectGuestPill(this, '300 – 600 Guests')">300 – 600</button>
-                    <button type="button" class="guest-pill" onclick="selectGuestPill(this, '600 – 1,500 Guests')">600 – 1,500</button>
-                    <button type="button" class="guest-pill" onclick="selectGuestPill(this, '1,500+ Guests')">1,500+ (Grand)</button>
-                  </div>
-                </div>
-
-                <div class="control-group">
-                  <label class="control-heading"><i class="fa-solid fa-calendar-day text-gold"></i> AUSPICIOUS EVENT DATE:</label>
-                  <div class="date-input-wrap">
-                    <i class="fa-solid fa-calendar-days date-icon"></i>
-                    <input type="date" id="conciergeEventDate" class="step-date-input" onchange="updateLiveSummary()">
-                  </div>
-                </div>
-              </div>
-
-              <div class="step-nav-footer between">
-                <button type="button" class="btn-step-prev" onclick="goToStep(1)">
-                  <i class="fa-solid fa-arrow-left"></i> Back
-                </button>
-                <button type="button" class="btn-step-next" onclick="goToStep(3)">
-                  <span>Next: Menu Preference</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 3: CUISINE & LIVE COUNTERS -->
-            <div class="concierge-step-container" id="conciergeStep3">
-              <div class="step-dialogue-bubble">
-                <div class="chef-bubble-avatar">
-                  <img src="assets/logo.png" alt="Chef Avatar">
-                </div>
-                <div class="bubble-speech">
-                  <span class="chef-name-tag">Chef Jagan C</span>
-                  <p>“What cuisine style and feast spread would delight your guests?”</p>
-                </div>
-              </div>
-
-              <div class="cuisine-options-grid">
-                <div class="cuisine-option-card active" onclick="selectCuisineCard(this, 'Pure Vegetarian Traditional Feast')">
-                  <div class="cuisine-icon-circle"><i class="fa-solid fa-leaf text-green"></i></div>
-                  <div class="cuisine-card-text">
-                    <strong>Pure Vegetarian Feast</strong>
-                    <span>Traditional Sambhar, Rasam, Payasam & Sweets</span>
-                  </div>
-                  <span class="cuisine-radio-dot"></span>
-                </div>
-
-                <div class="cuisine-option-card" onclick="selectCuisineCard(this, 'Chettinad Non-Vegetarian Feast')">
-                  <div class="cuisine-icon-circle"><i class="fa-solid fa-drumstick-bite text-gold"></i></div>
-                  <div class="cuisine-card-text">
-                    <strong>Non-Vegetarian Feast</strong>
-                    <span>Authentic Chettinad Biryani, Mutton & Chicken Gravies</span>
-                  </div>
-                  <span class="cuisine-radio-dot"></span>
-                </div>
-
-                <div class="cuisine-option-card" onclick="selectCuisineCard(this, 'Veg & Non-Veg Combination Feast')">
-                  <div class="cuisine-icon-circle"><i class="fa-solid fa-bowl-rice text-gold"></i></div>
-                  <div class="cuisine-card-text">
-                    <strong>Veg & Non-Veg Combo</strong>
-                    <span>Balanced buffet spread for multi-preference gatherings</span>
-                  </div>
-                  <span class="cuisine-radio-dot"></span>
-                </div>
-
-                <div class="cuisine-option-card" onclick="selectCuisineCard(this, '100% Satvik Temple Feast (No Onion/Garlic)')">
-                  <div class="cuisine-icon-circle"><i class="fa-solid fa-om text-gold"></i></div>
-                  <div class="cuisine-card-text">
-                    <strong>100% Satvik Prasadam</strong>
-                    <span>Strictly No Onion & No Garlic devotional feast</span>
-                  </div>
-                  <span class="cuisine-radio-dot"></span>
-                </div>
-              </div>
-
-              <div class="step-nav-footer between">
-                <button type="button" class="btn-step-prev" onclick="goToStep(2)">
-                  <i class="fa-solid fa-arrow-left"></i> Back
-                </button>
-                <button type="button" class="btn-step-next" onclick="goToStep(4)">
-                  <span>Next: Final Summary & Quote</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 4: FINAL DISPATCH FORM -->
-            <div class="concierge-step-container" id="conciergeStep4">
-              <div class="step-dialogue-bubble">
-                <div class="chef-bubble-avatar">
-                  <img src="assets/logo.png" alt="Chef Avatar">
-                </div>
-                <div class="bubble-speech">
-                  <span class="chef-name-tag">Chef Jagan C</span>
-                  <p>“All set! Please enter your name & WhatsApp number to receive your custom per-plate quote & menu options instantly.”</p>
-                </div>
-              </div>
-
-              <form id="conciergeFinalForm" onsubmit="handleConciergeSubmit(event)" class="final-step-form">
-                <div class="final-fields-row">
-                  <div class="final-input-wrap">
-                    <label>Your Full Name *</label>
-                    <div class="field-with-icon">
-                      <i class="fa-solid fa-user icon-gold"></i>
-                      <input type="text" id="conciergeUserName" required placeholder="e.g. Senthil Kumar" class="final-text-input">
-                    </div>
-                  </div>
-
-                  <div class="final-input-wrap">
-                    <label>WhatsApp Number *</label>
-                    <div class="field-with-icon">
-                      <i class="fa-solid fa-phone icon-gold"></i>
-                      <input type="tel" id="conciergeUserPhone" required placeholder="e.g. 9940649939" class="final-text-input">
-                    </div>
+            <form id="conciergeFinalForm" onsubmit="handleConciergeSubmit(event)" class="final-step-form">
+              
+              <div class="final-fields-row">
+                <div class="final-input-wrap">
+                  <label>Your Full Name *</label>
+                  <div class="field-with-icon">
+                    <i class="fa-solid fa-user icon-gold"></i>
+                    <input type="text" id="conciergeUserName" required placeholder="e.g. Senthil Kumar" class="final-text-input">
                   </div>
                 </div>
 
                 <div class="final-input-wrap">
-                  <label>Event Locality / Special Requests</label>
+                  <label>WhatsApp Number *</label>
                   <div class="field-with-icon">
-                    <i class="fa-solid fa-location-dot icon-gold"></i>
-                    <input type="text" id="conciergeUserNotes" placeholder="e.g. Velachery Mandapam, Live Sweet Counter needed" class="final-text-input">
+                    <i class="fa-solid fa-phone icon-gold"></i>
+                    <input type="tel" id="conciergeUserPhone" required placeholder="e.g. 9940649939" class="final-text-input">
                   </div>
                 </div>
-
-                <button type="submit" class="btn-whatsapp-grand-dispatch">
-                  <i class="fa-brands fa-whatsapp"></i>
-                  <span>GET INSTANT QUOTE FROM CHEF JAGAN ON WHATSAPP</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-
-                <div class="final-trust-subtext">
-                  <i class="fa-solid fa-shield-halved text-gold"></i>
-                  <span>Instant response in 15 mins • 100% Free consultation & Tasting samples</span>
-                </div>
-              </form>
-
-              <div class="step-nav-footer">
-                <button type="button" class="btn-step-prev" onclick="goToStep(3)">
-                  <i class="fa-solid fa-arrow-left"></i> Back to Menu
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- =========================================================================
-           EXPERIENCE 3: MODERN LUXURY BENTO GRID
-           ========================================================================= -->
-      <div id="masterExp3" class="master-experience-view">
-        <div class="bento-modern-grid">
-
-          <!-- Tile 1: Fast Quote Studio -->
-          <div class="bento-card bento-form-hero">
-            <div class="bento-card-header">
-              <span class="royal-badge-tag"><i class="fa-solid fa-bolt"></i> FAST QUOTE STUDIO</span>
-              <h3 class="bento-title">Instant Catering Proposal</h3>
-              <p class="bento-desc">Select your service & enter event details for an immediate WhatsApp quotation.</p>
-            </div>
-
-            <form id="bentoBookingForm" class="bento-input-grid">
-              <div class="bento-service-chips-row" id="bentoServiceChips">
-                <button type="button" class="bento-chip active" data-service="Marriage & Event Catering">
-                  <i class="fa-solid fa-ring"></i> Wedding / Events
-                </button>
-                <button type="button" class="bento-chip" data-service="CPU Industrial & Workforce">
-                  <i class="fa-solid fa-industry"></i> Industrial Shift
-                </button>
-                <button type="button" class="bento-chip" data-service="Corporate Packed Food Combos">
-                  <i class="fa-solid fa-box-archive"></i> Packed Meal Box
-                </button>
-                <button type="button" class="bento-chip" data-service="Kovil Annathanam & Sacred Feasts">
-                  <i class="fa-solid fa-gopuram"></i> Temple Annathanam
-                </button>
               </div>
 
-              <div class="bento-field-row">
-                <div class="bento-field">
-                  <label>Your Name *</label>
-                  <input type="text" id="bName" required placeholder="Enter full name" class="bento-input">
-                </div>
-                <div class="bento-field">
-                  <label>WhatsApp Number *</label>
-                  <input type="tel" id="bPhone" required placeholder="Enter WhatsApp number" class="bento-input">
+              <div class="final-input-wrap">
+                <label>Event Locality / Special Requests</label>
+                <div class="field-with-icon">
+                  <i class="fa-solid fa-location-dot icon-gold"></i>
+                  <input type="text" id="conciergeUserNotes" placeholder="e.g. Velachery Mandapam, Live Sweet Counter needed" class="final-text-input">
                 </div>
               </div>
 
-              <div class="bento-field-row">
-                <div class="bento-field">
-                  <label>Event Date *</label>
-                  <input type="date" id="bDate" required class="bento-input">
-                </div>
-                <div class="bento-field">
-                  <label>Guest Count *</label>
-                  <select id="bGuests" required class="bento-input bento-select">
-                    <option value="50 – 150 Guests">50 – 150 Guests</option>
-                    <option value="150 – 300 Guests" selected>150 – 300 Guests</option>
-                    <option value="300 – 600 Guests">300 – 600 Guests</option>
-                    <option value="600 – 1500 Guests">600 – 1,500 Guests</option>
-                    <option value="1500+ Guests">1,500+ Guests</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="bento-field-full">
-                <label>Event Locality / Special Notes</label>
-                <input type="text" id="bNotes" placeholder="e.g. Velachery / Adyar, Wedding Reception Buffet" class="bento-input">
-              </div>
-
-              <button type="submit" class="btn-bento-submit">
-                <span>GET INSTANT QUOTE ON WHATSAPP</span>
+              <button type="submit" class="btn-whatsapp-grand-dispatch">
                 <i class="fa-brands fa-whatsapp"></i>
+                <span>GET INSTANT QUOTE FROM CHEF JAGAN ON WHATSAPP</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </button>
-              <div class="bento-trust-subtext">
-                <i class="fa-solid fa-bolt text-gold"></i> Fast response in 15 mins • 100% Free consultation & Tasting samples
+
+              <div class="final-trust-subtext">
+                <i class="fa-solid fa-shield-halved text-gold"></i>
+                <span>Instant response in 15 mins • 100% Free consultation & Tasting samples</span>
               </div>
+
             </form>
-          </div>
 
-          <!-- Tile 2: Founder Hotline Card -->
-          <div class="bento-card bento-founder-card">
-            <div class="bento-founder-top">
-              <img src="assets/logo.png" alt="Jagan C Logo" class="bento-avatar">
-              <div>
-                <span class="bento-online-pill"><span class="pulse-dot"></span> Active Now</span>
-                <h4 class="founder-heading">Jagan C</h4>
-                <p class="founder-sub">Founder & Culinary Director</p>
-              </div>
+            <div class="step-nav-footer">
+              <button type="button" class="btn-step-prev" onclick="goToStep(3)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Menu
+              </button>
             </div>
-            <p class="founder-quote">“Direct personal hotline for weddings, muhurtham feasts & corporate catering.”</p>
-            <div class="bento-phones">
-              <a href="tel:9940649939" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 99406 49939</a>
-              <a href="tel:9884985368" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 98849 85368</a>
-            </div>
-            <a href="https://wa.me/919940649939?text=Hello%20Jagan%20C!%20I%20would%20like%20to%20inquire%20about%20catering%20services." target="_blank" class="bento-wa-btn">
-              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-          </div>
-
-          <!-- Tile 3: Central Kitchen & Location -->
-          <div class="bento-card bento-location-card">
-            <div class="bento-icon-badge"><i class="fa-solid fa-location-dot"></i></div>
-            <h4>Velachery Central Kitchen HQ</h4>
-            <p>No 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</p>
-            <div class="bento-coverage-tag">
-              <i class="fa-solid fa-circle-check text-green"></i> 22 South Chennai Localities Covered
-            </div>
-          </div>
-
-          <!-- Tile 4: Ratings & Accreditations -->
-          <div class="bento-card bento-rating-card">
-            <div class="bento-icon-badge"><i class="fa-solid fa-award"></i></div>
-            <div class="rating-huge">4.9 <span class="stars">★★★★★</span></div>
-            <h4>Google Verified Rating</h4>
-            <p>280+ Reviews • FSSAI Food Safety Certified • 100% Zero-Delay Record</p>
           </div>
 
         </div>
+
       </div>
 
     </div>
