@@ -55,6 +55,7 @@
 
 <!-- MOBILE NAV DRAWER -->
 <!-- MOBILE DRAWER NAVIGATION -->
+<!-- MOBILE DRAWER NAVIGATION -->
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
   <div class="mobile-nav-header">
     <a href="index.html" class="brand-logo-group">
@@ -70,14 +71,54 @@
   <nav class="mobile-nav-links">
     <a href="index.html" class="mobile-nav-item "><i class="fa-solid fa-house"></i> Home</a>
     <a href="about.html" class="mobile-nav-item "><i class="fa-solid fa-leaf"></i> About Us</a>
-    <a href="services.html" class="mobile-nav-item "><i class="fa-solid fa-utensils"></i> Services Hub</a>
     
-    <div class="mobile-drawer-section-title">Our 4 Core Divisions</div>
-    <a href="marriage-event-catering.html" class="mobile-nav-subitem "><i class="fa-solid fa-crown text-gold"></i> Marriage & Events</a>
-    <a href="industrial-workforce-catering.html" class="mobile-nav-subitem active"><i class="fa-solid fa-industry text-gold"></i> Industrial CPU Canteens</a>
-    <a href="corporate-packed-food-catering.html" class="mobile-nav-subitem "><i class="fa-solid fa-box-open text-gold"></i> Corporate Packed Combos</a>
-    <a href="temple-annathanam-catering.html" class="mobile-nav-subitem "><i class="fa-solid fa-gopuram text-gold"></i> Kovil Annathanam</a>
-    
+    <!-- SERVICES ACCORDION SUBMENU ITEM -->
+    <div class="mobile-nav-accordion is-expanded" id="mobileServicesAccordion">
+      <div class="mobile-nav-accordion-header" onclick="toggleMobileSubmenu(this)">
+        <div class="header-left">
+          <i class="fa-solid fa-utensils"></i>
+          <span>Our Services</span>
+        </div>
+        <i class="fa-solid fa-chevron-down accordion-chevron"></i>
+      </div>
+      
+      <div class="mobile-submenu-collapse">
+        <div class="mobile-submenu-inner">
+          <a href="marriage-event-catering.html" class="mobile-submenu-link ">
+            <div class="sub-icon-pill"><i class="fa-solid fa-crown text-gold"></i></div>
+            <div>
+              <strong>Marriage & Events</strong>
+              <span>Grand Kalyana Feasts</span>
+            </div>
+          </a>
+          <a href="industrial-workforce-catering.html" class="mobile-submenu-link active">
+            <div class="sub-icon-pill"><i class="fa-solid fa-industry text-gold"></i></div>
+            <div>
+              <strong>Industrial Canteens</strong>
+              <span>CPU Workforce Meals</span>
+            </div>
+          </a>
+          <a href="corporate-packed-food-catering.html" class="mobile-submenu-link ">
+            <div class="sub-icon-pill"><i class="fa-solid fa-box-open text-gold"></i></div>
+            <div>
+              <strong>Corporate Packed Combos</strong>
+              <span>Executive Meal Boxes</span>
+            </div>
+          </a>
+          <a href="temple-annathanam-catering.html" class="mobile-submenu-link ">
+            <div class="sub-icon-pill"><i class="fa-solid fa-gopuram text-gold"></i></div>
+            <div>
+              <strong>Kovil Annathanam</strong>
+              <span>Satvik Consecrated Feasts</span>
+            </div>
+          </a>
+          <a href="services.html" class="mobile-submenu-all ">
+            <span>Explore All Services Hub &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <a href="contact.html" class="mobile-nav-item "><i class="fa-solid fa-envelope"></i> Contact Us</a>
     <a href="contact.html" class="btn-gold-mobile"><i class="fa-solid fa-calendar-check"></i> Book Event</a>
   </nav>

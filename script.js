@@ -1,3 +1,11 @@
+
+  /* Mobile Accordion Submenu Toggle */
+  window.toggleMobileSubmenu = function(headerEl) {
+    const accordion = headerEl.closest('.mobile-nav-accordion');
+    if (!accordion) return;
+    accordion.classList.toggle('is-expanded');
+  };
+
 // JS CATERER — Master Script v3
 // Hero Slideshow · Drag Carousel · Scroll Story · Calculator · Area Chips · Storyboard
 
