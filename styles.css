@@ -17732,3 +17732,210 @@ body {
   color: #B38E22 !important;
   transform: translateX(4px) !important;
 }
+
+
+/* ================================================================
+   ABOUT US PAGE — COMPREHENSIVE MOBILE RESPONSIVE STYLES
+   ================================================================ */
+
+@media (max-width: 768px) {
+  /* 1. Page Hero Banner */
+  .page-hero-banner {
+    padding: 85px 16px 65px !important;
+  }
+  .page-hero-banner .page-breadcrumb {
+    font-size: 0.68rem !important;
+    padding: 4px 12px !important;
+    margin-bottom: 12px !important;
+  }
+  .page-hero-banner .page-hero-title {
+    font-size: clamp(1.75rem, 6vw, 2.2rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+  .page-hero-banner .page-hero-slogan {
+    font-size: 0.92rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* 2. Section 1: Leadership & Heritage */
+  .section-luxury-about,
+  .section-luxury-heritage {
+    padding: 50px 0 40px !important;
+  }
+  .about-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .founder-card-frame,
+  .founder-main-frame {
+    height: 380px !important;
+    min-height: 360px !important;
+    border-radius: 20px !important;
+  }
+  .founder-floating-badge {
+    margin: 0 12px 8px 12px !important;
+    padding: 10px 14px !important;
+    gap: 10px !important;
+    border-radius: 14px !important;
+  }
+  .badge-crown-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.95rem !important;
+  }
+  .founder-floating-badge strong {
+    font-size: 0.95rem !important;
+  }
+  .founder-floating-badge span {
+    font-size: 0.72rem !important;
+  }
+  .founder-stat-chip,
+  .founder-guarantee-pill {
+    margin: 0 12px 14px 12px !important;
+    padding: 6px 12px !important;
+    font-size: 0.74rem !important;
+  }
+  .about-content-col .section-title {
+    font-size: clamp(1.5rem, 5vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+    margin-top: 6px !important;
+    margin-bottom: 12px !important;
+  }
+  .about-lead-p {
+    font-size: 0.96rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 10px !important;
+  }
+  .about-secondary-p {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+  }
+  .about-pillars-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+  .pillar-bento-card {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+  .pillar-bento-card h4 {
+    font-size: 0.98rem !important;
+    margin-bottom: 4px !important;
+  }
+  .pillar-bento-card p {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+  }
+  .about-milestones-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    padding: 14px 8px !important;
+    border-radius: 14px !important;
+  }
+  .milestone-item strong {
+    font-size: 1.25rem !important;
+  }
+  .milestone-item span {
+    font-size: 0.68rem !important;
+  }
+  .milestone-divider {
+    display: none !important;
+  }
+
+  /* 3. Section 2: Full-Stretch CPU Banner */
+  .section-cpu-hud,
+  .section-cpu-console {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 0 !important;
+  }
+  .fullstretch-content,
+  .cpu-console-container {
+    padding: 0 16px !important;
+  }
+  .cpu-hud-top-tag,
+  .cpu-console-badge {
+    font-size: 0.68rem !important;
+    padding: 4px 12px !important;
+    margin-bottom: 12px !important;
+  }
+  .section-cpu-hud h2,
+  .cpu-console-title {
+    font-size: clamp(1.55rem, 5vw, 1.95rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+  .section-cpu-hud p,
+  .cpu-console-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+  }
+  .cpu-live-hud-grid,
+  .cpu-matrix-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .hud-pill-box,
+  .matrix-card {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+  }
+  .hud-pill-box strong,
+  .matrix-card-content strong {
+    font-size: 0.88rem !important;
+  }
+  .hud-pill-box span,
+  .matrix-card-content span {
+    font-size: 0.72rem !important;
+  }
+  .cpu-action-row,
+  .cpu-cta-wrap {
+    margin-top: 22px !important;
+  }
+  .cpu-action-row .btn-primary-gold,
+  .cpu-cta-wrap .btn-primary-gold {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    padding: 13px 16px !important;
+    text-align: center !important;
+  }
+
+  /* 4. Section 3: Kitchen Infrastructure Suite */
+  .section-infrastructure-suite,
+  .section-infra-bento {
+    padding: 50px 0 45px !important;
+  }
+  .infra-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .infra-card {
+    padding: 24px 18px !important;
+    border-radius: 18px !important;
+  }
+  .infra-card h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 8px !important;
+  }
+  .infra-card p {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+  }
+  .infra-chip-tag {
+    font-size: 0.76rem !important;
+    padding: 6px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
