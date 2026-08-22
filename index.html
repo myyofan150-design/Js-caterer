@@ -452,7 +452,7 @@
     </div>
   </section>
 
-  <section id="act-8" class="section-recreated-contact">
+  <section id="act-8" class="section-luxury-bento">
     <div class="container">
       
       <!-- Section Header -->
@@ -463,289 +463,117 @@
       </div>
       <p class="section-subtitle">Connect directly with Founder Jagan C or request an instant bespoke catering quotation</p>
 
-      <!-- LIVE DESIGN TOGGLE TABS (FOR EASY PREVIEW) -->
-      <div class="design-switcher-bar">
-        <button type="button" class="design-tab-btn active" onclick="switchContactDesign('opt1')">
-          <i class="fa-solid fa-crown"></i> Option 1: Royal Executive Concierge (5-Star Luxury)
-        </button>
-        <button type="button" class="design-tab-btn" onclick="switchContactDesign('opt2')">
-          <i class="fa-solid fa-table-cells-large"></i> Option 2: Modern Luxury Bento Grid
-        </button>
-      </div>
+      <!-- MODERN LUXURY BENTO GRID -->
+      <div class="bento-modern-grid">
 
-      <!-- ================================================================
-           OPTION 1: THE ROYAL EXECUTIVE CONCIERGE (5-STAR EDITORIAL LUXURY)
-           ================================================================ -->
-      <div id="contactOpt1" class="contact-design-view active">
-        <div class="royal-concierge-grid">
+        <!-- Tile 1: Main Interactive Proposal Studio (Span 2 Rows on Left) -->
+        <div class="bento-card bento-form-hero">
+          <div class="bento-card-header">
+            <span class="royal-badge-tag"><i class="fa-solid fa-bolt"></i> FAST QUOTE STUDIO</span>
+            <h3 class="bento-title">Instant Catering Proposal</h3>
+            <p class="bento-desc">Select your service & enter event details for an immediate WhatsApp quotation.</p>
+          </div>
 
-          <!-- Left Column: Editorial Founder Anchor -->
-          <div class="royal-anchor-card">
-            <div class="royal-badge-tag"><i class="fa-solid fa-phone-volume"></i> DIRECT FOUNDER HOTLINE</div>
-            <h3 class="royal-title">Plan Your Memorable Feast With <em>JS Caterer</em></h3>
+          <form id="bentoBookingForm" class="bento-input-grid">
             
-            <div class="royal-quote-box">
-              <p class="quote-text">
-                “Every wedding feast, corporate delivery, and temple annathanam is personally supervised from dawn farm sourcing to leaf service.”
-              </p>
-              <div class="quote-author">
-                <img src="assets/logo.png" alt="Jagan C Logo" class="author-avatar">
-                <div>
-                  <strong>JAGAN C</strong>
-                  <span>Founder & Culinary Director</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="royal-contact-list">
-              <div class="royal-contact-item">
-                <div class="icon-circle-gold"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                  <span class="item-label">DIRECT PHONE / WHATSAPP</span>
-                  <div class="phone-group">
-                    <a href="tel:9940649939" class="phone-link">99406 49939</a>
-                    <span class="phone-pipe">|</span>
-                    <a href="tel:9884985368" class="phone-link">98849 85368</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="royal-contact-item">
-                <div class="icon-circle-gold"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <span class="item-label">CENTRAL KITCHEN & HQ</span>
-                  <p class="item-val">No 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</p>
-                </div>
-              </div>
-
-              <div class="royal-contact-item">
-                <div class="icon-circle-gold"><i class="fa-solid fa-shield-halved"></i></div>
-                <div>
-                  <span class="item-label">ACCREDITATION & TRUST</span>
-                  <p class="item-val">★ 4.9 Google Rating (280+ Reviews) • FSSAI Food Safety Certified</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="royal-action-row">
-              <a href="https://wa.me/919940649939?text=Hello%20JS%20Caterer!%20I%20would%20like%20to%20inquire%20about%20catering%20services." target="_blank" class="btn-royal-wa">
-                <i class="fa-brands fa-whatsapp"></i> Chat with Jagan C on WhatsApp
-              </a>
-              <a href="tel:9940649939" class="btn-royal-call">
-                <i class="fa-solid fa-phone"></i> Call Hotline
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: 5-Star Booking Studio Card -->
-          <div class="royal-form-card">
-            <div class="form-header-wrap">
-              <span class="royal-badge-tag"><i class="fa-solid fa-sparkles"></i> BESPOKE QUOTATION</span>
-              <h3 class="form-title">Request Custom Catering Proposal</h3>
-              <p class="form-subtitle">Fill in your event details below to receive custom menu options and pricing.</p>
-            </div>
-
-            <form id="royalBookingForm" class="royal-input-grid">
-              
-              <div class="royal-field-wrap">
-                <label>Your Name *</label>
-                <div class="input-container">
-                  <i class="fa-solid fa-user field-icon"></i>
-                  <input type="text" id="rName" required placeholder="Enter full name" class="royal-input">
-                </div>
-              </div>
-
-              <div class="royal-field-wrap">
-                <label>WhatsApp Number *</label>
-                <div class="input-container">
-                  <i class="fa-solid fa-phone field-icon"></i>
-                  <input type="tel" id="rPhone" required placeholder="Enter WhatsApp number" class="royal-input">
-                </div>
-              </div>
-
-              <div class="royal-field-wrap">
-                <label>Catering Category *</label>
-                <div class="input-container select-box">
-                  <i class="fa-solid fa-utensils field-icon"></i>
-                  <select id="rCategory" required class="royal-input royal-select">
-                    <option value="" disabled selected>Select Category</option>
-                    <option value="Marriage & Event Catering">Marriage & Event Catering</option>
-                    <option value="CPU Industrial & Workforce">CPU Industrial & Workforce</option>
-                    <option value="Corporate Packed Food Combos">Corporate Packed Food Combos</option>
-                    <option value="Kovil Annathanam & Sacred Feasts">Kovil Annathanam & Sacred Feasts</option>
-                  </select>
-                  <i class="fa-solid fa-chevron-down select-chevron"></i>
-                </div>
-              </div>
-
-              <div class="royal-field-wrap">
-                <label>Event Date *</label>
-                <div class="input-container">
-                  <i class="fa-solid fa-calendar-days field-icon"></i>
-                  <input type="date" id="rDate" required class="royal-input">
-                </div>
-              </div>
-
-              <div class="royal-field-wrap">
-                <label>Expected Guest Count *</label>
-                <div class="input-container select-box">
-                  <i class="fa-solid fa-users field-icon"></i>
-                  <select id="rGuests" required class="royal-input royal-select">
-                    <option value="" disabled selected>Select Headcount</option>
-                    <option value="50 - 150 Guests">50 – 150 Guests</option>
-                    <option value="150 - 300 Guests">150 – 300 Guests</option>
-                    <option value="300 - 600 Guests">300 – 600 Guests</option>
-                    <option value="600 - 1500 Guests">600 – 1,500 Guests</option>
-                    <option value="1500+ Guests">1,500+ Guests</option>
-                  </select>
-                  <i class="fa-solid fa-chevron-down select-chevron"></i>
-                </div>
-              </div>
-
-              <div class="royal-field-wrap">
-                <label>Cuisine Preference *</label>
-                <div class="input-container select-box">
-                  <i class="fa-solid fa-bowl-food field-icon"></i>
-                  <select id="rCuisine" required class="royal-input royal-select">
-                    <option value="" disabled selected>Select Cuisine</option>
-                    <option value="Pure Vegetarian Feast">Pure Vegetarian Feast</option>
-                    <option value="Non-Vegetarian Feast">Non-Vegetarian Feast</option>
-                    <option value="Veg & Non-Veg Combination">Veg & Non-Veg Combination</option>
-                    <option value="100% Satvik (No Onion/Garlic)">100% Satvik (No Onion/Garlic)</option>
-                  </select>
-                  <i class="fa-solid fa-chevron-down select-chevron"></i>
-                </div>
-              </div>
-
-              <div class="royal-field-wrap full-width">
-                <label>Location / Special Requirements</label>
-                <div class="input-container">
-                  <i class="fa-solid fa-location-dot field-icon textarea-icon"></i>
-                  <textarea id="rNotes" rows="2" placeholder="e.g. Velachery / Adyar, Wedding Reception Buffet, Need Live Sweet Counters" class="royal-input royal-textarea"></textarea>
-                </div>
-              </div>
-
-              <div class="royal-field-wrap full-width">
-                <button type="submit" class="btn-royal-submit">
-                  <span>GET INSTANT PROPOSAL ON WHATSAPP</span>
-                  <i class="fa-brands fa-whatsapp"></i>
-                </button>
-                <div class="royal-form-trust-note">
-                  <i class="fa-solid fa-bolt text-gold"></i>
-                  <span>Fast response in 15 mins • 100% Free consultation & Tasting samples</span>
-                </div>
-              </div>
-
-            </form>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================================================================
-           OPTION 2: THE MODERN LUXURY BENTO GRID (APPLE / MODULAR CARDS)
-           ================================================================ -->
-      <div id="contactOpt2" class="contact-design-view">
-        <div class="bento-modern-grid">
-
-          <!-- Tile 1: Main Interactive Proposal Studio (Span 2 Rows on Left) -->
-          <div class="bento-card bento-form-hero">
-            <div class="bento-card-header">
-              <span class="royal-badge-tag"><i class="fa-solid fa-bolt"></i> FAST QUOTE STUDIO</span>
-              <h3 class="bento-title">Instant Catering Proposal</h3>
-              <p class="bento-desc">Select your event details to generate an instant WhatsApp pricing quotation.</p>
-            </div>
-
-            <form id="bentoBookingForm" class="bento-input-grid">
-              
-              <!-- Quick Service Chips Selector -->
-              <div class="bento-service-chips-row" id="bentoServiceChips">
-                <button type="button" class="bento-chip active" data-service="Marriage Catering">💍 Wedding / Events</button>
-                <button type="button" class="bento-chip" data-service="Industrial Catering">🏭 Industrial Shift</button>
-                <button type="button" class="bento-chip" data-service="Corporate Packed Food">🍱 Meal Boxes</button>
-                <button type="button" class="bento-chip" data-service="Temple Annathanam">🛕 Annathanam</button>
-              </div>
-
-              <div class="bento-field-row">
-                <div class="bento-field">
-                  <label>Your Name *</label>
-                  <input type="text" id="bName" required placeholder="Your full name" class="bento-input">
-                </div>
-                <div class="bento-field">
-                  <label>WhatsApp Number *</label>
-                  <input type="tel" id="bPhone" required placeholder="WhatsApp number" class="bento-input">
-                </div>
-              </div>
-
-              <div class="bento-field-row">
-                <div class="bento-field">
-                  <label>Event Date *</label>
-                  <input type="date" id="bDate" required class="bento-input">
-                </div>
-                <div class="bento-field">
-                  <label>Guest Count *</label>
-                  <select id="bGuests" required class="bento-input bento-select">
-                    <option value="50 - 150 Guests">50 – 150 Guests</option>
-                    <option value="150 - 300 Guests" selected>150 – 300 Guests</option>
-                    <option value="300 - 600 Guests">300 – 600 Guests</option>
-                    <option value="600 - 1500 Guests">600 – 1,500 Guests</option>
-                    <option value="1500+ Guests">1,500+ Guests</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="bento-field-full">
-                <label>Locality & Requirements</label>
-                <input type="text" id="bNotes" placeholder="e.g. Velachery, Pure Veg Satvik Feast" class="bento-input">
-              </div>
-
-              <button type="submit" class="btn-bento-submit">
-                <span>SEND INQUIRY VIA WHATSAPP</span>
-                <i class="fa-brands fa-whatsapp"></i>
+            <!-- Quick Service Chips Selector -->
+            <div class="bento-service-chips-row" id="bentoServiceChips">
+              <button type="button" class="bento-chip active" data-service="Marriage & Event Catering">
+                <i class="fa-solid fa-ring"></i> Wedding / Events
               </button>
+              <button type="button" class="bento-chip" data-service="CPU Industrial & Workforce">
+                <i class="fa-solid fa-industry"></i> Industrial Shift
+              </button>
+              <button type="button" class="bento-chip" data-service="Corporate Packed Food Combos">
+                <i class="fa-solid fa-box-archive"></i> Packed Meal Box
+              </button>
+              <button type="button" class="bento-chip" data-service="Kovil Annathanam & Sacred Feasts">
+                <i class="fa-solid fa-gopuram"></i> Temple Annathanam
+              </button>
+            </div>
 
-            </form>
-          </div>
-
-          <!-- Tile 2: Founder Hotline Card (Top Right) -->
-          <div class="bento-card bento-founder-card">
-            <div class="bento-founder-top">
-              <img src="assets/logo.png" alt="Jagan C" class="bento-avatar">
-              <div>
-                <span class="bento-online-pill"><span class="pulse-dot"></span> Active Now</span>
-                <h4 class="founder-heading">Jagan C</h4>
-                <p class="founder-sub">Founder & Culinary Director</p>
+            <div class="bento-field-row">
+              <div class="bento-field">
+                <label>Your Name *</label>
+                <input type="text" id="bName" required placeholder="Enter full name" class="bento-input">
+              </div>
+              <div class="bento-field">
+                <label>WhatsApp Number *</label>
+                <input type="tel" id="bPhone" required placeholder="Enter WhatsApp number" class="bento-input">
               </div>
             </div>
-            <p class="founder-quote">“Direct hotline for wedding muhurthams & corporate bulk contracts.”</p>
-            <div class="bento-phones">
-              <a href="tel:9940649939" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 99406 49939</a>
-              <a href="tel:9884985368" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 98849 85368</a>
+
+            <div class="bento-field-row">
+              <div class="bento-field">
+                <label>Event Date *</label>
+                <input type="date" id="bDate" required class="bento-input">
+              </div>
+              <div class="bento-field">
+                <label>Guest Count *</label>
+                <select id="bGuests" required class="bento-input bento-select">
+                  <option value="50 - 150 Guests">50 – 150 Guests</option>
+                  <option value="150 - 300 Guests" selected>150 – 300 Guests</option>
+                  <option value="300 - 600 Guests">300 – 600 Guests</option>
+                  <option value="600 - 1500 Guests">600 – 1,500 Guests</option>
+                  <option value="1500+ Guests">1,500+ Guests</option>
+                </select>
+              </div>
             </div>
-            <a href="https://wa.me/919940649939" target="_blank" class="bento-wa-btn">
-              <i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Chat
-            </a>
-          </div>
 
-          <!-- Tile 3: Central Kitchen & Location (Bottom Right 1) -->
-          <div class="bento-card bento-location-card">
-            <div class="bento-icon-badge"><i class="fa-solid fa-location-dot"></i></div>
-            <h4>Velachery Central Kitchen HQ</h4>
-            <p>No 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</p>
-            <div class="bento-coverage-tag">
-              <i class="fa-solid fa-circle-check text-green"></i> 22 South Chennai Localities Covered
+            <div class="bento-field-full">
+              <label>Event Locality / Special Notes</label>
+              <input type="text" id="bNotes" placeholder="e.g. Velachery / Adyar, Wedding Reception Buffet" class="bento-input">
             </div>
-          </div>
 
-          <!-- Tile 4: Ratings & Accreditations (Bottom Right 2) -->
-          <div class="bento-card bento-rating-card">
-            <div class="bento-icon-badge"><i class="fa-solid fa-award"></i></div>
-            <div class="rating-huge">4.9 <span class="stars">★★★★★</span></div>
-            <h4>Google Verified Rating</h4>
-            <p>280+ Reviews • FSSAI Food Safety Certified • 100% Zero-Delay Record</p>
-          </div>
+            <button type="submit" class="btn-bento-submit">
+              <span>GET INSTANT QUOTE ON WHATSAPP</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+            <div class="bento-trust-subtext">
+              <i class="fa-solid fa-bolt text-gold"></i> Fast response in 15 mins • 100% Free consultation & Tasting samples
+            </div>
 
+          </form>
         </div>
+
+        <!-- Tile 2: Founder Hotline Card (Top Right) -->
+        <div class="bento-card bento-founder-card">
+          <div class="bento-founder-top">
+            <img src="assets/logo.png" alt="Jagan C Logo" class="bento-avatar">
+            <div>
+              <span class="bento-online-pill"><span class="pulse-dot"></span> Active Now</span>
+              <h4 class="founder-heading">Jagan C</h4>
+              <p class="founder-sub">Founder & Culinary Director</p>
+            </div>
+          </div>
+          <p class="founder-quote">“Direct personal hotline for weddings, muhurtham feasts & corporate catering.”</p>
+          <div class="bento-phones">
+            <a href="tel:9940649939" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 99406 49939</a>
+            <a href="tel:9884985368" class="bento-phone-btn"><i class="fa-solid fa-phone"></i> 98849 85368</a>
+          </div>
+          <a href="https://wa.me/919940649939?text=Hello%20Jagan%20C!%20I%20would%20like%20to%20inquire%20about%20catering%20services." target="_blank" class="bento-wa-btn">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Tile 3: Central Kitchen & Location (Bottom Right 1) -->
+        <div class="bento-card bento-location-card">
+          <div class="bento-icon-badge"><i class="fa-solid fa-location-dot"></i></div>
+          <h4>Velachery Central Kitchen HQ</h4>
+          <p>No 81, Throwpathi Amman Koil 5th St, Velachery, Chennai 600042</p>
+          <div class="bento-coverage-tag">
+            <i class="fa-solid fa-circle-check text-green"></i> 22 South Chennai Localities Covered
+          </div>
+        </div>
+
+        <!-- Tile 4: Ratings & Accreditations (Bottom Right 2) -->
+        <div class="bento-card bento-rating-card">
+          <div class="bento-icon-badge"><i class="fa-solid fa-award"></i></div>
+          <div class="rating-huge">4.9 <span class="stars">★★★★★</span></div>
+          <h4>Google Verified Rating</h4>
+          <p>280+ Reviews • FSSAI Food Safety Certified • 100% Zero-Delay Record</p>
+        </div>
+
       </div>
 
     </div>
