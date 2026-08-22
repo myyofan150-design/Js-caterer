@@ -11981,3 +11981,406 @@ footer.luxury-footer-wrap,
   0% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
   100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6); }
 }
+
+
+/* ================================================================
+   3D GAMIFIED VIRTUAL KITCHEN METAVERSE & MENU STUDIO
+   ================================================================ */
+
+.section-3d-kitchen-world {
+  padding: 68px 0 80px !important;
+  background: #061A12 !important;
+  color: #FFFFFF !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.section-3d-kitchen-world .ornamental-header h2 {
+  color: #FAF8F2 !important;
+}
+
+.section-3d-kitchen-world .section-subtitle {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.kitchen-3d-metaverse-wrap {
+  position: relative !important;
+  border-radius: 30px !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  background: radial-gradient(circle at 50% 30%, rgba(14, 45, 32, 0.85) 0%, rgba(6, 22, 15, 0.98) 100%) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(212, 175, 55, 0.1) !important;
+  padding: 32px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  margin-top: 24px !important;
+}
+
+.kitchen-3d-bg-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  opacity: 0.6 !important;
+}
+
+.kitchen-hud-top {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 24px !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  padding-bottom: 16px !important;
+}
+
+.hud-status-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  color: #E8C84D !important;
+  letter-spacing: 0.06em !important;
+}
+
+.hud-guest-counter {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.hud-label {
+  font-family: var(--font-label) !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.hud-level-tag {
+  background: rgba(232, 200, 77, 0.15) !important;
+  border: 1px solid rgba(232, 200, 77, 0.35) !important;
+  color: #E8C84D !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  padding: 3px 8px !important;
+  border-radius: 8px !important;
+}
+
+/* ================================================================
+   3D INTERACTIVE KITCHEN STATIONS GRID
+   ================================================================ */
+.kitchen-stations-3d-grid {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
+  perspective: 1200px !important;
+  margin-bottom: 28px !important;
+}
+
+.station-3d-card {
+  background: rgba(14, 38, 27, 0.7) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.25) !important;
+  border-radius: 20px !important;
+  padding: 18px !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  backdrop-filter: blur(8px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transform-style: preserve-3d !important;
+}
+
+.station-3d-card:hover {
+  transform: translateY(-8px) scale(1.03) rotateX(4deg) !important;
+  border-color: #E8C84D !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(232, 200, 77, 0.25) !important;
+  background: rgba(20, 52, 38, 0.85) !important;
+}
+
+.station-3d-card.active {
+  border-color: #25D366 !important;
+  box-shadow: 0 0 24px rgba(37, 211, 102, 0.35) !important;
+  background: rgba(18, 48, 34, 0.9) !important;
+}
+
+.station-card-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.station-3d-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.station-num-pill {
+  font-family: var(--font-label) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  color: #E8C84D !important;
+  background: rgba(232, 200, 77, 0.12) !important;
+  padding: 2px 7px !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(232, 200, 77, 0.25) !important;
+}
+
+.station-temp-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.6rem !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-weight: 700 !important;
+}
+
+.station-visual-wrap {
+  position: relative !important;
+  height: 110px !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.station-thumb-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+
+.station-3d-card:hover .station-thumb-img {
+  transform: scale(1.1) !important;
+}
+
+.station-3d-icon-svg {
+  width: 75px !important;
+  height: 75px !important;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.station-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #FAF8F2 !important;
+  margin: 0 0 4px !important;
+  line-height: 1.2 !important;
+}
+
+.station-desc {
+  font-family: var(--font-body) !important;
+  font-size: 0.74rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin: 0 0 10px !important;
+  line-height: 1.35 !important;
+}
+
+.station-action-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 7px 10px !important;
+  border-radius: 10px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  transition: all 0.2s ease !important;
+}
+
+.station-3d-card:hover .station-action-btn {
+  background: #E8C84D !important;
+  color: #0E2018 !important;
+  border-color: #E8C84D !important;
+}
+
+.station-3d-card.active .station-action-btn {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  border-color: #25D366 !important;
+}
+
+/* ================================================================
+   FLOATING 3D HUD TRAY & BOOKING CONTROLS
+   ================================================================ */
+.kitchen-gamified-tray-hud {
+  position: relative !important;
+  z-index: 2 !important;
+  background: rgba(10, 28, 19, 0.9) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 22px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.tray-hud-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 12px !important;
+}
+
+.tray-title-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.tray-title-group strong {
+  display: block !important;
+  font-family: var(--font-head) !important;
+  font-size: 0.95rem !important;
+  color: #FAF8F2 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.tray-title-group span {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  color: #E8C84D !important;
+}
+
+.tray-items-pills {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.tray-item-pill {
+  background: rgba(232, 200, 77, 0.15) !important;
+  border: 1px solid rgba(232, 200, 77, 0.4) !important;
+  color: #FAF8F2 !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 12px !important;
+  animation: popInPill 0.3s ease forwards !important;
+}
+
+@keyframes popInPill {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.tray-booking-controls {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1.5fr auto !important;
+  gap: 12px !important;
+  align-items: flex-end !important;
+}
+
+.tray-input-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.tray-input-box label {
+  font-family: var(--font-label) !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  letter-spacing: 0.06em !important;
+}
+
+.tray-select,
+.tray-date-input,
+.tray-text-input {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 10px !important;
+  padding: 9px 12px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  color: #FFFFFF !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.tray-select:focus,
+.tray-date-input:focus,
+.tray-text-input:focus {
+  border-color: #E8C84D !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.btn-game-whatsapp-launch {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 11px 18px !important;
+  border-radius: 12px !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.btn-game-whatsapp-launch:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6) !important;
+}
+
+/* Responsive 3D Grid */
+@media (max-width: 1024px) {
+  .kitchen-stations-3d-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .tray-booking-controls {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .btn-game-whatsapp-launch {
+    grid-column: 1 / -1 !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .kitchen-stations-3d-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .tray-booking-controls {
+    grid-template-columns: 1fr !important;
+  }
+  .kitchen-3d-metaverse-wrap {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+  }
+  .hud-status-badge {
+    font-size: 0.64rem !important;
+  }
+  .tray-hud-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+}

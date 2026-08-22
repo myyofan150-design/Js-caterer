@@ -627,93 +627,159 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
-  // ANIMATED MULTI-STEP CATERING CONCIERGE CONTROLLER
+  // 3D GAMIFIED VIRTUAL CENTRAL KITCHEN WORLD CONTROLLER
   // ----------------------------------------------------
-  let conciergeState = {
-    step: 1,
-    occasion: 'Marriage & Event Feast',
-    guests: '150 – 300 Guests',
-    date: '',
-    cuisine: 'Pure Vegetarian Feast',
-    name: '',
-    phone: '',
-    notes: ''
-  };
+  const selectedStations = new Set(['station1', 'station2']);
 
-  window.goToStep = function(stepNum) {
-    conciergeState.step = stepNum;
-    
-    // Hide all step containers and show active
-    document.querySelectorAll('.concierge-step-container').forEach(el => el.classList.remove('active'));
-    const targetStep = document.getElementById(`conciergeStep${stepNum}`);
-    if (targetStep) targetStep.classList.add('active');
-
-    // Update progress bar
-    const bar = document.getElementById('studioProgressBar');
-    if (bar) {
-      const pct = stepNum === 1 ? 25 : stepNum === 2 ? 50 : stepNum === 3 ? 75 : 100;
-      bar.style.width = `${pct}%`;
-    }
-
-    // Update step label pills
-    for (let i = 1; i <= 4; i++) {
-      const pill = document.getElementById(`stepPill${i}`);
-      if (pill) {
-        if (i <= stepNum) pill.classList.add('active');
-        else pill.classList.remove('active');
+  window.interactStation = function(stationId, stationName) {
+    const card = document.querySelector(`.station-3d-card[data-station="${stationId}"]`);
+    if (selectedStations.has(stationId)) {
+      if (selectedStations.size > 1) {
+        selectedStations.delete(stationId);
+        if (card) card.classList.remove('active');
       }
+    } else {
+      selectedStations.add(stationId);
+      if (card) card.classList.add('active');
     }
+    updateTrayDisplay();
   };
 
-  window.selectOccasionCard = function(cardEl, occasionName) {
-    document.querySelectorAll('.occasion-select-card').forEach(c => c.classList.remove('active'));
-    cardEl.classList.add('active');
-    conciergeState.occasion = occasionName;
-    
-    const summaryOccasion = document.getElementById('summaryOccasion');
-    if (summaryOccasion) summaryOccasion.textContent = occasionName;
-  };
+  function updateTrayDisplay() {
+    const countEl = document.getElementById('trayItemCount');
+    const container = document.getElementById('trayPillsContainer');
+    if (countEl) countEl.textContent = `${selectedStations.size} Kitchen Zones Selected`;
 
-  window.selectGuestPill = function(pillEl, guestRange) {
-    document.querySelectorAll('.guest-pill').forEach(p => p.classList.remove('active'));
-    pillEl.classList.add('active');
-    conciergeState.guests = guestRange;
+    if (container) {
+      container.innerHTML = '';
+      const names = {
+        station1: '🍲 Cauldron Zone',
+        station2: '🌿 Leaf Assembly',
+        station3: '🍧 Live Kulfi Counter',
+        station4: '📦 CPU Bento Packing'
+      };
+      selectedStations.forEach(id => {
+        const pill = document.createElement('span');
+        pill.className = 'tray-item-pill active';
+        pill.textContent = names[id] || id;
+        container.appendChild(pill);
+      });
+    }
+  }
 
-    const summaryGuests = document.getElementById('summaryGuests');
-    if (summaryGuests) summaryGuests.textContent = guestRange;
-  };
+  // 3D Mouse Parallax Tilt
+  const metaverseWrap = document.getElementById('kitchenMetaverseWrap');
+  if (metaverseWrap) {
+    metaverseWrap.addEventListener('mousemove', (e) => {
+      const rect = metaverseWrap.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const grid = document.getElementById('kitchenStationsGrid');
+      if (grid) {
+        grid.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+      }
+    });
 
-  window.selectCuisineCard = function(cardEl, cuisineName) {
-    document.querySelectorAll('.cuisine-option-card').forEach(c => c.classList.remove('active'));
-    cardEl.classList.add('active');
-    conciergeState.cuisine = cuisineName;
+    metaverseWrap.addEventListener('mouseleave', () => {
+      const grid = document.getElementById('kitchenStationsGrid');
+      if (grid) grid.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
 
-    const summaryCuisine = document.getElementById('summaryCuisine');
-    if (summaryCuisine) summaryCuisine.textContent = cuisineName;
-  };
+  // Three.js Ambient Particle WebGL Scene
+  function initKitchen3DCanvas() {
+    const canvas = document.getElementById('kitchen3dCanvas');
+    if (!canvas || typeof THREE === 'undefined') return;
 
-  window.updateLiveSummary = function() {
-    const dateInput = document.getElementById('conciergeEventDate');
-    if (dateInput) conciergeState.date = dateInput.value;
-  };
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  window.handleConciergeSubmit = function(e) {
-    e.preventDefault();
-    const nameInput = document.getElementById('conciergeUserName');
-    const phoneInput = document.getElementById('conciergeUserPhone');
-    const notesInput = document.getElementById('conciergeUserNotes');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    camera.position.z = 80;
 
-    const name = nameInput ? nameInput.value.trim() : '';
-    const phone = phoneInput ? phoneInput.value.trim() : '';
-    const notes = notesInput ? notesInput.value.trim() : '';
-    const date = conciergeState.date;
+    // Glowing Golden Spice Particles (Ambience)
+    const particleCount = 120;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
 
-    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nI have curated a custom catering inquiry on your website:\n🎯 Occasion: ${conciergeState.occasion}\n👥 Guest Strength: ${conciergeState.guests}\n🍲 Cuisine Preference: ${conciergeState.cuisine}`;
-    if (date) msg += `\n📅 Auspicious Date: ${date}`;
-    if (name) msg += `\n👤 Name: ${name}`;
-    if (phone) msg += `\n📞 WhatsApp: ${phone}`;
-    if (notes) msg += `\n📍 Locality / Special Notes: ${notes}`;
-    msg += `\n\nPlease send me the custom menu proposal and price quote!`;
+    const goldColor = new THREE.Color('#E8C84D');
+    const amberColor = new THREE.Color('#FF9500');
+
+    for (let i = 0; i < particleCount * 3; i += 3) {
+      positions[i] = (Math.random() - 0.5) * 160;
+      positions[i + 1] = (Math.random() - 0.5) * 100;
+      positions[i + 2] = (Math.random() - 0.5) * 100;
+
+      const c = Math.random() > 0.5 ? goldColor : amberColor;
+      colors[i] = c.r;
+      colors[i + 1] = c.g;
+      colors[i + 2] = c.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const material = new THREE.PointsMaterial({
+      size: 2.2,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending
+    });
+
+    const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      particles.rotation.y += 0.0015;
+      particles.rotation.x += 0.0008;
+
+      const pos = particles.geometry.attributes.position.array;
+      for (let i = 1; i < particleCount * 3; i += 3) {
+        pos[i] += 0.08;
+        if (pos[i] > 50) pos[i] = -50;
+      }
+      particles.geometry.attributes.position.needsUpdate = true;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      if (canvas && canvas.clientWidth > 0) {
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      }
+    });
+  }
+
+  // Initialize WebGL once DOM is ready
+  setTimeout(initKitchen3DCanvas, 500);
+
+  window.launch3dKitchenWhatsApp = function() {
+    const guests = document.getElementById('gameHeadcount') ? document.getElementById('gameHeadcount').value : '150 – 300 Guests';
+    const date = document.getElementById('gameEventDate') ? document.getElementById('gameEventDate').value : '';
+    const contact = document.getElementById('gameContact') ? document.getElementById('gameContact').value.trim() : '';
+
+    const zoneNames = {
+      station1: '🍲 Dum Biryani & Cauldron Zone',
+      station2: '🌿 Traditional Banana Leaf VIP Plating',
+      station3: '🍧 Live Matka Kulfi & Hot Sweets Counter',
+      station4: '📦 FSSAI Certified Bento Packaging'
+    };
+
+    const selectedList = Array.from(selectedStations).map(id => `• ${zoneNames[id] || id}`).join('\n');
+
+    let msg = `வணக்கம் Chef Jagan C (JS Caterer),\n\nI have explored your 3D Virtual Kitchen and curated my feast itinerary:\n\n🎮 Selected Kitchen Zones:\n${selectedList}\n\n👥 Guest Strength: ${guests}`;
+    if (date) msg += `\n📅 Auspicious Event Date: ${date}`;
+    if (contact) msg += `\n👤 Client Info: ${contact}`;
+    msg += `\n\nPlease share the customized menu quotation and booking confirmation!`;
 
     window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
   };
