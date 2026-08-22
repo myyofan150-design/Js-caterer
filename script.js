@@ -626,79 +626,88 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Home Page Act 08 & Contact Page Native WhatsApp Chat Flow Controller
-  function initNativeWhatsAppChat() {
-    const chips = document.querySelectorAll('.wa-chip');
-    const nameInput = document.getElementById('waUserName');
-    const phoneInput = document.getElementById('waUserPhone');
-    const dateInput = document.getElementById('waUserDate');
-    const guestsInput = document.getElementById('waUserGuests');
-    const notesInput = document.getElementById('waUserNotes');
-    const customMsgInput = document.getElementById('waCustomMessageInput');
-    const outgoingText = document.getElementById('waOutgoingText');
-    const btnSend = document.getElementById('btnLaunchNativeWhatsApp');
-    const btnFull = document.getElementById('btnLaunchWhatsAppFull');
+  // ----------------------------------------------------
+  // CONTACT DESIGN SWITCHER (OPTION 1 vs OPTION 2)
+  // ----------------------------------------------------
+  window.switchContactDesign = function(optId) {
+    const opt1El = document.getElementById('contactOpt1');
+    const opt2El = document.getElementById('contactOpt2');
+    const btns = document.querySelectorAll('.design-tab-btn');
 
-    let selectedService = 'Marriage & Event Catering';
+    btns.forEach(btn => btn.classList.remove('active'));
 
-    function updatePreviewAndMessage() {
-      const name = nameInput ? nameInput.value.trim() : '';
-      const phone = phoneInput ? phoneInput.value.trim() : '';
-      const date = dateInput ? dateInput.value : '';
-      const guests = guestsInput ? guestsInput.value : '150 - 300 Guests';
-      const notes = notesInput ? notesInput.value.trim() : '';
-
-      let text = `Hello Jagan C! Please share packages for ${selectedService} (${guests}).`;
-      if (name) text = `Hi Jagan C! I am ${name}. Looking for ${selectedService} (${guests}).`;
-      if (outgoingText) outgoingText.textContent = `"${text}"`;
-
-      return { name, phone, date, guests, notes, selectedService };
+    if (optId === 'opt1') {
+      if (opt1El) opt1El.classList.add('active');
+      if (opt2El) opt2El.classList.remove('active');
+      if (btns[0]) btns[0].classList.add('active');
+    } else if (optId === 'opt2') {
+      if (opt1El) opt1El.classList.remove('active');
+      if (opt2El) opt2El.classList.add('active');
+      if (btns[1]) btns[1].classList.add('active');
     }
+  };
 
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        selectedService = chip.getAttribute('data-service') || 'Marriage & Event Catering';
-        updatePreviewAndMessage();
-      });
-    });
+  // Option 1: Royal Booking Form Submit
+  const royalBookingForm = document.getElementById('royalBookingForm');
+  if (royalBookingForm) {
+    royalBookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      const name = v('rName');
+      const phone = v('rPhone');
+      const category = v('rCategory');
+      const date = v('rDate');
+      const guests = v('rGuests');
+      const cuisine = v('rCuisine');
+      const notes = v('rNotes');
 
-    [nameInput, phoneInput, dateInput, guestsInput, notesInput].forEach(el => {
-      if (el) {
-        el.addEventListener('input', updatePreviewAndMessage);
-        el.addEventListener('change', updatePreviewAndMessage);
-      }
-    });
-
-    function launchWhatsApp() {
-      const data = updatePreviewAndMessage();
-      const customMsg = customMsgInput ? customMsgInput.value.trim() : '';
-
-      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nI would like to inquire about catering services:\n🎯 Service: ${data.selectedService}\n👥 Guests: ${data.guests}`;
-      if (data.name) msg += `\n👤 Name: ${data.name}`;
-      if (data.phone) msg += `\n📞 Phone: ${data.phone}`;
-      if (data.date) msg += `\n📅 Event Date: ${data.date}`;
-      if (data.notes) msg += `\n📍 Location / Notes: ${data.notes}`;
-      if (customMsg) msg += `\n💬 Message: ${customMsg}`;
-      msg += `\n\nPlease share the detailed menu packages and best quote!`;
+      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nI would like to request a custom catering proposal:\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n🏬 Service Category: ${category}`;
+      if (date) msg += `\n📅 Event Date: ${date}`;
+      if (guests) msg += `\n👥 Guest Count: ${guests}`;
+      if (cuisine) msg += `\n🍲 Cuisine Preference: ${cuisine}`;
+      if (notes) msg += `\n📍 Special Notes / Location: ${notes}`;
+      msg += `\n\nPlease share the detailed menu options and per-plate pricing quote!`;
 
       window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-
-    if (btnSend) btnSend.addEventListener('click', launchWhatsApp);
-    if (btnFull) btnFull.addEventListener('click', launchWhatsApp);
-    if (customMsgInput) {
-      customMsgInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          launchWhatsApp();
-        }
-      });
-    }
+    });
   }
 
-  initNativeWhatsAppChat();
+  // Option 2: Bento Booking Form Submit & Chips
+  let bentoSelectedService = 'Marriage Catering';
+  const bentoChips = document.querySelectorAll('.bento-chip');
+  bentoChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      bentoChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      bentoSelectedService = chip.getAttribute('data-service') || 'Marriage Catering';
+    });
+  });
+
+  const bentoBookingForm = document.getElementById('bentoBookingForm');
+  if (bentoBookingForm) {
+    bentoBookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      const name = v('bName');
+      const phone = v('bPhone');
+      const date = v('bDate');
+      const guests = v('bGuests');
+      const notes = v('bNotes');
+
+      let msg = `வணக்கம் JS Caterer (Jagan C),\n\nBento Fast Quote Request:\n🎯 Service: ${bentoSelectedService}\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n👥 Guests: ${guests}`;
+      if (date) msg += `\n📅 Event Date: ${date}`;
+      if (notes) msg += `\n📍 Notes / Locality: ${notes}`;
+      msg += `\n\nPlease send custom package options and instant quote!`;
+
+      window.open(`https://wa.me/919940649939?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
 
   // ----------------------------------------------------
   // GSAP-STYLE SCROLL PROGRESS BAR & REVEAL ANIMATIONS
