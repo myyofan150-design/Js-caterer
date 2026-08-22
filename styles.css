@@ -1531,7 +1531,10 @@ a { text-decoration: none; transition: color .25s; }
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3) !important;
   z-index: 100000 !important;
   transform: translateX(100%) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.35s ease !important;
   display: flex !important;
   flex-direction: column !important;
   padding: 24px 28px !important;
@@ -1540,6 +1543,9 @@ a { text-decoration: none; transition: color .25s; }
 }
 .mobile-nav-drawer.is-open {
   transform: translateX(0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 .mobile-nav-header {
   display: flex !important;

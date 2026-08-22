@@ -18,23 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavDrawer = document.getElementById('mobileNavDrawer');
   const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
   const mobileDrawerClose = document.getElementById('mobileDrawerClose');
-  const mobileNavItems = document.querySelectorAll('.mobile-nav-item, .btn-gold-mobile');
 
   function openMobileMenu() {
     if (!mobileNavDrawer) return;
     mobileNavDrawer.style.visibility = 'visible';
-    mobileNavDrawer.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+    mobileNavDrawer.style.opacity = '1';
+    mobileNavDrawer.style.pointerEvents = 'auto';
+    mobileNavDrawer.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease';
     mobileNavDrawer.classList.add('is-open');
     if (mobileToggleBtn) mobileToggleBtn.classList.add('is-active');
     if (mobileNavBackdrop) mobileNavBackdrop.classList.add('is-active');
     document.body.classList.add('menu-open');
-
-    if (window.gsap) {
-      gsap.fromTo(mobileNavItems, 
-        { x: 25, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.3, stagger: 0.05, ease: 'power2.out', delay: 0.08 }
-      );
-    }
   }
 
   function closeMobileMenu(instant = false) {
@@ -43,11 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (instant) {
       // Instant dismissal with zero transition for immediate page navigation
       mobileNavDrawer.style.transition = 'none';
-      mobileNavDrawer.classList.remove('is-open');
+      mobileNavDrawer.style.transform = 'translateX(100%)';
       mobileNavDrawer.style.visibility = 'hidden';
-    } else {
-      mobileNavDrawer.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+      mobileNavDrawer.style.opacity = '0';
+      mobileNavDrawer.style.pointerEvents = 'none';
       mobileNavDrawer.classList.remove('is-open');
+    } else {
+      mobileNavDrawer.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease';
+      mobileNavDrawer.classList.remove('is-open');
+      mobileNavDrawer.style.opacity = '0';
+      mobileNavDrawer.style.pointerEvents = 'none';
       setTimeout(() => {
         if (!mobileNavDrawer.classList.contains('is-open')) {
           mobileNavDrawer.style.visibility = 'hidden';
@@ -56,7 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (mobileToggleBtn) mobileToggleBtn.classList.remove('is-active');
-    if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('is-active');
+    if (mobileNavBackdrop) {
+      if (instant) mobileNavBackdrop.style.transition = 'none';
+      mobileNavBackdrop.classList.remove('is-active');
+    }
     document.body.classList.remove('menu-open');
   }
 
@@ -73,8 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', () => closeMobileMenu());
   if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', () => closeMobileMenu());
 
-  // Instant dismissal on navigation link click to prevent page-load flash
-  mobileNavItems.forEach(item => {
+  // Instant dismissal on ALL navigation links inside drawer to prevent page-load flash
+  const allDrawerLinks = document.querySelectorAll('.mobile-nav-drawer a');
+  allDrawerLinks.forEach(item => {
     item.addEventListener('click', () => {
       closeMobileMenu(true);
     });
@@ -87,6 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Ensure menu is closed before page unloads
   window.addEventListener('beforeunload', () => {
+    closeMobileMenu(true);
+  });
+  window.addEventListener('pagehide', () => {
     closeMobileMenu(true);
   });
 
