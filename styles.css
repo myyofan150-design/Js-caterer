@@ -13131,3 +13131,201 @@ footer.luxury-footer-wrap,
     gap: 10px !important;
   }
 }
+
+
+/* ================================================================
+   MOBILE-FIRST MASTER RESPONSIVE OVERHAUL FOR CATERING CONCIERGE
+   ================================================================ */
+
+/* Desktop Base (>1024px) */
+@media (min-width: 1025px) {
+  .concierge-master-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.25fr !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+  }
+
+  .concierge-kitchen-pass-card {
+    order: 1 !important;
+    min-height: 560px !important;
+  }
+
+  .concierge-studio-card {
+    order: 2 !important;
+    min-height: 560px !important;
+  }
+}
+
+/* Tablet & Mobile Breakpoint (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .section-catering-concierge {
+    padding: 48px 0 60px !important;
+  }
+
+  .concierge-master-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* STEP STUDIO COMES FIRST ON MOBILE FOR INSTANT ENGAGEMENT */
+  .concierge-studio-card {
+    order: 1 !important;
+    padding: 24px 18px !important;
+    border-radius: 22px !important;
+    min-height: auto !important;
+    box-shadow: 0 10px 30px rgba(14, 32, 24, 0.08) !important;
+  }
+
+  /* KITCHEN PASS COMES SECOND AS A STREAMLINED VIP TRUST STRIP */
+  .concierge-kitchen-pass-card {
+    order: 2 !important;
+    padding: 22px 18px !important;
+    border-radius: 22px !important;
+    min-height: auto !important;
+    gap: 16px !important;
+  }
+
+  .pass-header-meta {
+    padding-bottom: 10px !important;
+  }
+
+  .pass-title {
+    font-size: 1.5rem !important;
+  }
+
+  .pass-tamil-motto {
+    font-size: 0.88rem !important;
+  }
+
+  .pass-sub-text {
+    font-size: 0.76rem !important;
+  }
+
+  /* High-Contrast 1-Column Key-Value Itinerary on Mobile */
+  .itinerary-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+  }
+
+  .itinerary-row .row-label {
+    color: #E8C84D !important;
+    font-size: 0.62rem !important;
+  }
+
+  .itinerary-row .row-value {
+    text-align: left !important;
+    font-size: 0.84rem !important;
+    color: #FFFFFF !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Trust Pills */
+  .pass-trust-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  .trust-pill {
+    padding: 6px 8px !important;
+    font-size: 0.68rem !important;
+  }
+
+  /* Hotline Buttons */
+  .hotline-buttons-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .hotline-btn {
+    font-size: 0.8rem !important;
+    padding: 9px 8px !important;
+  }
+
+  /* Studio Form Elements on Mobile */
+  .step-dialogue-bubble {
+    padding: 10px 12px !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .bubble-speech p {
+    font-size: 0.82rem !important;
+  }
+
+  .occasion-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .occasion-select-card {
+    display: flex !important;
+    align-items: center !important;
+    padding: 6px !important;
+  }
+
+  .card-image-wrap {
+    width: 80px !important;
+    height: 65px !important;
+    min-width: 80px !important;
+    border-radius: 10px !important;
+  }
+
+  .card-caption {
+    padding: 4px 10px !important;
+  }
+
+  .card-caption strong {
+    font-size: 0.82rem !important;
+  }
+
+  .card-caption span {
+    font-size: 0.68rem !important;
+  }
+
+  .guest-pills-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  .guest-pill {
+    padding: 8px 6px !important;
+    font-size: 0.74rem !important;
+  }
+
+  .date-session-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .cuisine-options-grid {
+    gap: 8px !important;
+  }
+
+  .cuisine-option-card {
+    padding: 10px 12px !important;
+  }
+
+  .final-fields-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .btn-whatsapp-grand-dispatch {
+    padding: 12px 14px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .hotline-buttons-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pass-trust-row {
+    grid-template-columns: 1fr !important;
+  }
+}
