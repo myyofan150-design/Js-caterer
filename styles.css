@@ -16386,3 +16386,349 @@ body {
     display: none !important;
   }
 }
+
+
+/* ================================================================
+   AWWARDS-GRADE KINETIC VISUAL CURTAIN REEL (ACT 05)
+   ================================================================ */
+
+.section-kinetic-offerings {
+  padding: 80px 0 96px !important;
+  background: #FAF8F2 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* ================================================================
+   DESKTOP (>992px): EXPANDING KINETIC PANELS
+   ================================================================ */
+.kinetic-curtain-container {
+  display: flex !important;
+  gap: 16px !important;
+  height: 520px !important;
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 16px auto 0 !important;
+}
+
+.kinetic-panel {
+  position: relative !important;
+  flex: 1 !important;
+  height: 100% !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 16px 40px rgba(10, 32, 22, 0.1) !important;
+  cursor: pointer !important;
+  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s ease, border-color 0.4s ease !important;
+  box-sizing: border-box !important;
+}
+
+.kinetic-panel.active {
+  flex: 3.2 !important;
+  border-color: #E8C84D !important;
+  box-shadow: 0 24px 60px rgba(10, 32, 22, 0.25), 0 0 25px rgba(232, 200, 77, 0.25) !important;
+}
+
+/* Background Photo with Zoom on Hover */
+.panel-bg-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 1 !important;
+}
+
+.kinetic-panel:hover .panel-bg-photo,
+.kinetic-panel.active .panel-bg-photo {
+  transform: scale(1.06) !important;
+}
+
+/* Dark Emerald Glass Gradient Overlay */
+.panel-glass-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(8, 32, 22, 0.3) 0%, rgba(6, 24, 16, 0.85) 60%, rgba(4, 18, 12, 0.96) 100%) !important;
+  z-index: 2 !important;
+  transition: background 0.4s ease !important;
+}
+
+.kinetic-panel.active .panel-glass-overlay {
+  background: linear-gradient(180deg, rgba(8, 32, 22, 0.2) 0%, rgba(6, 24, 16, 0.75) 50%, rgba(4, 18, 12, 0.94) 100%) !important;
+}
+
+/* Vertical Tamil Watermark */
+.panel-tamil-watermark {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(-90deg) !important;
+  font-family: var(--font-tamil) !important;
+  font-size: 2.4rem !important;
+  font-weight: 900 !important;
+  color: rgba(232, 200, 77, 0.08) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  letter-spacing: 0.15em !important;
+  transition: opacity 0.4s ease !important;
+}
+
+.kinetic-panel.active .panel-tamil-watermark {
+  opacity: 0.04 !important;
+}
+
+/* Collapsed State Minimal Pill (Shown when panel is flex: 1) */
+.panel-collapsed-badge {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  z-index: 4 !important;
+  transition: opacity 0.3s ease !important;
+  white-space: nowrap !important;
+}
+
+.panel-num-roman {
+  font-family: var(--font-label) !important;
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+  color: #E8C84D !important;
+  background: rgba(8, 32, 22, 0.8) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.panel-short-title {
+  font-family: var(--font-head) !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.kinetic-panel.active .panel-collapsed-badge {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Expanded Content Layer (Revealed when active) */
+.panel-expanded-content {
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  z-index: 4 !important;
+  opacity: 0 !important;
+  transform: translateY(12px) !important;
+  pointer-events: none !important;
+  transition: opacity 0.4s ease 0.15s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s !important;
+  box-sizing: border-box !important;
+}
+
+.kinetic-panel.active .panel-expanded-content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* Top Pill Header */
+.panel-top-pill {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.pill-category {
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  color: #E8C84D !important;
+  background: rgba(8, 32, 22, 0.85) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+}
+
+.pill-capacity {
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+}
+
+/* Main Info Block */
+.panel-main-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-top: auto !important;
+  margin-bottom: 14px !important;
+}
+
+.panel-icon-brass {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: #E8C84D !important;
+  color: #082016 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 6px 18px rgba(232, 200, 77, 0.4) !important;
+}
+
+.panel-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.65rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+.panel-desc {
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  max-width: 480px !important;
+}
+
+/* Specs Chips */
+.panel-specs-chips {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 18px !important;
+}
+
+.panel-specs-chips span {
+  font-family: var(--font-body) !important;
+  font-size: 0.76rem !important;
+  color: #FAF8F2 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  padding: 4px 10px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Action Button */
+.panel-action-row {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.btn-panel-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
+  color: #082016 !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-panel-action:hover {
+  transform: translateX(4px) !important;
+  background: linear-gradient(135deg, #E8C84D 0%, #C59B27 100%) !important;
+  box-shadow: 0 12px 28px rgba(232, 200, 77, 0.4) !important;
+}
+
+/* ================================================================
+   MOBILE & TABLET RESPONSIVE STACK (<992px)
+   ================================================================ */
+@media (max-width: 992px) {
+  .kinetic-curtain-container {
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 16px !important;
+  }
+
+  .kinetic-panel {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 280px !important;
+    border-radius: 22px !important;
+  }
+
+  .kinetic-panel.active {
+    flex: none !important;
+  }
+
+  .panel-collapsed-badge {
+    display: none !important;
+  }
+
+  .panel-expanded-content {
+    position: relative !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    padding: 22px 20px !important;
+  }
+
+  .panel-tamil-watermark {
+    display: none !important;
+  }
+
+  .panel-title {
+    font-size: 1.35rem !important;
+  }
+
+  .panel-desc {
+    font-size: 0.84rem !important;
+  }
+
+  .panel-specs-chips {
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .panel-specs-chips span {
+    font-size: 0.72rem !important;
+  }
+
+  .btn-panel-action {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px 18px !important;
+  }
+}

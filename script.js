@@ -1995,3 +1995,13 @@ window.setCirclePillar = function(pillarId) {
     }, 150);
   }
 };
+
+
+// ================================================================
+// KINETIC VISUAL CURTAIN CONTROLLER (ACT 05)
+// ================================================================
+window.activateCurtainPanel = function(panelIndex) {
+  document.querySelectorAll('.kinetic-panel').forEach(panel => {
+    panel.classList.toggle('active', parseInt(panel.getAttribute('data-index')) === panelIndex);
+  });
+};
