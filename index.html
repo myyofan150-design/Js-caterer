@@ -376,7 +376,7 @@
   <!-- ================================================================
        ACT 05 — SPECIALIZED CATERING SOLUTIONS (KINETIC VISUAL CURTAIN)
        ================================================================ -->
-  <section id="act-5" class="section-soft-gold section-kinetic-offerings">
+  <section id="act-5" class="section-soft-gold section-kinetic-offerings" onmouseenter="pauseCurtainAutoplay()" onmouseleave="resumeCurtainAutoplay()">
     <div class="container">
       
       <!-- Section Header -->
@@ -393,16 +393,18 @@
         <div class="kinetic-panel panel-1 active" data-index="1" onmouseenter="activateCurtainPanel(1)" onclick="activateCurtainPanel(1)">
           <div class="panel-bg-photo" style="background-image: url('assets/wedding_feast.jpg');"></div>
           <div class="panel-glass-overlay"></div>
-          <div class="panel-tamil-watermark">திருமணம்</div>
           
+          <!-- Collapsed State Badge & Title (Standard 01, bold & uniform) -->
           <div class="panel-collapsed-badge">
-            <span class="panel-num-roman">I</span>
-            <span class="panel-short-title">Weddings</span>
+            <span class="panel-num-pill">01</span>
+            <div class="panel-collapsed-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+            <span class="panel-collapsed-title">Weddings</span>
           </div>
 
+          <!-- Expanded State Content Layer -->
           <div class="panel-expanded-content">
             <div class="panel-top-pill">
-              <span class="pill-category">CELEBRATIONS</span>
+              <span class="pill-category">01 · CELEBRATIONS</span>
               <span class="pill-capacity">100 – 5,000+ Guests</span>
             </div>
             
@@ -431,16 +433,18 @@
         <div class="kinetic-panel panel-2" data-index="2" onmouseenter="activateCurtainPanel(2)" onclick="activateCurtainPanel(2)">
           <div class="panel-bg-photo" style="background-image: url('assets/live_kitchen.jpg');"></div>
           <div class="panel-glass-overlay"></div>
-          <div class="panel-tamil-watermark">தொழிற்சாலை</div>
           
+          <!-- Collapsed State Badge & Title -->
           <div class="panel-collapsed-badge">
-            <span class="panel-num-roman">II</span>
-            <span class="panel-short-title">Industrial CPU</span>
+            <span class="panel-num-pill">02</span>
+            <div class="panel-collapsed-icon"><i class="fa-solid fa-industry"></i></div>
+            <span class="panel-collapsed-title">Industrial CPU</span>
           </div>
 
+          <!-- Expanded State Content Layer -->
           <div class="panel-expanded-content">
             <div class="panel-top-pill">
-              <span class="pill-category">MEGA LOGISTICS</span>
+              <span class="pill-category">02 · MEGA LOGISTICS</span>
               <span class="pill-capacity">500 – 10,000+ Meals/Day</span>
             </div>
             
@@ -469,16 +473,18 @@
         <div class="kinetic-panel panel-3" data-index="3" onmouseenter="activateCurtainPanel(3)" onclick="activateCurtainPanel(3)">
           <div class="panel-bg-photo" style="background-image: url('assets/corporate_buffet.jpg');"></div>
           <div class="panel-glass-overlay"></div>
-          <div class="panel-tamil-watermark">நிறுவனம்</div>
           
+          <!-- Collapsed State Badge & Title -->
           <div class="panel-collapsed-badge">
-            <span class="panel-num-roman">III</span>
-            <span class="panel-short-title">Corporate</span>
+            <span class="panel-num-pill">03</span>
+            <div class="panel-collapsed-icon"><i class="fa-solid fa-box-open"></i></div>
+            <span class="panel-collapsed-title">Corporate</span>
           </div>
 
+          <!-- Expanded State Content Layer -->
           <div class="panel-expanded-content">
             <div class="panel-top-pill">
-              <span class="pill-category">EXECUTIVE PACKS</span>
+              <span class="pill-category">03 · EXECUTIVE PACKS</span>
               <span class="pill-capacity">Min. 25 – 2,000+ Boxes</span>
             </div>
             
@@ -507,16 +513,18 @@
         <div class="kinetic-panel panel-4" data-index="4" onmouseenter="activateCurtainPanel(4)" onclick="activateCurtainPanel(4)">
           <div class="panel-bg-photo" style="background-image: url('assets/temple_annathanam.jpg');"></div>
           <div class="panel-glass-overlay"></div>
-          <div class="panel-tamil-watermark">அன்னதானம்</div>
           
+          <!-- Collapsed State Badge & Title -->
           <div class="panel-collapsed-badge">
-            <span class="panel-num-roman">IV</span>
-            <span class="panel-short-title">Annathanam</span>
+            <span class="panel-num-pill">04</span>
+            <div class="panel-collapsed-icon"><i class="fa-solid fa-gopuram"></i></div>
+            <span class="panel-collapsed-title">Annathanam</span>
           </div>
 
+          <!-- Expanded State Content Layer -->
           <div class="panel-expanded-content">
             <div class="panel-top-pill">
-              <span class="pill-category">SACRED SANCTITY</span>
+              <span class="pill-category">04 · SACRED SANCTITY</span>
               <span class="pill-capacity">100% Satvik Protocol</span>
             </div>
             
@@ -541,6 +549,14 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Autoplay Progress Indicator Bars -->
+      <div class="curtain-autoplay-indicators">
+        <button type="button" class="indicator-bar active" onclick="activateCurtainPanel(1)"><span class="bar-fill"></span></button>
+        <button type="button" class="indicator-bar" onclick="activateCurtainPanel(2)"><span class="bar-fill"></span></button>
+        <button type="button" class="indicator-bar" onclick="activateCurtainPanel(3)"><span class="bar-fill"></span></button>
+        <button type="button" class="indicator-bar" onclick="activateCurtainPanel(4)"><span class="bar-fill"></span></button>
       </div>
 
     </div>

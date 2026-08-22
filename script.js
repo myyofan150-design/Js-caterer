@@ -2005,3 +2005,50 @@ window.activateCurtainPanel = function(panelIndex) {
     panel.classList.toggle('active', parseInt(panel.getAttribute('data-index')) === panelIndex);
   });
 };
+
+
+// ================================================================
+// KINETIC VISUAL CURTAIN AUTOPLAY CONTROLLER (ACT 05)
+// ================================================================
+let curtainActiveIndex = 1;
+let curtainAutoplayTimer = null;
+const totalCurtainPanels = 4;
+const curtainIntervalMs = 4500;
+
+window.activateCurtainPanel = function(panelIndex) {
+  curtainActiveIndex = panelIndex;
+  
+  document.querySelectorAll('.kinetic-panel').forEach(panel => {
+    panel.classList.toggle('active', parseInt(panel.getAttribute('data-index')) === panelIndex);
+  });
+
+  document.querySelectorAll('.indicator-bar').forEach((bar, idx) => {
+    bar.classList.toggle('active', (idx + 1) === panelIndex);
+  });
+};
+
+function startCurtainAutoplay() {
+  if (curtainAutoplayTimer) clearInterval(curtainAutoplayTimer);
+  curtainAutoplayTimer = setInterval(() => {
+    // Only autoplay on desktop where expanding panels exist
+    if (window.innerWidth > 992) {
+      curtainActiveIndex = (curtainActiveIndex % totalCurtainPanels) + 1;
+      activateCurtainPanel(curtainActiveIndex);
+    }
+  }, curtainIntervalMs);
+}
+
+window.pauseCurtainAutoplay = function() {
+  if (curtainAutoplayTimer) {
+    clearInterval(curtainAutoplayTimer);
+    curtainAutoplayTimer = null;
+  }
+};
+
+window.resumeCurtainAutoplay = function() {
+  startCurtainAutoplay();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  startCurtainAutoplay();
+});

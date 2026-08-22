@@ -16399,9 +16399,7 @@ body {
   overflow: hidden !important;
 }
 
-/* ================================================================
-   DESKTOP (>992px): EXPANDING KINETIC PANELS
-   ================================================================ */
+/* Desktop Container */
 .kinetic-curtain-container {
   display: flex !important;
   gap: 16px !important;
@@ -16420,7 +16418,7 @@ body {
   border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
   box-shadow: 0 16px 40px rgba(10, 32, 22, 0.1) !important;
   cursor: pointer !important;
-  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s ease, border-color 0.4s ease !important;
+  transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s ease, border-color 0.4s ease !important;
   box-sizing: border-box !important;
 }
 
@@ -16449,7 +16447,7 @@ body {
 .panel-glass-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(180deg, rgba(8, 32, 22, 0.3) 0%, rgba(6, 24, 16, 0.85) 60%, rgba(4, 18, 12, 0.96) 100%) !important;
+  background: linear-gradient(180deg, rgba(8, 32, 22, 0.35) 0%, rgba(6, 24, 16, 0.85) 60%, rgba(4, 18, 12, 0.96) 100%) !important;
   z-index: 2 !important;
   transition: background 0.4s ease !important;
 }
@@ -16458,74 +16456,76 @@ body {
   background: linear-gradient(180deg, rgba(8, 32, 22, 0.2) 0%, rgba(6, 24, 16, 0.75) 50%, rgba(4, 18, 12, 0.94) 100%) !important;
 }
 
-/* Vertical Tamil Watermark */
-.panel-tamil-watermark {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) rotate(-90deg) !important;
-  font-family: var(--font-tamil) !important;
-  font-size: 2.4rem !important;
-  font-weight: 900 !important;
-  color: rgba(232, 200, 77, 0.08) !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
-  letter-spacing: 0.15em !important;
-  transition: opacity 0.4s ease !important;
-}
-
-.kinetic-panel.active .panel-tamil-watermark {
-  opacity: 0.04 !important;
-}
-
-/* Collapsed State Minimal Pill (Shown when panel is flex: 1) */
+/* ================================================================
+   COLLAPSED STATE (UNIFORM, CLEAN 01, 02, 03, 04 & EMBEDDED TITLE)
+   ================================================================ */
 .panel-collapsed-badge {
   position: absolute !important;
-  bottom: 24px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  inset: 0 !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 8px !important;
+  justify-content: space-between !important;
+  padding: 24px 12px !important;
   z-index: 4 !important;
-  transition: opacity 0.3s ease !important;
-  white-space: nowrap !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
 }
 
-.panel-num-roman {
+.panel-num-pill {
   font-family: var(--font-label) !important;
-  font-size: 1.1rem !important;
-  font-weight: 900 !important;
-  color: #E8C84D !important;
-  background: rgba(8, 32, 22, 0.8) !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  width: 36px !important;
-  height: 36px !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  color: #082016 !important;
+  background: #E8C84D !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  letter-spacing: 0.05em !important;
+}
+
+.panel-collapsed-icon {
+  width: 44px !important;
+  height: 44px !important;
   border-radius: 50% !important;
+  background: rgba(8, 32, 22, 0.85) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.6) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  color: #E8C84D !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s ease !important;
 }
 
-.panel-short-title {
+.panel-collapsed-title {
   font-family: var(--font-head) !important;
-  font-size: 0.95rem !important;
+  font-size: 1.05rem !important;
   font-weight: 800 !important;
   color: #FFFFFF !important;
-  writing-mode: vertical-rl !important;
-  transform: rotate(180deg) !important;
-  letter-spacing: 0.08em !important;
+  background: rgba(6, 24, 16, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 6px 14px !important;
+  border-radius: 16px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+  max-width: 92% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .kinetic-panel.active .panel-collapsed-badge {
   opacity: 0 !important;
-  pointer-events: none !important;
+  transform: scale(0.95) !important;
 }
 
-/* Expanded Content Layer (Revealed when active) */
+/* ================================================================
+   EXPANDED STATE CONTENT
+   ================================================================ */
 .panel-expanded-content {
   position: absolute !important;
   inset: 0 !important;
@@ -16547,7 +16547,6 @@ body {
   pointer-events: auto !important;
 }
 
-/* Top Pill Header */
 .panel-top-pill {
   display: flex !important;
   justify-content: space-between !important;
@@ -16579,7 +16578,6 @@ body {
   border-radius: 20px !important;
 }
 
-/* Main Info Block */
 .panel-main-info {
   display: flex !important;
   flex-direction: column !important;
@@ -16614,13 +16612,12 @@ body {
 .panel-desc {
   font-family: var(--font-body) !important;
   font-size: 0.88rem !important;
-  color: rgba(255, 255, 255, 0.82) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   line-height: 1.5 !important;
   margin: 0 !important;
   max-width: 480px !important;
 }
 
-/* Specs Chips */
 .panel-specs-chips {
   display: flex !important;
   gap: 12px !important;
@@ -16641,7 +16638,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-/* Action Button */
 .panel-action-row {
   display: flex !important;
   width: 100% !important;
@@ -16669,6 +16665,52 @@ body {
   transform: translateX(4px) !important;
   background: linear-gradient(135deg, #E8C84D 0%, #C59B27 100%) !important;
   box-shadow: 0 12px 28px rgba(232, 200, 77, 0.4) !important;
+}
+
+/* ================================================================
+   AUTOPLAY PROGRESS INDICATORS
+   ================================================================ */
+.curtain-autoplay-indicators {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 24px !important;
+}
+
+.indicator-bar {
+  width: 50px !important;
+  height: 4px !important;
+  border-radius: 4px !important;
+  background: rgba(212, 175, 55, 0.25) !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: width 0.3s ease !important;
+}
+
+.indicator-bar.active {
+  width: 70px !important;
+  background: rgba(212, 175, 55, 0.35) !important;
+}
+
+.indicator-bar .bar-fill {
+  position: absolute !important;
+  inset: 0 !important;
+  background: #AA820A !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+}
+
+.indicator-bar.active .bar-fill {
+  background: #E8C84D !important;
+  animation: fillProgressBar 4.5s linear infinite !important;
+}
+
+@keyframes fillProgressBar {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
 }
 
 /* ================================================================
@@ -16705,10 +16747,6 @@ body {
     padding: 22px 20px !important;
   }
 
-  .panel-tamil-watermark {
-    display: none !important;
-  }
-
   .panel-title {
     font-size: 1.35rem !important;
   }
@@ -16730,5 +16768,9 @@ body {
     width: 100% !important;
     justify-content: center !important;
     padding: 10px 18px !important;
+  }
+
+  .curtain-autoplay-indicators {
+    display: none !important;
   }
 }
