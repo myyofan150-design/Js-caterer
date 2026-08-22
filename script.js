@@ -1936,3 +1936,13 @@ window.activatePillar = function(pillarId) {
     }, 400);
   }
 };
+
+
+// ================================================================
+// BANANA LEAF PLATTER 4-DISH CONTROLLER
+// ================================================================
+window.highlightDish = function(dishId) {
+  document.querySelectorAll('.leaf-dish-point').forEach(dish => {
+    dish.classList.toggle('active', dish.classList.contains('dish-' + dishId));
+  });
+};

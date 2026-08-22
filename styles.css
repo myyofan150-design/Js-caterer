@@ -15438,3 +15438,188 @@ body {
     height: 240px !important;
   }
 }
+
+
+/* ================================================================
+   BANANA LEAF PLATTER WITH 4 DISH POINTS (ACT 04)
+   ================================================================ */
+
+.section-banana-leaf-platter {
+  padding: 80px 0 92px !important;
+  background: radial-gradient(circle at 50% 50%, #FFFDF9 0%, #FAF5EA 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.banana-leaf-platter-stage {
+  position: relative !important;
+  max-width: 1040px !important;
+  min-height: 480px !important;
+  margin: 16px auto 0 !important;
+  border-radius: 36px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px rgba(14, 32, 24, 0.12), 0 0 0 1.5px rgba(212, 175, 55, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 40px 32px !important;
+  box-sizing: border-box !important;
+}
+
+/* Background Banana Leaf Image Layer */
+.leaf-platter-bg-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaf-platter-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: scale(1.02) !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.banana-leaf-platter-stage:hover .leaf-platter-img {
+  transform: scale(1.05) !important;
+}
+
+.leaf-platter-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 32, 22, 0.15) 0%, rgba(10, 32, 22, 0.55) 100%) !important;
+}
+
+/* 4 Dishes Grid Over the Banana Leaf */
+.leaf-dishes-grid {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px 40px !important;
+  width: 100% !important;
+  max-width: 920px !important;
+}
+
+/* Individual Dish Point Card */
+.leaf-dish-point {
+  background: rgba(255, 253, 248, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 22px !important;
+  padding: 18px 22px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18) !important;
+  cursor: pointer !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.leaf-dish-point:hover,
+.leaf-dish-point.active {
+  transform: translateY(-6px) scale(1.02) !important;
+  border-color: #D4AF37 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), 0 0 0 2px rgba(232, 200, 77, 0.5) !important;
+}
+
+.dish-badge-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
+}
+
+.dish-num {
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #AA820A !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 2px 8px !important;
+  border-radius: 8px !important;
+}
+
+.dish-tamil {
+  font-family: var(--font-tamil) !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: var(--emerald) !important;
+  line-height: 1 !important;
+}
+
+.dish-content-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+}
+
+.dish-icon-brass {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 50% !important;
+  background: #082016 !important;
+  border: 1.5px solid #E8C84D !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E8C84D !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 4px 12px rgba(8, 32, 22, 0.25) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.leaf-dish-point:hover .dish-icon-brass,
+.leaf-dish-point.active .dish-icon-brass {
+  background: #E8C84D !important;
+  color: #082016 !important;
+  transform: scale(1.1) rotate(6deg) !important;
+}
+
+.dish-info h3 {
+  font-family: var(--font-head) !important;
+  font-size: 1.18rem !important;
+  font-weight: 800 !important;
+  color: #0E2018 !important;
+  margin: 0 0 3px !important;
+  line-height: 1.2 !important;
+}
+
+.dish-info p {
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  color: #4A5550 !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+@media (max-width: 860px) {
+  .banana-leaf-platter-stage {
+    min-height: auto !important;
+    padding: 28px 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .leaf-dishes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .leaf-dish-point {
+    padding: 16px 18px !important;
+  }
+
+  .dish-tamil {
+    font-size: 1.2rem !important;
+  }
+
+  .dish-info h3 {
+    font-size: 1.1rem !important;
+  }
+}
