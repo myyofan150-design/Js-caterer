@@ -1772,3 +1772,135 @@ window.selectCircularPillar = function(pillarId) {
     }, 150);
   }
 };
+
+
+// ================================================================
+// 360° LUXURY RADIAL WHEEL & EDITORIAL LENS CONTROLLER
+// ================================================================
+const radialPillarsMasterData = {
+  1: {
+    angle: 0,
+    tag: 'PILLAR 01 OF 04',
+    tamil: 'சுவை · Authentic Taste',
+    headline: 'Authentic Generational Taste',
+    sub: 'Heirloom Recipes Slow-Cooked Over Woodfire',
+    story: 'Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable taste. Prepared with stone-ground masalas and zero artificial coloring or flavor enhancers.',
+    img: 'assets/wedding_feast.jpg',
+    m1_title: '100% Woodfire', m1_sub: 'Simmered Dum Pots', m1_icon: 'fa-fire-flame-curved',
+    m2_title: 'Stone-Ground', m2_sub: 'Chettinad Masalas', m2_icon: 'fa-mortar-pestle',
+    m3_title: 'Zero Additives', m3_sub: 'No Artificial Colors', m3_icon: 'fa-ban'
+  },
+  2: {
+    angle: 90,
+    tag: 'PILLAR 02 OF 04',
+    tamil: 'தரம் · Pure Quality',
+    headline: 'Pure Uncompromised Quality',
+    sub: 'A2 Cow Ghee & Direct Farm-Harvested Produce',
+    story: 'We use certified pure A2 cow ghee, cold-pressed groundnut oils, farm-direct morning harvest vegetables, and first-grade aged basmati. Quality is never compromised for volume.',
+    img: 'assets/banana_leaf_serving.jpg',
+    m1_title: 'Pure A2 Ghee', m1_sub: 'Certified Pure Dairy', m1_icon: 'fa-crown',
+    m2_title: 'Cold-Pressed', m2_sub: 'Traditional Oils', m2_icon: 'fa-seedling',
+    m3_title: 'Farm-Direct', m3_sub: 'Daily Fresh Harvest', m3_icon: 'fa-leaf'
+  },
+  3: {
+    angle: 180,
+    tag: 'PILLAR 03 OF 04',
+    tamil: 'சுத்தம் · 100% Hygiene',
+    headline: 'Clinical 100% Food Safety',
+    sub: 'FSSAI Certified Central Kitchen Facility',
+    story: 'State-of-the-art Central Production Unit in Velachery equipped with 4-stage RO water cooking systems, stainless steel sanitized vessels, and strict mandatory glove, apron, and hairnet protocols.',
+    img: 'assets/live_kitchen.jpg',
+    m1_title: 'FSSAI Grade', m1_sub: 'Clinical Compliance', m1_icon: 'fa-shield-check',
+    m2_title: '4-Stage RO', m2_sub: 'Purified Water Line', m2_icon: 'fa-droplet',
+    m3_title: 'Sanitized Prep', m3_sub: 'Stainless Steel Lines', m3_icon: 'fa-hands-bubbles'
+  },
+  4: {
+    angle: 270,
+    tag: 'PILLAR 04 OF 04',
+    tamil: 'நேர்த்தி · Flawless Hospitality',
+    headline: 'Flawless Muhurtham Hospitality',
+    sub: 'Uniformed White-Glove Traditional Service',
+    story: 'Courteous, trained service captains delivering coordinated traditional banana leaf seating service with speed, warmth, and grace. Dedicated banquet managers guarantee zero Muhurtham delay.',
+    img: 'assets/corporate_buffet.jpg',
+    m1_title: 'Zero Delay', m1_sub: 'Muhurtham Guarantee', m1_icon: 'fa-clock-rotate-left',
+    m2_title: 'Uniformed Staff', m2_sub: 'White-Glove Captains', m2_icon: 'fa-user-tie',
+    m3_title: 'VIP Manager', m3_sub: 'Dedicated On-Site Lead', m3_icon: 'fa-award'
+  }
+};
+
+window.switchRadialPillar = function(pillarId) {
+  const data = radialPillarsMasterData[pillarId];
+  if (!data) return;
+
+  // 1. Rotate Needle Pointer Beam
+  const pointerEl = document.getElementById('radialDialPointer');
+  if (pointerEl) {
+    pointerEl.style.transform = 'rotate(' + data.angle + 'deg)';
+  }
+
+  // 2. Update Sector Node Active Classes
+  document.querySelectorAll('.radial-sector-node').forEach(node => {
+    node.classList.toggle('active', parseInt(node.getAttribute('data-pillar')) === pillarId);
+  });
+
+  // 3. Update Quick Tabs Active Classes
+  const tabs = document.querySelectorAll('.lens-quick-tabs .tab-chip');
+  tabs.forEach((tab, idx) => {
+    tab.classList.toggle('active', (idx + 1) === pillarId);
+  });
+
+  // 4. Smooth Crossfade Editorial Lens Card
+  const lensCard = document.getElementById('radialEditorialCard');
+  if (lensCard) {
+    const heroImg = document.getElementById('lensHeroImg');
+    const headline = document.getElementById('lensHeadline');
+    const sub = document.getElementById('lensSubHeading');
+    const story = document.getElementById('lensStoryText');
+    const nodeTag = document.getElementById('lensNodeTag');
+    const tamilPill = document.getElementById('lensTamilPill');
+    const metricsGrid = document.getElementById('lensMetricsGrid');
+
+    // Fade out slightly
+    heroImg.style.opacity = '0.3';
+    headline.style.opacity = '0.3';
+
+    setTimeout(() => {
+      heroImg.src = data.img;
+      nodeTag.textContent = data.tag;
+      tamilPill.textContent = data.tamil;
+      headline.textContent = data.headline;
+      sub.textContent = data.sub;
+      story.textContent = data.story;
+
+      // Update metrics
+      if (metricsGrid) {
+        metricsGrid.innerHTML = `
+          <div class="lens-metric-item">
+            <i class="fa-solid ${data.m1_icon} text-gold"></i>
+            <div class="metric-text">
+              <strong>${data.m1_title}</strong>
+              <span>${data.m1_sub}</span>
+            </div>
+          </div>
+          <div class="lens-metric-item">
+            <i class="fa-solid ${data.m2_icon} text-gold"></i>
+            <div class="metric-text">
+              <strong>${data.m2_title}</strong>
+              <span>${data.m2_sub}</span>
+            </div>
+          </div>
+          <div class="lens-metric-item">
+            <i class="fa-solid ${data.m3_icon} text-gold"></i>
+            <div class="metric-text">
+              <strong>${data.m3_title}</strong>
+              <span>${data.m3_sub}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      heroImg.style.opacity = '1';
+      headline.style.opacity = '1';
+    }, 160);
+  }
+};

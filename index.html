@@ -247,161 +247,179 @@
   </section>
 
   <!-- ================================================================
-       ACT 04 — FOUR PILLARS 360° CIRCULAR INTERACTIVE INFOGRAPHIC
+       ACT 04 — FOUR PILLARS 360° RADIAL WHEEL & EDITORIAL LENS
        ================================================================ -->
-  <section id="act-4" class="section-light-warm section-circular-infographic">
+  <section id="act-4" class="section-light-warm section-pillars-radial-master">
     <div class="container">
       
       <!-- Section Header -->
       <div class="section-header-center">
-        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-circle-nodes"></i> 360° Quality Ecosystem</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-compass-drafting"></i> The 4 Culinary Standards</div>
         <h2 class="section-title story-reveal">The Four Pillars of <em class="gradient-text">JS Caterer Excellence</em></h2>
-        <p class="section-desc story-reveal" style="max-width: 760px; margin: 0 auto 28px; text-wrap: balance;">An unbroken 360° circle of generational authenticity, uncompromised farm ingredients, clinical hygiene, and seamless Muhurtham hospitality.</p>
+        <p class="section-desc story-reveal" style="max-width: 760px; margin: 0 auto 32px; text-wrap: balance;">An unbroken 360° circle of generational authenticity, farm-fresh ingredients, clinical hygiene, and flawless Muhurtham hospitality.</p>
       </div>
 
-      <!-- CIRCULAR INFOGRAPHIC MASTER STAGE -->
-      <div class="circular-infographic-stage story-reveal" id="circularInfographicStage">
+      <!-- MAIN 2-COLUMN RADIAL WHEEL & EDITORIAL SHOWCASE -->
+      <div class="pillars-radial-split-grid story-reveal">
         
-        <!-- Background Orbital Rings & Mandala SVG -->
-        <div class="orbit-rings-bg">
-          <div class="orbit-ring-outer"></div>
-          <div class="orbit-ring-middle"></div>
-          <div class="orbit-ring-inner"></div>
-        </div>
-
-        <!-- 4 ORBITING SATELLITE PILLAR NODES -->
-        <div class="orbit-nodes-wrapper">
+        <!-- =======================================================
+             LEFT WING: 360° ANIMATED GOLDEN RADIAL DIAL WHEEL
+             ======================================================= -->
+        <div class="radial-wheel-container">
           
-          <!-- NODE 01: TASTE (TOP-LEFT) -->
-          <div class="orbit-satellite-node node-1 active" data-pillar="1" onclick="selectCircularPillar(1)" onmouseenter="selectCircularPillar(1)">
-            <div class="satellite-pill-card">
-              <div class="sat-node-header">
-                <span class="sat-num">01</span>
-                <span class="sat-tamil">சுவை</span>
-              </div>
-              <div class="sat-icon-wrap">
-                <i class="fa-solid fa-fire-burner"></i>
-              </div>
-              <div class="sat-text-wrap">
-                <strong>Authentic Taste</strong>
-                <span>Woodfire Slow-Cooking</span>
-              </div>
-            </div>
-            <span class="sat-connecting-beam"></span>
-          </div>
-
-          <!-- NODE 02: QUALITY (TOP-RIGHT) -->
-          <div class="orbit-satellite-node node-2" data-pillar="2" onclick="selectCircularPillar(2)" onmouseenter="selectCircularPillar(2)">
-            <div class="satellite-pill-card">
-              <div class="sat-node-header">
-                <span class="sat-num">02</span>
-                <span class="sat-tamil">தரம்</span>
-              </div>
-              <div class="sat-icon-wrap">
-                <i class="fa-solid fa-leaf"></i>
-              </div>
-              <div class="sat-text-wrap">
-                <strong>Pure Quality</strong>
-                <span>A2 Ghee & Farm Harvest</span>
-              </div>
-            </div>
-            <span class="sat-connecting-beam"></span>
-          </div>
-
-          <!-- NODE 03: HYGIENE (BOTTOM-RIGHT) -->
-          <div class="orbit-satellite-node node-3" data-pillar="3" onclick="selectCircularPillar(3)" onmouseenter="selectCircularPillar(3)">
-            <div class="satellite-pill-card">
-              <div class="sat-node-header">
-                <span class="sat-num">03</span>
-                <span class="sat-tamil">சுத்தம்</span>
-              </div>
-              <div class="sat-icon-wrap">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="sat-text-wrap">
-                <strong>100% Hygiene</strong>
-                <span>FSSAI ISO Clinical Line</span>
-              </div>
-            </div>
-            <span class="sat-connecting-beam"></span>
-          </div>
-
-          <!-- NODE 04: HOSPITALITY (BOTTOM-LEFT) -->
-          <div class="orbit-satellite-node node-4" data-pillar="4" onclick="selectCircularPillar(4)" onmouseenter="selectCircularPillar(4)">
-            <div class="satellite-pill-card">
-              <div class="sat-node-header">
-                <span class="sat-num">04</span>
-                <span class="sat-tamil">நேர்த்தி</span>
-              </div>
-              <div class="sat-icon-wrap">
-                <i class="fa-solid fa-award"></i>
-              </div>
-              <div class="sat-text-wrap">
-                <strong>Hospitality</strong>
-                <span>Zero-Delay Muhurtham</span>
-              </div>
-            </div>
-            <span class="sat-connecting-beam"></span>
-          </div>
-
-        </div>
-
-        <!-- CENTRAL CORE HUB & LIVE DATA DISPLAY -->
-        <div class="circular-hub-core">
-          <div class="hub-aura-glow"></div>
-          
-          <div class="hub-inner-screen">
+          <div class="radial-dial-stage">
             
-            <!-- Live Core Emblem -->
-            <div class="hub-emblem-badge">
-              <img src="assets/logo.png" alt="JS Caterer Seal" class="hub-logo-img">
-              <span class="hub-live-tag">PILLAR INSPECTOR</span>
+            <!-- Ambient Rotating Radial Gauge Rings -->
+            <div class="radial-gauge-track"></div>
+            <div class="radial-ambient-spokes"></div>
+
+            <!-- Rotating Needle Pointer Beam -->
+            <div class="radial-dial-pointer" id="radialDialPointer">
+              <div class="dial-pointer-head">
+                <span class="pointer-spark-glow"></span>
+              </div>
             </div>
 
-            <!-- Dynamic Pillar Info Display -->
-            <div class="hub-dynamic-content" id="hubDynamicContent">
-              <div class="hub-tamil-title" id="hubTamilTitle">சுவை</div>
-              <h3 class="hub-title" id="hubTitle">Authentic Taste</h3>
-              <p class="hub-desc" id="hubDesc">Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable flavor.</p>
-              
-              <div class="hub-metric-badge" id="hubMetric">
-                <i class="fa-solid fa-bolt text-gold"></i>
-                <span id="hubMetricText">100% Traditional Woodfire Simmering</span>
+            <!-- Central Golden Emblem Hub -->
+            <div class="radial-center-seal">
+              <div class="seal-inner-emblem">
+                <img src="assets/logo.png" alt="JS Caterer Seal" class="seal-logo">
+                <span class="seal-brand">JS CATERER</span>
+                <span class="seal-tag">360° PILLARS</span>
+              </div>
+            </div>
+
+            <!-- 4 RADIAL SECTOR NODES (CARDINAL POSITIONS) -->
+            <!-- NODE 1: TASTE (TOP) -->
+            <button type="button" class="radial-sector-node sector-top active" data-pillar="1" onclick="switchRadialPillar(1)" aria-label="Authentic Taste">
+              <div class="sector-node-inner">
+                <span class="sector-node-num">01</span>
+                <div class="sector-node-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                <div class="sector-node-label">
+                  <span class="sector-tamil">சுவை</span>
+                  <span class="sector-title">TASTE</span>
+                </div>
+              </div>
+            </button>
+
+            <!-- NODE 2: QUALITY (RIGHT) -->
+            <button type="button" class="radial-sector-node sector-right" data-pillar="2" onclick="switchRadialPillar(2)" aria-label="Pure Quality">
+              <div class="sector-node-inner">
+                <span class="sector-node-num">02</span>
+                <div class="sector-node-icon"><i class="fa-solid fa-leaf"></i></div>
+                <div class="sector-node-label">
+                  <span class="sector-tamil">தரம்</span>
+                  <span class="sector-title">QUALITY</span>
+                </div>
+              </div>
+            </button>
+
+            <!-- NODE 3: HYGIENE (BOTTOM) -->
+            <button type="button" class="radial-sector-node sector-bottom" data-pillar="3" onclick="switchRadialPillar(3)" aria-label="100% Hygiene">
+              <div class="sector-node-inner">
+                <span class="sector-node-num">03</span>
+                <div class="sector-node-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="sector-node-label">
+                  <span class="sector-tamil">சுத்தம்</span>
+                  <span class="sector-title">HYGIENE</span>
+                </div>
+              </div>
+            </button>
+
+            <!-- NODE 4: HOSPITALITY (LEFT) -->
+            <button type="button" class="radial-sector-node sector-left" data-pillar="4" onclick="switchRadialPillar(4)" aria-label="Flawless Hospitality">
+              <div class="sector-node-inner">
+                <span class="sector-node-num">04</span>
+                <div class="sector-node-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="sector-node-label">
+                  <span class="sector-tamil">நேர்த்தி</span>
+                  <span class="sector-title">SERVICE</span>
+                </div>
+              </div>
+            </button>
+
+          </div>
+
+          <div class="dial-hint-text">
+            <i class="fa-solid fa-hand-pointer text-gold"></i>
+            <span>Tap any sector or button to inspect pillar details</span>
+          </div>
+
+        </div>
+
+        <!-- =======================================================
+             RIGHT WING: HIGH-END EDITORIAL SHOWCASE LENS CARD
+             ======================================================= -->
+        <div class="radial-editorial-lens-card" id="radialEditorialCard">
+          
+          <!-- Top Hero Photography Box -->
+          <div class="lens-hero-photo-wrap">
+            <img src="assets/wedding_feast.jpg" alt="Pillar Visual" id="lensHeroImg" class="lens-hero-img">
+            <div class="lens-hero-overlay"></div>
+            
+            <div class="lens-badge-row">
+              <span class="lens-node-tag" id="lensNodeTag">PILLAR 01 OF 04</span>
+              <span class="lens-tamil-pill" id="lensTamilPill">சுவை · Authentic Taste</span>
+            </div>
+          </div>
+
+          <!-- Editorial Body -->
+          <div class="lens-body-content">
+            
+            <div class="lens-title-group">
+              <h3 class="lens-headline" id="lensHeadline">Authentic Generational Taste</h3>
+              <span class="lens-sub-heading" id="lensSubHeading">Heirloom Recipes Slow-Cooked Over Woodfire</span>
+            </div>
+
+            <p class="lens-story-text" id="lensStoryText">Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable taste. Stone-ground masalas and zero artificial coloring.</p>
+
+            <!-- 3 Proven Micro-Metrics -->
+            <div class="lens-metrics-grid" id="lensMetricsGrid">
+              <div class="lens-metric-item">
+                <i class="fa-solid fa-fire-flame-curved text-gold"></i>
+                <div class="metric-text">
+                  <strong>100% Woodfire</strong>
+                  <span>Simmered Dum Pots</span>
+                </div>
               </div>
 
-              <div class="hub-proof-bullets" id="hubBullets">
-                <span><i class="fa-solid fa-circle-check text-green"></i> Stone-ground masalas</span>
-                <span><i class="fa-solid fa-circle-check text-green"></i> Zero artificial food colors</span>
+              <div class="lens-metric-item">
+                <i class="fa-solid fa-mortar-pestle text-gold"></i>
+                <div class="metric-text">
+                  <strong>Stone-Ground</strong>
+                  <span>Chettinad Masalas</span>
+                </div>
               </div>
+
+              <div class="lens-metric-item">
+                <i class="fa-solid fa-ban text-gold"></i>
+                <div class="metric-text">
+                  <strong>Zero Additives</strong>
+                  <span>No Artificial Colors</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Sector Jump Tabs -->
+            <div class="lens-quick-tabs">
+              <button type="button" class="tab-chip active" onclick="switchRadialPillar(1)">
+                <span>01</span> சுவை (Taste)
+              </button>
+              <button type="button" class="tab-chip" onclick="switchRadialPillar(2)">
+                <span>02</span> தரம் (Quality)
+              </button>
+              <button type="button" class="tab-chip" onclick="switchRadialPillar(3)">
+                <span>03</span> சுத்தம் (Hygiene)
+              </button>
+              <button type="button" class="tab-chip" onclick="switchRadialPillar(4)">
+                <span>04</span> நேர்த்தி (Service)
+              </button>
             </div>
 
           </div>
+
         </div>
 
-      </div>
-
-      <!-- 4-WAY INTERACTIVE DIAL SELECTOR (FOR EASY TOUCH ON MOBILE & TABLET) -->
-      <div class="circular-dial-controls">
-        <button type="button" class="dial-btn active" onclick="selectCircularPillar(1)">
-          <span class="dial-btn-num">01</span>
-          <span class="dial-btn-tamil">சுவை</span>
-          <span class="dial-btn-label">Taste</span>
-        </button>
-        <button type="button" class="dial-btn" onclick="selectCircularPillar(2)">
-          <span class="dial-btn-num">02</span>
-          <span class="dial-btn-tamil">தரம்</span>
-          <span class="dial-btn-label">Quality</span>
-        </button>
-        <button type="button" class="dial-btn" onclick="selectCircularPillar(3)">
-          <span class="dial-btn-num">03</span>
-          <span class="dial-btn-tamil">சுத்தம்</span>
-          <span class="dial-btn-label">Hygiene</span>
-        </button>
-        <button type="button" class="dial-btn" onclick="selectCircularPillar(4)">
-          <span class="dial-btn-num">04</span>
-          <span class="dial-btn-tamil">நேர்த்தி</span>
-          <span class="dial-btn-label">Hospitality</span>
-        </button>
       </div>
 
     </div>
