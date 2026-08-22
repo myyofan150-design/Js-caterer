@@ -1609,3 +1609,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// ================================================================
+// STICKY HEADER DYNAMIC SCROLL CONTROLLER
+// ================================================================
+(function initStickyHeader() {
+  const headerEl = document.querySelector('.luxury-header') || document.getElementById('header');
+  if (!headerEl) return;
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 30) {
+      headerEl.classList.add('is-scrolled');
+    } else {
+      headerEl.classList.remove('is-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  // Run on initial load
+  handleScroll();
+})();

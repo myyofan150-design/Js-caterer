@@ -13478,3 +13478,63 @@ footer.luxury-footer-wrap,
     border-radius: 8px !important;
   }
 }
+
+
+/* ================================================================
+   PERFECTED STICKY HEADER & SCROLL BEHAVIOR
+   ================================================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+.luxury-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(252, 250, 247, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.header-inner {
+  transition: padding 0.3s ease !important;
+}
+
+.brand-logo-img {
+  transition: all 0.3s ease !important;
+}
+
+.brand-name {
+  transition: all 0.3s ease !important;
+}
+
+/* Active Scrolled State */
+.luxury-header.is-scrolled {
+  background: rgba(255, 253, 249, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(10, 28, 20, 0.1) !important;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+}
+
+.luxury-header.is-scrolled .header-inner {
+  padding: 8px 24px !important;
+}
+
+.luxury-header.is-scrolled .brand-logo-img {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.luxury-header.is-scrolled .brand-name {
+  font-size: 18px !important;
+}
+
+@media (max-width: 992px) {
+  .luxury-header.is-scrolled .header-inner {
+    padding: 8px 16px !important;
+  }
+}
