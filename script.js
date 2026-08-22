@@ -1775,16 +1775,17 @@ window.selectCircularPillar = function(pillarId) {
 
 
 // ================================================================
-// 360° LUXURY RADIAL WHEEL & EDITORIAL LENS CONTROLLER
+// 360° LUXURY RADIAL WHEEL & EDITORIAL LENS CONTROLLER (BANANA LEAF)
 // ================================================================
 const radialPillarsMasterData = {
   1: {
     angle: 0,
     tag: 'PILLAR 01 OF 04',
     tamil: 'சுவை · Authentic Taste',
+    ribbon: '🌿 தலைவாழை இலை விருந்து முறை · Hot Paruppu Ghee & Sambar Harmony',
     headline: 'Authentic Generational Taste',
     sub: 'Heirloom Recipes Slow-Cooked Over Woodfire',
-    story: 'Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable taste. Prepared with stone-ground masalas and zero artificial coloring or flavor enhancers.',
+    story: 'Generational family recipes slow-cooked over steady firewood flames in heirloom brass urulis for deep, irreplaceable taste. Served steaming hot directly onto fresh tender banana leaves with fragrant ghee.',
     img: 'assets/wedding_feast.jpg',
     m1_title: '100% Woodfire', m1_sub: 'Simmered Dum Pots', m1_icon: 'fa-fire-flame-curved',
     m2_title: 'Stone-Ground', m2_sub: 'Chettinad Masalas', m2_icon: 'fa-mortar-pestle',
@@ -1794,37 +1795,40 @@ const radialPillarsMasterData = {
     angle: 90,
     tag: 'PILLAR 02 OF 04',
     tamil: 'தரம் · Pure Quality',
+    ribbon: '🍃 காவேரி டெல்டா தலைவாழை இலை · Farm-Fresh Tender Cuts',
     headline: 'Pure Uncompromised Quality',
-    sub: 'A2 Cow Ghee & Direct Farm-Harvested Produce',
-    story: 'We use certified pure A2 cow ghee, cold-pressed groundnut oils, farm-direct morning harvest vegetables, and first-grade aged basmati. Quality is never compromised for volume.',
+    sub: 'Certified A2 Ghee & Cauvery Delta Banana Leaves',
+    story: 'We source fresh, tender-cut banana leaves directly from organic Cauvery delta farms, washed with RO water. Paired with pure A2 cow ghee, cold-pressed groundnut oils, and first-grade aged basmati rice.',
     img: 'assets/banana_leaf_serving.jpg',
     m1_title: 'Pure A2 Ghee', m1_sub: 'Certified Pure Dairy', m1_icon: 'fa-crown',
-    m2_title: 'Cold-Pressed', m2_sub: 'Traditional Oils', m2_icon: 'fa-seedling',
-    m3_title: 'Farm-Direct', m3_sub: 'Daily Fresh Harvest', m3_icon: 'fa-leaf'
+    m2_title: 'Delta Leaves', m2_sub: 'Farm-Fresh Harvest', m2_icon: 'fa-leaf',
+    m3_title: 'Cold-Pressed', m3_sub: 'Traditional Oils', m3_icon: 'fa-seedling'
   },
   3: {
     angle: 180,
     tag: 'PILLAR 03 OF 04',
     tamil: 'சுத்தம் · 100% Hygiene',
+    ribbon: '🛡️ FSSAI ISO 22000 சான்றளிக்கப்பட்ட தூய்மை · 100% Natural Dining',
     headline: 'Clinical 100% Food Safety',
-    sub: 'FSSAI Certified Central Kitchen Facility',
-    story: 'State-of-the-art Central Production Unit in Velachery equipped with 4-stage RO water cooking systems, stainless steel sanitized vessels, and strict mandatory glove, apron, and hairnet protocols.',
+    sub: 'RO Washed Eco-Friendly Natural Banana Leaf Dining',
+    story: 'State-of-the-art Central Production Unit with 4-stage RO water purification. All banana leaves undergo specialized organic washing and heat-sanitization, guaranteeing 100% hygienic, biodegradable dining.',
     img: 'assets/live_kitchen.jpg',
     m1_title: 'FSSAI Grade', m1_sub: 'Clinical Compliance', m1_icon: 'fa-shield-check',
     m2_title: '4-Stage RO', m2_sub: 'Purified Water Line', m2_icon: 'fa-droplet',
-    m3_title: 'Sanitized Prep', m3_sub: 'Stainless Steel Lines', m3_icon: 'fa-hands-bubbles'
+    m3_title: 'Eco-Sanitized', m3_sub: '100% Natural Dining', m3_icon: 'fa-leaf'
   },
   4: {
     angle: 270,
     tag: 'PILLAR 04 OF 04',
     tamil: 'நேர்த்தி · Flawless Hospitality',
+    ribbon: '👑 பாரம்பரிய பரிமாறும் ஒழுங்கு · Clockwise Traditional Placement',
     headline: 'Flawless Muhurtham Hospitality',
-    sub: 'Uniformed White-Glove Traditional Service',
-    story: 'Courteous, trained service captains delivering coordinated traditional banana leaf seating service with speed, warmth, and grace. Dedicated banquet managers guarantee zero Muhurtham delay.',
+    sub: 'Traditional Left-to-Right Sacred Serving Protocol',
+    story: 'Trained service captains meticulously follow traditional Tamil wedding banana leaf etiquette — placing salt, pickles, sweets, fries, and rice in sacred sequence (உப்பு முதல் பாயாசம் வரை) with zero Muhurtham delay.',
     img: 'assets/corporate_buffet.jpg',
     m1_title: 'Zero Delay', m1_sub: 'Muhurtham Guarantee', m1_icon: 'fa-clock-rotate-left',
-    m2_title: 'Uniformed Staff', m2_sub: 'White-Glove Captains', m2_icon: 'fa-user-tie',
-    m3_title: 'VIP Manager', m3_sub: 'Dedicated On-Site Lead', m3_icon: 'fa-award'
+    m2_title: 'Etiquette Lead', m2_sub: 'Sacred Placement', m2_icon: 'fa-leaf',
+    m3_title: 'Uniformed Staff', m3_sub: 'White-Glove Captains', m3_icon: 'fa-user-tie'
   }
 };
 
@@ -1858,6 +1862,7 @@ window.switchRadialPillar = function(pillarId) {
     const story = document.getElementById('lensStoryText');
     const nodeTag = document.getElementById('lensNodeTag');
     const tamilPill = document.getElementById('lensTamilPill');
+    const ribbonText = document.getElementById('lensBananaRibbonText');
     const metricsGrid = document.getElementById('lensMetricsGrid');
 
     // Fade out slightly
@@ -1868,6 +1873,7 @@ window.switchRadialPillar = function(pillarId) {
       heroImg.src = data.img;
       nodeTag.textContent = data.tag;
       tamilPill.textContent = data.tamil;
+      if (ribbonText) ribbonText.textContent = data.ribbon;
       headline.textContent = data.headline;
       sub.textContent = data.sub;
       story.textContent = data.story;

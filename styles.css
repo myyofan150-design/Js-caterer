@@ -14961,3 +14961,111 @@ body {
     grid-template-columns: 1fr 1fr !important;
   }
 }
+
+
+/* ================================================================
+   BANANA LEAF CONCEPT ENHANCEMENTS FOR 360° RADIAL SYSTEM
+   ================================================================ */
+
+/* Quad Banana Leaf Petals */
+.radial-banana-leaves-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.banana-leaf-petal {
+  position: absolute !important;
+  width: 90px !important;
+  height: 130px !important;
+  background: radial-gradient(ellipse at center, rgba(34, 139, 34, 0.18) 0%, rgba(20, 90, 45, 0.08) 70%, transparent 100%) !important;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40% !important;
+  border: 1px solid rgba(46, 125, 50, 0.25) !important;
+  box-shadow: inset 0 0 15px rgba(76, 175, 80, 0.12) !important;
+  transition: all 0.4s ease !important;
+}
+
+.banana-leaf-petal.petal-top {
+  top: 15px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(0deg) !important;
+}
+
+.banana-leaf-petal.petal-right {
+  top: 50% !important;
+  right: 15px !important;
+  transform: translateY(-50%) rotate(90deg) !important;
+}
+
+.banana-leaf-petal.petal-bottom {
+  bottom: 15px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(180deg) !important;
+}
+
+.banana-leaf-petal.petal-left {
+  top: 50% !important;
+  left: 15px !important;
+  transform: translateY(-50%) rotate(270deg) !important;
+}
+
+/* Organic Leaf Shaped Sector Nodes */
+.sector-node-inner.leaf-styled {
+  border-radius: 20px 6px 20px 6px !important;
+  border: 1.5px solid rgba(46, 125, 50, 0.35) !important;
+}
+
+.radial-sector-node:hover .sector-node-inner.leaf-styled,
+.radial-sector-node.active .sector-node-inner.leaf-styled {
+  border-color: #2E7D32 !important;
+  background: #F4FBF7 !important;
+  border-radius: 22px 4px 22px 4px !important;
+}
+
+/* Pointer Leaf Icon */
+.pointer-leaf-icon {
+  position: absolute !important;
+  top: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  color: #25D366 !important;
+  font-size: 0.95rem !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
+  animation: swayLeaf 2s infinite ease-in-out !important;
+}
+
+@keyframes swayLeaf {
+  0%, 100% { transform: translateX(-50%) rotate(-6deg); }
+  50% { transform: translateX(-50%) rotate(6deg); }
+}
+
+/* Banana Leaf Protocol Ribbon on Editorial Card */
+.lens-banana-ribbon {
+  position: absolute !important;
+  top: 14px !important;
+  left: 18px !important;
+  right: 18px !important;
+  background: rgba(8, 32, 22, 0.88) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 20px !important;
+  padding: 5px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  z-index: 3 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.lens-banana-ribbon span {
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  color: #F3EAD0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
