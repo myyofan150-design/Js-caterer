@@ -16880,3 +16880,60 @@ body {
     padding: 2px 8px !important;
   }
 }
+
+
+/* ================================================================
+   SPECIFIC OCCASION DEPENDENT DROPDOWN STYLES
+   ================================================================ */
+
+.specific-occasion-selector-row {
+  margin-top: 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.select-wrap-gold {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.step-select-input-gold {
+  width: 100% !important;
+  background: #082016 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 12px !important;
+  padding: 12px 38px 12px 14px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.25s ease !important;
+}
+
+.step-select-input-gold:focus,
+.step-select-input-gold:hover {
+  border-color: #E8C84D !important;
+  box-shadow: 0 6px 20px rgba(232, 200, 77, 0.25) !important;
+}
+
+.step-select-input-gold option {
+  background: #082016 !important;
+  color: #FFFFFF !important;
+  padding: 10px !important;
+}
+
+.select-gold-arrow {
+  position: absolute !important;
+  right: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #E8C84D !important;
+  font-size: 0.85rem !important;
+  pointer-events: none !important;
+}

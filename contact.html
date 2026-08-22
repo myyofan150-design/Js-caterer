@@ -268,6 +268,24 @@
 
             </div>
 
+            <!-- Specific Occasion Dependent Dropdown Row -->
+            <div class="specific-occasion-selector-row">
+              <label class="control-heading"><i class="fa-solid fa-list-check text-gold"></i> SPECIFIC OCCASION / SERVICE TYPE *</label>
+              <div class="select-wrap-gold">
+                <select id="conciergeSpecificOccasion" class="step-select-input-gold" onchange="updateLiveSummary()">
+                  <option value="Marriage">Marriage</option>
+                  <option value="Betrothal">Betrothal</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Gettogether Ceremony">Gettogether Ceremony</option>
+                  <option value="Housewarming">Housewarming</option>
+                  <option value="Baby Shower">Baby Shower</option>
+                  <option value="60th & 80th Birthdays">60th & 80th Birthdays</option>
+                  <option value="Others (etc.)">Others (etc.)</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-gold-arrow"></i>
+              </div>
+            </div>
+
             <div class="step-nav-footer">
               <button type="button" class="btn-step-next" onclick="goToStep(2)">
                 <span>Next: Schedule & Guests</span>
