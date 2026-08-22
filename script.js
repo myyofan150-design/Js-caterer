@@ -1964,3 +1964,34 @@ window.activateDish = function(dishId) {
     card.classList.toggle('active', (idx + 1) === dishId);
   });
 };
+
+
+// ================================================================
+// PURE CIRCULAR INFOGRAPHIC 4-POINT CONTROLLER
+// ================================================================
+const pillarTags = {
+  1: 'சுவை · TASTE',
+  2: 'தரம் · QUALITY',
+  3: 'சுத்தம் · HYGIENE',
+  4: 'நேர்த்தி · SERVICE'
+};
+
+window.setCirclePillar = function(pillarId) {
+  document.querySelectorAll('.circle-node').forEach((node) => {
+    node.classList.toggle('active', parseInt(node.getAttribute('data-pillar')) === pillarId);
+  });
+
+  const chips = document.querySelectorAll('.circle-chip');
+  chips.forEach((chip, idx) => {
+    chip.classList.toggle('active', (idx + 1) === pillarId);
+  });
+
+  const tagEl = document.getElementById('hubLiveTag');
+  if (tagEl && pillarTags[pillarId]) {
+    tagEl.style.opacity = '0';
+    setTimeout(() => {
+      tagEl.textContent = pillarTags[pillarId];
+      tagEl.style.opacity = '1';
+    }, 150);
+  }
+};

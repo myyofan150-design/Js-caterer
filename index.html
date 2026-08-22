@@ -247,91 +247,127 @@
   </section>
 
   <!-- ================================================================
-       ACT 04 — FOUR PILLARS (ISOLATED BANANA LEAF & 4 DISHES)
+       ACT 04 — FOUR PILLARS PURE CIRCULAR INFOGRAPHIC
        ================================================================ -->
-  <section id="act-4" class="section-light-warm section-isolated-banana-leaf">
+  <section id="act-4" class="section-light-warm section-pure-circular-infographic">
     <div class="container">
       
       <!-- Section Header -->
       <div class="section-header-center">
-        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-leaf"></i> தலைவாழை இலை விருந்து முறை · Sacred Feast Standards</div>
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-circle-notch fa-spin"></i> Our 4 Core Pillars</div>
         <h2 class="section-title story-reveal">The Four Pillars of <em class="gradient-text">JS Caterer Excellence</em></h2>
-        <p class="section-desc story-reveal" style="max-width: 680px; margin: 0 auto 36px; text-wrap: balance;">Traditional Tamil wedding feast hospitality — 4 sacred culinary pillars served fresh on our signature banana leaf.</p>
+        <p class="section-desc story-reveal" style="max-width: 680px; margin: 0 auto 32px; text-wrap: balance;">An unbroken 360° circle of generational authenticity, farm-fresh ingredients, clinical hygiene, and flawless Muhurtham hospitality.</p>
       </div>
 
-      <!-- ISOLATED BANANA LEAF STAGE -->
-      <div class="isolated-leaf-stage story-reveal">
+      <!-- MASTER CIRCULAR INFOGRAPHIC STAGE -->
+      <div class="pure-circle-stage story-reveal" id="pureCircleStage">
         
-        <!-- Isolated Banana Leaf Cutout Graphic -->
-        <div class="leaf-cutout-wrap">
-          <img src="assets/isolated_banana_leaf_cutout.jpg" alt="Fresh Emerald South Indian Banana Leaf" class="isolated-leaf-img">
+        <!-- Rotating SVG Orbit Rings & Energy Waves -->
+        <div class="circle-orbit-svg-wrap">
+          <svg class="orbit-svg-canvas" viewBox="0 0 540 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer Dashed Ring -->
+            <circle class="svg-orbit-outer" cx="270" cy="270" r="230" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 8" />
+            <!-- Inner Solid Track -->
+            <circle class="svg-orbit-inner" cx="270" cy="270" r="170" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1.5" />
+            <!-- Cardinal Connective Crosshairs -->
+            <line x1="270" y1="40" x2="270" y2="500" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1" stroke-dasharray="4 4" />
+            <line x1="40" y1="270" x2="500" y2="270" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1" stroke-dasharray="4 4" />
+            
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.8" />
+                <stop offset="50%" stop-color="#25D366" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.8" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="circle-ambient-glow"></div>
         </div>
 
-        <!-- 4 DISH POINTS PLACED DIRECTLY OVER THE LEAF -->
-        <div class="leaf-dishes-overlay-grid">
-          
-          <!-- DISH 01: TASTE (TOP LEFT) -->
-          <div class="leaf-dish-card dish-pos-1" onmouseenter="activateDish(1)" onclick="activateDish(1)">
-            <div class="dish-card-header">
-              <span class="dish-pill-num">01</span>
-              <span class="dish-tamil-seal">சுவை</span>
+        <!-- 4 CARDINAL INFOGRAPHIC NODES -->
+        
+        <!-- NODE 01: TASTE (TOP) -->
+        <div class="circle-node node-top active" data-pillar="1" onmouseenter="setCirclePillar(1)" onclick="setCirclePillar(1)">
+          <div class="node-glass-card">
+            <div class="node-header">
+              <span class="node-badge">01</span>
+              <span class="node-tamil">சுவை</span>
             </div>
-            <div class="dish-card-body">
-              <div class="dish-brass-circle"><i class="fa-solid fa-fire-burner"></i></div>
-              <div class="dish-card-text">
-                <h3>Authentic Taste</h3>
-                <p>Generational recipes slow-cooked over steady firewood flames in heirloom brass urulis.</p>
-              </div>
+            <div class="node-icon-circle"><i class="fa-solid fa-fire-burner"></i></div>
+            <div class="node-text">
+              <h3>Authentic Taste</h3>
+              <p>Generational recipes slow-cooked over firewood in heirloom brass urulis.</p>
             </div>
           </div>
-
-          <!-- DISH 02: QUALITY (TOP RIGHT) -->
-          <div class="leaf-dish-card dish-pos-2" onmouseenter="activateDish(2)" onclick="activateDish(2)">
-            <div class="dish-card-header">
-              <span class="dish-pill-num">02</span>
-              <span class="dish-tamil-seal">தரம்</span>
-            </div>
-            <div class="dish-card-body">
-              <div class="dish-brass-circle"><i class="fa-solid fa-leaf"></i></div>
-              <div class="dish-card-text">
-                <h3>Pure Quality</h3>
-                <p>Certified pure A2 cow ghee, cold-pressed oils & fresh Cauvery delta banana leaves.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- DISH 03: HYGIENE (BOTTOM LEFT) -->
-          <div class="leaf-dish-card dish-pos-3" onmouseenter="activateDish(3)" onclick="activateDish(3)">
-            <div class="dish-card-header">
-              <span class="dish-pill-num">03</span>
-              <span class="dish-tamil-seal">சுத்தம்</span>
-            </div>
-            <div class="dish-card-body">
-              <div class="dish-brass-circle"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="dish-card-text">
-                <h3>100% Hygiene</h3>
-                <p>State-of-the-art Central Kitchen with 4-stage RO water and steam-sanitized leaves.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- DISH 04: SERVICE (BOTTOM RIGHT) -->
-          <div class="leaf-dish-card dish-pos-4" onmouseenter="activateDish(4)" onclick="activateDish(4)">
-            <div class="dish-card-header">
-              <span class="dish-pill-num">04</span>
-              <span class="dish-tamil-seal">நேர்த்தி</span>
-            </div>
-            <div class="dish-card-body">
-              <div class="dish-brass-circle"><i class="fa-solid fa-award"></i></div>
-              <div class="dish-card-text">
-                <h3>Flawless Service</h3>
-                <p>Uniformed captains delivering traditional clockwise feast service with zero delay.</p>
-              </div>
-            </div>
-          </div>
-
+          <span class="node-pulse-ring"></span>
         </div>
 
+        <!-- NODE 02: QUALITY (RIGHT) -->
+        <div class="circle-node node-right" data-pillar="2" onmouseenter="setCirclePillar(2)" onclick="setCirclePillar(2)">
+          <div class="node-glass-card">
+            <div class="node-header">
+              <span class="node-badge">02</span>
+              <span class="node-tamil">தரம்</span>
+            </div>
+            <div class="node-icon-circle"><i class="fa-solid fa-leaf"></i></div>
+            <div class="node-text">
+              <h3>Pure Quality</h3>
+              <p>Certified pure A2 cow ghee, cold-pressed oils & fresh farm harvest.</p>
+            </div>
+          </div>
+          <span class="node-pulse-ring"></span>
+        </div>
+
+        <!-- NODE 03: HYGIENE (BOTTOM) -->
+        <div class="circle-node node-bottom" data-pillar="3" onmouseenter="setCirclePillar(3)" onclick="setCirclePillar(3)">
+          <div class="node-glass-card">
+            <div class="node-header">
+              <span class="node-badge">03</span>
+              <span class="node-tamil">சுத்தம்</span>
+            </div>
+            <div class="node-icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="node-text">
+              <h3>100% Hygiene</h3>
+              <p>FSSAI certified Central Kitchen with 4-stage RO water cooking line.</p>
+            </div>
+          </div>
+          <span class="node-pulse-ring"></span>
+        </div>
+
+        <!-- NODE 04: SERVICE (LEFT) -->
+        <div class="circle-node node-left" data-pillar="4" onmouseenter="setCirclePillar(4)" onclick="setCirclePillar(4)">
+          <div class="node-glass-card">
+            <div class="node-header">
+              <span class="node-badge">04</span>
+              <span class="node-tamil">நேர்த்தி</span>
+            </div>
+            <div class="node-icon-circle"><i class="fa-solid fa-award"></i></div>
+            <div class="node-text">
+              <h3>Flawless Service</h3>
+              <p>Uniformed captains delivering traditional clockwise feast service.</p>
+            </div>
+          </div>
+          <span class="node-pulse-ring"></span>
+        </div>
+
+        <!-- CENTRAL GOLDEN HUB CREST -->
+        <div class="circle-center-hub">
+          <div class="hub-radar-ripple"></div>
+          <div class="hub-disc-inner">
+            <img src="assets/logo.png" alt="JS Caterer Logo" class="hub-logo">
+            <span class="hub-brand-name">JS CATERER</span>
+            <span class="hub-tagline" id="hubLiveTag">சுவை · TASTE</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick 1-Touch Pills for Mobile / Tablet -->
+      <div class="circle-mobile-dial-chips">
+        <button type="button" class="circle-chip active" onclick="setCirclePillar(1)"><span>01</span> சுவை Taste</button>
+        <button type="button" class="circle-chip" onclick="setCirclePillar(2)"><span>02</span> தரம் Quality</button>
+        <button type="button" class="circle-chip" onclick="setCirclePillar(3)"><span>03</span> சுத்தம் Hygiene</button>
+        <button type="button" class="circle-chip" onclick="setCirclePillar(4)"><span>04</span> நேர்த்தி Service</button>
       </div>
 
     </div>
