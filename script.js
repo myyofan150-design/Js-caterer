@@ -1910,3 +1910,29 @@ window.switchRadialPillar = function(pillarId) {
     }, 160);
   }
 };
+
+// ================================================================
+// CLEAN BANANA LEAF INFOGRAPHIC PILLAR CONTROLLER
+// ================================================================
+window.activatePillar = function(pillarId) {
+  // Update card active classes
+  document.querySelectorAll('.infographic-card').forEach(card => {
+    card.classList.toggle('active', parseInt(card.getAttribute('data-pillar')) === pillarId);
+  });
+
+  // Update mobile pill active classes
+  const chips = document.querySelectorAll('.mob-pillar-chip');
+  chips.forEach((chip, idx) => {
+    chip.classList.toggle('active', (idx + 1) === pillarId);
+  });
+
+  // Subtle rotation pulse on center feast wheel
+  const wheelImg = document.getElementById('wheelMainImg');
+  if (wheelImg) {
+    const rotationDegrees = { 1: 0, 2: 8, 3: -8, 4: 4 };
+    wheelImg.style.transform = 'scale(1.06) rotate(' + (rotationDegrees[pillarId] || 0) + 'deg)';
+    setTimeout(() => {
+      wheelImg.style.transform = 'scale(1) rotate(0deg)';
+    }, 400);
+  }
+};
