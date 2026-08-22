@@ -18295,17 +18295,19 @@ body {
 }
 
 #about-cpu-section .cpu-live-hud-grid {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 14px !important;
-  max-width: 580px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin-bottom: 28px !important;
 }
 
 #about-cpu-section .hud-pill-box {
   display: flex !important;
   align-items: center !important;
-  gap: 16px !important;
-  padding: 16px 20px !important;
+  gap: 14px !important;
+  padding: 16px 18px !important;
   background: rgba(3, 15, 10, 0.88) !important;
   border: 1.5px solid rgba(212, 175, 55, 0.38) !important;
   border-radius: 18px !important;
@@ -18313,11 +18315,12 @@ body {
   -webkit-backdrop-filter: blur(12px) !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
   transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
 }
 
 #about-cpu-section .hud-pill-box:hover {
   border-color: #E8C84D !important;
-  transform: translateX(4px) !important;
+  transform: translateY(-3px) !important;
   background: rgba(3, 15, 10, 0.95) !important;
 }
 
@@ -18353,7 +18356,7 @@ body {
 }
 
 #about-cpu-section .cpu-action-row {
-  margin-top: 28px !important;
+  margin-top: 10px !important;
   width: 100% !important;
 }
 
@@ -18388,7 +18391,15 @@ body {
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6) !important;
 }
 
-/* Specific Mobile Device Optimizations for this section */
+/* Tablet Device Optimizations (2 Columns) */
+@media (max-width: 1023px) and (min-width: 769px) {
+  #about-cpu-section .cpu-live-hud-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+}
+
+/* Mobile Device Optimizations (1 Column) */
 @media (max-width: 768px) {
   #about-cpu-section {
     padding: 45px 0 40px !important;
@@ -18431,6 +18442,7 @@ body {
   }
   
   #about-cpu-section .cpu-live-hud-grid {
+    grid-template-columns: 1fr !important;
     gap: 10px !important;
     margin-bottom: 22px !important;
   }
