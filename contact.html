@@ -477,43 +477,81 @@
     </div>
   </section>
 
-  <!-- AREA SELECTOR — SOFT GOLD -->
-  <section class="section-soft-gold">
-      <div class="section-header-center mt-56">
-        <span class="section-gold-tag accent-label">Service Coverage</span>
-        <h2 class="section-title">We Cover <em>22 Localities</em> Across South Chennai</h2>
-        <p class="section-desc">Click any area to verify instant availability for your event.</p>
+  <!-- DUAL-DIRECTION CONTINUOUS MARQUEE SECTION — SOFT GOLD -->
+  <section class="section-soft-gold" style="padding: 64px 0 80px;">
+    <div class="container">
+      <div class="section-header-center">
+        <div class="story-chapter-tag accent-label"><i class="fa-solid fa-map-location-dot"></i> Service Coverage</div>
+        <h2 class="section-title">We Cover <em class="gradient-text">22 Localities</em> Across South Chennai</h2>
+        <p class="section-desc" style="max-width: 760px; margin: 0 auto 32px; text-wrap: balance;">Guaranteed 100% on-time hot food delivery & live feast service across South Chennai & IT Corridors.</p>
       </div>
 
-      <div class="areas-grid-interactive">
-        <div class="area-chip active-hq" onclick="highlightArea('Velachery')"><i class="fa-solid fa-star"></i> Velachery (HQ)</div>
-        <div class="area-chip" onclick="highlightArea('Adyar')">Adyar</div>
-        <div class="area-chip" onclick="highlightArea('Thiruvanmiyur')">Thiruvanmiyur</div>
-        <div class="area-chip" onclick="highlightArea('Palavakkam')">Palavakkam</div>
-        <div class="area-chip" onclick="highlightArea('Kottivakkam')">Kottivakkam</div>
-        <div class="area-chip" onclick="highlightArea('Neelankarai')">Neelankarai</div>
-        <div class="area-chip" onclick="highlightArea('Adambakkam')">Adambakkam</div>
-        <div class="area-chip" onclick="highlightArea('Madipakkam')">Madipakkam</div>
-        <div class="area-chip" onclick="highlightArea('Medavakkam')">Medavakkam</div>
-        <div class="area-chip" onclick="highlightArea('Pallikaranai')">Pallikaranai</div>
-        <div class="area-chip" onclick="highlightArea('Thoraipakkam')">Thoraipakkam</div>
-        <div class="area-chip" onclick="highlightArea('Perungudi')">Perungudi</div>
-        <div class="area-chip" onclick="highlightArea('Taramani')">Taramani</div>
-        <div class="area-chip" onclick="highlightArea('Guindy')">Guindy</div>
-        <div class="area-chip" onclick="highlightArea('Saidapet')">Saidapet</div>
-        <div class="area-chip" onclick="highlightArea('Nanganallur')">Nanganallur</div>
-        <div class="area-chip" onclick="highlightArea('Tambaram')">Tambaram</div>
-        <div class="area-chip" onclick="highlightArea('Sholinganallur')">Sholinganallur</div>
-        <div class="area-chip" onclick="highlightArea('OMR')">OMR</div>
-        <div class="area-chip" onclick="highlightArea('ECR')">ECR</div>
-        <div class="area-chip" onclick="highlightArea('Chromepet')">Chromepet</div>
-      </div>
+      <!-- DUAL-DIRECTION CONTINUOUS MARQUEE WRAPPER -->
+      <div class="localities-marquee-container">
+        
+        <!-- ROW 1: Moves Left -->
+        <div class="marquee-row marquee-row-left">
+          <div class="marquee-track marquee-track-left">
+            <!-- Set 1 -->
+            <span class="marquee-chip hq-chip"><i class="fa-solid fa-star text-gold"></i> Velachery (Central HQ)</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Adyar</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Thiruvanmiyur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Palavakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Kottivakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Neelankarai</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Adambakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Madipakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Medavakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Pallikaranai</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Thoraipakkam</span>
 
-      <div id="areaInfoDisplay" class="area-info-banner">
-        <i class="fa-solid fa-circle-check" style="color:var(--emerald);margin-right:8px;"></i>
-        <span id="areaInfoText">JS Caterer provides guaranteed 100% on-time delivery & hot food catering in <strong>Velachery</strong> and all surrounding locations!</span>
-      </div>
+            <!-- Duplicate Set for Seamless Infinite Loop -->
+            <span class="marquee-chip hq-chip"><i class="fa-solid fa-star text-gold"></i> Velachery (Central HQ)</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Adyar</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Thiruvanmiyur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Palavakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Kottivakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Neelankarai</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Adambakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Madipakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Medavakkam</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Pallikaranai</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Thoraipakkam</span>
+          </div>
+        </div>
 
+        <!-- ROW 2: Moves Right -->
+        <div class="marquee-row marquee-row-right">
+          <div class="marquee-track marquee-track-right">
+            <!-- Set 1 -->
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Perungudi</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Taramani</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Guindy</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Saidapet</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Nanganallur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Tambaram</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Sholinganallur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> OMR IT Corridor</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> ECR Coastal</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Chromepet</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Alandur</span>
+
+            <!-- Duplicate Set for Seamless Infinite Loop -->
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Perungudi</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Taramani</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Guindy</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Saidapet</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Nanganallur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Tambaram</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Sholinganallur</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> OMR IT Corridor</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> ECR Coastal</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Chromepet</span>
+            <span class="marquee-chip"><i class="fa-solid fa-location-dot"></i> Alandur</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
