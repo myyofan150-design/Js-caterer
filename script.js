@@ -1946,3 +1946,11 @@ window.highlightDish = function(dishId) {
     dish.classList.toggle('active', dish.classList.contains('dish-' + dishId));
   });
 };
+
+
+// ================================================================
+// FULL BANANA LEAF SECTION CONTROLLER
+// ================================================================
+window.activateLeafDish = function(dishId) {
+  // subtle hover effect on leaf dish cards
+};
