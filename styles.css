@@ -13329,3 +13329,152 @@ footer.luxury-footer-wrap,
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ================================================================
+   MOBILE SPACE & TYPOGRAPHY EXPANSION FOR CATERING PASS CARD
+   ================================================================ */
+
+@media (max-width: 768px) {
+  /* Give the container and card full breathing room */
+  .section-catering-concierge {
+    padding: 36px 0 48px !important;
+  }
+
+  .concierge-master-grid {
+    gap: 16px !important;
+  }
+
+  .concierge-kitchen-pass-card {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .kitchen-card-content {
+    padding: 0 !important;
+    gap: 14px !important;
+  }
+
+  .pass-header-meta {
+    padding-bottom: 8px !important;
+    gap: 8px !important;
+  }
+
+  .pass-founder-badge {
+    font-size: 0.68rem !important;
+  }
+
+  .pass-status-pill {
+    font-size: 0.64rem !important;
+    padding: 2px 8px !important;
+  }
+
+  .pass-title {
+    font-size: 1.55rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .pass-tamil-motto {
+    font-size: 0.88rem !important;
+  }
+
+  .pass-sub-text {
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* De-clutter Itinerary: Make it a clean, open, high-contrast block */
+  .pass-itinerary-card {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+  }
+
+  .itinerary-card-title {
+    margin-bottom: 8px !important;
+    padding-bottom: 6px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .itinerary-rows {
+    gap: 8px !important;
+  }
+
+  .itinerary-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding-bottom: 4px !important;
+  }
+
+  .itinerary-row:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .itinerary-row .row-label {
+    font-size: 0.62rem !important;
+    color: #E8C84D !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .itinerary-row .row-value {
+    font-size: 0.88rem !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    word-break: normal !important;
+  }
+
+  /* Compact Horizontal Trust Ribbon (Zero Box Clutter) */
+  .pass-trust-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    background: transparent !important;
+  }
+
+  .trust-pill {
+    flex: 1 1 calc(50% - 6px) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 5px 8px !important;
+    font-size: 0.68rem !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Streamlined Hotline Bar */
+  .pass-hotline-bar {
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    gap: 6px !important;
+  }
+
+  .hotline-lead-text {
+    font-size: 0.65rem !important;
+  }
+
+  .hotline-buttons-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .hotline-btn {
+    font-size: 0.82rem !important;
+    padding: 8px 6px !important;
+    border-radius: 8px !important;
+  }
+}
