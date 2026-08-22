@@ -18172,3 +18172,208 @@ body {
   background: rgba(232, 200, 77, 0.12) !important;
   margin-top: 4px !important;
 }
+
+
+/* ================================================================
+   ABOUT US — SECTION 2 CPU HUD (RELAXED, ULTRA-LEGIBLE MOBILE & DESKTOP)
+   ================================================================ */
+
+#about-cpu-section {
+  position: relative !important;
+  min-height: 560px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 85px 0 !important;
+}
+
+#about-cpu-section .cpu-hud-top-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 16px !important;
+  background: rgba(3, 15, 10, 0.85) !important;
+  border: 1px solid rgba(232, 200, 77, 0.45) !important;
+  border-radius: 30px !important;
+  color: #E8C84D !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+#about-cpu-section .cpu-hero-heading {
+  color: #FFFFFF !important;
+  font-family: var(--font-title) !important;
+  font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9) !important;
+}
+
+#about-cpu-section .text-gold-italic {
+  color: #E8C84D !important;
+  font-style: italic !important;
+}
+
+#about-cpu-section .cpu-hero-desc {
+  color: rgba(255, 255, 255, 0.9) !important;
+  max-width: 660px !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 28px !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+#about-cpu-section .cpu-hero-desc strong {
+  color: #FFFFFF !important;
+}
+
+#about-cpu-section .cpu-live-hud-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  max-width: 580px !important;
+}
+
+#about-cpu-section .hud-pill-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 16px 20px !important;
+  background: rgba(3, 15, 10, 0.88) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.38) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+
+#about-cpu-section .hud-pill-box:hover {
+  border-color: #E8C84D !important;
+  transform: translateX(4px) !important;
+  background: rgba(3, 15, 10, 0.95) !important;
+}
+
+#about-cpu-section .hud-icon-gem {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #E8C84D 0%, #D4AF37 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #030F0A !important;
+  font-size: 1.2rem !important;
+  box-shadow: 0 4px 14px rgba(232, 200, 77, 0.3) !important;
+  flex-shrink: 0 !important;
+}
+
+#about-cpu-section .hud-text-block strong {
+  display: block !important;
+  color: #FFFFFF !important;
+  font-size: 1.02rem !important;
+  font-family: var(--font-title) !important;
+  margin-bottom: 2px !important;
+  letter-spacing: 0.2px !important;
+}
+
+#about-cpu-section .hud-text-block span {
+  display: block !important;
+  color: #E8C84D !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+}
+
+#about-cpu-section .btn-cpu-wa {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 15px 28px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+}
+
+/* Specific Mobile Device Optimizations for this section */
+@media (max-width: 768px) {
+  #about-cpu-section {
+    padding: 55px 0 50px !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  
+  #about-cpu-section .fullstretch-content {
+    padding: 0 20px !important;
+  }
+  
+  #about-cpu-section .cpu-hud-top-tag {
+    font-size: 0.72rem !important;
+    padding: 6px 14px !important;
+    margin-bottom: 16px !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+  
+  #about-cpu-section .cpu-hero-heading {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
+  }
+  
+  #about-cpu-section .cpu-hero-desc {
+    font-size: 0.94rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 24px !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+  }
+  
+  #about-cpu-section .cpu-live-hud-grid {
+    gap: 12px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  #about-cpu-section .hud-pill-box {
+    padding: 14px 16px !important;
+    gap: 14px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  
+  #about-cpu-section .hud-icon-gem {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.1rem !important;
+  }
+  
+  #about-cpu-section .hud-text-block strong {
+    font-size: 0.95rem !important;
+  }
+  
+  #about-cpu-section .hud-text-block span {
+    font-size: 0.78rem !important;
+  }
+  
+  #about-cpu-section .cpu-action-row {
+    margin-top: 6px !important;
+  }
+  
+  #about-cpu-section .btn-cpu-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.85rem !important;
+    padding: 14px 20px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+}
+
