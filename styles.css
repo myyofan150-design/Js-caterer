@@ -48,7 +48,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   background: var(--bg); color: var(--text);
   font-family: var(--font-body);
-  line-height: 1.75; overflow-x: hidden;
+  line-height: 1.75; overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -13650,5 +13650,82 @@ html {
 
   .marquee-track-right {
     animation-duration: 28s !important;
+  }
+}
+
+
+/* ================================================================
+   100% BULLETPROOF STICKY / FIXED HEADER SYSTEM
+   ================================================================ */
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 90px !important;
+}
+
+body {
+  overflow-x: clip !important;
+}
+
+.luxury-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: rgba(252, 250, 247, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
+}
+
+/* Bulletproof Fixed State on Scroll */
+.luxury-header.is-scrolled,
+.luxury-header.is-sticky-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: rgba(255, 253, 249, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(10, 28, 20, 0.12) !important;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  animation: slideDownHeader 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes slideDownHeader {
+  from {
+    transform: translateY(-8px);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.luxury-header.is-scrolled .header-inner,
+.luxury-header.is-sticky-fixed .header-inner {
+  padding: 8px 24px !important;
+}
+
+.luxury-header.is-scrolled .brand-logo-img,
+.luxury-header.is-sticky-fixed .brand-logo-img {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+.luxury-header.is-scrolled .brand-name,
+.luxury-header.is-sticky-fixed .brand-name {
+  font-size: 18px !important;
+}
+
+@media (max-width: 992px) {
+  .luxury-header.is-scrolled .header-inner,
+  .luxury-header.is-sticky-fixed .header-inner {
+    padding: 8px 16px !important;
   }
 }

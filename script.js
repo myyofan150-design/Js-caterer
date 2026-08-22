@@ -1611,21 +1611,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ================================================================
-// STICKY HEADER DYNAMIC SCROLL CONTROLLER
+// BULLETPROOF STICKY HEADER DYNAMIC SCROLL CONTROLLER
 // ================================================================
-(function initStickyHeader() {
+(function initBulletproofStickyHeader() {
   const headerEl = document.querySelector('.luxury-header') || document.getElementById('header');
   if (!headerEl) return;
 
-  const handleScroll = () => {
-    if (window.pageYOffset > 30) {
-      headerEl.classList.add('is-scrolled');
+  // Create a placeholder element to prevent page layout jump when header becomes position: fixed
+  let headerPlaceholder = document.getElementById('header-sticky-placeholder');
+  if (!headerPlaceholder) {
+    headerPlaceholder = document.createElement('div');
+    headerPlaceholder.id = 'header-sticky-placeholder';
+    headerPlaceholder.style.display = 'none';
+    headerPlaceholder.style.width = '100%';
+    headerEl.parentNode.insertBefore(headerPlaceholder, headerEl.nextSibling);
+  }
+
+  const handleStickyScroll = () => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const headerHeight = headerEl.offsetHeight || 75;
+
+    if (scrollY > 35) {
+      if (!headerEl.classList.contains('is-scrolled')) {
+        headerPlaceholder.style.height = headerHeight + 'px';
+        headerPlaceholder.style.display = 'block';
+        headerEl.classList.add('is-scrolled');
+        headerEl.classList.add('is-sticky-fixed');
+      }
     } else {
-      headerEl.classList.remove('is-scrolled');
+      if (headerEl.classList.contains('is-scrolled')) {
+        headerPlaceholder.style.display = 'none';
+        headerEl.classList.remove('is-scrolled');
+        headerEl.classList.remove('is-sticky-fixed');
+      }
     }
   };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  // Run on initial load
-  handleScroll();
+  window.addEventListener('scroll', handleStickyScroll, { passive: true });
+  window.addEventListener('resize', handleStickyScroll, { passive: true });
+  document.addEventListener('DOMContentLoaded', handleStickyScroll);
+  handleStickyScroll();
 })();
