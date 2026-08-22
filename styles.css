@@ -12455,3 +12455,277 @@ footer.luxury-footer-wrap,
     gap: 8px !important;
   }
 }
+
+
+/* ================================================================
+   REFINED RESPONSIVE & HIGH-CONTRAST TYPOGRAPHY SYSTEM
+   ================================================================ */
+
+.kitchen-pass-top-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.chef-live-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(14, 38, 27, 0.85) !important;
+  border: 1px solid rgba(37, 211, 102, 0.4) !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.76rem !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.status-name {
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+}
+
+.compact-steaming-badge {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  border-radius: 50% !important;
+  background: rgba(14, 38, 27, 0.85) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  animation: floatCauldron 3s infinite ease-in-out !important;
+}
+
+.compact-pot-icon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Typography Clarity for Left Card */
+.kitchen-gold-pill {
+  display: inline-block !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  color: #E8C84D !important;
+  margin-bottom: 6px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.kitchen-hero-title {
+  font-family: var(--font-head) !important;
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  color: #FAF8F2 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 6px !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+}
+
+.kitchen-tamil-quote {
+  font-family: var(--font-tamil) !important;
+  font-size: 0.95rem !important;
+  color: #E8C84D !important;
+  font-style: italic !important;
+  margin: 0 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Live Feast Summary Box Alignment */
+.live-feast-summary-box {
+  background: rgba(6, 22, 15, 0.75) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 16px !important;
+  padding: 16px !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.summary-box-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #E8C84D !important;
+  margin-bottom: 10px !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  padding-bottom: 6px !important;
+}
+
+.summary-dynamic-items {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.summary-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  text-align: left !important;
+}
+
+.item-tag {
+  font-family: var(--font-label) !important;
+  font-size: 0.65rem !important;
+  color: #E8C84D !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+}
+
+.summary-item strong {
+  color: #FAF8F2 !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+/* Hotline Clickable Pills */
+.kitchen-direct-hotline {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(6, 22, 15, 0.75) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+}
+
+.hotline-icon-box {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1rem !important;
+}
+
+.hotline-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.hotline-links {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.phone-chip-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  padding: 5px 10px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.phone-chip-btn:hover {
+  background: #E8C84D !important;
+  color: #0E2018 !important;
+}
+
+/* ================================================================
+   MOBILE & TABLET RESPONSIVE PERFECTION
+   ================================================================ */
+
+@media (max-width: 768px) {
+  .concierge-master-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+  
+  .concierge-kitchen-pass-card,
+  .concierge-studio-card {
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+    min-height: auto !important;
+  }
+
+  .kitchen-pass-top-row {
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+  }
+
+  .chef-live-status-badge {
+    font-size: 0.72rem !important;
+  }
+
+  .kitchen-hero-title {
+    font-size: 1.55rem !important;
+  }
+
+  .kitchen-tamil-quote {
+    font-size: 0.88rem !important;
+  }
+
+  .kitchen-trust-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  .trust-mini-chip {
+    padding: 6px 8px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .hotline-links {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .phone-chip-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+  }
+
+  .occasion-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .guest-pills-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .final-fields-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .guest-pills-row {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .progress-steps-label-row {
+    font-size: 0.6rem !important;
+  }
+}
