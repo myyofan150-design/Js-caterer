@@ -187,7 +187,7 @@
         </div>
 
         <!-- =======================================================
-             RIGHT WING: ANIMATED MULTI-STEP CONVERSATIONAL STUDIO
+             RIGHT WING: ANIMATED MULTI-STEP CONVERSATIONAL STUDIO (EQUAL HEIGHT)
              ======================================================= -->
         <div class="concierge-studio-card">
 
@@ -198,7 +198,7 @@
             </div>
             <div class="progress-steps-label-row">
               <span class="step-label-pill active" id="stepPill1">❶ Occasion</span>
-              <span class="step-label-pill" id="stepPill2">❷ Guests</span>
+              <span class="step-label-pill" id="stepPill2">❷ Schedule</span>
               <span class="step-label-pill" id="stepPill3">❸ Menu</span>
               <span class="step-label-pill" id="stepPill4">❹ Quote</span>
             </div>
@@ -270,13 +270,13 @@
 
             <div class="step-nav-footer">
               <button type="button" class="btn-step-next" onclick="goToStep(2)">
-                <span>Next: Guest Count & Date</span>
+                <span>Next: Schedule & Guests</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
           </div>
 
-          <!-- STEP 2: GUEST COUNT & AUSPICIOUS DATE -->
+          <!-- STEP 2: GUEST COUNT, AUSPICIOUS DATE & MEAL SESSION -->
           <div class="concierge-step-container" id="conciergeStep2">
             <div class="step-dialogue-bubble">
               <div class="chef-bubble-avatar">
@@ -284,12 +284,13 @@
               </div>
               <div class="bubble-speech">
                 <span class="chef-name-tag">Chef Jagan C</span>
-                <p>“Wonderful! How many guests will be seated, and what is your event date?”</p>
+                <p>“Wonderful! Select your guest count, event date, and preferred feast session.”</p>
               </div>
             </div>
 
             <div class="step2-interactive-controls">
               
+              <!-- Headcount Pills -->
               <div class="control-group">
                 <label class="control-heading"><i class="fa-solid fa-users text-gold"></i> ESTIMATED GUEST HEADCOUNT:</label>
                 <div class="guest-pills-row" id="guestPillsRow">
@@ -301,11 +302,24 @@
                 </div>
               </div>
 
-              <div class="control-group">
-                <label class="control-heading"><i class="fa-solid fa-calendar-day text-gold"></i> AUSPICIOUS EVENT DATE:</label>
-                <div class="date-input-wrap">
-                  <i class="fa-solid fa-calendar-days date-icon"></i>
-                  <input type="date" id="conciergeEventDate" class="step-date-input" onchange="updateLiveSummary()">
+              <!-- Date & Meal Session Row -->
+              <div class="date-session-row">
+                <div class="control-group flex-1">
+                  <label class="control-heading"><i class="fa-solid fa-calendar-day text-gold"></i> AUSPICIOUS DATE:</label>
+                  <div class="date-input-wrap">
+                    <i class="fa-solid fa-calendar-days date-icon"></i>
+                    <input type="date" id="conciergeEventDate" class="step-date-input" onchange="updateLiveSummary()">
+                  </div>
+                </div>
+
+                <div class="control-group flex-1">
+                  <label class="control-heading"><i class="fa-solid fa-clock text-gold"></i> MEAL SESSION:</label>
+                  <select id="conciergeMealSession" class="step-select-input" onchange="updateLiveSummary()">
+                    <option value="Lunch / Muhurtham Virundhu (11 AM – 3 PM)" selected>Lunch / Muhurtham (11 AM – 3 PM)</option>
+                    <option value="Dinner / Reception Buffet (6:30 PM – 10:30 PM)">Dinner / Reception (6:30 PM – 10:30 PM)</option>
+                    <option value="Breakfast / Morning Tiffin (7 AM – 10 AM)">Breakfast / Tiffin (7 AM – 10 AM)</option>
+                    <option value="All-Day Industrial Shifts">All-Day Industrial Shifts</option>
+                  </select>
                 </div>
               </div>
 
@@ -316,7 +330,7 @@
                 <i class="fa-solid fa-arrow-left"></i> Back
               </button>
               <button type="button" class="btn-step-next" onclick="goToStep(3)">
-                <span>Next: Menu Preference</span>
+                <span>Next: Menu Style</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -379,7 +393,7 @@
                 <i class="fa-solid fa-arrow-left"></i> Back
               </button>
               <button type="button" class="btn-step-next" onclick="goToStep(4)">
-                <span>Next: Final Summary & Quote</span>
+                <span>Next: Final Quote</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -393,7 +407,7 @@
               </div>
               <div class="bubble-speech">
                 <span class="chef-name-tag">Chef Jagan C</span>
-                <p>“All set! Please enter your name & WhatsApp number to receive your custom per-plate quote & menu options instantly.”</p>
+                <p>“All set! Enter your contact details to receive your bespoke quotation on WhatsApp.”</p>
               </div>
             </div>
 
@@ -421,7 +435,7 @@
                 <label>Event Locality / Special Requests</label>
                 <div class="field-with-icon">
                   <i class="fa-solid fa-location-dot icon-gold"></i>
-                  <input type="text" id="conciergeUserNotes" placeholder="e.g. Velachery Mandapam, Live Sweet Counter needed" class="final-text-input">
+                  <input type="text" id="conciergeUserNotes" placeholder="e.g. Velachery Mandapam, Need Live Matka Kulfi counter" class="final-text-input">
                 </div>
               </div>
 

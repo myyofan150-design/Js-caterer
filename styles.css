@@ -13051,3 +13051,83 @@ footer.luxury-footer-wrap,
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ================================================================
+   EQUAL-HEIGHT & ZERO-GAP MULTI-STEP STUDIO PERFECTION
+   ================================================================ */
+
+.concierge-studio-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.35) !important;
+  border-radius: 26px !important;
+  padding: 30px 28px !important;
+  box-shadow: 0 16px 45px rgba(14, 32, 24, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  box-sizing: border-box !important;
+  min-height: 540px !important;
+}
+
+.concierge-step-container {
+  display: none !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+}
+
+.concierge-step-container.active {
+  display: flex !important;
+}
+
+.step-nav-footer {
+  margin-top: auto !important;
+  padding-top: 10px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+}
+
+.step-nav-footer.between {
+  justify-content: space-between !important;
+}
+
+/* Date & Session Row in Step 2 */
+.date-session-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1.15fr !important;
+  gap: 12px !important;
+}
+
+.flex-1 {
+  flex: 1 !important;
+}
+
+.step-select-input {
+  width: 100% !important;
+  background: #FAF8F2 !important;
+  border: 1.5px solid rgba(197, 155, 39, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 11px 12px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.84rem !important;
+  color: #0E2018 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
+.step-select-input:focus {
+  border-color: #AA820A !important;
+  background: #FFFFFF !important;
+}
+
+@media (max-width: 600px) {
+  .date-session-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+}
