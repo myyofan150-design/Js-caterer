@@ -18494,3 +18494,413 @@ body {
   }
 }
 
+
+/* ================================================================
+   ABOUT US — SECTION 1: LEADERSHIP & HERITAGE LUXURY BALANCED GRID
+   Strictly Scoped under #about-leadership-section
+   ================================================================ */
+
+#about-leadership-section {
+  padding: 90px 0 !important;
+  background: linear-gradient(180deg, #FFFDF8 0%, #FAF5E8 100%) !important;
+  position: relative !important;
+}
+
+#about-leadership-section .about-hero-grid {
+  display: grid !important;
+  grid-template-columns: 470px 1fr !important;
+  gap: 48px !important;
+  align-items: stretch !important;
+}
+
+/* Left Column: Flex Column Stretching 100% to Match Right Column Height */
+#about-leadership-section .about-media-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  height: 100% !important;
+}
+
+#about-leadership-section .founder-card-frame {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  min-height: 440px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 2px solid rgba(212, 175, 55, 0.55) !important;
+  box-shadow: 0 22px 50px rgba(3, 15, 10, 0.2), 0 0 0 6px rgba(212, 175, 55, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  background: #030F0A !important;
+}
+
+#about-leadership-section .founder-card-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  z-index: 1 !important;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#about-leadership-section .founder-card-frame:hover .founder-card-img {
+  transform: scale(1.04) !important;
+}
+
+#about-leadership-section .founder-card-gradient {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 15, 10, 0.45) 0%,
+    rgba(3, 15, 10, 0.15) 35%,
+    rgba(3, 15, 10, 0.65) 70%,
+    rgba(3, 15, 10, 0.96) 100%
+  ) !important;
+  z-index: 2 !important;
+}
+
+/* Top Editorial Pills inside Portrait Card */
+#about-leadership-section .founder-card-top-bar {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding: 18px 20px 0 20px !important;
+}
+
+#about-leadership-section .founder-origin-pill,
+#about-leadership-section .founder-fssai-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 12px !important;
+  background: rgba(3, 15, 10, 0.78) !important;
+  border: 1px solid rgba(232, 200, 77, 0.42) !important;
+  border-radius: 30px !important;
+  color: #F8F5EC !important;
+  font-family: var(--font-label) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#about-leadership-section .founder-origin-pill i,
+#about-leadership-section .founder-fssai-pill i {
+  color: #E8C84D !important;
+  font-size: 0.72rem !important;
+}
+
+/* Bottom Unified Luxury Founder Plaque */
+#about-leadership-section .founder-card-bottom-wrap {
+  position: relative !important;
+  z-index: 3 !important;
+  padding: 0 20px 20px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+#about-leadership-section .founder-floating-badge {
+  margin: 0 !important;
+  padding: 14px 16px !important;
+  background: rgba(5, 22, 15, 0.9) !important;
+  border: 1.5px solid rgba(232, 200, 77, 0.48) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4) !important;
+}
+
+#about-leadership-section .founder-badge-meta {
+  flex: 1 1 auto !important;
+}
+
+#about-leadership-section .founder-exp-seal {
+  padding: 6px 11px !important;
+  background: linear-gradient(135deg, rgba(232, 200, 77, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%) !important;
+  border: 1px solid rgba(232, 200, 77, 0.45) !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+#about-leadership-section .founder-exp-seal strong {
+  display: block !important;
+  color: #E8C84D !important;
+  font-family: var(--font-title) !important;
+  font-size: 1rem !important;
+  line-height: 1.1 !important;
+}
+
+#about-leadership-section .founder-exp-seal span {
+  display: block !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.62rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  margin-top: 2px !important;
+}
+
+#about-leadership-section .founder-stat-chip {
+  margin: 0 !important;
+  padding: 9px 14px !important;
+  background: rgba(3, 15, 10, 0.82) !important;
+  border: 1px solid rgba(232, 200, 77, 0.28) !important;
+  border-radius: 12px !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Royal Dark-Emerald & Gold Milestones Counter Box (Anchored in Left Column) */
+#about-leadership-section .about-milestones-row {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 20px 22px !important;
+  background: linear-gradient(135deg, #07271B 0%, #03130D 100%) !important;
+  border-radius: 20px !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.5) !important;
+  box-shadow: 0 16px 36px rgba(3, 15, 10, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  margin: 0 !important;
+}
+
+#about-leadership-section .milestone-item {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+#about-leadership-section .milestone-icon-dot {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  background: rgba(232, 200, 77, 0.14) !important;
+  border: 1px solid rgba(232, 200, 77, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E8C84D !important;
+  font-size: 0.72rem !important;
+  margin-bottom: 4px !important;
+}
+
+#about-leadership-section .milestone-item strong {
+  display: block !important;
+  font-family: var(--font-title) !important;
+  font-size: 1.5rem !important;
+  line-height: 1.15 !important;
+  color: #E8C84D !important;
+  letter-spacing: 0.3px !important;
+}
+
+#about-leadership-section .milestone-item span {
+  font-size: 0.76rem !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+}
+
+#about-leadership-section .milestone-divider {
+  width: 1px !important;
+  height: 44px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(232, 200, 77, 0.45) 50%, transparent 100%) !important;
+}
+
+/* Right Column: Flex Column Aligned Top-to-Bottom with Left Column */
+#about-leadership-section .about-content-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  gap: 22px !important;
+}
+
+#about-leadership-section .about-secondary-p {
+  margin-bottom: 18px !important;
+}
+
+/* Luxury Sanctity & Craft Assurance Ribbon */
+#about-leadership-section .about-sanctity-ribbon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding: 13px 18px !important;
+  background: linear-gradient(90deg, rgba(14, 61, 42, 0.06) 0%, rgba(232, 200, 77, 0.14) 50%, rgba(14, 61, 42, 0.06) 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-left: 4px solid #0E3D2A !important;
+  border-radius: 14px !important;
+}
+
+#about-leadership-section .sanctity-ribbon-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 0.86rem !important;
+  color: #1A2621 !important;
+}
+
+#about-leadership-section .sanctity-ribbon-item i {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 8px !important;
+  background: #0E3D2A !important;
+  color: #E8C84D !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.78rem !important;
+  flex-shrink: 0 !important;
+}
+
+#about-leadership-section .sanctity-ribbon-sep {
+  width: 1px !important;
+  height: 24px !important;
+  background: rgba(212, 175, 55, 0.4) !important;
+}
+
+/* 4 Heritage Pillars Luxury Bento Grid */
+#about-leadership-section .about-pillars-bento-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 16px !important;
+  margin-bottom: 0 !important;
+}
+
+#about-leadership-section .pillar-bento-card {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.32) !important;
+  border-radius: 18px !important;
+  padding: 20px 22px !important;
+  box-shadow: 0 10px 26px rgba(3, 15, 10, 0.05) !important;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+#about-leadership-section .pillar-bento-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #0E3D2A 0%, #D4AF37 50%, #0E3D2A 100%) !important;
+  opacity: 0.75 !important;
+}
+
+#about-leadership-section .pillar-bento-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 16px 34px rgba(212, 175, 55, 0.2) !important;
+}
+
+#about-leadership-section .pillar-icon-medallion {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, rgba(14, 61, 42, 0.08) 0%, rgba(232, 200, 77, 0.18) 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#about-leadership-section .pillar-icon {
+  color: #0E3D2A !important;
+  font-size: 0.98rem !important;
+}
+
+/* Responsive Breakpoints for #about-leadership-section */
+@media (max-width: 992px) {
+  #about-leadership-section .about-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #about-leadership-section .founder-card-frame {
+    min-height: 420px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #about-leadership-section {
+    padding: 50px 0 42px !important;
+  }
+
+  #about-leadership-section .founder-card-frame {
+    min-height: 370px !important;
+    height: auto !important;
+  }
+
+  #about-leadership-section .founder-card-top-bar {
+    padding: 14px 14px 0 14px !important;
+  }
+
+  #about-leadership-section .founder-origin-pill,
+  #about-leadership-section .founder-fssai-pill {
+    font-size: 0.62rem !important;
+    padding: 5px 10px !important;
+  }
+
+  #about-leadership-section .founder-card-bottom-wrap {
+    padding: 0 14px 14px 14px !important;
+  }
+
+  #about-leadership-section .about-sanctity-ribbon {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  #about-leadership-section .sanctity-ribbon-sep {
+    display: none !important;
+  }
+
+  #about-leadership-section .about-pillars-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  #about-leadership-section .about-milestones-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    padding: 16px 10px !important;
+    gap: 8px !important;
+  }
+
+  #about-leadership-section .milestone-divider {
+    display: none !important;
+  }
+
+  #about-leadership-section .milestone-item strong {
+    font-size: 1.25rem !important;
+  }
+
+  #about-leadership-section .milestone-item span {
+    font-size: 0.68rem !important;
+  }
+}
+
+
