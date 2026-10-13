@@ -19,6 +19,7 @@ if (fs.existsSync(distDir)) {
 fs.mkdirSync(distDir, { recursive: true });
 
 const filesToCopy = [
+  'index.php',
   'index.html',
   'about.html',
   'services.html',
@@ -64,12 +65,9 @@ if (fs.existsSync(assetsSrc)) {
   copyDirRecursive(assetsSrc, assetsDest);
 }
 
-// Create Hostinger deployable zip
-execSync(`tar -a -c -f "../js-caterer-hostinger-deploy.zip" * .htaccess`, { cwd: distDir, stdio: 'inherit' });
-// Also keep js-caterer-production.zip updated
-fs.copyFileSync(hostingerZip, prodZip);
+// Build standard .NET Zip archive with forward-slash Unix paths compatible with Hostinger
+execSync(`powershell -ExecutionPolicy Bypass -File "${path.join(__dirname, 'create_zip.ps1')}"`, { stdio: 'inherit' });
 
 const stats = fs.statSync(hostingerZip);
 console.log(`✅ SUCCESS! Hostinger Deployable Zip created at:`);
 console.log(`   ${hostingerZip} (${(stats.size / (1024 * 1024)).toFixed(2)} MB)`);
-
