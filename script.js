@@ -1146,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'PURE GHEE & STEAM FRESH',
           cols: [
             { heading: 'WELCOME DRINKS', icon: 'fa-glass-water', items: ['Spiced Panakam', 'Fresh Lime Mint Juice', 'Chilled Rose Milk', 'Traditional Buttermilk'] },
-            { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-hot', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
+            { heading: 'HOT BREAKFAST MAINS', icon: 'fa-bowl-food', items: ['Mallipoo Soft Idli', 'Mini Ghee Pongal with Cashews', 'Crispy Medu Vada', 'Poori with Potato Masala', 'Live Dosa (Masala / Plain)', 'Vegetable Rava Upma'] },
             { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Traditional Drumstick Sambar', 'Fresh Coconut Chutney', 'Spiced Tomato Chutney', 'Andhra Kara Chutney', 'Idli Podi & Pure Cow Ghee'] },
             { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Pineapple Rava Kesari', 'Elaneer Payasam', 'Kumbakonam Degree Filter Coffee', 'Hot Milk', 'Ginger Masala Tea'] }
           ]
@@ -1190,7 +1190,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'WEDDING EVE SUPPER',
           cols: [
             { heading: 'DINNER TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Soft Chapathi', 'Mixed Vegetable Kurma', 'Ghee Paper Dosa', 'Onion Tomato Uthappam'] },
-            { heading: 'VARIETY RICE SELECTION', icon: 'fa-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
+            { heading: 'VARIETY RICE SELECTION', icon: 'fa-bowl-rice', items: ['Spiced Tomato Rice', 'Seasoned Curd Rice', 'Tangy Lemon Rice', 'Hot Sambar Rice with Chips'] },
             { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Tomato Kara Chutney', 'Potato Chips & Fryums', 'More Milagai Pickles'] },
             { heading: 'SWEETS & BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Wheat Halwa', 'Saffron Badam Milk', 'Filter Coffee', 'Fresh Banana'] }
           ]
@@ -1214,7 +1214,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'CHETTINAD SPECIALS',
           cols: [
             { heading: 'NON-VEG BREAKFAST MAINS', icon: 'fa-drumstick-bite', items: ['Egg Roast Kal Dosa', 'Mutton Paya with Appam', 'Chicken Pepper Dosa', 'Mallipoo Idli with Meen Gravy'] },
-            { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-hot', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
+            { heading: 'CURRIES & GRAVIES', icon: 'fa-bowl-food', items: ['Chettinad Country Chicken Curry', 'Mutton Salna Gravy', 'Egg Thokku', 'Fish Gravy'] },
             { heading: 'ACCOMPANIMENTS', icon: 'fa-pepper-hot', items: ['Coconut Chutney', 'Kara Chutney', 'Vegetable Sambar', 'Pure Cow Ghee'] },
             { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Kumbakonam Filter Coffee', 'Cardamom Tea', 'Hot Milk'] }
           ]
@@ -1259,7 +1259,7 @@ document.addEventListener('DOMContentLoaded', () => {
           cols: [
             { heading: 'HOT DINNER MAINS', icon: 'fa-bowl-food', items: ['Soft Idli with Mutton Gravy', 'Idiyappam with Chicken Stew', 'Spicy Egg Dosa', 'Malabar Parotta'] },
             { heading: 'GRAVIES & CURRIES', icon: 'fa-pepper-hot', items: ['Chicken Pepper Gravy', 'Mutton Chukka Salna', 'Egg Thokku Gravy', 'Fish Curry'] },
-            { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Chicken Fried Rice', 'Egg Fried Rice', 'Thick Curd Rice with Pickle'] },
+            { heading: 'RICE VARIETIES', icon: 'fa-bowl-rice', items: ['Chicken Fried Rice', 'Egg Fried Rice', 'Thick Curd Rice with Pickle'] },
             { heading: 'SWEETS & MILK', icon: 'fa-apple-whole', items: ['Hot Badam Milk', 'Vanilla Ice Cream', 'Fresh Banana'] }
           ]
         },
@@ -1283,7 +1283,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sub: 'Nutritious high-energy morning meal prepared fresh at our Central Kitchen',
           badge: 'CPU STEAM FRESH',
           cols: [
-            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (4 Pcs)', 'Hot Ghee Kichadi / Pongal', 'Crispy Medu Vada', 'Poori with Potato Masala'] },
+            { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Soft Mallipoo Idli (4 Pcs)', 'Hot Ghee Kichadi / Pongal', 'Crispy Medu Vada', 'Poori with Potato Masala'] },
             { heading: 'SAMBAR & CHUTNEYS', icon: 'fa-pepper-hot', items: ['Drumstick Veg Sambar', 'Fresh Coconut Chutney', 'Tomato Kara Chutney', 'Idli Milagai Podi'] },
             { heading: 'ENERGY SIDES', icon: 'fa-seedling', items: ['Boiled Sprouted Moong', 'Banana', 'Mixed Fruit Bowl'] },
             { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Filter Coffee', 'Cardamom Tea', 'Hot Milk with Bournvita'] }
@@ -1317,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'EASY DIGESTION SUPPER',
           cols: [
             { heading: 'TIFFIN MAINS', icon: 'fa-bowl-food', items: ['Hot Soft Chapathi (3 Pcs)', 'Veg Kurma Gravy', 'Kal Dosa with Podi', 'Idiyappam'] },
-            { heading: 'RICE VARIETIES', icon: 'fa-rice', items: ['Steamed Rice with Sambar', 'Digestive Jeera Rice', 'Tempered Curd Rice with Pickle'] },
+            { heading: 'RICE VARIETIES', icon: 'fa-bowl-rice', items: ['Steamed Rice with Sambar', 'Digestive Jeera Rice', 'Tempered Curd Rice with Pickle'] },
             { heading: 'GRAVIES & RASAM', icon: 'fa-pepper-hot', items: ['Poondu Rasam (Garlic Rasam)', 'Tomato Thokku', 'Fryums'] },
             { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Badam Milk', 'Sukku Coffee', 'Herbal Digestive Tea'] }
           ]
@@ -1340,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sub: 'High-protein workforce breakfast with boiled eggs and chicken gravy',
           badge: 'HIGH PROTEIN SHIFT',
           cols: [
-            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (4 Pcs)', 'Egg Kal Dosa (2 Pcs)', 'Hot Medu Vada', 'Poori with Masala'] },
+            { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Soft Mallipoo Idli (4 Pcs)', 'Egg Kal Dosa (2 Pcs)', 'Hot Medu Vada', 'Poori with Masala'] },
             { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chicken Salna Gravy', 'Egg Curry Thokku', 'Tiffin Sambar'] },
             { heading: 'PROTEIN SIDES', icon: 'fa-egg', items: ['2 Whole Boiled Eggs with Pepper', 'Fresh Chutneys'] },
             { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Filter Coffee', 'Cardamom Tea'] }
@@ -1375,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', () => {
           cols: [
             { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Malabar Parotta (2 Pcs)', 'Idiyappam (3 Pcs)', 'Soft Chapathi'] },
             { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chicken Pepper Gravy', 'Egg Salna', 'Veg Kurma Gravy'] },
-            { heading: 'RICE', icon: 'fa-rice', items: ['Egg Fried Rice', 'Steamed Rice with Rasam', 'Curd Rice with Pickle'] },
+            { heading: 'RICE', icon: 'fa-bowl-rice', items: ['Egg Fried Rice', 'Steamed Rice with Rasam', 'Curd Rice with Pickle'] },
             { heading: 'BEVERAGES', icon: 'fa-mug-hot', items: ['Hot Badam Milk', 'Sukku Tea'] }
           ]
         },
@@ -1399,7 +1399,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sub: 'Individual 4-compartment sealed box with idli, vada, pongal & sweet',
           badge: 'HOT SEALED BENTO',
           cols: [
-            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (2 Pcs)', 'Mini Ghee Cashew Pongal', 'Crispy Medu Vada (1 Pc)', 'Mini Poori Masala'] },
+            { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Soft Mallipoo Idli (2 Pcs)', 'Mini Ghee Cashew Pongal', 'Crispy Medu Vada (1 Pc)', 'Mini Poori Masala'] },
             { heading: 'CHUTNEY & SAMBAR', icon: 'fa-pepper-hot', items: ['Sealed Sambar Cup', 'Fresh Coconut Chutney Cup', 'Kara Chutney Cup'] },
             { heading: 'SWEET', icon: 'fa-cookie', items: ['Pineapple Rava Kesari (50g)'] },
             { heading: 'BEVERAGE & KIT', icon: 'fa-mug-hot', items: ['Flask Degree Coffee / Tea', 'Cutlery & Wet Wipe'] }
@@ -1444,7 +1444,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'LATE NIGHT WORK BENTO',
           cols: [
             { heading: 'BREAD & GRAVY', icon: 'fa-bowl-food', items: ['Soft Ghee Chapathi (3 Pcs)', 'Mixed Vegetable Paneer Kurma', 'Dal Tadka'] },
-            { heading: 'RICE', icon: 'fa-rice', items: ['Veg Pulao with Raitha', 'Thick Curd Rice with Mango Pickle'] },
+            { heading: 'RICE', icon: 'fa-bowl-rice', items: ['Veg Pulao with Raitha', 'Thick Curd Rice with Mango Pickle'] },
             { heading: 'SIDES', icon: 'fa-carrot', items: ['Fresh Green Salad', 'Fried Appalam'] },
             { heading: 'DESSERT', icon: 'fa-apple-whole', items: ['Gulab Jamun (1 Pc)', 'Fresh Cut Apple'] }
           ]
@@ -1456,7 +1456,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sub: 'High-protein executive breakfast box with chicken gravy & boiled egg',
           badge: 'PROTEIN BENTO BOX',
           cols: [
-            { heading: 'MAINS', icon: 'fa-bowl-hot', items: ['Soft Mallipoo Idli (2 Pcs)', 'Egg Kal Dosa (1 Pc)', 'Crispy Medu Vada (1 Pc)'] },
+            { heading: 'MAINS', icon: 'fa-bowl-food', items: ['Soft Mallipoo Idli (2 Pcs)', 'Egg Kal Dosa (1 Pc)', 'Crispy Medu Vada (1 Pc)'] },
             { heading: 'CURRIES', icon: 'fa-drumstick-bite', items: ['Chettinad Chicken Salna', 'Boiled Egg with Black Pepper'] },
             { heading: 'CHUTNEY', icon: 'fa-pepper-hot', items: ['Coconut Chutney Cup', 'Kara Chutney Cup'] },
             { heading: 'SWEET & TEA', icon: 'fa-mug-hot', items: ['Kesari Cup', 'Flask Coffee / Tea', 'Cutlery Kit'] }
@@ -1501,7 +1501,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'NIGHT NON-VEG BENTO',
           cols: [
             { heading: 'BREAD & GRAVY', icon: 'fa-bowl-food', items: ['Malabar Parotta (2 Pcs)', 'Chicken Chettinad Gravy (2 Pcs)', 'Egg Thokku'] },
-            { heading: 'RICE', icon: 'fa-rice', items: ['Egg Fried Rice / Chicken Biryani', 'Curd Rice with Pickle'] },
+            { heading: 'RICE', icon: 'fa-bowl-rice', items: ['Egg Fried Rice / Chicken Biryani', 'Curd Rice with Pickle'] },
             { heading: 'SIDES', icon: 'fa-pepper-hot', items: ['Salna Gravy', 'Onion Raitha Cup'] },
             { heading: 'DESSERT', icon: 'fa-apple-whole', items: ['Gulab Jamun (1 Pc)', 'Fresh Cut Fruit'] }
           ]
@@ -1550,7 +1550,7 @@ document.addEventListener('DOMContentLoaded', () => {
           cols: [
             { heading: 'AUSPICIOUS SWEETS', icon: 'fa-crown', items: ['Maha Prasadam Tirupati Laddu', 'Ghee Mysore Pak', 'Paruppu Payasam', 'Special Vada'] },
             { heading: 'SACRED FEAST MAINS', icon: 'fa-plate-wheat', items: ['Steamed Rice with Ghee', 'Temple Kovil Sambar', 'Mor Kulambu', 'Milagu Jeera Rasam'] },
-            { heading: 'VARIETY SACRED RICE', icon: 'fa-rice', items: ['Authentic Kovil Puliyodharai', 'Kalkandu Sadham (Rock Sugar Rice)', 'Curd Rice with Pomegranate'] },
+            { heading: 'VARIETY SACRED RICE', icon: 'fa-bowl-rice', items: ['Authentic Kovil Puliyodharai', 'Kalkandu Sadham (Rock Sugar Rice)', 'Curd Rice with Pomegranate'] },
             { heading: 'TRADITIONAL SIDES', icon: 'fa-leaf', items: ['Urulai Kara Roast', 'Keerai Kootu', 'More Milagai', 'Thamboolam Bag'] }
           ]
         },
@@ -1560,7 +1560,7 @@ document.addEventListener('DOMContentLoaded', () => {
           badge: 'DIVINE NIGHT PRASADAM',
           cols: [
             { heading: 'SACRED TIFFIN', icon: 'fa-bowl-food', items: ['Ghee Chapathi with Potato Kurma', 'Soft Dosa with Sambar (No Onion)', 'Idiyappam with Coconut Milk'] },
-            { heading: 'RICE OFFERINGS', icon: 'fa-rice', items: ['Kovil Sambar Sadham', 'Thick Curd Rice with Fresh Mango Pickle'] },
+            { heading: 'RICE OFFERINGS', icon: 'fa-bowl-rice', items: ['Kovil Sambar Sadham', 'Thick Curd Rice with Fresh Mango Pickle'] },
             { heading: 'SACRED MILK', icon: 'fa-mug-hot', items: ['Kunkumapoo Saffron Milk', 'Hot Sukku Coffee with Palm Jaggery'] },
             { heading: 'FRUITS', icon: 'fa-apple-whole', items: ['Fresh Naattu Pazham (Hill Banana)', 'Sacred Vibhuti & Prasadam'] }
           ]
@@ -1585,7 +1585,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (studioHeroPhoto && data.photo) studioHeroPhoto.src = data.photo;
     
     const badgeEl = document.getElementById('studioCourseBadge');
-    if (badgeEl && data.badge) badgeEl.innerHTML = '<i class="fa-solid fa-sparkles"></i> ' + data.badge;
+    if (badgeEl && data.badge) badgeEl.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> ' + data.badge;
 
     if (studioCoursesGrid && data.cols) {
       studioCoursesGrid.innerHTML = '';
@@ -1800,7 +1800,7 @@ const circularPillarsData = {
     title: '100% Hygiene',
     desc: 'State-of-the-art Central Production Unit with sanitized prep stations, RO water purification, and strict glove/hairnet protocols.',
     metric: 'FSSAI Certified 4-Stage RO Stations',
-    metricIcon: 'fa-shield-check',
+    metricIcon: 'fa-shield-halved',
     b1: '4-stage RO water cooking line',
     b2: 'Stainless steel sanitized vessels'
   },
@@ -1898,7 +1898,7 @@ const radialPillarsMasterData = {
     sub: 'RO Washed Eco-Friendly Natural Banana Leaf Dining',
     story: 'State-of-the-art Central Production Unit with 4-stage RO water purification. All banana leaves undergo specialized organic washing and heat-sanitization, guaranteeing 100% hygienic, biodegradable dining.',
     img: 'assets/live_kitchen.jpg',
-    m1_title: 'FSSAI Grade', m1_sub: 'Clinical Compliance', m1_icon: 'fa-shield-check',
+    m1_title: 'FSSAI Grade', m1_sub: 'Clinical Compliance', m1_icon: 'fa-shield-halved',
     m2_title: '4-Stage RO', m2_sub: 'Purified Water Line', m2_icon: 'fa-droplet',
     m3_title: 'Eco-Sanitized', m3_sub: '100% Natural Dining', m3_icon: 'fa-leaf'
   },
@@ -2137,3 +2137,97 @@ window.resumeCurtainAutoplay = function() {
 document.addEventListener('DOMContentLoaded', () => {
   startCurtainAutoplay();
 });
+
+// ================================================================
+// MULTI-LAYER SECURITY, ANTI-SPAM HONEYPOT & INPUT SANITIZATION SHIELD
+// ================================================================
+(function initSecurityAndSpamShield() {
+  let lastSubmissionTimestamp = 0;
+  const SUBMISSION_COOLDOWN_MS = 4000; // 4-second anti-flood rate limit
+
+  // 1. Strip HTML/Script tags & malicious XSS payloads from text inputs
+  function sanitizeText(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/[<>]/g, '')
+      .replace(/javascript:/gi, '')
+      .replace(/on\w+=/gi, '')
+      .trim();
+  }
+
+  // 2. Validate 10-digit Indian phone numbers (allows optional +91 / 0 prefix)
+  function isValidPhone(phoneStr) {
+    if (!phoneStr) return true; // Only validate if a phone input is present & non-empty
+    const digits = String(phoneStr).replace(/\D/g, '');
+    if (digits.length === 10 && /^[6-9]\d{9}$/.test(digits)) return true;
+    if (digits.length === 12 && /^91[6-9]\d{9}$/.test(digits)) return true;
+    if (digits.length === 11 && /^0[6-9]\d{9}$/.test(digits)) return true;
+    return false;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const allForms = document.querySelectorAll('form');
+
+    allForms.forEach((form) => {
+      // Inject invisible Anti-Bot Honeypot input into every form
+      if (!form.querySelector('.hp-bot-trap')) {
+        const trapWrap = document.createElement('div');
+        trapWrap.style.cssText = 'position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden;pointer-events:none;';
+        trapWrap.setAttribute('aria-hidden', 'true');
+        trapWrap.innerHTML = '<input type="text" name="website_url_hp" class="hp-bot-trap" tabindex="-1" autocomplete="off">';
+        form.appendChild(trapWrap);
+      }
+
+      // Sanitize inputs on blur
+      form.querySelectorAll('input[type="text"], textarea').forEach((input) => {
+        input.addEventListener('blur', () => {
+          input.value = sanitizeText(input.value);
+        });
+      });
+
+      // Capture-phase security gate before any form submit handler fires
+      form.addEventListener('submit', (e) => {
+        // A. Bot Honeypot Check
+        const trap = form.querySelector('.hp-bot-trap');
+        if (trap && trap.value.trim() !== '') {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return false;
+        }
+
+        // B. Automated WebDriver / Rapid Flood Rate-Limit Check
+        const now = Date.now();
+        if (now - lastSubmissionTimestamp < SUBMISSION_COOLDOWN_MS) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          alert('Please wait a few seconds before submitting another request.');
+          return false;
+        }
+
+        // C. Sanitize all text fields and validate phone input
+        form.querySelectorAll('input[type="text"], textarea').forEach((input) => {
+          input.value = sanitizeText(input.value);
+        });
+
+        const phoneInput = form.querySelector('input[type="tel"]');
+        if (phoneInput && phoneInput.value.trim() !== '' && !isValidPhone(phoneInput.value)) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          alert('Please enter a valid 10-digit mobile / WhatsApp number.');
+          phoneInput.focus();
+          return false;
+        }
+
+        lastSubmissionTimestamp = now;
+      }, true);
+    });
+
+    // Enforce rel="noopener noreferrer" on all external target="_blank" links to prevent tabnabbing
+    document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+      const currentRel = link.getAttribute('rel') || '';
+      if (!currentRel.includes('noopener')) {
+        link.setAttribute('rel', (currentRel + ' noopener noreferrer').trim());
+      }
+    });
+  });
+})();
